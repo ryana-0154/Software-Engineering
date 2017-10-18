@@ -26,5 +26,25 @@ namespace BasicGP
         {
             Application.Exit();
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            // I'm only doing the following bits of code so that we can easily pass into DBAccess when it is created
+            string fName, sName, title, address, allergies, nhNumber, phone;
+            string dob;
+            bool diabetic, smoker, asthmatic;
+
+            nhNumber = txtNHNumber.Text;
+            fName = txtFName.Text;
+            sName = txtSName.Text;
+            title = comboTitle.Text;
+            dob = dtpDOB.Text;
+            phone = txtPhoneNumber.Text;
+            address = txtAddress.Text;
+            allergies = txtAllergies.Text;
+            diabetic = cbDiabetes.Checked;
+            smoker = cbSmoker.Checked;
+            asthmatic = cbAsthmatic.Checked;
+        }
     }
 }

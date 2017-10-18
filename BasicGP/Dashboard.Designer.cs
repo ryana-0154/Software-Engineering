@@ -71,7 +71,6 @@
             this.button3.TabIndex = 6;
             this.button3.Text = "Manage Appointments";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button_Click);
             // 
             // button4
             // 
@@ -85,7 +84,6 @@
             this.button4.TabIndex = 5;
             this.button4.Text = "Find Patient";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button_Click);
             // 
             // btnRegister
             // 
@@ -99,7 +97,7 @@
             this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Register Patient";
             this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.button_Click);
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnLogin
             // 
@@ -113,7 +111,6 @@
             this.btnLogin.TabIndex = 1;
             this.btnLogin.Text = "Check Availability";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.button_Click);
             // 
             // Results
             // 
