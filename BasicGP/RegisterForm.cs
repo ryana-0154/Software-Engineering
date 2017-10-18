@@ -45,6 +45,30 @@ namespace BasicGP
             diabetic = cbDiabetes.Checked;
             smoker = cbSmoker.Checked;
             asthmatic = cbAsthmatic.Checked;
+           
         }
+        //Lowells Code
+        #region
+        /*
+        //attributes
+        string[] patientDetails = new string[8];
+        bool[] additionalInfo = new bool[3];
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            patientDetails[0] = txtNHNumber.Text;
+            patientDetails[1] = txtFName.Text;
+            patientDetails[2] = txtSName.Text;
+            patientDetails[3] = comboTitle.Text;
+            patientDetails[4] = dtpDOB.Text;
+            patientDetails[5] = txtPhoneNumber.Text;
+            patientDetails[6] = txtAddress.Text;
+            patientDetails[7] = txtAllergies.Text;
+
+            additionalInfo[0] = cbDiabetes.Checked;
+            additionalInfo[1] = cbSmoker.Checked;
+            additionalInfo[2] = cbAsthmatic.Checked;
+        }
+        */
+        #endregion
     }
 }
