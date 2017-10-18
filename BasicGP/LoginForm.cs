@@ -84,5 +84,11 @@ namespace BasicGP
                 BtnLogin_Click(sender, e);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            dashboard.Visible = true;
+        }
     }
 }

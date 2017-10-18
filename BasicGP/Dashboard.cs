@@ -29,7 +29,7 @@ namespace BasicGP
         private void button_Click(object sender,EventArgs e)
         {
             this.Visible = false;
-            new ResultsForm().Visible = true;
+            new RegisterForm().Visible = true;
         }
     }
 }

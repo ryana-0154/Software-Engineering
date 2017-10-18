@@ -34,6 +34,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.authStatus = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,10 +44,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsername.ForeColor = System.Drawing.Color.Gray;
-            this.txtUsername.Location = new System.Drawing.Point(228, 203);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUsername.Location = new System.Drawing.Point(152, 132);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(292, 26);
+            this.txtUsername.Size = new System.Drawing.Size(196, 20);
             this.txtUsername.TabIndex = 1;
             this.txtUsername.Text = "Username";
             this.txtUsername.Enter += new System.EventHandler(this.TxtUsername_Enter);
@@ -58,10 +58,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.ForeColor = System.Drawing.Color.Gray;
-            this.txtPassword.Location = new System.Drawing.Point(228, 243);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPassword.Location = new System.Drawing.Point(152, 158);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(292, 26);
+            this.txtPassword.Size = new System.Drawing.Size(196, 20);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "Password";
             this.txtPassword.Enter += new System.EventHandler(this.TxtPassword_Enter);
@@ -73,10 +72,9 @@
             this.btnLogin.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnLogin.Location = new System.Drawing.Point(310, 409);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLogin.Location = new System.Drawing.Point(207, 266);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(129, 69);
+            this.btnLogin.Size = new System.Drawing.Size(86, 45);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Log In";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -93,20 +91,18 @@
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.txtUsername);
             this.panel1.ForeColor = System.Drawing.Color.Brown;
-            this.panel1.Location = new System.Drawing.Point(438, 306);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(292, 199);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(750, 578);
+            this.panel1.Size = new System.Drawing.Size(500, 376);
             this.panel1.TabIndex = 3;
             // 
             // authStatus
             // 
             this.authStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.authStatus.ForeColor = System.Drawing.Color.Red;
-            this.authStatus.Location = new System.Drawing.Point(224, 40);
-            this.authStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.authStatus.Location = new System.Drawing.Point(149, 26);
             this.authStatus.Name = "authStatus";
-            this.authStatus.Size = new System.Drawing.Size(298, 125);
+            this.authStatus.Size = new System.Drawing.Size(199, 81);
             this.authStatus.TabIndex = 3;
             this.authStatus.Text = "Incorrect Username or Password, Please try again.";
             this.authStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -114,26 +110,38 @@
             // titleLabel
             // 
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(438, 35);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.titleLabel.Location = new System.Drawing.Point(292, 23);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(750, 140);
+            this.titleLabel.Size = new System.Drawing.Size(500, 91);
             this.titleLabel.TabIndex = 3;
             this.titleLabel.Text = "Over Surgery | Login";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.button1.Location = new System.Drawing.Point(864, 515);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 45);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Bypass";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1617, 1038);
+            this.ClientSize = new System.Drawing.Size(1078, 675);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1639, 1201);
+            this.MaximumSize = new System.Drawing.Size(1098, 794);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Over Surgery | Login";
@@ -152,6 +160,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label authStatus;
         private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
 
