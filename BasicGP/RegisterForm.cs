@@ -47,8 +47,8 @@ namespace BasicGP
             asthmatic = cbAsthmatic.Checked;
            
         }
-        //Lowells Code
-        #region
+    
+        #region Lowells Code
         /*
         //attributes
         string[] patientDetails = new string[8];
