@@ -47,7 +47,7 @@ namespace BasicGP
             asthmatic = cbAsthmatic.Checked;
            
         }
-    
+
         #region Lowells Code
         /*
         //attributes
@@ -70,5 +70,73 @@ namespace BasicGP
         }
         */
         #endregion
+        /// <summary>
+        /// a text validation method which checks the length of the compulsory fields
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtText_validation(object sender, EventArgs e)
+        {
+            TextBox boxInput = (TextBox)sender;
+            if (boxInput.Text != "")
+            {
+                switch (boxInput.Name)
+                {
+                    case "lblFName":
+                        break;
+                    case "lblSName":
+                        break;
+                    case "lblAddress":
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                //TODO: implement this as a popup label
+                Console.WriteLine("you need to enter number");
+                btnSubmit.Enabled = false;
+            }
+        }
+
+                /// <summary>
+/// A validation check to make sure number fields are numbers and correct length
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
+                private void txtNumber_validation(object sender, EventArgs e)
+        {
+            TextBox boxInput = (TextBox)sender;
+            //if there is something in there and it is a number
+            if (boxInput.Text != "" && int.TryParse(boxInput.Text, out int input))
+            {
+                //assuming NHNumber is meant to be 5 digits
+                if (boxInput.Name == "txtNHNumber" && boxInput.Text.Length == 5)
+                {
+                    //passes the validation
+                    btnSubmit.Enabled = true;
+                    return;
+                }
+                else if (boxInput.Name == "txtPhoneNumber" && boxInput.Text.Length == 11)
+                {
+                    //passes the validation
+                    btnSubmit.Enabled = true;
+                    return;
+                }
+                else
+                {
+                    //TODO: implement this as a popup label
+                    Console.WriteLine("Entry is incorrect length");
+                    btnSubmit.Enabled = false;
+                }
+            }
+            else {
+                //TODO: implement this as a popup label
+                Console.WriteLine("you need to enter number");
+                btnSubmit.Enabled = false;
+            }
+
+         }
     }
 }
