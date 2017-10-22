@@ -28,8 +28,17 @@ namespace BasicGP
         }
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            //Is this bad coding practice to repeat everytime???
             this.Visible = false;
             new RegisterForm().Visible = true;
+        }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            //and here repeated
+            this.Visible = false;
+            new ResultsForm().Visible = true;
+
         }
     }
 }

@@ -34,12 +34,14 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.btnTest = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel1.Controls.Add(this.btnTest);
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button4);
@@ -112,6 +114,20 @@
             this.btnLogin.Text = "Check Availability";
             this.btnLogin.UseVisualStyleBackColor = false;
             // 
+            // btnTest
+            // 
+            this.btnTest.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnTest.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTest.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnTest.Location = new System.Drawing.Point(435, 328);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(190, 81);
+            this.btnTest.TabIndex = 11;
+            this.btnTest.Text = "TEST";
+            this.btnTest.UseVisualStyleBackColor = false;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
             // Results
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,5 +153,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnTest;
     }
 }
