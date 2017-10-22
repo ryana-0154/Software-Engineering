@@ -23,10 +23,16 @@ namespace BasicGP
             Console.WriteLine("Results Form Loaded");
 
         }
-
+        //TODO: REMOVE ME
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
             Console.WriteLine("MEME");
+        }
+
+        private void picLogo_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            LoginForm.dashboard.Visible = true;
         }
     }
 }
