@@ -34,7 +34,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.authStatus = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -109,12 +111,24 @@
             // titleLabel
             // 
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(292, 23);
+            this.titleLabel.Location = new System.Drawing.Point(292, 56);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(500, 91);
             this.titleLabel.TabIndex = 3;
             this.titleLabel.Text = "Over Surgery | Login";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // picLogo
+            // 
+            this.picLogo.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.picLogo.Image = global::BasicGP.Properties.Resources.logo1;
+            this.picLogo.InitialImage = global::BasicGP.Properties.Resources.logo;
+            this.picLogo.Location = new System.Drawing.Point(939, 12);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(127, 101);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 8;
+            this.picLogo.TabStop = false;
             // 
             // LoginForm
             // 
@@ -122,6 +136,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1078, 675);
+            this.Controls.Add(this.picLogo);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -133,6 +148,7 @@
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -145,6 +161,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label authStatus;
         private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.PictureBox picLogo;
     }
 }
 

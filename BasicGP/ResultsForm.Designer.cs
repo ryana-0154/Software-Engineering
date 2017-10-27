@@ -170,7 +170,7 @@
             this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picLogo.Image = global::BasicGP.Properties.Resources.logo1;
             this.picLogo.InitialImage = global::BasicGP.Properties.Resources.logo;
-            this.picLogo.Location = new System.Drawing.Point(899, 21);
+            this.picLogo.Location = new System.Drawing.Point(939, 12);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(127, 101);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
