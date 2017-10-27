@@ -19,7 +19,7 @@ namespace BasicGP
         private void ResultsForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'database1DataSet.patient' table. You can move, or remove it, as needed.
-            this.patientTableAdapter.Fill(this.database1DataSet.patient);
+            //this.patientTableAdapter.Fill(this.database1DataSet.patient);
             Console.WriteLine("Results Form Loaded");
 
         }

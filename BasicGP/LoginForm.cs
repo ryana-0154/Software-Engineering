@@ -62,34 +62,30 @@ namespace BasicGP
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-
+            // Variables to hold username and password
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            bool loginAuth;
 
-            if (loginAuth = HandleLogin.Authenticate(username, password))
+            if(HandleLogin.Authenticate(username, password))
             {
-                this.Visible = false;
+                Visible = false;
                 dashboard.Visible = true;
             } else
             {
                 authStatus.Visible = true;
             }
+
+            
+
         }
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //If the return key is pressed, sent a login button click event
             if (e.KeyChar == (char)13)
             {
-                Console.WriteLine("key 13");
                 BtnLogin_Click(sender, e);
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            dashboard.Visible = true;
         }
     }
 }

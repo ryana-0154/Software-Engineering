@@ -10,7 +10,7 @@ namespace BasicGP
         private string connectionString;
         System.Data.SqlClient.SqlConnection DBConnection;
         private System.Data.SqlClient.SqlDataAdapter dataAdapter;
-        
+
         public DBAccess(string connectionString)
         {
             this.connectionString = connectionString;
@@ -47,7 +47,6 @@ namespace BasicGP
             //Creat the dataSet
             dataSet = new DataSet();
             dataAdapter.Fill(dataSet);
-
             return dataSet;
         }
 

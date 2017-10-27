@@ -34,7 +34,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.authStatus = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,26 +116,12 @@
             this.titleLabel.Text = "Over Surgery | Login";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Location = new System.Drawing.Point(864, 515);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 45);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Bypass";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1078, 675);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -160,7 +145,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label authStatus;
         private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.Button button1;
     }
 }
 
