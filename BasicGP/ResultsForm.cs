@@ -32,7 +32,8 @@ namespace BasicGP
         private void picLogo_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            LoginForm.dashboard.Visible = true;
+            Dashboard dashboard = new Dashboard();
+            dashboard.Visible = true;
         }
     }
 }

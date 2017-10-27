@@ -85,3 +85,17 @@ C:\Users\Lowell\OneDrive - Anglia Ruskin University\Software Engineering\Project
 C:\Users\Lowell\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csproj.CoreCompileInputs.cache
 C:\Users\Lowell\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.exe
 C:\Users\Lowell\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.pdb
+K:\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csprojResolveAssemblyReference.cache
+K:\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.LoginForm.resources
+K:\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.Properties.Resources.resources
+K:\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.RegisterForm.resources
+K:\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.ResultsForm.resources
+K:\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csproj.GenerateResource.Cache
+K:\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.exe
+K:\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.pdb
+K:\MOD003263-Software-Engineering\BasicGP\bin\Debug\Database1.mdf
+K:\MOD003263-Software-Engineering\BasicGP\bin\Debug\Database1_log.ldf
+K:\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.exe.config
+K:\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.exe
+K:\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.pdb
+K:\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.Dashboard.resources

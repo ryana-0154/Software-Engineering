@@ -12,7 +12,7 @@ namespace BasicGP
         }
 
         HandleLogin HandleLogin = new HandleLogin();
-        Results dashboard = new Results();
+        Dashboard dashboard = new Dashboard();
         
         private void TxtUsername_Enter(object sender, EventArgs e)
         {

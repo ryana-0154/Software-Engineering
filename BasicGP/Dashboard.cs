@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BasicGP
 {
-    public partial class Results : Form
+    public partial class Dashboard : Form
     {
-        public Results()
+        public Dashboard()
         {
             InitializeComponent();
         }

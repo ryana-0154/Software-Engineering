@@ -1,6 +1,6 @@
 ﻿namespace BasicGP
 {
-    partial class Results
+    partial class Dashboard
     {
         /// <summary>
         /// Required designer variable.
