@@ -18,6 +18,7 @@ namespace BasicGP
         {
             if(txtUsername.Text == "Username")
             {
+                //esting 123
                 Console.WriteLine("username enter");
                 txtUsername.Text = "";
                 txtUsername.ForeColor = Color.Black;
