@@ -10,13 +10,11 @@ namespace BasicGP
         private string connectionString;
         System.Data.SqlClient.SqlConnection DBConnection;
         private System.Data.SqlClient.SqlDataAdapter dataAdapter;
-
-
-        //TODO: Fix this error - I'm not sure why it's broken (Issue #
-        //public DatabaseConnection(string connectionString)
-        //{
-        //    this.connectionString = connectionString;
-        //}
+        
+        public DBAccess(string connectionString)
+        {
+            this.connectionString = connectionString;
+        }
 
         /// <summary>
         /// Opens the connection based on the string passed in DatabaseConnection
