@@ -28,7 +28,7 @@ namespace BasicGP
         /// <summary>
         /// Closes the DB Connection
         /// </summary>
-        public void closeConnection()
+        public void CloseConnection()
         {
             DBConnection.Close();
         }
