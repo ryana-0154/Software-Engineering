@@ -18,9 +18,6 @@ namespace BasicGP
         }
         private void ResultsForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database1DataSet.patient' table. You can move, or remove it, as needed.
-            //this.patientTableAdapter.Fill(this.database1DataSet.patient);
-            Console.WriteLine("Results Form Loaded");
 
         }
         //TODO: REMOVE ME
@@ -42,9 +39,27 @@ namespace BasicGP
             if (e.KeyChar == (char)13)
             {
                 string[] data = new string[1];
-                data[0] = "Find Patient";
-                DBAccess.getData(data);
+                // Define a dataSet from DBAccess with the SQL statement
+                DataSet dataSet = DBAccess.getData("findPatient", txtInput.Text);
+                //Define a datatable with the tables from the dataset return
+                DataTable table = dataSet.Tables[0];
+
+                Console.WriteLine(table.Rows.Count);
+
+                if(table.Rows.Count > 0)
+                {
+                    dgvAppointments.DataSource = table;
+                } else
+                {
+                    MessageBox.Show("No data was found");
+                }
+
+                
+                
             }
+
+            
+
         }
     }
 }

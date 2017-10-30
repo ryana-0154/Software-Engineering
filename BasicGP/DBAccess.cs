@@ -10,6 +10,7 @@ namespace BasicGP
     {
         private static string conStr = Properties.Settings.Default.OverGPDBConnectionString;
         private static SqlConnection DBConnection;
+        private static SqlDataAdapter loginDataAdapter;
         private static SqlDataAdapter dataAdapter;
 
 
@@ -37,34 +38,39 @@ namespace BasicGP
         /// <returns></returns>
         public static DataSet CheckLogin(string username, string password)
         {
-            DataSet dataSet;
+            DataSet loginDataSet;
             //Open a connection to the database inside DBAccess
             OpenConnection();
             //create the object dataAdapter to manipulate a table from the database specified by DBConnection
-            dataAdapter = new SqlDataAdapter($"SELECT * FROM users WHERE userName = '{username}' AND password = '{password}'", DBConnection);
+            loginDataAdapter = new SqlDataAdapter($"SELECT * FROM users WHERE userName = '{username}' AND password = '{password}'", DBConnection);
             //Creat the dataSet
-            dataSet = new DataSet();
-            dataAdapter.Fill(dataSet);
+            loginDataSet = new DataSet();
+            loginDataAdapter.Fill(loginDataSet);
             //close the DB Connections
             CloseConnection();
 
-            return dataSet;
+            return loginDataSet;
         }
 
         /// <summary>
-        /// Gets specified data from server
+        /// Gets data from DB
         /// </summary>
-        public static DataSet getData(String[] args)
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public static DataSet getData(params string[] data)
         {
             DataSet dataSet;
 
+            dataSet = null;
+            dataAdapter = null;
+
             OpenConnection();
             
-            switch(args[0])
+            switch(data[0])
             {
                 case "findPatient":
-                    //dataAdapter = new SqlDataAdapter($"SELECT * FROM patients WHERE patientID = '{args[1]}'", DBConnection);
-                    Console.WriteLine(args[0]);
+                    int pID = Int32.Parse(data[1]);
+                    dataAdapter = new SqlDataAdapter($"SELECT * FROM patient WHERE Id = '{pID}'", DBConnection);
                     break;
                 case "patientAppointments":
                     break;
@@ -78,12 +84,13 @@ namespace BasicGP
                     break;
                 default:
                     dataSet = null;
+                    Console.WriteLine("default");
                     break;
             }
 
             dataSet = new DataSet();
             dataAdapter.Fill(dataSet);
-
+            CloseConnection();
             return dataSet;
         }
 
