@@ -60,7 +60,6 @@ C:\Users\Stacey\Documents\ONE DRIVE\OneDrive - Anglia Ruskin University\Software
 C:\Users\Stacey\Documents\ONE DRIVE\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.exe
 C:\Users\Stacey\Documents\ONE DRIVE\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.pdb
 C:\Users\Stacey\Documents\ONE DRIVE\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csprojResolveAssemblyReference.cache
-C:\Users\Stacey\Documents\ONE DRIVE\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.Results.resources
 C:\Users\Stacey\Documents\ONE DRIVE\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.LoginForm.resources
 C:\Users\Stacey\Documents\ONE DRIVE\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.Properties.Resources.resources
 C:\Users\Stacey\Documents\ONE DRIVE\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.RegisterForm.resources
@@ -116,3 +115,6 @@ C:\Users\User\OneDrive - Anglia Ruskin University\Assignments\Software Engineeri
 B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\bin\Debug\OverGPDB.mdf
 B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\bin\Debug\OverGPDB_log.ldf
 B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.Dashboard.resources
+C:\Users\Stacey\Documents\ONE DRIVE\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.Dashboard.resources
+C:\Users\Stacey\Documents\ONE DRIVE\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\bin\Debug\OverGPDB.mdf
+C:\Users\Stacey\Documents\ONE DRIVE\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\bin\Debug\OverGPDB_log.ldf

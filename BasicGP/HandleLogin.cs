@@ -24,7 +24,7 @@ namespace BasicGP
             //Define a datatable with the tables from the dataset return
             DataTable table = dataSet.Tables[0];
             //close the DB Connections
-            dbCon.closeConnection();
+            dbCon.CloseConnection();
 
             //If there is a user with those credentials, do this
             if (table.Rows.Count == 1)
