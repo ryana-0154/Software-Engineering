@@ -35,5 +35,16 @@ namespace BasicGP
             Dashboard dashboard = new Dashboard();
             dashboard.Visible = true;
         }
+
+        private void txtInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //If the return key is pressed, sent a login button click event
+            if (e.KeyChar == (char)13)
+            {
+                string[] data = new string[1];
+                data[0] = "Find Patient";
+                DBAccess.getData(data);
+            }
+        }
     }
 }
