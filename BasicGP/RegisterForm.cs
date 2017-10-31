@@ -152,5 +152,12 @@ namespace BasicGP
             }
 
          }
+
+        private void picLogo_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Dashboard dashboard = new Dashboard();
+            dashboard.Visible = true;
+        }
     }
 }

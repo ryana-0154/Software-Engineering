@@ -28,3 +28,18 @@ C:\Users\Lowell\OneDrive - Anglia Ruskin University\Software Engineering\Project
 C:\Users\Lowell\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.exe
 C:\Users\Lowell\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.pdb
 C:\Users\Lowell\OneDrive - Anglia Ruskin University\Software Engineering\Projects\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.pdb
+C:\Users\Ikram\Documents\Software Engineering\mod003263-software-engineering\BasicGP\bin\Debug\OverGPDB.mdf
+C:\Users\Ikram\Documents\Software Engineering\mod003263-software-engineering\BasicGP\bin\Debug\OverGPDB_log.ldf
+C:\Users\Ikram\Documents\Software Engineering\mod003263-software-engineering\BasicGP\bin\Debug\BasicGP.exe.config
+C:\Users\Ikram\Documents\Software Engineering\mod003263-software-engineering\BasicGP\bin\Debug\BasicGP.exe
+C:\Users\Ikram\Documents\Software Engineering\mod003263-software-engineering\BasicGP\bin\Debug\BasicGP.pdb
+C:\Users\Ikram\Documents\Software Engineering\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.csprojResolveAssemblyReference.cache
+C:\Users\Ikram\Documents\Software Engineering\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.Dashboard.resources
+C:\Users\Ikram\Documents\Software Engineering\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.LoginForm.resources
+C:\Users\Ikram\Documents\Software Engineering\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.Properties.Resources.resources
+C:\Users\Ikram\Documents\Software Engineering\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.RegisterForm.resources
+C:\Users\Ikram\Documents\Software Engineering\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.ResultsForm.resources
+C:\Users\Ikram\Documents\Software Engineering\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.csproj.GenerateResource.Cache
+C:\Users\Ikram\Documents\Software Engineering\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.csproj.CoreCompileInputs.cache
+C:\Users\Ikram\Documents\Software Engineering\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.exe
+C:\Users\Ikram\Documents\Software Engineering\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.pdb

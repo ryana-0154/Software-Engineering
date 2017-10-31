@@ -87,5 +87,20 @@ namespace BasicGP
                 BtnLogin_Click(sender, e);
             }
         }
+
+        private void titleLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void authStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
