@@ -159,5 +159,15 @@ namespace BasicGP
             Dashboard dashboard = new Dashboard();
             dashboard.Visible = true;
         }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblAddress_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
