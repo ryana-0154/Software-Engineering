@@ -33,12 +33,11 @@ namespace BasicGP
             new RegisterForm().Visible = true;
         }
 
-        private void btnTest_Click(object sender, EventArgs e)
+        private void btnFind_Click(object sender, EventArgs e)
         {
             //and here repeated
             this.Visible = false;
             new ResultsForm().Visible = true;
-
         }
     }
 }

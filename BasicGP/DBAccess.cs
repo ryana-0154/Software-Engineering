@@ -53,25 +53,32 @@ namespace BasicGP
         }
 
         /// <summary>
-        /// Gets data from DB
+        /// Fetches data from the server
         /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
+        /// <param name="data">Data to be passed to the server - first element should always be the function</param>
         public static DataSet getData(params string[] data)
         {
+            // Create a dataset called dataSet
             DataSet dataSet;
-
+            // Clean the dataSet and the dataAdapter
             dataSet = null;
             dataAdapter = null;
 
+            // Open the DB Connection
             OpenConnection();
             
+            // Switch statement based on what is in data[0]
             switch(data[0])
             {
                 case "findPatient":
+                    // Try to parse data[1] to an int32 and output as pID
                     Int32.TryParse(data[1], out int pID);
-                    Console.WriteLine(pID);
-                    dataAdapter = new SqlDataAdapter($"SELECT * FROM patient WHERE Id = '{pID}'", DBConnection);
+                    // Instantiate an sqlCommand on the DBConnection
+                    SqlCommand sqlCommand = new SqlCommand("SELECT * FROM patient WHERE Id = @id", DBConnection);
+                    // add parameters to the sql command (Prevents again SQLI)
+                    sqlCommand.Parameters.AddWithValue("@id", pID);
+                    // Add the value of the sqlCommand to the sqlDataAdapter
+                    dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
                 case "patientAppointments":
                     break;
@@ -89,9 +96,49 @@ namespace BasicGP
                     break;
             }
 
+            // create a data set
             dataSet = new DataSet();
+            // Fill the dataAdapter with the data from the dataSet
             dataAdapter.Fill(dataSet);
+            // Close the DB Connection
             CloseConnection();
+            // Return the dataset
+            return dataSet;
+        }
+
+        /// <summary>
+        /// Posts Data to server
+        /// </summary>
+        /// <param name="data">Data to be passed to the server - first element should always be the function</param>
+        public static DataSet postData(params string[] data)
+        {
+            DataSet dataSet;
+
+            dataSet = null;
+            dataAdapter = null;
+            OpenConnection();
+
+            switch (data[0])
+            {
+                case "registerPatient":
+                    // Instantiate an sqlCommand on the DBConnection
+                    SqlCommand sqlCommand = new SqlCommand("INSERT INTO patient (id, First name, Last name, Phone number, address) VALUES (@id, @firstName, @lName, @number, @address)", DBConnection);
+                    // add parameters to the sql command (Prevents again SQLI)
+                    sqlCommand.Parameters.AddWithValue("@id", data[1]);
+                    sqlCommand.Parameters.AddWithValue("@firstName", data[2]);
+                    sqlCommand.Parameters.AddWithValue("@lName", data[3]);
+                    sqlCommand.Parameters.AddWithValue("@id", data[4]);
+                    // Add the value of the sqlCommand to the sqlDataAdapter
+                    dataAdapter = new SqlDataAdapter(sqlCommand);
+                    break;
+                case "newAppointment":
+                    break;
+                default:
+                    dataSet = null;
+                    Console.WriteLine("default");
+                    break;
+            }
+            
             return dataSet;
         }
 

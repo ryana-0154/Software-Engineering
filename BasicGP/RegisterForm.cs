@@ -29,47 +29,50 @@ namespace BasicGP
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            // I'm only doing the following bits of code so that we can easily pass into DBAccess when it is created
-            string fName, sName, title, address, allergies, nhNumber, phone;
-            string dob;
-            bool diabetic, smoker, asthmatic;
+            //attributes
+            string[] patientDetails = new string[8];
+            bool[] additionalInfo = new bool[3];
+            
+                patientDetails[0] = txtNHNumber.Text;
+                patientDetails[1] = txtFName.Text;
+                patientDetails[2] = txtSName.Text;
+                patientDetails[3] = comboTitle.Text;
+                patientDetails[4] = dtpDOB.Text;
+                patientDetails[5] = txtPhoneNumber.Text;
+                patientDetails[6] = txtAllergies.Text;
+                patientDetails[7] = txtAddress1.Text;
+                patientDetails[8] = txtAddress2.Text;
+                patientDetails[9] = txtAddress3.Text;
 
-            nhNumber = txtNHNumber.Text;
-            fName = txtFName.Text;
-            sName = txtSName.Text;
-            title = comboTitle.Text;
-            dob = dtpDOB.Text;
-            phone = txtPhoneNumber.Text;
-            address = txtAddress1.Text;
-            allergies = txtAllergies.Text;
-            diabetic = cbDiabetes.Checked;
-            smoker = cbSmoker.Checked;
-            asthmatic = cbAsthmatic.Checked;
-           
+                additionalInfo[0] = cbDiabetes.Checked;
+                additionalInfo[1] = cbSmoker.Checked;
+                additionalInfo[2] = cbAsthmatic.Checked;
+
+            // TODO: Finish this and figure how to push booleans
+            //DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3], patientDetails[4], patientDetails[5], patientDetails[6],
+              //  patientDetails[7], patientDetails[8], patientDetails[9], additionalInfo[0], additionalInfo[1], additionalInfo[2]);
+
         }
 
-        #region Lowells Code
-        /*
-        //attributes
-        string[] patientDetails = new string[8];
-        bool[] additionalInfo = new bool[3];
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-            patientDetails[0] = txtNHNumber.Text;
-            patientDetails[1] = txtFName.Text;
-            patientDetails[2] = txtSName.Text;
-            patientDetails[3] = comboTitle.Text;
-            patientDetails[4] = dtpDOB.Text;
-            patientDetails[5] = txtPhoneNumber.Text;
-            patientDetails[6] = txtAddress.Text;
-            patientDetails[7] = txtAllergies.Text;
+        #region Ryan's Code
+        //// I'm only doing the following bits of code so that we can easily pass into DBAccess when it is created
+        //string fName, sName, title, address, allergies, nhNumber, phone;
+        //string dob;
+        //bool diabetic, smoker, asthmatic;
 
-            additionalInfo[0] = cbDiabetes.Checked;
-            additionalInfo[1] = cbSmoker.Checked;
-            additionalInfo[2] = cbAsthmatic.Checked;
-        }
-        */
+        //nhNumber = txtNHNumber.Text;
+        //    fName = txtFName.Text;
+        //    sName = txtSName.Text;
+        //    title = comboTitle.Text;
+        //    dob = dtpDOB.Text;
+        //    phone = txtPhoneNumber.Text;
+        //    address = txtAddress1.Text;
+        //    allergies = txtAllergies.Text;
+        //    diabetic = cbDiabetes.Checked;
+        //    smoker = cbSmoker.Checked;
+        //    asthmatic = cbAsthmatic.Checked;
         #endregion
+
         /// <summary>
         /// a text validation method which checks the length of the compulsory fields
         /// </summary>
@@ -110,13 +113,13 @@ namespace BasicGP
             }
         }
 
-                /// <summary>
-/// A validation check to make sure number fields are numbers and correct length
-/// </summary>
-/// <param name="sender"></param>
-/// <param name="e"></param>
-                private void txtNumber_validation(object sender, EventArgs e)
-        {
+         /// <summary>
+         /// A validation check to make sure number fields are numbers and correct length
+         /// </summary>
+         /// <param name="sender"></param>
+         /// <param name="e"></param>
+         private void txtNumber_validation(object sender, EventArgs e)
+         {
             TextBox boxInput = (TextBox)sender;
             //if there is something in there and it is a number
             if (boxInput.Text != "" && int.TryParse(boxInput.Text, out int input))
