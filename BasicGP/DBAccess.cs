@@ -69,7 +69,8 @@ namespace BasicGP
             switch(data[0])
             {
                 case "findPatient":
-                    int pID = Int32.Parse(data[1]);
+                    Int32.TryParse(data[1], out int pID);
+                    Console.WriteLine(pID);
                     dataAdapter = new SqlDataAdapter($"SELECT * FROM patient WHERE Id = '{pID}'", DBConnection);
                     break;
                 case "patientAppointments":
