@@ -251,7 +251,7 @@
             "Miss",
             "Mr",
             "Master"});
-            this.comboTitle.Location = new System.Drawing.Point(274, 148);
+            this.comboTitle.Location = new System.Drawing.Point(274, 149);
             this.comboTitle.Margin = new System.Windows.Forms.Padding(4);
             this.comboTitle.Name = "comboTitle";
             this.comboTitle.Size = new System.Drawing.Size(279, 24);
@@ -419,7 +419,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 595);
+            this.ClientSize = new System.Drawing.Size(1432, 953);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
