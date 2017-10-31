@@ -31,7 +31,11 @@
             this.lblNHNumber = new System.Windows.Forms.Label();
             this.lblFName = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.lblAddress3 = new System.Windows.Forms.Label();
+            this.txtAddress3 = new System.Windows.Forms.TextBox();
+            this.lblAddress2 = new System.Windows.Forms.Label();
+            this.txtAddress2 = new System.Windows.Forms.TextBox();
+            this.lblAddress1 = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblDOB = new System.Windows.Forms.Label();
@@ -42,21 +46,17 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.comboTitle = new System.Windows.Forms.ComboBox();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
+            this.txtAddress1 = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtAllergies = new System.Windows.Forms.TextBox();
             this.lblAllergiesText = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.cbSmoker = new System.Windows.Forms.CheckBox();
-            this.lblFlagText = new System.Windows.Forms.Label();
             this.cbDiabetes = new System.Windows.Forms.CheckBox();
             this.cbAsthmatic = new System.Windows.Forms.CheckBox();
+            this.lblFlagText = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -97,11 +97,11 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.307F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.693F));
-            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 8);
-            this.tableLayoutPanel3.Controls.Add(this.textBox2, 0, 8);
-            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 7);
-            this.tableLayoutPanel3.Controls.Add(this.textBox1, 0, 7);
-            this.tableLayoutPanel3.Controls.Add(this.lblAddress, 0, 6);
+            this.tableLayoutPanel3.Controls.Add(this.lblAddress3, 0, 8);
+            this.tableLayoutPanel3.Controls.Add(this.txtAddress3, 0, 8);
+            this.tableLayoutPanel3.Controls.Add(this.lblAddress2, 0, 7);
+            this.tableLayoutPanel3.Controls.Add(this.txtAddress2, 0, 7);
+            this.tableLayoutPanel3.Controls.Add(this.lblAddress1, 0, 6);
             this.tableLayoutPanel3.Controls.Add(this.txtPhoneNumber, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.lblPhone, 0, 5);
             this.tableLayoutPanel3.Controls.Add(this.lblDOB, 0, 4);
@@ -114,7 +114,7 @@
             this.tableLayoutPanel3.Controls.Add(this.lblTitle, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.comboTitle, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.dtpDOB, 1, 4);
-            this.tableLayoutPanel3.Controls.Add(this.txtAddress, 1, 6);
+            this.tableLayoutPanel3.Controls.Add(this.txtAddress1, 1, 6);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(22, 67);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -133,15 +133,68 @@
             this.tableLayoutPanel3.TabIndex = 3;
             this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
-            // txtAddress
+            // lblAddress3
             // 
-            this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAddress.Location = new System.Drawing.Point(306, 431);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(279, 22);
-            this.txtAddress.TabIndex = 16;
+            this.lblAddress3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAddress3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress3.Location = new System.Drawing.Point(5, 556);
+            this.lblAddress3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAddress3.Name = "lblAddress3";
+            this.lblAddress3.Size = new System.Drawing.Size(281, 81);
+            this.lblAddress3.TabIndex = 20;
+            this.lblAddress3.Text = "Address Line 3 *";
+            this.lblAddress3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtAddress3
+            // 
+            this.txtAddress3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAddress3.Location = new System.Drawing.Point(306, 585);
+            this.txtAddress3.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAddress3.Multiline = true;
+            this.txtAddress3.Name = "txtAddress3";
+            this.txtAddress3.Size = new System.Drawing.Size(279, 22);
+            this.txtAddress3.TabIndex = 19;
+            // 
+            // lblAddress2
+            // 
+            this.lblAddress2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress2.Location = new System.Drawing.Point(5, 480);
+            this.lblAddress2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAddress2.Name = "lblAddress2";
+            this.lblAddress2.Size = new System.Drawing.Size(281, 75);
+            this.lblAddress2.TabIndex = 18;
+            this.lblAddress2.Text = "Address Line 2 *";
+            this.lblAddress2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtAddress2
+            // 
+            this.txtAddress2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAddress2.Location = new System.Drawing.Point(306, 506);
+            this.txtAddress2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAddress2.Multiline = true;
+            this.txtAddress2.Name = "txtAddress2";
+            this.txtAddress2.Size = new System.Drawing.Size(279, 22);
+            this.txtAddress2.TabIndex = 17;
+            // 
+            // lblAddress1
+            // 
+            this.lblAddress1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAddress1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress1.Location = new System.Drawing.Point(5, 406);
+            this.lblAddress1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAddress1.Name = "lblAddress1";
+            this.lblAddress1.Size = new System.Drawing.Size(281, 73);
+            this.lblAddress1.TabIndex = 15;
+            this.lblAddress1.Text = "Address Line 1 *";
+            this.lblAddress1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAddress1.Click += new System.EventHandler(this.lblAddress_Click);
             // 
             // txtPhoneNumber
             // 
@@ -268,6 +321,16 @@
             this.dtpDOB.TabIndex = 12;
             this.dtpDOB.Value = new System.DateTime(2000, 1, 1, 19, 53, 0, 0);
             // 
+            // txtAddress1
+            // 
+            this.txtAddress1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAddress1.Location = new System.Drawing.Point(306, 431);
+            this.txtAddress1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAddress1.Multiline = true;
+            this.txtAddress1.Name = "txtAddress1";
+            this.txtAddress1.Size = new System.Drawing.Size(279, 22);
+            this.txtAddress1.TabIndex = 16;
+            // 
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -358,20 +421,6 @@
             this.cbSmoker.Text = "Smoker";
             this.cbSmoker.UseVisualStyleBackColor = true;
             // 
-            // lblFlagText
-            // 
-            this.lblFlagText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFlagText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFlagText.Location = new System.Drawing.Point(5, 1);
-            this.lblFlagText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFlagText.Name = "lblFlagText";
-            this.lblFlagText.Size = new System.Drawing.Size(334, 60);
-            this.lblFlagText.TabIndex = 17;
-            this.lblFlagText.Text = "Are you any of the following?";
-            this.lblFlagText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // cbDiabetes
             // 
             this.cbDiabetes.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -398,6 +447,20 @@
             this.cbAsthmatic.Text = "Asthmatic";
             this.cbAsthmatic.UseVisualStyleBackColor = true;
             // 
+            // lblFlagText
+            // 
+            this.lblFlagText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFlagText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFlagText.Location = new System.Drawing.Point(5, 1);
+            this.lblFlagText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFlagText.Name = "lblFlagText";
+            this.lblFlagText.Size = new System.Drawing.Size(334, 60);
+            this.lblFlagText.TabIndex = 17;
+            this.lblFlagText.Text = "Are you any of the following?";
+            this.lblFlagText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // picLogo
             // 
             this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -411,69 +474,6 @@
             this.picLogo.TabIndex = 19;
             this.picLogo.TabStop = false;
             this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(306, 506);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(279, 22);
-            this.textBox1.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 480);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(281, 75);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Address Line 2 *";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(5, 406);
-            this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(281, 73);
-            this.lblAddress.TabIndex = 15;
-            this.lblAddress.Text = "Address Line 1 *";
-            this.lblAddress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblAddress.Click += new System.EventHandler(this.lblAddress_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(306, 585);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(279, 22);
-            this.textBox2.TabIndex = 19;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 556);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(281, 81);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Address Line 3 *";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // RegisterForm
             // 
@@ -512,7 +512,7 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblDOB;
-        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtAddress1;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.TextBox txtFName;
         private System.Windows.Forms.TextBox txtNHNumber;
@@ -529,10 +529,10 @@
         private System.Windows.Forms.CheckBox cbSmoker;
         private System.Windows.Forms.CheckBox cbDiabetes;
         private System.Windows.Forms.PictureBox picLogo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lblAddress2;
+        private System.Windows.Forms.TextBox txtAddress2;
+        private System.Windows.Forms.Label lblAddress1;
+        private System.Windows.Forms.Label lblAddress3;
+        private System.Windows.Forms.TextBox txtAddress3;
     }
 }

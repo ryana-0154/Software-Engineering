@@ -40,7 +40,7 @@ namespace BasicGP
             title = comboTitle.Text;
             dob = dtpDOB.Text;
             phone = txtPhoneNumber.Text;
-            address = txtAddress.Text;
+            address = txtAddress1.Text;
             allergies = txtAllergies.Text;
             diabetic = cbDiabetes.Checked;
             smoker = cbSmoker.Checked;
