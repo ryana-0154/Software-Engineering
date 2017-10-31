@@ -108,7 +108,7 @@
             this.tableLayoutPanel3.Controls.Add(this.comboTitle, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.dtpDOB, 1, 4);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(12, 11);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 7;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.81967F));
@@ -126,7 +126,7 @@
             // 
             this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAddress.Location = new System.Drawing.Point(274, 263);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(279, 86);
@@ -150,7 +150,7 @@
             // 
             this.txtPhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPhoneNumber.Location = new System.Drawing.Point(274, 222);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(279, 22);
             this.txtPhoneNumber.TabIndex = 14;
@@ -188,7 +188,7 @@
             // 
             this.txtFName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFName.Location = new System.Drawing.Point(274, 71);
-            this.txtFName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(279, 22);
             this.txtFName.TabIndex = 6;
@@ -197,7 +197,7 @@
             // 
             this.txtNHNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNHNumber.Location = new System.Drawing.Point(274, 17);
-            this.txtNHNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNHNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtNHNumber.MaxLength = 10;
             this.txtNHNumber.Name = "txtNHNumber";
             this.txtNHNumber.Size = new System.Drawing.Size(279, 22);
@@ -222,7 +222,7 @@
             // 
             this.txtSName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSName.Location = new System.Drawing.Point(274, 115);
-            this.txtSName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSName.Margin = new System.Windows.Forms.Padding(4);
             this.txtSName.Name = "txtSName";
             this.txtSName.Size = new System.Drawing.Size(279, 22);
             this.txtSName.TabIndex = 8;
@@ -251,8 +251,8 @@
             "Miss",
             "Mr",
             "Master"});
-            this.comboTitle.Location = new System.Drawing.Point(274, 149);
-            this.comboTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboTitle.Location = new System.Drawing.Point(274, 148);
+            this.comboTitle.Margin = new System.Windows.Forms.Padding(4);
             this.comboTitle.Name = "comboTitle";
             this.comboTitle.Size = new System.Drawing.Size(279, 24);
             this.comboTitle.TabIndex = 10;
@@ -263,7 +263,7 @@
             this.dtpDOB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDOB.Location = new System.Drawing.Point(274, 186);
-            this.dtpDOB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDOB.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDOB.MaxDate = new System.DateTime(2017, 11, 24, 0, 0, 0, 0);
             this.dtpDOB.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             this.dtpDOB.Name = "dtpDOB";
@@ -278,7 +278,7 @@
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnSubmit.Location = new System.Drawing.Point(798, 502);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(136, 82);
             this.btnSubmit.TabIndex = 6;
@@ -295,7 +295,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtAllergies, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblAllergiesText, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(100, 421);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28F));
@@ -307,7 +307,7 @@
             // 
             this.txtAllergies.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAllergies.Location = new System.Drawing.Point(6, 53);
-            this.txtAllergies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAllergies.Margin = new System.Windows.Forms.Padding(4);
             this.txtAllergies.Multiline = true;
             this.txtAllergies.Name = "txtAllergies";
             this.txtAllergies.Size = new System.Drawing.Size(450, 112);
@@ -338,7 +338,7 @@
             this.tableLayoutPanel2.Controls.Add(this.cbDiabetes, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.cbAsthmatic, 0, 3);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(601, 154);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.48148F));
@@ -354,7 +354,7 @@
             this.cbSmoker.AutoSize = true;
             this.cbSmoker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSmoker.Location = new System.Drawing.Point(129, 117);
-            this.cbSmoker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSmoker.Margin = new System.Windows.Forms.Padding(4);
             this.cbSmoker.Name = "cbSmoker";
             this.cbSmoker.Size = new System.Drawing.Size(86, 24);
             this.cbSmoker.TabIndex = 19;
@@ -381,7 +381,7 @@
             this.cbDiabetes.AutoSize = true;
             this.cbDiabetes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDiabetes.Location = new System.Drawing.Point(127, 73);
-            this.cbDiabetes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDiabetes.Margin = new System.Windows.Forms.Padding(4);
             this.cbDiabetes.Name = "cbDiabetes";
             this.cbDiabetes.Size = new System.Drawing.Size(89, 24);
             this.cbDiabetes.TabIndex = 18;
@@ -394,7 +394,7 @@
             this.cbAsthmatic.AutoSize = true;
             this.cbAsthmatic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAsthmatic.Location = new System.Drawing.Point(121, 159);
-            this.cbAsthmatic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbAsthmatic.Margin = new System.Windows.Forms.Padding(4);
             this.cbAsthmatic.Name = "cbAsthmatic";
             this.cbAsthmatic.Size = new System.Drawing.Size(102, 24);
             this.cbAsthmatic.TabIndex = 20;
