@@ -251,7 +251,7 @@
             "Miss",
             "Mr",
             "Master"});
-            this.comboTitle.Location = new System.Drawing.Point(274, 149);
+            this.comboTitle.Location = new System.Drawing.Point(274, 148);
             this.comboTitle.Margin = new System.Windows.Forms.Padding(4);
             this.comboTitle.Name = "comboTitle";
             this.comboTitle.Size = new System.Drawing.Size(279, 24);
