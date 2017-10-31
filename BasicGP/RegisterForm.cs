@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using System.Text.RegularExpressions;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -83,8 +83,17 @@ namespace BasicGP
                 switch (boxInput.Name)
                 {
                     case "lblFName":
+                        //checks to see if the input is less that or equal to 16 bits and is only letters
+                        if (boxInput.Text.Length <= 16 && Regex.IsMatch(boxInput.Text, @"^[\p{L}]+$"))
+                        {
+                            //passes validation
+                        }
                         break;
                     case "lblSName":
+                        if (boxInput.Text.Length <= 16 && Regex.IsMatch(boxInput.Text, @"^[\p{L}]+$"))
+                        {
+
+                        }
                         break;
                     case "lblAddress":
                         break;
@@ -95,7 +104,8 @@ namespace BasicGP
             else
             {
                 //TODO: implement this as a popup label
-                Console.WriteLine("you need to enter number");
+                Console.WriteLine("you need to enter Text here");
+                boxInput.BackColor = Color.LightCoral;
                 btnSubmit.Enabled = false;
             }
         }
@@ -111,29 +121,33 @@ namespace BasicGP
             //if there is something in there and it is a number
             if (boxInput.Text != "" && int.TryParse(boxInput.Text, out int input))
             {
-                //assuming NHNumber is meant to be 5 digits
-                if (boxInput.Name == "txtNHNumber" && boxInput.Text.Length == 5)
+                //assuming NHNumber is meant to be 10 digits
+                if (boxInput.Name == "txtNHNumber" && boxInput.Text.Length == 10)
                 {
                     //passes the validation
                     btnSubmit.Enabled = true;
+                    boxInput.BackColor = Color.White;
                     return;
                 }
                 else if (boxInput.Name == "txtPhoneNumber" && boxInput.Text.Length == 11)
                 {
                     //passes the validation
                     btnSubmit.Enabled = true;
+                    boxInput.BackColor = Color.White;
                     return;
                 }
                 else
                 {
                     //TODO: implement this as a popup label
                     Console.WriteLine("Entry is incorrect length");
+                    boxInput.BackColor = Color.LightCoral;
                     btnSubmit.Enabled = false;
                 }
             }
             else {
                 //TODO: implement this as a popup label
                 Console.WriteLine("you need to enter number");
+                boxInput.BackColor = Color.LightCoral;
                 btnSubmit.Enabled = false;
             }
 
