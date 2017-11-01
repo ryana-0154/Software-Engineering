@@ -132,6 +132,8 @@ namespace BasicGP
                     dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
                 case "newAppointment":
+                    // TODO: Create Appointments table and make this SQLCommand valid
+                    //SqlCommand sqlCommand = new SqlCommand("INSERT INTO appointments (TABLEPARAMS) VALUES (VALUES)");
                     break;
                 default:
                     dataSet = null;
