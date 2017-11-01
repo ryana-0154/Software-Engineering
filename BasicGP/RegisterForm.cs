@@ -32,25 +32,23 @@ namespace BasicGP
             //attributes
             string[] patientDetails = new string[8];
             bool[] additionalInfo = new bool[3];
-            
-                
+            string address = txtAddress1.Text + ", " + txtAddress2.Text + ", " + txtAddress3.Text;
+            Console.WriteLine(address);
 
-                patientDetails[0] = txtNHNumber.Text;
-                patientDetails[1] = txtFName.Text + " " + txtSName.Text;
-                patientDetails[3] = comboTitle.Text;
-                patientDetails[4] = dtpDOB.Text;
-                patientDetails[5] = txtPhoneNumber.Text;
-                patientDetails[6] = txtAllergies.Text;
-                patientDetails[7] = txtAddress1.Text;
-                patientDetails[8] = txtAddress2.Text;
-                patientDetails[9] = txtAddress3.Text;
+                patientDetails[0] = txtNHNumber.Text; // data[1]
+                patientDetails[1] = txtFName.Text + " " + txtSName.Text; // data[2]
+                patientDetails[3] = comboTitle.Text; // data[3]
+                patientDetails[4] = dtpDOB.Text; // data[4]
+                patientDetails[5] = txtPhoneNumber.Text; // data[5]
+                patientDetails[6] = address; // data[6]
+                patientDetails[7] = txtAllergies.Text; // data[7]
 
-                additionalInfo[0] = cbDiabetes.Checked;
-                additionalInfo[1] = cbSmoker.Checked;
-                additionalInfo[2] = cbAsthmatic.Checked;
+                additionalInfo[0] = cbDiabetes.Checked; // data[8]
+                additionalInfo[1] = cbSmoker.Checked; // data[9]
+                additionalInfo[2] = cbAsthmatic.Checked; // data[10]
             
             DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3], patientDetails[4], patientDetails[5], patientDetails[6],
-              patientDetails[7], patientDetails[8], patientDetails[9], additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
+              patientDetails[7], additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
 
         }
 

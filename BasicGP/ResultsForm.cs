@@ -20,11 +20,6 @@ namespace BasicGP
         {
 
         }
-        //TODO: REMOVE ME
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-            Console.WriteLine("MEME");
-        }
 
         private void picLogo_Click(object sender, EventArgs e)
         {
@@ -35,6 +30,7 @@ namespace BasicGP
 
         private void txtInput_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // TODO: Send this all to backend
             //If the return key is pressed, sent a login button click event
             if (e.KeyChar == (char)13)
             {

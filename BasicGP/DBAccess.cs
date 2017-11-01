@@ -123,7 +123,7 @@ namespace BasicGP
                 case "registerPatient":
                     // Instantiate an sqlCommand on the DBConnection
                     // TODO: Concat Address
-                    SqlCommand sqlCommand = new SqlCommand("INSERT INTO patient (NationalHealthNumber, Name, Title, DOB, PhoneNumber, Address, Diabetes, Smoker, Asthma, Allergies) " +
+                    SqlCommand sqlCommand = new SqlCommand("INSERT INTO patients (NationalHealthNumber, Name, Title, DOB, PhoneNumber, Address, Diabetes, Smoker, Asthma, Allergies) " +
                         "VALUES (@NHNumber, @name, @title, @DOB, @phoneNumber, @address, @diabetes, @smoker, @asthma, @allergies)", DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@NHNumber", data[1]);
@@ -132,10 +132,10 @@ namespace BasicGP
                     sqlCommand.Parameters.AddWithValue("@DOB", data[4]);
                     sqlCommand.Parameters.AddWithValue("@PhoneNumber", data[5]);
                     sqlCommand.Parameters.AddWithValue("@Address", data[6]);
-                    sqlCommand.Parameters.AddWithValue("@Diabetes", data[7]);
-                    sqlCommand.Parameters.AddWithValue("@Smoker", data[8]);
-                    sqlCommand.Parameters.AddWithValue("@Asthma", data[9]);
-                    sqlCommand.Parameters.AddWithValue("@Allergies", data[10]);
+                    sqlCommand.Parameters.AddWithValue("@Diabetes", data[8]);
+                    sqlCommand.Parameters.AddWithValue("@Smoker", data[9]);
+                    sqlCommand.Parameters.AddWithValue("@Asthma", data[10]);
+                    sqlCommand.Parameters.AddWithValue("@Allergies", data[7]);
                     // Add the value of the sqlCommand to the sqlDataAdapter
                     dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
