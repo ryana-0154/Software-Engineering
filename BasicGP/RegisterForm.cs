@@ -33,9 +33,10 @@ namespace BasicGP
             string[] patientDetails = new string[8];
             bool[] additionalInfo = new bool[3];
             
+                
+
                 patientDetails[0] = txtNHNumber.Text;
-                patientDetails[1] = txtFName.Text;
-                patientDetails[2] = txtSName.Text;
+                patientDetails[1] = txtFName.Text + " " + txtSName.Text;
                 patientDetails[3] = comboTitle.Text;
                 patientDetails[4] = dtpDOB.Text;
                 patientDetails[5] = txtPhoneNumber.Text;
@@ -47,10 +48,9 @@ namespace BasicGP
                 additionalInfo[0] = cbDiabetes.Checked;
                 additionalInfo[1] = cbSmoker.Checked;
                 additionalInfo[2] = cbAsthmatic.Checked;
-
-            // TODO: Finish this and figure how to push booleans
-            //DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3], patientDetails[4], patientDetails[5], patientDetails[6],
-              //  patientDetails[7], patientDetails[8], patientDetails[9], additionalInfo[0], additionalInfo[1], additionalInfo[2]);
+            
+            DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3], patientDetails[4], patientDetails[5], patientDetails[6],
+              patientDetails[7], patientDetails[8], patientDetails[9], additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
 
         }
 

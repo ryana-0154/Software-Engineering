@@ -74,7 +74,7 @@ namespace BasicGP
                     // Try to parse data[1] to an int32 and output as pID
                     Int32.TryParse(data[1], out int pID);
                     // Instantiate an sqlCommand on the DBConnection
-                    SqlCommand sqlCommand = new SqlCommand("SELECT * FROM patient WHERE Id = @id", DBConnection);
+                    SqlCommand sqlCommand = new SqlCommand("SELECT * FROM patients WHERE NationalHealthNumber = @id", DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
                     // Add the value of the sqlCommand to the sqlDataAdapter
@@ -122,12 +122,20 @@ namespace BasicGP
             {
                 case "registerPatient":
                     // Instantiate an sqlCommand on the DBConnection
-                    SqlCommand sqlCommand = new SqlCommand("INSERT INTO patient (id, First name, Last name, Phone number, address) VALUES (@id, @firstName, @lName, @number, @address)", DBConnection);
+                    // TODO: Concat Address
+                    SqlCommand sqlCommand = new SqlCommand("INSERT INTO patient (NationalHealthNumber, Name, Title, DOB, PhoneNumber, Address, Diabetes, Smoker, Asthma, Allergies) " +
+                        "VALUES (@NHNumber, @name, @title, @DOB, @phoneNumber, @address, @diabetes, @smoker, @asthma, @allergies)", DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
-                    sqlCommand.Parameters.AddWithValue("@id", data[1]);
-                    sqlCommand.Parameters.AddWithValue("@firstName", data[2]);
-                    sqlCommand.Parameters.AddWithValue("@lName", data[3]);
-                    sqlCommand.Parameters.AddWithValue("@id", data[4]);
+                    sqlCommand.Parameters.AddWithValue("@NHNumber", data[1]);
+                    sqlCommand.Parameters.AddWithValue("@Name", data[2]);
+                    sqlCommand.Parameters.AddWithValue("@Title", data[3]);
+                    sqlCommand.Parameters.AddWithValue("@DOB", data[4]);
+                    sqlCommand.Parameters.AddWithValue("@PhoneNumber", data[5]);
+                    sqlCommand.Parameters.AddWithValue("@Address", data[6]);
+                    sqlCommand.Parameters.AddWithValue("@Diabetes", data[7]);
+                    sqlCommand.Parameters.AddWithValue("@Smoker", data[8]);
+                    sqlCommand.Parameters.AddWithValue("@Asthma", data[9]);
+                    sqlCommand.Parameters.AddWithValue("@Allergies", data[10]);
                     // Add the value of the sqlCommand to the sqlDataAdapter
                     dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
