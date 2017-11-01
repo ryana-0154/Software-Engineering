@@ -69,11 +69,6 @@ namespace BasicGP
             }
         }
 
-        public void UnauthMsg()
-        {
-            authStatus.Visible = true;
-        }
-
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             //If the return key is pressed, sent a login button click event
