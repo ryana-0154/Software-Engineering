@@ -13,6 +13,8 @@ namespace BasicGP
         /// <returns>True if authenticated | false if not</returns>
         public static bool Authenticate(string username, string password)
         {
+            LoginForm loginForm = new LoginForm();
+            Dashboard dashboard = new Dashboard();
             // Define a dataSet from DBAccess with the SQL statement
             DataSet dataSet = DBAccess.CheckLogin(username, password);
             //Define a datatable with the tables from the dataset return

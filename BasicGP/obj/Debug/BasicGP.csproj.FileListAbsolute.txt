@@ -58,3 +58,18 @@ C:\Users\User\OneDrive - Anglia Ruskin University\Assignments\Software Engineeri
 C:\Users\User\OneDrive - Anglia Ruskin University\Assignments\Software Engineering\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csproj.CoreCompileInputs.cache
 C:\Users\User\OneDrive - Anglia Ruskin University\Assignments\Software Engineering\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.exe
 C:\Users\User\OneDrive - Anglia Ruskin University\Assignments\Software Engineering\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.pdb
+C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csprojResolveAssemblyReference.cache
+C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.Dashboard.resources
+C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.LoginForm.resources
+C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.Properties.Resources.resources
+C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.RegisterForm.resources
+C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.ResultsForm.resources
+C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csproj.GenerateResource.Cache
+C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csproj.CoreCompileInputs.cache
+C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.exe
+C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.pdb
+C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\bin\Debug\OverGPDB.mdf
+C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\bin\Debug\OverGPDB_log.ldf
+C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.exe.config
+C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.exe
+C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.pdb

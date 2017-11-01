@@ -6,20 +6,15 @@ namespace BasicGP
 {
     public partial class LoginForm : Form
     {
+        Dashboard dashboard = new Dashboard();
         public LoginForm()
         {
             InitializeComponent();
         }
-
-        HandleLogin HandleLogin = new HandleLogin();
-        Dashboard dashboard = new Dashboard();
-        
         private void TxtUsername_Enter(object sender, EventArgs e)
         {
             if(txtUsername.Text == "Username")
             {
-                //esting 123
-                Console.WriteLine("username enter");
                 txtUsername.Text = "";
                 txtUsername.ForeColor = Color.Black;
             }
@@ -56,7 +51,6 @@ namespace BasicGP
         
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            Console.WriteLine("Login Form Loaded");
             authStatus.Visible = false;
         }
 
@@ -66,17 +60,18 @@ namespace BasicGP
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            if(HandleLogin.Authenticate(username, password))
-            {
+            if(HandleLogin.Authenticate(username, password)) {
                 Visible = false;
                 dashboard.Visible = true;
             } else
             {
                 authStatus.Visible = true;
             }
+        }
 
-            
-
+        public void UnauthMsg()
+        {
+            authStatus.Visible = true;
         }
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
@@ -86,21 +81,6 @@ namespace BasicGP
             {
                 BtnLogin_Click(sender, e);
             }
-        }
-
-        private void titleLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void authStatus_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

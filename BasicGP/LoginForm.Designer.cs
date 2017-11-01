@@ -51,7 +51,6 @@
             this.txtUsername.Size = new System.Drawing.Size(255, 22);
             this.txtUsername.TabIndex = 1;
             this.txtUsername.Text = "Username";
-            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             this.txtUsername.Enter += new System.EventHandler(this.TxtUsername_Enter);
             this.txtUsername.Leave += new System.EventHandler(this.TxtUsername_Leave);
             // 
@@ -113,7 +112,6 @@
             this.authStatus.TabIndex = 3;
             this.authStatus.Text = "Incorrect Username or Password, Please try again.";
             this.authStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.authStatus.Click += new System.EventHandler(this.authStatus_Click);
             // 
             // titleLabel
             // 
@@ -125,7 +123,6 @@
             this.titleLabel.TabIndex = 3;
             this.titleLabel.Text = "Over Surgery | Login";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.titleLabel.Click += new System.EventHandler(this.titleLabel_Click);
             // 
             // picLogo
             // 
