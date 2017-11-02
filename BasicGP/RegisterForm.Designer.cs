@@ -131,7 +131,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(677, 798);
             this.tableLayoutPanel3.TabIndex = 3;
-            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // lblAddress3
             // 
@@ -192,7 +191,6 @@
             this.lblAddress1.TabIndex = 15;
             this.lblAddress1.Text = "Address Line 1 *";
             this.lblAddress1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblAddress1.Click += new System.EventHandler(this.lblAddress_Click);
             // 
             // txtPhoneNumber
             // 

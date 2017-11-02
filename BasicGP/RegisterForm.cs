@@ -35,18 +35,18 @@ namespace BasicGP
             string address = txtAddress1.Text + ", " + txtAddress2.Text + ", " + txtAddress3.Text;
             Console.WriteLine(address);
 
-                patientDetails[0] = txtNHNumber.Text; // data[1]
-                patientDetails[1] = txtFName.Text + " " + txtSName.Text; // data[2]
-                patientDetails[3] = comboTitle.Text; // data[3]
-                patientDetails[4] = dtpDOB.Text; // data[4]
-                patientDetails[5] = txtPhoneNumber.Text; // data[5]
-                patientDetails[6] = address; // data[6]
-                patientDetails[7] = txtAllergies.Text; // data[7]
+            patientDetails[0] = txtNHNumber.Text; // data[1]
+            patientDetails[1] = txtFName.Text + " " + txtSName.Text; // data[2]
+            patientDetails[3] = comboTitle.Text; // data[3]
+            patientDetails[4] = dtpDOB.Text; // data[4]
+            patientDetails[5] = txtPhoneNumber.Text; // data[5]
+            patientDetails[6] = address; // data[6]
+            patientDetails[7] = txtAllergies.Text; // data[7]
 
-                additionalInfo[0] = cbDiabetes.Checked; // data[8]
-                additionalInfo[1] = cbSmoker.Checked; // data[9]
-                additionalInfo[2] = cbAsthmatic.Checked; // data[10]
-            
+            additionalInfo[0] = cbDiabetes.Checked; // data[8]
+            additionalInfo[1] = cbSmoker.Checked; // data[9]
+            additionalInfo[2] = cbAsthmatic.Checked; // data[10]
+
             DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3], patientDetails[4], patientDetails[5], patientDetails[6],
               patientDetails[7], additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
 
@@ -93,7 +93,7 @@ namespace BasicGP
                     case "lblSName":
                         if (boxInput.Text.Length <= 16 && Regex.IsMatch(boxInput.Text, @"^[\p{L}]+$"))
                         {
-
+                            //passes validation
                         }
                         break;
                     case "lblAddress":
@@ -111,13 +111,13 @@ namespace BasicGP
             }
         }
 
-         /// <summary>
-         /// A validation check to make sure number fields are numbers and correct length
-         /// </summary>
-         /// <param name="sender"></param>
-         /// <param name="e"></param>
-         private void txtNumber_validation(object sender, EventArgs e)
-         {
+        /// <summary>
+        /// A validation check to make sure number fields are numbers and correct length
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtNumber_validation(object sender, EventArgs e)
+        {
             TextBox boxInput = (TextBox)sender;
             //if there is something in there and it is a number
             if (boxInput.Text != "" && int.TryParse(boxInput.Text, out int input))
@@ -139,20 +139,22 @@ namespace BasicGP
                 }
                 else
                 {
-                    //TODO: implement this as a popup label
-                    Console.WriteLine("Entry is incorrect length");
-                    boxInput.BackColor = Color.LightCoral;
-                    btnSubmit.Enabled = false;
+                    validation_failed(boxInput, "Entry is incorrect Length");
                 }
             }
-            else {
-                //TODO: implement this as a popup label
-                Console.WriteLine("you need to enter number");
-                boxInput.BackColor = Color.LightCoral;
-                btnSubmit.Enabled = false;
+            else
+            {
+                validation_failed(boxInput, "You need to enter a number");
             }
 
-         }
+        }
+        private void validation_failed(TextBox boxInput, string reason)
+        {
+            MessageBox.Show(reason);
+            Console.WriteLine(reason);
+            boxInput.BackColor = Color.LightCoral;
+            btnSubmit.Enabled = false;
+        }
 
         private void picLogo_Click(object sender, EventArgs e)
         {
@@ -161,14 +163,5 @@ namespace BasicGP
             dashboard.Visible = true;
         }
 
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblAddress_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
