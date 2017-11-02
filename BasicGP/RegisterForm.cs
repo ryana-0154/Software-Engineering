@@ -48,11 +48,14 @@ namespace BasicGP
             additionalInfo[2] = cbAsthmatic.Checked; // data[10]
 
             DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3], patientDetails[4], patientDetails[5], patientDetails[6],
-              patientDetails[7], additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
+            additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
             //TODO: check this, should we just overload the method instead???
             toDashboard(sender, e);
         }
-
+        /// <summary>
+        /// a seperate method to build the address string, it allows for the user to only fill the first address line
+        /// </summary>
+        /// <returns></returns>
         private string concatAddress()
         {
             string address = txtAddress1.Text;
@@ -95,29 +98,45 @@ namespace BasicGP
         private void txtText_validation(object sender, EventArgs e)
         {
             TextBox boxInput = (TextBox)sender;
-            //REFERENCE https://stackoverflow.com/questions/273141/regex-for-numbers-only
-            if (boxInput.Text != "" && Regex.IsMatch(boxInput.Text, @"^[\p{L}]+$"))
+            switch (boxInput.Name)
             {
-                switch (boxInput.Name)
-                {
-                    case "lblFName":
-                    case "lblSname":
-                        //checks to see if the input is less that or equal to 16 bits and is only letters
-                        if (boxInput.Text.Length <= 16 )
-                        {
-                            //passes validation
-                        }
-                        break;
-                    case "lblAddress":
-                        break;
-                    default:
-                        break;
-                }
+                case "txtFName":
+                case "txtSName":
+                    //checks to see if the input is less that or equal to 16 bits, but not 0 and is only letters
+                    //REFERENCE https://stackoverflow.com/questions/273141/regex-for-numbers-only
+                    if ((boxInput.Text.Length <= 16 && boxInput.Text.Length > 0) && Regex.IsMatch(boxInput.Text, @"^[\p{L}]+$"))
+                    {
+                        validation_passed(boxInput);
+                        return;
+                    }
+                    break;
+                case "txtAddress1":
+                    //first part of the address cannot be null
+                    if (boxInput.Text.Length <= 20 && boxInput.Text.Length > 0)
+                    {
+                        validation_passed(boxInput);
+                        return;
+                    }
+                    break;
+                case "txtAddress2":
+                case "txtAddress3":
+                    if (boxInput.Text.Length <= 20)
+                    {
+                        validation_passed(boxInput);
+                        return;
+                    }
+                    break;
+                case "txtAllergies":
+                    if (boxInput.Text.Length <= 64)
+                    {
+                        validation_passed(boxInput);
+                        return;
+                    }
+                    break;
             }
-            else
-            {
-                validation_failed(boxInput, "you need to enter Text here");
-            }
+
+            validation_failed(boxInput, "you need to enter Text here");
+
         }
 
         /// <summary>
@@ -135,15 +154,13 @@ namespace BasicGP
                 if (boxInput.Name == "txtNHNumber" && boxInput.Text.Length == 10)
                 {
                     //passes the validation
-                    btnSubmit.Enabled = true;
-                    boxInput.BackColor = Color.White;
+                    validation_passed(boxInput);
                     return;
                 }
                 else if (boxInput.Name == "txtPhoneNumber" && boxInput.Text.Length == 11)
                 {
                     //passes the validation
-                    btnSubmit.Enabled = true;
-                    boxInput.BackColor = Color.White;
+                    validation_passed(boxInput);
                     return;
                 }
                 else
@@ -168,7 +185,15 @@ namespace BasicGP
             boxInput.BackColor = Color.LightCoral;
             btnSubmit.Enabled = false;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="boxInput"></param>
+        private void validation_passed(TextBox boxInput)
+        {
+            btnSubmit.Enabled = true;
+            boxInput.BackColor = Color.White;
+        }
         /// <summary>
         /// is called when the logo is clicked, can also be called from in code
         /// </summary>

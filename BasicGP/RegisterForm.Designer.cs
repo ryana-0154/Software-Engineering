@@ -143,7 +143,7 @@
             this.lblAddress3.Name = "lblAddress3";
             this.lblAddress3.Size = new System.Drawing.Size(317, 101);
             this.lblAddress3.TabIndex = 20;
-            this.lblAddress3.Text = "Address Line 3 *";
+            this.lblAddress3.Text = "Address Line 3";
             this.lblAddress3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtAddress3
@@ -167,7 +167,7 @@
             this.lblAddress2.Name = "lblAddress2";
             this.lblAddress2.Size = new System.Drawing.Size(317, 94);
             this.lblAddress2.TabIndex = 18;
-            this.lblAddress2.Text = "Address Line 2 *";
+            this.lblAddress2.Text = "Address Line 2";
             this.lblAddress2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtAddress2
