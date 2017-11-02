@@ -42,20 +42,28 @@ namespace BasicGP
 
                 Console.WriteLine(table.Rows.Count);
 
-                if(table.Rows.Count > 0)
+                if (table.Rows.Count > 0)
                 {
-                    dgvAppointments.DataSource = table;
-                } else
+                    dgvPatients.DataSource = table;
+                }
+                else
                 {
                     MessageBox.Show("No data was found");
                 }
-
-                
-                
             }
-
+        }
+        /// <summary>
+        /// when a cell is double clicked on a dataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvPatients.Visible = false;
+            tcResults.Visible = true;
+            //we can find the row index but not whats in that row
+            Console.WriteLine(e.RowIndex);
             
-
         }
     }
 }
