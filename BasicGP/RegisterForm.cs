@@ -30,18 +30,18 @@ namespace BasicGP
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             //attributes
-            string[] patientDetails = new string[8];
+            string[] patientDetails = new string[7];
             bool[] additionalInfo = new bool[3];
-            string address = txtAddress1.Text + ", " + txtAddress2.Text + ", " + txtAddress3.Text;
+            string address = concatAddress();
             Console.WriteLine(address);
 
             patientDetails[0] = txtNHNumber.Text; // data[1]
             patientDetails[1] = txtFName.Text + " " + txtSName.Text; // data[2]
-            patientDetails[3] = comboTitle.Text; // data[3]
-            patientDetails[4] = dtpDOB.Text; // data[4]
-            patientDetails[5] = txtPhoneNumber.Text; // data[5]
-            patientDetails[6] = address; // data[6]
-            patientDetails[7] = txtAllergies.Text; // data[7]
+            patientDetails[2] = comboTitle.Text; // data[3]
+            patientDetails[3] = dtpDOB.Text; // data[4]
+            patientDetails[4] = txtPhoneNumber.Text; // data[5]
+            patientDetails[5] = address; // data[6]
+            patientDetails[6] = txtAllergies.Text; // data[7]
 
             additionalInfo[0] = cbDiabetes.Checked; // data[8]
             additionalInfo[1] = cbSmoker.Checked; // data[9]
@@ -49,8 +49,24 @@ namespace BasicGP
 
             DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3], patientDetails[4], patientDetails[5], patientDetails[6],
               patientDetails[7], additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
-
+            //TODO: check this, should we just overload the method instead???
+            toDashboard(sender, e);
         }
+
+        private string concatAddress()
+        {
+            string address = txtAddress1.Text;
+            if (txtAddress2.Text != "")
+            {
+                address += ", " + txtAddress2.Text;
+                if (txtAddress3.Text != "")
+                {
+                    address += ", " + txtAddress3.Text;
+                }
+            }
+            return address;
+        }
+
 
         #region Ryan's Code
         //// I'm only doing the following bits of code so that we can easily pass into DBAccess when it is created
@@ -79,19 +95,15 @@ namespace BasicGP
         private void txtText_validation(object sender, EventArgs e)
         {
             TextBox boxInput = (TextBox)sender;
-            if (boxInput.Text != "")
+            //REFERENCE https://stackoverflow.com/questions/273141/regex-for-numbers-only
+            if (boxInput.Text != "" && Regex.IsMatch(boxInput.Text, @"^[\p{L}]+$"))
             {
                 switch (boxInput.Name)
                 {
                     case "lblFName":
+                    case "lblSname":
                         //checks to see if the input is less that or equal to 16 bits and is only letters
-                        if (boxInput.Text.Length <= 16 && Regex.IsMatch(boxInput.Text, @"^[\p{L}]+$"))
-                        {
-                            //passes validation
-                        }
-                        break;
-                    case "lblSName":
-                        if (boxInput.Text.Length <= 16 && Regex.IsMatch(boxInput.Text, @"^[\p{L}]+$"))
+                        if (boxInput.Text.Length <= 16 )
                         {
                             //passes validation
                         }
@@ -104,10 +116,7 @@ namespace BasicGP
             }
             else
             {
-                //TODO: implement this as a popup label
-                Console.WriteLine("you need to enter Text here");
-                boxInput.BackColor = Color.LightCoral;
-                btnSubmit.Enabled = false;
+                validation_failed(boxInput, "you need to enter Text here");
             }
         }
 
@@ -120,7 +129,7 @@ namespace BasicGP
         {
             TextBox boxInput = (TextBox)sender;
             //if there is something in there and it is a number
-            if (boxInput.Text != "" && int.TryParse(boxInput.Text, out int input))
+            if (boxInput.Text != "" && Regex.IsMatch(boxInput.Text, @"^\d+$"))
             {
                 //assuming NHNumber is meant to be 10 digits
                 if (boxInput.Name == "txtNHNumber" && boxInput.Text.Length == 10)
@@ -146,8 +155,12 @@ namespace BasicGP
             {
                 validation_failed(boxInput, "You need to enter a number");
             }
-
         }
+        /// <summary>
+        /// Is called if validation is failed, disables submit button, changes colours and posts a message
+        /// </summary>
+        /// <param name="boxInput"></param>
+        /// <param name="reason">the message to print</param>
         private void validation_failed(TextBox boxInput, string reason)
         {
             MessageBox.Show(reason);
@@ -156,7 +169,12 @@ namespace BasicGP
             btnSubmit.Enabled = false;
         }
 
-        private void picLogo_Click(object sender, EventArgs e)
+        /// <summary>
+        /// is called when the logo is clicked, can also be called from in code
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toDashboard(object sender, EventArgs e)
         {
             this.Visible = false;
             Dashboard dashboard = new Dashboard();

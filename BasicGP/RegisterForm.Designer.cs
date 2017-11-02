@@ -154,6 +154,7 @@
             this.txtAddress3.Name = "txtAddress3";
             this.txtAddress3.Size = new System.Drawing.Size(343, 95);
             this.txtAddress3.TabIndex = 19;
+            this.txtAddress3.Leave += new System.EventHandler(this.txtText_validation);
             // 
             // lblAddress2
             // 
@@ -177,6 +178,7 @@
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(343, 88);
             this.txtAddress2.TabIndex = 17;
+            this.txtAddress2.Leave += new System.EventHandler(this.txtText_validation);
             // 
             // lblAddress1
             // 
@@ -238,6 +240,7 @@
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(343, 26);
             this.txtFName.TabIndex = 6;
+            this.txtFName.Leave += new System.EventHandler(this.txtText_validation);
             // 
             // txtNHNumber
             // 
@@ -270,6 +273,7 @@
             this.txtSName.Name = "txtSName";
             this.txtSName.Size = new System.Drawing.Size(343, 26);
             this.txtSName.TabIndex = 8;
+            this.txtSName.Leave += new System.EventHandler(this.txtText_validation);
             // 
             // lblTitle
             // 
@@ -321,6 +325,7 @@
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(343, 85);
             this.txtAddress1.TabIndex = 16;
+            this.txtAddress1.Leave += new System.EventHandler(this.txtText_validation);
             // 
             // btnSubmit
             // 
@@ -464,7 +469,7 @@
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 19;
             this.picLogo.TabStop = false;
-            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
+            this.picLogo.Click += new System.EventHandler(this.toDashboard);
             // 
             // RegisterForm
             // 
