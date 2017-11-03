@@ -136,9 +136,16 @@ namespace BasicGP
                     sqlCommand.Parameters.AddWithValue("@Diabetes", data[8]);
                     sqlCommand.Parameters.AddWithValue("@Smoker", data[9]);
                     sqlCommand.Parameters.AddWithValue("@Asthma", data[10]);
-                    // Add the value of the sqlCommand to the sqlDataAdapter
-                    //dataAdapter = new SqlDataAdapter(sqlCommand);
+
                     int count = sqlCommand.ExecuteNonQuery();
+
+                    if(count > 0)
+                    {
+                        RegisterForm.showMessage("Success!", "Patient was added successfully!");
+                    } else
+                    {
+                        RegisterForm.showMessage("Error!", "There was an error and the patient was not added.");
+                    }
 
                     Console.WriteLine(count);
                     break;

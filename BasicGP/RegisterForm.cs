@@ -51,9 +51,19 @@ namespace BasicGP
             DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3], 
                 patientDetails[4], patientDetails[5], patientDetails[6],
                 additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
+            
             //TODO: check this, should we just overload the method instead???
             toDashboard(sender, e);
         }
+
+        /// <summary>
+        /// Shows a messagebox
+        /// </summary>
+        public static void showMessage(string message, string title)
+        {
+            MessageBox.Show(title, message);
+        }
+
         /// <summary>
         /// a seperate method to build the address string, it allows for the user to only fill the first address line
         /// </summary>
