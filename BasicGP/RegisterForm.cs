@@ -32,7 +32,7 @@ namespace BasicGP
             //attributes
             string[] patientDetails = new string[7];
             bool[] additionalInfo = new bool[3];
-            string address = concatAddress();
+            string address = ConcatAddress();
             Console.WriteLine(address);
 
             patientDetails[0] = txtNHNumber.Text; // data[1]
@@ -47,8 +47,9 @@ namespace BasicGP
             additionalInfo[1] = cbSmoker.Checked; // data[9]
             additionalInfo[2] = cbAsthmatic.Checked; // data[10]
 
-            DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3], patientDetails[4], patientDetails[5], patientDetails[6],
-            additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
+            DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3], 
+                patientDetails[4], patientDetails[5], patientDetails[6],
+                additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
             //TODO: check this, should we just overload the method instead???
             toDashboard(sender, e);
         }

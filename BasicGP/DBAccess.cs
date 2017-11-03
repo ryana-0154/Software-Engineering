@@ -132,12 +132,15 @@ namespace BasicGP
                     sqlCommand.Parameters.AddWithValue("@DOB", data[4]);
                     sqlCommand.Parameters.AddWithValue("@PhoneNumber", data[5]);
                     sqlCommand.Parameters.AddWithValue("@Address", data[6]);
+                    sqlCommand.Parameters.AddWithValue("@Allergies", data[7]);
                     sqlCommand.Parameters.AddWithValue("@Diabetes", data[8]);
                     sqlCommand.Parameters.AddWithValue("@Smoker", data[9]);
                     sqlCommand.Parameters.AddWithValue("@Asthma", data[10]);
-                    sqlCommand.Parameters.AddWithValue("@Allergies", data[7]);
                     // Add the value of the sqlCommand to the sqlDataAdapter
-                    dataAdapter = new SqlDataAdapter(sqlCommand);
+                    //dataAdapter = new SqlDataAdapter(sqlCommand);
+                    int count = sqlCommand.ExecuteNonQuery();
+
+                    Console.WriteLine(count);
                     break;
                 case "newAppointment":
                     // TODO: Create Appointments table and make this SQLCommand valid
