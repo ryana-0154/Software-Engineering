@@ -73,3 +73,18 @@ C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\bin\Debug\OverGPD
 C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.exe.config
 C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.exe
 C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.pdb
+B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\bin\Debug\OverGPDB.mdf
+B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\bin\Debug\OverGPDB_log.ldf
+B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.exe.config
+B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.exe
+B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.pdb
+B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csprojResolveAssemblyReference.cache
+B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.Dashboard.resources
+B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.LoginForm.resources
+B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.Properties.Resources.resources
+B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.RegisterForm.resources
+B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.ResultsForm.resources
+B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csproj.GenerateResource.Cache
+B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csproj.CoreCompileInputs.cache
+B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.exe
+B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.pdb
