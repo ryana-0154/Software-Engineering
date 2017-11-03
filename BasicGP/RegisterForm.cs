@@ -29,6 +29,7 @@ namespace BasicGP
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            CheckValidation();
             //attributes
             string[] patientDetails = new string[7];
             bool[] additionalInfo = new bool[3];
@@ -70,6 +71,60 @@ namespace BasicGP
             }
             return address;
         }
+
+        private Boolean CheckValidation()
+        {
+            Boolean[] valid = new bool[7];
+            TextBox[] txtBoxes = new TextBox[7];
+            txtBoxes[0] = txtNHNumber;
+            txtBoxes[1] = txtFName;
+            txtBoxes[2] = txtSName;
+            txtBoxes[3] = txtPhoneNumber;
+            txtBoxes[4] = txtAddress1;
+            txtBoxes[5] = txtAddress2;
+            txtBoxes[6] = txtAddress3;
+            //does not require validation
+            txtBoxes[7] = txtAllergies;
+
+            //title
+            //DOB
+            
+            //applies onto names
+            for (int i = 1; i <= 2; i++)
+            {
+                if ((txtBoxes[i].Text.Length <= 16 && txtBoxes[i].Text.Length > 0) && Regex.IsMatch(txtBoxes[i].Text, @"^[\p{L}]+$"))
+                {
+                    valid[i] = true;
+                }
+            }
+            //applies onto numbers
+
+
+            //applies onto address
+            for (int i = 4; i <= 6; i++)
+            {
+                //if its txtAddress1
+                if (i == 4)
+                {
+                    if (txtBoxes[i].Text.Length <= 64 && txtBoxes[i].Text.Length > 0)
+                    {
+                        valid[i] = true;
+                    }
+                }
+                else //if it isnt txtAddress1 - therefore txtAddress2 and 3
+                {
+                    //only check if its input is less that 64
+                    if (txtBoxes[i].Text.Length <= 64)
+                    {
+                        valid[i] = true;
+                    }
+                }
+            }
+
+
+            return true;
+        }
+
 
 
         #region Ryan's Code
@@ -127,6 +182,7 @@ namespace BasicGP
                         return;
                     }
                     break;
+                    //this can be removed, isnt required and is txt
                 case "txtAllergies":
                     if (boxInput.Text.Length <= 64)
                     {
