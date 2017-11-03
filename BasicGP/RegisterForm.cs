@@ -29,7 +29,7 @@ namespace BasicGP
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            CheckValidation();
+            //CheckValidation();
             //attributes
             string[] patientDetails = new string[7];
             bool[] additionalInfo = new bool[3];
@@ -86,8 +86,8 @@ namespace BasicGP
             //does not require validation
             txtBoxes[7] = txtAllergies;
 
-            //title
-            //DOB
+            //TODO: validate title
+            //TODO: validate DOB
             
             //applies onto names
             for (int i = 1; i <= 2; i++)
@@ -97,7 +97,7 @@ namespace BasicGP
                     valid[i] = true;
                 }
             }
-            //applies onto numbers
+            //TODO: applies onto numbers
 
 
             //applies onto address
@@ -121,7 +121,7 @@ namespace BasicGP
                 }
             }
 
-
+            //TODO: search the valid array, point out errors
             return true;
         }
 
