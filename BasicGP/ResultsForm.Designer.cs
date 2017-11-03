@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtInput = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblPrompt = new System.Windows.Forms.Label();
@@ -54,10 +54,9 @@
             // 
             // txtInput
             // 
-            this.txtInput.Location = new System.Drawing.Point(289, 158);
-            this.txtInput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtInput.Location = new System.Drawing.Point(193, 103);
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(216, 26);
+            this.txtInput.Size = new System.Drawing.Size(145, 20);
             this.txtInput.TabIndex = 4;
             this.txtInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInput_KeyPress);
             // 
@@ -66,10 +65,9 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblTitle.Location = new System.Drawing.Point(68, 32);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Location = new System.Drawing.Point(45, 21);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(408, 79);
+            this.lblTitle.Size = new System.Drawing.Size(271, 54);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "Find Patient";
             // 
@@ -77,10 +75,9 @@
             // 
             this.lblPrompt.AutoSize = true;
             this.lblPrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrompt.Location = new System.Drawing.Point(82, 149);
-            this.lblPrompt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrompt.Location = new System.Drawing.Point(55, 97);
             this.lblPrompt.Name = "lblPrompt";
-            this.lblPrompt.Size = new System.Drawing.Size(200, 36);
+            this.lblPrompt.Size = new System.Drawing.Size(135, 25);
             this.lblPrompt.TabIndex = 6;
             this.lblPrompt.Text = "Patient Name:";
             // 
@@ -89,10 +86,9 @@
             this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picLogo.Image = global::BasicGP.Properties.Resources.logo1;
             this.picLogo.InitialImage = global::BasicGP.Properties.Resources.logo;
-            this.picLogo.Location = new System.Drawing.Point(1408, 19);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picLogo.Location = new System.Drawing.Point(939, 12);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(190, 155);
+            this.picLogo.Size = new System.Drawing.Size(127, 101);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 7;
             this.picLogo.TabStop = false;
@@ -101,11 +97,10 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dgvTests);
-            this.tabPage3.Location = new System.Drawing.Point(4, 45);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage3.Size = new System.Drawing.Size(1454, 731);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Size = new System.Drawing.Size(967, 469);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Tests";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -114,33 +109,31 @@
             // 
             this.dgvTests.AllowUserToAddRows = false;
             this.dgvTests.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTests.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTests.Location = new System.Drawing.Point(4, 5);
-            this.dgvTests.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvTests.Location = new System.Drawing.Point(3, 3);
             this.dgvTests.Name = "dgvTests";
             this.dgvTests.ReadOnly = true;
             this.dgvTests.RowHeadersVisible = false;
             this.dgvTests.RowHeadersWidth = 5;
-            this.dgvTests.Size = new System.Drawing.Size(1446, 721);
+            this.dgvTests.Size = new System.Drawing.Size(961, 463);
             this.dgvTests.TabIndex = 4;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dgvMedications);
-            this.tabPage2.Location = new System.Drawing.Point(4, 45);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage2.Size = new System.Drawing.Size(1454, 731);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(967, 469);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Medications";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -149,26 +142,24 @@
             // 
             this.dgvMedications.AllowUserToAddRows = false;
             this.dgvMedications.AllowUserToDeleteRows = false;
-            this.dgvMedications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMedications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMedications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedications.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMedications.Location = new System.Drawing.Point(4, 5);
-            this.dgvMedications.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvMedications.Location = new System.Drawing.Point(3, 3);
             this.dgvMedications.Name = "dgvMedications";
             this.dgvMedications.ReadOnly = true;
             this.dgvMedications.RowHeadersVisible = false;
             this.dgvMedications.RowHeadersWidth = 5;
-            this.dgvMedications.Size = new System.Drawing.Size(1446, 721);
+            this.dgvMedications.Size = new System.Drawing.Size(961, 463);
             this.dgvMedications.TabIndex = 4;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dgvAppointments);
-            this.tabPage1.Location = new System.Drawing.Point(4, 45);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage1.Size = new System.Drawing.Size(1454, 731);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(967, 469);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Appointments";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -178,16 +169,15 @@
             this.dgvAppointments.AllowUserToAddRows = false;
             this.dgvAppointments.AllowUserToDeleteRows = false;
             this.dgvAppointments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAppointments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAppointments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppointments.Location = new System.Drawing.Point(4, 5);
-            this.dgvAppointments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvAppointments.Location = new System.Drawing.Point(3, 3);
             this.dgvAppointments.Name = "dgvAppointments";
             this.dgvAppointments.ReadOnly = true;
             this.dgvAppointments.RowHeadersVisible = false;
             this.dgvAppointments.RowHeadersWidth = 5;
             this.dgvAppointments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvAppointments.Size = new System.Drawing.Size(1446, 721);
+            this.dgvAppointments.Size = new System.Drawing.Size(964, 469);
             this.dgvAppointments.TabIndex = 2;
             // 
             // tcResults
@@ -196,11 +186,10 @@
             this.tcResults.Controls.Add(this.tabPage2);
             this.tcResults.Controls.Add(this.tabPage3);
             this.tcResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcResults.Location = new System.Drawing.Point(82, 209);
-            this.tcResults.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tcResults.Location = new System.Drawing.Point(55, 136);
             this.tcResults.Name = "tcResults";
             this.tcResults.SelectedIndex = 0;
-            this.tcResults.Size = new System.Drawing.Size(1462, 780);
+            this.tcResults.Size = new System.Drawing.Size(975, 507);
             this.tcResults.TabIndex = 3;
             this.tcResults.Visible = false;
             // 
@@ -209,25 +198,26 @@
             this.dgvPatients.AllowUserToAddRows = false;
             this.dgvPatients.AllowUserToDeleteRows = false;
             this.dgvPatients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPatients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPatients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPatients.Location = new System.Drawing.Point(86, 260);
+            this.dgvPatients.Location = new System.Drawing.Point(57, 169);
+            this.dgvPatients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvPatients.Name = "dgvPatients";
             this.dgvPatients.ReadOnly = true;
             this.dgvPatients.RowHeadersVisible = false;
             this.dgvPatients.RowHeadersWidth = 5;
             this.dgvPatients.RowTemplate.Height = 28;
             this.dgvPatients.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvPatients.Size = new System.Drawing.Size(1446, 721);
+            this.dgvPatients.Size = new System.Drawing.Size(964, 469);
             this.dgvPatients.TabIndex = 8;
             this.dgvPatients.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellDoubleClick);
             // 
             // ResultsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1611, 1138);
+            this.ClientSize = new System.Drawing.Size(1081, 751);
             this.Controls.Add(this.dgvPatients);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.lblPrompt);
@@ -235,9 +225,8 @@
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.tcResults);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1638, 1194);
+            this.MaximumSize = new System.Drawing.Size(1097, 790);
             this.Name = "ResultsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Over Surgery | Results";
