@@ -56,7 +56,7 @@ namespace BasicGP
         /// a seperate method to build the address string, it allows for the user to only fill the first address line
         /// </summary>
         /// <returns></returns>
-        private string concatAddress()
+        private string ConcatAddress()
         {
             string address = txtAddress1.Text;
             if (txtAddress2.Text != "")
