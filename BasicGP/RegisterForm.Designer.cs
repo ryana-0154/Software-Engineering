@@ -146,7 +146,7 @@
             // 
             this.txtAddress3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAddress3.Location = new System.Drawing.Point(220, 454);
-            this.txtAddress3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress3.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress3.Multiline = true;
             this.txtAddress3.Name = "txtAddress3";
             this.txtAddress3.Size = new System.Drawing.Size(228, 62);
@@ -170,7 +170,7 @@
             // 
             this.txtAddress2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAddress2.Location = new System.Drawing.Point(220, 392);
-            this.txtAddress2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress2.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress2.Multiline = true;
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(228, 57);
@@ -196,7 +196,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhoneNumber.Location = new System.Drawing.Point(220, 272);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(228, 20);
             this.txtPhoneNumber.TabIndex = 14;
@@ -232,7 +232,7 @@
             // 
             this.txtFName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFName.Location = new System.Drawing.Point(220, 42);
-            this.txtFName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(228, 20);
             this.txtFName.TabIndex = 6;
@@ -242,7 +242,7 @@
             // 
             this.txtNHNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNHNumber.Location = new System.Drawing.Point(220, 3);
-            this.txtNHNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNHNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtNHNumber.MaxLength = 10;
             this.txtNHNumber.Name = "txtNHNumber";
             this.txtNHNumber.Size = new System.Drawing.Size(228, 20);
@@ -266,7 +266,7 @@
             // 
             this.txtSName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSName.Location = new System.Drawing.Point(220, 84);
-            this.txtSName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSName.Margin = new System.Windows.Forms.Padding(2);
             this.txtSName.Name = "txtSName";
             this.txtSName.Size = new System.Drawing.Size(228, 20);
             this.txtSName.TabIndex = 8;
@@ -296,7 +296,7 @@
             "Mr",
             "Master"});
             this.comboTitle.Location = new System.Drawing.Point(220, 149);
-            this.comboTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboTitle.Margin = new System.Windows.Forms.Padding(2);
             this.comboTitle.Name = "comboTitle";
             this.comboTitle.Size = new System.Drawing.Size(228, 21);
             this.comboTitle.TabIndex = 10;
@@ -307,7 +307,7 @@
             this.dtpDOB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDOB.Location = new System.Drawing.Point(220, 209);
-            this.dtpDOB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDOB.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDOB.MaxDate = new System.DateTime(2017, 11, 24, 0, 0, 0, 0);
             this.dtpDOB.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             this.dtpDOB.Name = "dtpDOB";
@@ -319,7 +319,7 @@
             // 
             this.txtAddress1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAddress1.Location = new System.Drawing.Point(220, 332);
-            this.txtAddress1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress1.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress1.Multiline = true;
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(228, 55);
