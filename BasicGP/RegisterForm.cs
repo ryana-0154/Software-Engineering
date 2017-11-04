@@ -29,13 +29,13 @@ namespace BasicGP
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //CheckValidation();
+            CheckValidation();
             //attributes
             string[] patientDetails = new string[7];
             bool[] additionalInfo = new bool[3];
             string address = ConcatAddress();
             Console.WriteLine(address);
-
+            //TODO: cahnge from bool and string arrays to just one Control data type array
             patientDetails[0] = txtNHNumber.Text; // data[1]
             patientDetails[1] = txtFName.Text + " " + txtSName.Text; // data[2]
             patientDetails[2] = comboTitle.Text; // data[3]
@@ -48,20 +48,12 @@ namespace BasicGP
             additionalInfo[1] = cbSmoker.Checked; // data[9]
             additionalInfo[2] = cbAsthmatic.Checked; // data[10]
 
-            DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3], 
+            DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3],
                 patientDetails[4], patientDetails[5], patientDetails[6],
                 additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
-            
+
             //TODO: check this, should we just overload the method instead???
             toDashboard(sender, e);
-        }
-
-        /// <summary>
-        /// Shows a messagebox
-        /// </summary>
-        public static void showMessage(string message, string title)
-        {
-            MessageBox.Show(title, message);
         }
 
         /// <summary>
@@ -84,39 +76,60 @@ namespace BasicGP
 
         private Boolean CheckValidation()
         {
-            Boolean[] valid = new bool[7];
-            TextBox[] txtBoxes = new TextBox[7];
-            txtBoxes[0] = txtNHNumber;
-            txtBoxes[1] = txtFName;
-            txtBoxes[2] = txtSName;
-            txtBoxes[3] = txtPhoneNumber;
-            txtBoxes[4] = txtAddress1;
-            txtBoxes[5] = txtAddress2;
-            txtBoxes[6] = txtAddress3;
-            //does not require validation
-            txtBoxes[7] = txtAllergies;
+            Boolean[] valid = new bool[9];
+            Control[] userInputs = new Control[9];
 
-            //TODO: validate title
-            //TODO: validate DOB
-            
-            //applies onto names
+            userInputs[0] = txtNHNumber; //valid[0]
+            userInputs[1] = txtFName;
+            userInputs[2] = txtSName;
+            userInputs[3] = comboTitle;
+            userInputs[4] = dtpDOB;
+            userInputs[5] = txtPhoneNumber;
+            userInputs[6] = txtAddress1;
+            userInputs[7] = txtAddress2;
+            userInputs[8] = txtAddress3;
+            //NHNumber validation
+            if (userInputs[0].Text.Length == 10 && Regex.IsMatch(userInputs[0].Text, @"^\d+$"))
+            {
+                valid[0] = true;
+            }
+            //all names validation
             for (int i = 1; i <= 2; i++)
             {
-                if ((txtBoxes[i].Text.Length <= 16 && txtBoxes[i].Text.Length > 0) && Regex.IsMatch(txtBoxes[i].Text, @"^[\p{L}]+$"))
+                if ((userInputs[i].Text.Length <= 16 && userInputs[i].Text.Length > 0) && Regex.IsMatch(userInputs[i].Text, @"^[\p{L}]+$"))
                 {
                     valid[i] = true;
                 }
             }
-            //TODO: applies onto numbers
-
-
-            //applies onto address
-            for (int i = 4; i <= 6; i++)
+            //Title validation
+            if (comboTitle.SelectedIndex != -1)//something was selected
+            {
+                //it is valid number 8 because its not a txt box and goes at the end
+                valid[3] = true;
+            }
+            #region compare explaination
+            /*Less than zero time1 is earlier than time2. Zero time1 is the same as time2. Greater than
+            zero time1 is later than time2.
+            this if is saying if the user has inputted a date in the future or exactly now, then it is not correct
+            */
+            #endregion
+            //DOB validation
+            if ((DateTime.Compare(dtpDOB.Value, DateTime.Now)) < 0)
+            {
+                valid[4] = true;
+            }
+            //Phone number validation
+            if (userInputs[5].Text.Length == 11 && Regex.IsMatch(userInputs[5].Text, @"^\d+$"))
+            {
+                valid[5] = true;
+            }
+            //all address validation
+            for (int i = 6; i <= 8; i++)
             {
                 //if its txtAddress1
-                if (i == 4)
+                if (i == 6)
                 {
-                    if (txtBoxes[i].Text.Length <= 64 && txtBoxes[i].Text.Length > 0)
+                    if (userInputs[i].Text.Length <= 64 && userInputs[i].Text.Length > 0)
                     {
                         valid[i] = true;
                     }
@@ -124,18 +137,77 @@ namespace BasicGP
                 else //if it isnt txtAddress1 - therefore txtAddress2 and 3
                 {
                     //only check if its input is less that 64
-                    if (txtBoxes[i].Text.Length <= 64)
+                    if (userInputs[i].Text.Length <= 64)
                     {
                         valid[i] = true;
                     }
                 }
             }
-
-            //TODO: search the valid array, point out errors
+            //searches through the how valid array after all controls have been checked, and prints errors respectively
+            for (int i = 0; i < valid.Length; i++)
+            {
+                if (valid[i] == false)
+                {
+                    validation_failed(userInputs[i]);
+                }
+            }
             return true;
         }
-
-
+        
+        /// <summary>
+        /// Is called if validation is failed, disables submit button, changes colours and posts a message
+        /// </summary>
+        /// <param name="userInput">is the control that has failed</param>
+        private void validation_failed(Control userInput)
+        {
+            //start a fresh each time
+            string errorMsg = "";
+            switch (userInput.Name)
+            {
+                case "NHNumber":
+                    //https://stackoverflow.com/questions/4085739/how-to-insert-newline-in-string-literal
+                    errorMsg += userInput.Tag + " - Field must be 10 digits long and only numbers." + Environment.NewLine;
+                    break;
+                case "txtFName":
+                case "txtSName":
+                    errorMsg += userInput.Tag + " - Field must be less than 16 characters but more than 0 and only letters." + Environment.NewLine;
+                    break;
+                case "comboTitle":
+                    errorMsg += userInput.Tag + " - Field must be one of the drop down options." + Environment.NewLine;
+                    break;
+                case "dtpDOB":
+                    errorMsg += userInput.Tag + " - Field must before current day." + Environment.NewLine;
+                    break;
+                case "txtPhoneNumber":
+                    errorMsg += userInput.Tag + " - Field must be 11 digits and numbers only." + Environment.NewLine;
+                    break;
+                case "txtAddress1":
+                    errorMsg += userInput.Tag + " - Field must be less than 20 characters but more than 0." + Environment.NewLine;
+                    break;
+                case "txtAddress2":
+                case "txtAddress3":
+                    errorMsg += userInput.Tag + " - Field must be less than 20 characters." + Environment.NewLine;
+                    break;
+                //this can be removed, isnt required and is txt
+                case "txtAllergies":
+                    errorMsg += userInput.Tag + " - Field must be less than 64 characters." + Environment.NewLine;
+                    break;
+            }
+            lblErrorMsg.Text = errorMsg;
+            userInput.BackColor = Color.LightCoral;
+            btnSubmit.Enabled = false;
+        }
+        /// <summary>
+        /// is called when the logo is clicked, can also be called from in code
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toDashboard(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Dashboard dashboard = new Dashboard();
+            dashboard.Visible = true;
+        }
 
         #region Ryan's Code
         //// I'm only doing the following bits of code so that we can easily pass into DBAccess when it is created
@@ -163,46 +235,6 @@ namespace BasicGP
         /// <param name="e"></param>
         private void txtText_validation(object sender, EventArgs e)
         {
-            TextBox boxInput = (TextBox)sender;
-            switch (boxInput.Name)
-            {
-                case "txtFName":
-                case "txtSName":
-                    //checks to see if the input is less that or equal to 16 bits, but not 0 and is only letters
-                    //REFERENCE https://stackoverflow.com/questions/273141/regex-for-numbers-only
-                    if ((boxInput.Text.Length <= 16 && boxInput.Text.Length > 0) && Regex.IsMatch(boxInput.Text, @"^[\p{L}]+$"))
-                    {
-                        validation_passed(boxInput);
-                        return;
-                    }
-                    break;
-                case "txtAddress1":
-                    //first part of the address cannot be null
-                    if (boxInput.Text.Length <= 20 && boxInput.Text.Length > 0)
-                    {
-                        validation_passed(boxInput);
-                        return;
-                    }
-                    break;
-                case "txtAddress2":
-                case "txtAddress3":
-                    if (boxInput.Text.Length <= 20)
-                    {
-                        validation_passed(boxInput);
-                        return;
-                    }
-                    break;
-                    //this can be removed, isnt required and is txt
-                case "txtAllergies":
-                    if (boxInput.Text.Length <= 64)
-                    {
-                        validation_passed(boxInput);
-                        return;
-                    }
-                    break;
-            }
-
-            validation_failed(boxInput, "you need to enter Text here");
 
         }
 
@@ -213,44 +245,7 @@ namespace BasicGP
         /// <param name="e"></param>
         private void txtNumber_validation(object sender, EventArgs e)
         {
-            TextBox boxInput = (TextBox)sender;
-            //if there is something in there and it is a number
-            if (boxInput.Text != "" && Regex.IsMatch(boxInput.Text, @"^\d+$"))
-            {
-                //assuming NHNumber is meant to be 10 digits
-                if (boxInput.Name == "txtNHNumber" && boxInput.Text.Length == 10)
-                {
-                    //passes the validation
-                    validation_passed(boxInput);
-                    return;
-                }
-                else if (boxInput.Name == "txtPhoneNumber" && boxInput.Text.Length == 11)
-                {
-                    //passes the validation
-                    validation_passed(boxInput);
-                    return;
-                }
-                else
-                {
-                    validation_failed(boxInput, "Entry is incorrect Length");
-                }
-            }
-            else
-            {
-                validation_failed(boxInput, "You need to enter a number");
-            }
-        }
-        /// <summary>
-        /// Is called if validation is failed, disables submit button, changes colours and posts a message
-        /// </summary>
-        /// <param name="boxInput"></param>
-        /// <param name="reason">the message to print</param>
-        private void validation_failed(TextBox boxInput, string reason)
-        {
-            MessageBox.Show(reason);
-            Console.WriteLine(reason);
-            boxInput.BackColor = Color.LightCoral;
-            btnSubmit.Enabled = false;
+
         }
         /// <summary>
         /// 
@@ -262,15 +257,11 @@ namespace BasicGP
             boxInput.BackColor = Color.White;
         }
         /// <summary>
-        /// is called when the logo is clicked, can also be called from in code
+        /// Shows a messagebox
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toDashboard(object sender, EventArgs e)
+        public static void showMessage(string message, string title)
         {
-            this.Visible = false;
-            Dashboard dashboard = new Dashboard();
-            dashboard.Visible = true;
+            MessageBox.Show(title, message);
         }
 
     }

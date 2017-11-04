@@ -57,6 +57,7 @@
             this.cbAsthmatic = new System.Windows.Forms.CheckBox();
             this.lblFlagText = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.lblErrorMsg = new System.Windows.Forms.Label();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -155,7 +156,7 @@
             this.txtAddress3.Name = "txtAddress3";
             this.txtAddress3.Size = new System.Drawing.Size(304, 77);
             this.txtAddress3.TabIndex = 19;
-            this.txtAddress3.Leave += new System.EventHandler(this.txtText_validation);
+            this.txtAddress3.Tag = "Address Line 3";
             // 
             // lblAddress2
             // 
@@ -180,7 +181,7 @@
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(304, 71);
             this.txtAddress2.TabIndex = 17;
-            this.txtAddress2.Leave += new System.EventHandler(this.txtText_validation);
+            this.txtAddress2.Tag = "Address Line 2";
             // 
             // lblAddress1
             // 
@@ -206,7 +207,7 @@
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(304, 22);
             this.txtPhoneNumber.TabIndex = 14;
-            this.txtPhoneNumber.Leave += new System.EventHandler(this.txtNumber_validation);
+            this.txtPhoneNumber.Tag = "Phone Number";
             // 
             // lblPhone
             // 
@@ -244,7 +245,7 @@
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(304, 22);
             this.txtFName.TabIndex = 6;
-            this.txtFName.Leave += new System.EventHandler(this.txtText_validation);
+            this.txtFName.Tag = "First Name";
             // 
             // txtNHNumber
             // 
@@ -255,7 +256,7 @@
             this.txtNHNumber.Name = "txtNHNumber";
             this.txtNHNumber.Size = new System.Drawing.Size(304, 22);
             this.txtNHNumber.TabIndex = 5;
-            this.txtNHNumber.Leave += new System.EventHandler(this.txtNumber_validation);
+            this.txtNHNumber.Tag = "NHS Number";
             // 
             // lblSName
             // 
@@ -279,7 +280,7 @@
             this.txtSName.Name = "txtSName";
             this.txtSName.Size = new System.Drawing.Size(304, 22);
             this.txtSName.TabIndex = 8;
-            this.txtSName.Leave += new System.EventHandler(this.txtText_validation);
+            this.txtSName.Tag = "Surname";
             // 
             // lblTitle
             // 
@@ -299,31 +300,34 @@
             // 
             this.comboTitle.DisplayMember = "Mr";
             this.comboTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTitle.FormattingEnabled = true;
             this.comboTitle.Items.AddRange(new object[] {
             "Mrs",
             "Miss",
             "Mr",
-            "Master"});
+            "Master",
+            "Dr"});
             this.comboTitle.Location = new System.Drawing.Point(293, 184);
             this.comboTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboTitle.Name = "comboTitle";
             this.comboTitle.Size = new System.Drawing.Size(304, 24);
             this.comboTitle.TabIndex = 10;
-            this.comboTitle.Text = "Please Select";
+            this.comboTitle.Tag = "Title";
             // 
             // dtpDOB
             // 
+            this.dtpDOB.Checked = false;
             this.dtpDOB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDOB.Location = new System.Drawing.Point(293, 258);
             this.dtpDOB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpDOB.MaxDate = new System.DateTime(2017, 11, 24, 0, 0, 0, 0);
             this.dtpDOB.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(304, 22);
             this.dtpDOB.TabIndex = 12;
-            this.dtpDOB.Value = new System.DateTime(2000, 1, 1, 19, 53, 0, 0);
+            this.dtpDOB.Tag = "DOB";
+            this.dtpDOB.Value = new System.DateTime(2017, 11, 4, 0, 0, 0, 0);
             // 
             // txtAddress1
             // 
@@ -334,7 +338,7 @@
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(304, 69);
             this.txtAddress1.TabIndex = 16;
-            this.txtAddress1.Leave += new System.EventHandler(this.txtText_validation);
+            this.txtAddress1.Tag = "Address Line 1";
             // 
             // btnSubmit
             // 
@@ -480,11 +484,22 @@
             this.picLogo.TabStop = false;
             this.picLogo.Click += new System.EventHandler(this.toDashboard);
             // 
+            // lblErrorMsg
+            // 
+            this.lblErrorMsg.AutoSize = true;
+            this.lblErrorMsg.ForeColor = System.Drawing.Color.LightCoral;
+            this.lblErrorMsg.Location = new System.Drawing.Point(661, 606);
+            this.lblErrorMsg.Name = "lblErrorMsg";
+            this.lblErrorMsg.Size = new System.Drawing.Size(46, 17);
+            this.lblErrorMsg.TabIndex = 20;
+            this.lblErrorMsg.Text = "label1";
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1413, 756);
+            this.Controls.Add(this.lblErrorMsg);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -506,6 +521,7 @@
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -539,5 +555,6 @@
         private System.Windows.Forms.Label lblAddress1;
         private System.Windows.Forms.Label lblAddress3;
         private System.Windows.Forms.TextBox txtAddress3;
+        private System.Windows.Forms.Label lblErrorMsg;
     }
 }
