@@ -81,6 +81,10 @@ namespace BasicGP
                     dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
                 case "patientAppointments":
+                    Int32.TryParse(data[1], out pID);
+                    sqlCommand = new SqlCommand("SELECT * FROM appointment WHERE NationalHealthNumber = @id", DBConnection);
+                    sqlCommand.Parameters.AddWithValue("@id", pID);
+                    dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
                 case "testResults":
                     break;

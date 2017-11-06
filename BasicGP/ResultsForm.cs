@@ -63,7 +63,21 @@ namespace BasicGP
             tcResults.Visible = true;
             //we can find the row index but not whats in that row
             Console.WriteLine(e.RowIndex);
-            
+
+            string[] data = new string[1];
+            DataSet dataSet = DBAccess.getData("patientAppointments", txtInput.Text);
+            DataTable table = dataSet.Tables[0];
+
+            Console.WriteLine(table.Rows.Count);
+
+            if (table.Rows.Count > 0)
+            {
+                dgvAppointments.DataSource = table;
+            } else
+            {
+                MessageBox.Show("No appointments were found");
+            }
+
         }
     }
 }
