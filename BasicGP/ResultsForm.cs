@@ -61,23 +61,36 @@ namespace BasicGP
         {
             dgvPatients.Visible = false;
             tcResults.Visible = true;
-            //we can find the row index but not whats in that row
-            Console.WriteLine(e.RowIndex);
-
+            
             string[] data = new string[1];
-            DataSet dataSet = DBAccess.getData("patientAppointments", txtInput.Text);
-            DataTable table = dataSet.Tables[0];
+            //https://stackoverflow.com/questions/5571963/how-to-get-datagridview-cell-value-in-messagebox
+            //finds the NHNumber of whichever row was clicked on
+            DataSet dataSetAppointments = DBAccess.getData("patientAppointments", dgvPatients.Rows[e.RowIndex].Cells[0].Value.ToString());
+            DataTable tableAppointments = dataSetAppointments.Tables[0];
+            CheckForResults(tableAppointments, dgvAppointments);
 
-            Console.WriteLine(table.Rows.Count);
+            DataSet dataSetPrescriptions = DBAccess.getData("patientPresciptions", dgvPatients.Rows[e.RowIndex].Cells[0].Value.ToString());
+            DataTable tablePrescriptions = dataSetAppointments.Tables[0];
+            CheckForResults(tablePrescriptions, dgvPrescriptions);
 
-            if (table.Rows.Count > 0)
+            DataSet dataSetResults = DBAccess.getData("testResults", dgvPatients.Rows[e.RowIndex].Cells[0].Value.ToString());
+            DataTable tableResults = dataSetResults.Tables[0];
+            CheckForResults(tableResults, dgvResults);
+
+            Console.WriteLine(tableAppointments.Rows.Count);
+
+        }
+        //seperating this into a method allows it to work on all three dgvs without writing it over and over again
+        private void CheckForResults(DataTable dt, DataGridView dgv)
+        {
+            if (dt.Rows.Count > 0)
             {
-                dgvAppointments.DataSource = table;
-            } else
+                dgv.DataSource = dt;
+            }
+            else
             {
                 MessageBox.Show("No appointments were found");
             }
-
         }
     }
 }

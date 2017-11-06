@@ -88,3 +88,18 @@ B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\Basic
 B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csproj.CoreCompileInputs.cache
 B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.exe
 B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.pdb
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\bin\Debug\OverGPDB.mdf
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\bin\Debug\OverGPDB_log.ldf
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.exe.config
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.exe
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.pdb
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csprojResolveAssemblyReference.cache
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.Dashboard.resources
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.LoginForm.resources
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.Properties.Resources.resources
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.RegisterForm.resources
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.ResultsForm.resources
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csproj.GenerateResource.Cache
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csproj.CoreCompileInputs.cache
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.exe
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.pdb

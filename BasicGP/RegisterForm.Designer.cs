@@ -473,8 +473,6 @@
             // picLogo
             // 
             this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picLogo.Image = global::BasicGP.Properties.Resources.logo1;
-            this.picLogo.InitialImage = global::BasicGP.Properties.Resources.logo;
             this.picLogo.Location = new System.Drawing.Point(1336, 60);
             this.picLogo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picLogo.Name = "picLogo";

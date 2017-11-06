@@ -35,18 +35,18 @@
             this.lblPrompt = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dgvTests = new System.Windows.Forms.DataGridView();
+            this.dgvResults = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvMedications = new System.Windows.Forms.DataGridView();
+            this.dgvPrescriptions = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
             this.tcResults = new System.Windows.Forms.TabControl();
             this.dgvPatients = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTests)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMedications)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrescriptions)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             this.tcResults.SuspendLayout();
@@ -101,7 +101,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.dgvTests);
+            this.tabPage3.Controls.Add(this.dgvResults);
             this.tabPage3.Location = new System.Drawing.Point(4, 38);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
@@ -113,8 +113,8 @@
             // 
             // dgvTests
             // 
-            this.dgvTests.AllowUserToAddRows = false;
-            this.dgvTests.AllowUserToDeleteRows = false;
+            this.dgvResults.AllowUserToAddRows = false;
+            this.dgvResults.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,21 +122,21 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvTests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTests.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTests.Location = new System.Drawing.Point(4, 4);
-            this.dgvTests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgvTests.Name = "dgvTests";
-            this.dgvTests.ReadOnly = true;
-            this.dgvTests.RowHeadersVisible = false;
-            this.dgvTests.RowHeadersWidth = 5;
-            this.dgvTests.Size = new System.Drawing.Size(1284, 574);
-            this.dgvTests.TabIndex = 4;
+            this.dgvResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvResults.Location = new System.Drawing.Point(4, 4);
+            this.dgvResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvResults.Name = "dgvTests";
+            this.dgvResults.ReadOnly = true;
+            this.dgvResults.RowHeadersVisible = false;
+            this.dgvResults.RowHeadersWidth = 5;
+            this.dgvResults.Size = new System.Drawing.Size(1284, 574);
+            this.dgvResults.TabIndex = 4;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dgvMedications);
+            this.tabPage2.Controls.Add(this.dgvPrescriptions);
             this.tabPage2.Location = new System.Drawing.Point(4, 38);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
@@ -148,19 +148,19 @@
             // 
             // dgvMedications
             // 
-            this.dgvMedications.AllowUserToAddRows = false;
-            this.dgvMedications.AllowUserToDeleteRows = false;
-            this.dgvMedications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvMedications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedications.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMedications.Location = new System.Drawing.Point(4, 4);
-            this.dgvMedications.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgvMedications.Name = "dgvMedications";
-            this.dgvMedications.ReadOnly = true;
-            this.dgvMedications.RowHeadersVisible = false;
-            this.dgvMedications.RowHeadersWidth = 5;
-            this.dgvMedications.Size = new System.Drawing.Size(1284, 574);
-            this.dgvMedications.TabIndex = 4;
+            this.dgvPrescriptions.AllowUserToAddRows = false;
+            this.dgvPrescriptions.AllowUserToDeleteRows = false;
+            this.dgvPrescriptions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPrescriptions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrescriptions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPrescriptions.Location = new System.Drawing.Point(4, 4);
+            this.dgvPrescriptions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPrescriptions.Name = "dgvMedications";
+            this.dgvPrescriptions.ReadOnly = true;
+            this.dgvPrescriptions.RowHeadersVisible = false;
+            this.dgvPrescriptions.RowHeadersWidth = 5;
+            this.dgvPrescriptions.Size = new System.Drawing.Size(1284, 574);
+            this.dgvPrescriptions.TabIndex = 4;
             // 
             // tabPage1
             // 
@@ -254,9 +254,9 @@
             this.Load += new System.EventHandler(this.ResultsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTests)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMedications)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrescriptions)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
             this.tcResults.ResumeLayout(false);
@@ -272,9 +272,9 @@
         private System.Windows.Forms.Label lblPrompt;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView dgvTests;
+        private System.Windows.Forms.DataGridView dgvResults;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dgvMedications;
+        private System.Windows.Forms.DataGridView dgvPrescriptions;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dgvAppointments;
         private System.Windows.Forms.TabControl tcResults;
