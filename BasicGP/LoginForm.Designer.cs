@@ -138,7 +138,7 @@
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1098, 792);
             this.Name = "LoginForm";
