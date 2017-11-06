@@ -140,7 +140,8 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1098, 792);
+            this.MaximumSize = new System.Drawing.Size(1087, 743);
+            this.MinimumSize = new System.Drawing.Size(1087, 743);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Over Surgery | Login";
