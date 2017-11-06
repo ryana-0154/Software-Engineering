@@ -12,6 +12,7 @@ namespace BasicGP
         private static SqlConnection DBConnection;
         private static SqlDataAdapter loginDataAdapter;
         private static SqlDataAdapter dataAdapter;
+        private static SqlCommand sqlCommand;
 
 
         /// <summary>
@@ -58,12 +59,12 @@ namespace BasicGP
         /// <param name="data">Data to be passed to the server - first element should always be the function</param>
         public static DataSet getData(params string[] data)
         {
-            // TODO: Declare SqlCommand up here
             // Create a dataset called dataSet
             DataSet dataSet;
             // Clean the dataSet and the dataAdapter
             dataSet = null;
             dataAdapter = null;
+            int pID;
 
             // Open the DB Connection
             OpenConnection();
@@ -73,28 +74,69 @@ namespace BasicGP
             {
                 case "findPatient":
                     // Try to parse data[1] to an int32 and output as pID
-                    Int32.TryParse(data[1], out int pID);
+                    Int32.TryParse(data[1], out pID);
                     // Instantiate an sqlCommand on the DBConnection
-                    SqlCommand sqlCommand = new SqlCommand("SELECT * FROM patients WHERE NationalHealthNumber = @id", DBConnection);
+                    sqlCommand = new SqlCommand("SELECT * FROM patients WHERE NationalHealthNumber = @id", DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
                     // Add the value of the sqlCommand to the sqlDataAdapter
                     dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
                 case "patientAppointments":
+                    // Try to parse data[1] to an int32 and output as pID
                     Int32.TryParse(data[1], out pID);
+                    // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand("SELECT * FROM appointment WHERE NationalHealthNumber = @id", DBConnection);
+                    // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
+                    // Add the value of the sqlCommand to the sqlDataAdapter
                     dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
+                // TODO:  Implement this case (TestResults)
                 case "testResults":
+                    // Try to parse data[1] to an int32 and output as pID
+                    Int32.TryParse(data[1], out pID);
+                    // Instantiate an sqlCommand on the DBConnection
+                    sqlCommand = new SqlCommand("SELECT * FROM testresults WHERE NationalHealthNumber = @id", DBConnection);
+                    // add parameters to the sql command (Prevents again SQLI)
+                    sqlCommand.Parameters.AddWithValue("@id", pID);
+                    // Add the value of the sqlCommand to the sqlDataAdapter
+                    dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
+                // TODO:  Implement this case (PatientPresciptions)
                 case "patientPresciptions":
+                    // Try to parse data[1] to an int32 and output as pID
+                    Int32.TryParse(data[1], out pID);
+                    // Instantiate an sqlCommand on the DBConnection
+                    sqlCommand = new SqlCommand("SELECT * FROM prescriptions WHERE NationalHealthNumber = @id", DBConnection);
+                    // add parameters to the sql command (Prevents again SQLI)
+                    sqlCommand.Parameters.AddWithValue("@id", pID);
+                    // Add the value of the sqlCommand to the sqlDataAdapter
+                    dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
+                // TODO:  Implement this case (Availability)
                 case "availability":
+                    // Try to parse data[1] to an int32 and output as pID
+                    Int32.TryParse(data[1], out pID);
+                    // Instantiate an sqlCommand on the DBConnection
+                    sqlCommand = new SqlCommand("SELECT * FROM availability WHERE NationalHealthNumber = @id", DBConnection);
+                    // add parameters to the sql command (Prevents again SQLI)
+                    sqlCommand.Parameters.AddWithValue("@id", pID);
+                    // Add the value of the sqlCommand to the sqlDataAdapter
+                    dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
+                // TODO: Implement this case (Duty
                 case "duty":
+                    // Try to parse data[1] to an int32 and output as pID
+                    Int32.TryParse(data[1], out pID);
+                    // Instantiate an sqlCommand on the DBConnection
+                    sqlCommand = new SqlCommand("SELECT * FROM duty WHERE NationalHealthNumber = @id", DBConnection);
+                    // add parameters to the sql command (Prevents again SQLI)
+                    sqlCommand.Parameters.AddWithValue("@id", pID);
+                    // Add the value of the sqlCommand to the sqlDataAdapter
+                    dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
+                // TODO: Figure out how to defualt this
                 default:
                     dataSet = null;
                     Console.WriteLine("default");
@@ -117,6 +159,7 @@ namespace BasicGP
         /// <param name="data">Data to be passed to the server - first element should always be the function</param>
         public static DataSet postData(params string[] data)
         {
+            int count;
             DataSet dataSet;
 
             dataSet = null;
@@ -142,7 +185,30 @@ namespace BasicGP
                     sqlCommand.Parameters.AddWithValue("@Smoker", data[9]);
                     sqlCommand.Parameters.AddWithValue("@Asthma", data[10]);
 
-                    int count = sqlCommand.ExecuteNonQuery();
+                    count = sqlCommand.ExecuteNonQuery();
+
+                    if(count > 0)
+                    {
+                        RegisterForm.showMessage("Success!", "Patient was added successfully!");
+                    } else
+                    {
+                        RegisterForm.showMessage("Error!", "There was an error and the patient was not added.");
+                    }
+                    count = 0;
+                    break;
+                case "newAppointment":
+                    sqlCommand = new SqlCommand("INSERT INTO appointment (AppointmentID, EmployeeID, NationalHealthNumber, Date, Time, Description" +
+                        "Status) VALUES (@AppointmentID, @EmployeeID, @NHNumber, @Date, @Time, @Description, @Status)", DBConnection);
+                    // Add params to the above SQL query (Prevents against SQLI)
+                    sqlCommand.Parameters.AddWithValue("@AppointmentID", data[1]);
+                    sqlCommand.Parameters.AddWithValue("@EmployeeID", data[2]);
+                    sqlCommand.Parameters.AddWithValue("@NHNumber", data[3]);
+                    sqlCommand.Parameters.AddWithValue("@Date", data[4]);
+                    sqlCommand.Parameters.AddWithValue("@Time", data[5]);
+                    sqlCommand.Parameters.AddWithValue("@Description", data[6]);
+                    sqlCommand.Parameters.AddWithValue("@Status", data[7]);
+
+                    count = sqlCommand.ExecuteNonQuery();
 
                     if(count > 0)
                     {
@@ -152,11 +218,7 @@ namespace BasicGP
                         RegisterForm.showMessage("Error!", "There was an error and the patient was not added.");
                     }
 
-                    Console.WriteLine(count);
-                    break;
-                case "newAppointment":
-                    // TODO: Create Appointments table and make this SQLCommand valid
-                    //SqlCommand sqlCommand = new SqlCommand("INSERT INTO appointments (TABLEPARAMS) VALUES (VALUES)");
+                    count = 0;
                     break;
                 default:
                     dataSet = null;
