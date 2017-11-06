@@ -94,7 +94,7 @@
             this.panel1.ForeColor = System.Drawing.Color.Brown;
             this.panel1.Location = new System.Drawing.Point(292, 199);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(496, 448);
+            this.panel1.Size = new System.Drawing.Size(496, 449);
             this.panel1.TabIndex = 3;
             // 
             // authStatus
@@ -134,7 +134,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1071, 703);
+            this.ClientSize = new System.Drawing.Size(1071, 704);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.panel1);
