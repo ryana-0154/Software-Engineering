@@ -16,7 +16,7 @@ namespace BasicGP
         {
             InitializeComponent();
         }
-
+        //comment
         private void RegisterForm_Load(object sender, EventArgs e)
         {
 
