@@ -76,6 +76,7 @@ namespace BasicGP
 
         private Boolean CheckValidation()
         {
+            bool result = false;
             Boolean[] valid = new bool[9];
             Control[] userInputs = new Control[9];
 
@@ -151,7 +152,11 @@ namespace BasicGP
                     validation_failed(userInputs[i]);
                 }
             }
-            return true;
+            if (!valid.Contains(false))
+            {
+                result = true;
+            }
+            return result;
         }
         
         /// <summary>
