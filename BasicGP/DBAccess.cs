@@ -58,6 +58,7 @@ namespace BasicGP
         /// <param name="data">Data to be passed to the server - first element should always be the function</param>
         public static DataSet getData(params string[] data)
         {
+            // TODO: Declare SqlCommand up here
             // Create a dataset called dataSet
             DataSet dataSet;
             // Clean the dataSet and the dataAdapter
