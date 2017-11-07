@@ -299,6 +299,7 @@
             this.btnSubmit.TabIndex = 9;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // picLogo
             // 
