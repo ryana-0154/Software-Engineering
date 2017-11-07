@@ -73,12 +73,29 @@ namespace BasicGP
             switch(data[0])
             {
                 case "findPatient":
-                    // Try to parse data[1] to an int32 and output as pID
-                    Int32.TryParse(data[1], out pID);
-                    // Instantiate an sqlCommand on the DBConnection
-                    sqlCommand = new SqlCommand("SELECT * FROM patients WHERE NationalHealthNumber = @id", DBConnection);
-                    // add parameters to the sql command (Prevents again SQLI)
-                    sqlCommand.Parameters.AddWithValue("@id", pID);
+
+                    // Switch based on data[1] which is ID or name and DOB
+                    switch (data[1])
+                    {
+                        case "id":
+                            // Try to parse data[2] (ID) to an int32 and output as pID
+                            Int32.TryParse(data[2], out pID);
+                            // Instantiate an sqlCommand on the DBConnection
+                            sqlCommand = new SqlCommand("SELECT * FROM patients WHERE NationalHealthNumber = @id", DBConnection);
+                            // add parameters to the sql command (Prevents again SQLI)
+                            sqlCommand.Parameters.AddWithValue("@id", pID);
+                            break;
+                        case "name&dob":
+                            string name = data[2];
+                            string DOB = data[3];
+                            sqlCommand = new SqlCommand("SELECT * FROM patients WHERE name = @name AND DOB = @DOB", DBConnection);
+                            sqlCommand.Parameters.AddWithValue("@name", name);
+                            sqlCommand.Parameters.AddWithValue("@DOB", DOB);
+                            break;
+                        default:
+                            dataSet = null;
+                            break;
+                    }
                     // Add the value of the sqlCommand to the sqlDataAdapter
                     dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
