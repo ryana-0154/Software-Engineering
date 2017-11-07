@@ -53,6 +53,18 @@ namespace BasicGP
             userInput.BackColor = System.Drawing.Color.LightCoral;
             btnSubmit.Enabled = false;
         }
+        /// <summary>
+        /// is called when the logo is clicked, can also be called from in code
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        public static void toDashboard(object sender, EventArgs e,Form currentForm)
+        {
+            currentForm.Visible = false;
+            Dashboard dashboard = new Dashboard();
+            dashboard.Visible = true;
+        }
 
 
         #region Still needs fixing - not functional
