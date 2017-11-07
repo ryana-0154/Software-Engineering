@@ -103,3 +103,4 @@ C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Enginee
 C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csproj.CoreCompileInputs.cache
 C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.exe
 C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.pdb
+C:\Users\Ikram\Documents\Software Engineering\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.AppointmentForm.resources
