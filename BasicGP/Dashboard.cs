@@ -39,5 +39,12 @@ namespace BasicGP
             this.Visible = false;
             new ResultsForm().Visible = true;
         }
+
+        private void btnManage_Click(object sender, EventArgs e)
+        {
+            // TODO: Potentially change this link?
+            Visible = false;
+            new AppointmentForm().Visible = true;
+        }
     }
 }

@@ -48,10 +48,9 @@
             this.panel1.Controls.Add(this.btnFind);
             this.panel1.Controls.Add(this.btnRegister);
             this.panel1.Controls.Add(this.btnAvailability);
-            this.panel1.Location = new System.Drawing.Point(16, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1413, 907);
+            this.panel1.Size = new System.Drawing.Size(1060, 737);
             this.panel1.TabIndex = 0;
             // 
             // picLogo
@@ -59,10 +58,9 @@
             this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picLogo.Image = global::BasicGP.Properties.Resources.logo1;
             this.picLogo.InitialImage = global::BasicGP.Properties.Resources.logo;
-            this.picLogo.Location = new System.Drawing.Point(1123, 43);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picLogo.Location = new System.Drawing.Point(842, 35);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(169, 124);
+            this.picLogo.Size = new System.Drawing.Size(127, 101);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 20;
             this.picLogo.TabStop = false;
@@ -70,10 +68,9 @@
             // lblTitle
             // 
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(403, 57);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Location = new System.Drawing.Point(302, 46);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(609, 85);
+            this.lblTitle.Size = new System.Drawing.Size(457, 69);
             this.lblTitle.TabIndex = 10;
             this.lblTitle.Text = "DASHBOARD";
             // 
@@ -83,13 +80,13 @@
             this.btnManage.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManage.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnManage.Location = new System.Drawing.Point(1068, 638);
-            this.btnManage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManage.Location = new System.Drawing.Point(801, 518);
             this.btnManage.Name = "btnManage";
-            this.btnManage.Size = new System.Drawing.Size(253, 100);
+            this.btnManage.Size = new System.Drawing.Size(190, 81);
             this.btnManage.TabIndex = 6;
             this.btnManage.Text = "Manage Appointments";
             this.btnManage.UseVisualStyleBackColor = false;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
             // btnFind
             // 
@@ -97,10 +94,9 @@
             this.btnFind.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnFind.Location = new System.Drawing.Point(89, 214);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFind.Location = new System.Drawing.Point(67, 174);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(253, 100);
+            this.btnFind.Size = new System.Drawing.Size(190, 81);
             this.btnFind.TabIndex = 5;
             this.btnFind.Text = "Find Patient";
             this.btnFind.UseVisualStyleBackColor = false;
@@ -112,10 +108,9 @@
             this.btnRegister.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnRegister.Location = new System.Drawing.Point(1068, 214);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegister.Location = new System.Drawing.Point(801, 174);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(253, 100);
+            this.btnRegister.Size = new System.Drawing.Size(190, 81);
             this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Register Patient";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -127,24 +122,22 @@
             this.btnAvailability.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnAvailability.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAvailability.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAvailability.Location = new System.Drawing.Point(89, 638);
-            this.btnAvailability.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAvailability.Location = new System.Drawing.Point(67, 518);
             this.btnAvailability.Name = "btnAvailability";
-            this.btnAvailability.Size = new System.Drawing.Size(253, 100);
+            this.btnAvailability.Size = new System.Drawing.Size(190, 81);
             this.btnAvailability.TabIndex = 1;
             this.btnAvailability.Text = "Check Availability";
             this.btnAvailability.UseVisualStyleBackColor = false;
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1432, 953);
+            this.ClientSize = new System.Drawing.Size(1071, 703);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MaximumSize = new System.Drawing.Size(1450, 1000);
-            this.MinimumSize = new System.Drawing.Size(1450, 1000);
+            this.MaximumSize = new System.Drawing.Size(1092, 820);
+            this.MinimumSize = new System.Drawing.Size(1082, 704);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Over Surgery | Dashboard";
