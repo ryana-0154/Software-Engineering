@@ -92,5 +92,19 @@ namespace BasicGP
                 MessageBox.Show("No appointments were found");
             }
         }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            lblPrompt.Text = "Full Name: ";
+            lblDOB.Visible = true;
+            dtpDOB.Visible = true;
+        }
+
+        private void rdbNHNumber_CheckedChanged(object sender, EventArgs e)
+        {
+            lblPrompt.Text = "National Health Number: ";
+            lblDOB.Visible = false;
+            dtpDOB.Visible = false;
+        }
     }
 }
