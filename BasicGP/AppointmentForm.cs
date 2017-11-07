@@ -38,18 +38,7 @@ namespace BasicGP
             //DBAccess.postData("newAppointment",);
 
             //TODO: check this, should we just overload the method instead???
-            toDashboard(sender, e);
-        }
-        /// <summary>
-        /// is called when the logo is clicked, can also be called from in code
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toDashboard(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            Dashboard dashboard = new Dashboard();
-            dashboard.Visible = true;
+            Utilities.toDashboard(sender, e,this);
         }
     }
 }
