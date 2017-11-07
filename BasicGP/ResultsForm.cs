@@ -30,25 +30,51 @@ namespace BasicGP
 
         private void txtInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // TODO: Send this all to backend
-            //If the return key is pressed, sent a login button click event
-            if (e.KeyChar == (char)13)
+            string[] data;
+            DataSet dataSet;
+            DataTable table;
+            if (rdbNHNumber.Checked)
             {
-                string[] data = new string[1];
-                // Define a dataSet from DBAccess with the SQL statement
-                DataSet dataSet = DBAccess.getData("findPatient", txtInput.Text);
-                //Define a datatable with the tables from the dataset return
-                DataTable table = dataSet.Tables[0];
-
-                Console.WriteLine(table.Rows.Count);
-
-                if (table.Rows.Count > 0)
+                // TODO: Send this all to backend
+                //If the return key is pressed, sent a login button click event
+                if (e.KeyChar == (char)13)
                 {
-                    dgvPatients.DataSource = table;
+                    data = new string[1];
+                    // Define a dataSet from DBAccess with the SQL statement
+                    dataSet = DBAccess.getData("findPatient", "id", txtInput.Text);
+                    //Define a datatable with the tables from the dataset return
+                    table = dataSet.Tables[0];
+
+                    Console.WriteLine(table.Rows.Count);
+
+                    if (table.Rows.Count > 0)
+                    {
+                        dgvPatients.DataSource = table;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No data was found");
+                    }
                 }
-                else
+            } else if (radioButton2.Checked) {
+                if (e.KeyChar == (char)13)
                 {
-                    MessageBox.Show("No data was found");
+                    data = new string[1];
+                    // Define a dataSet from DBAccess with the SQL statement
+                    dataSet = DBAccess.getData("findPatient", "name&dob", txtInput.Text, dtpDOB.Text);
+                    //Define a datatable with the tables from the dataset return
+                    table = dataSet.Tables[0];
+
+                    Console.WriteLine(table.Rows.Count);
+
+                    if (table.Rows.Count > 0)
+                    {
+                        dgvPatients.DataSource = table;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No data was found");
+                    }
                 }
             }
         }

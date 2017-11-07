@@ -86,14 +86,16 @@ namespace BasicGP
                             sqlCommand.Parameters.AddWithValue("@id", pID);
                             break;
                         case "name&dob":
+                            Console.WriteLine(data[3]);
+                            DateTime dateOfBirth = DateTime.Parse(data[3]);
+
                             string name = data[2];
-                            string DOB = data[3];
                             sqlCommand = new SqlCommand("SELECT * FROM patients WHERE name = @name AND DOB = @DOB", DBConnection);
                             sqlCommand.Parameters.AddWithValue("@name", name);
-                            sqlCommand.Parameters.AddWithValue("@DOB", DOB);
+                            sqlCommand.Parameters.AddWithValue("@DOB", dateOfBirth);
                             break;
                         default:
-                            dataSet = null;
+                            //dataSet = null;
                             break;
                     }
                     // Add the value of the sqlCommand to the sqlDataAdapter
