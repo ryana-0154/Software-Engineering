@@ -78,6 +78,9 @@ namespace BasicGP
                 }
             }
         }
+
+        int NHNumber;
+
         /// <summary>
         /// when a cell is double clicked on a dataGridView
         /// </summary>
@@ -87,22 +90,16 @@ namespace BasicGP
         {
             dgvPatients.Visible = false;
             tcResults.Visible = true;
-            
+
+            NHNumber = e.RowIndex;
+
             string[] data = new string[1];
             //https://stackoverflow.com/questions/5571963/how-to-get-datagridview-cell-value-in-messagebox
             //finds the NHNumber of whichever row was clicked on
-            DataSet dataSetAppointments = DBAccess.getData("patientAppointments", dgvPatients.Rows[e.RowIndex].Cells[0].Value.ToString());
+            DataSet dataSetAppointments = DBAccess.getData("patientAppointments", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
             DataTable tableAppointments = dataSetAppointments.Tables[0];
             CheckForResults(tableAppointments, dgvAppointments);
-
-            DataSet dataSetPrescriptions = DBAccess.getData("patientPresciptions", dgvPatients.Rows[e.RowIndex].Cells[0].Value.ToString());
-            DataTable tablePrescriptions = dataSetAppointments.Tables[0];
-            CheckForResults(tablePrescriptions, dgvPrescriptions);
-
-            DataSet dataSetResults = DBAccess.getData("testResults", dgvPatients.Rows[e.RowIndex].Cells[0].Value.ToString());
-            DataTable tableResults = dataSetResults.Tables[0];
-            CheckForResults(tableResults, dgvResults);
-
+            
             Console.WriteLine(tableAppointments.Rows.Count);
 
         }
@@ -115,7 +112,7 @@ namespace BasicGP
             }
             else
             {
-                MessageBox.Show("No appointments were found");
+                MessageBox.Show("No data was found");
             }
         }
 
@@ -131,6 +128,29 @@ namespace BasicGP
             lblPrompt.Text = "National Health Number: ";
             lblDOB.Visible = false;
             dtpDOB.Visible = false;
+        }
+
+        private void tcResults_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            switch(e.TabPageIndex)
+            {
+                case 1:
+                    DataSet dataSetPrescriptions = DBAccess.getData("patientPresciptions", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
+                    DataTable tablePrescriptions = dataSetPrescriptions.Tables[0];
+                    CheckForResults(tablePrescriptions, dgvAppointments);
+                    break;
+                case 2:
+                    DataSet dataSetResults = DBAccess.getData("testResults", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
+                    DataTable tableResults = dataSetResults.Tables[0];
+                    CheckForResults(tableResults, dgvAppointments);
+                    break;
+                default:
+                    break;
+            }
+
+            
+
+            
         }
     }
 }
