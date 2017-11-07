@@ -16,5 +16,11 @@ namespace BasicGP
         {
             InitializeComponent();
         }
+        private void picLogo_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            this.Visible = false;
+            dashboard.Visible = true;
+        }
     }
 }

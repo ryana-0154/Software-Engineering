@@ -134,6 +134,11 @@ namespace BasicGP
         {
             switch(e.TabPageIndex)
             {
+                case 0:
+                    DataSet dataSetAppointments = DBAccess.getData("patientAppointments", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
+                    DataTable tableAppointments = dataSetAppointments.Tables[0];
+                    CheckForResults(tableAppointments, dgvAppointments);
+                    break;
                 case 1:
                     DataSet dataSetPrescriptions = DBAccess.getData("patientPresciptions", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
                     DataTable tablePrescriptions = dataSetPrescriptions.Tables[0];
