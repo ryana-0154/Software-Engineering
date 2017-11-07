@@ -196,7 +196,8 @@ namespace BasicGP
                     sqlCommand.Parameters.AddWithValue("@NHNumber", data[1]);
                     sqlCommand.Parameters.AddWithValue("@Name", data[2]);
                     sqlCommand.Parameters.AddWithValue("@Title", data[3]);
-                    sqlCommand.Parameters.AddWithValue("@DOB", data[4]);
+                    
+                    sqlCommand.Parameters.AddWithValue("@DOB", DateTime.Parse(data[4]));
                     sqlCommand.Parameters.AddWithValue("@PhoneNumber", data[5]);
                     sqlCommand.Parameters.AddWithValue("@Address", data[6]);
                     sqlCommand.Parameters.AddWithValue("@Allergies", data[7]);

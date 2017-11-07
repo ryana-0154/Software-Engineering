@@ -84,7 +84,7 @@
             this.dtpTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpTime.Location = new System.Drawing.Point(220, 98);
-            this.dtpTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpTime.Margin = new System.Windows.Forms.Padding(2);
             this.dtpTime.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             this.dtpTime.Name = "dtpTime";
             this.dtpTime.Size = new System.Drawing.Size(228, 20);
@@ -124,7 +124,7 @@
             this.dtpDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDate.Location = new System.Drawing.Point(220, 3);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDate.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(228, 20);
@@ -175,7 +175,7 @@
             // 
             this.txtFName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFName.Location = new System.Drawing.Point(220, 83);
-            this.txtFName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(228, 20);
             this.txtFName.TabIndex = 6;
@@ -185,7 +185,7 @@
             // 
             this.txtSName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSName.Location = new System.Drawing.Point(220, 171);
-            this.txtSName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSName.Margin = new System.Windows.Forms.Padding(2);
             this.txtSName.Name = "txtSName";
             this.txtSName.Size = new System.Drawing.Size(228, 20);
             this.txtSName.TabIndex = 8;
@@ -204,7 +204,7 @@
             "Master",
             "Dr"});
             this.comboTitle.Location = new System.Drawing.Point(220, 3);
-            this.comboTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboTitle.Margin = new System.Windows.Forms.Padding(2);
             this.comboTitle.Name = "comboTitle";
             this.comboTitle.Size = new System.Drawing.Size(228, 21);
             this.comboTitle.TabIndex = 10;
@@ -299,6 +299,7 @@
             this.btnSubmit.TabIndex = 9;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // picLogo
             // 
@@ -310,6 +311,7 @@
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 20;
             this.picLogo.TabStop = false;
+            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
             // 
             // AppointmentForm
             // 
@@ -322,7 +324,7 @@
             this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.tableLayoutPanel4);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(1054, 739);
             this.MinimumSize = new System.Drawing.Size(1054, 704);
             this.Name = "AppointmentForm";
