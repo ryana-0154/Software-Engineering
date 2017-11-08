@@ -18,9 +18,7 @@ namespace BasicGP
         }
         private void picLogo_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard();
-            this.Visible = false;
-            dashboard.Visible = true;
+            Utilities.toDashboard(sender, e, this);
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -36,9 +34,19 @@ namespace BasicGP
           
             // TODO: Fix this
             //DBAccess.postData("newAppointment",);
-
-            //TODO: check this, should we just overload the method instead???
+            
             Utilities.toDashboard(sender, e,this);
+        }
+        private bool CheckValidation()
+        {
+            bool result = false;
+            bool[] valid = new bool[6];
+            valid[2] = Utilities.TitleValidation(comboTitle);
+            valid[3] = Utilities.NameValidation(txtFName);
+            valid[4] = Utilities.NameValidation(txtSName);
+            valid[5] = Utilities.DescriptionValidation(txtDescription);
+
+            return result;
         }
     }
 }

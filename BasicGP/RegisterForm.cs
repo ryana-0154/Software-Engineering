@@ -51,9 +51,8 @@ namespace BasicGP
             DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3],
                 patientDetails[4], patientDetails[5], patientDetails[6],
                 additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
-
-            //TODO: check this, should we just overload the method instead???
-            toDashboard(sender, e);
+            
+           Utilities.toDashboard(sender, e,this);
         }
 
         /// <summary>
@@ -80,76 +79,40 @@ namespace BasicGP
             Boolean[] valid = new bool[9];
             Control[] userInputs = new Control[9];
 
-            userInputs[0] = txtNHNumber; //valid[0]
+            //[0] = txtNHNumber; //valid[0]
             userInputs[1] = txtFName;
             userInputs[2] = txtSName;
-            userInputs[3] = comboTitle;
-            userInputs[4] = dtpDOB;
-            userInputs[5] = txtPhoneNumber;
+            //userInputs[3] = comboTitle;
+            //userInputs[4] = dtpDOB;
+            //userInputs[5] = txtPhoneNumber;
             userInputs[6] = txtAddress1;
             userInputs[7] = txtAddress2;
             userInputs[8] = txtAddress3;
             //NHNumber validation
-            if (userInputs[0].Text.Length == 10 && Regex.IsMatch(userInputs[0].Text, @"^\d+$"))
-            {
-                valid[0] = true;
-            }
+            valid[0] = Utilities.NHNumberValidation(txtNHNumber);
             //all names validation
             for (int i = 1; i <= 2; i++)
             {
-                if ((userInputs[i].Text.Length <= 16 && userInputs[i].Text.Length > 0) && Regex.IsMatch(userInputs[i].Text, @"^[\p{L}]+$"))
-                {
-                    valid[i] = true;
-                }
+                valid[i] = Utilities.NameValidation((TextBox)userInputs[i]);
             }
             //Title validation
-            if (comboTitle.SelectedIndex != -1)//something was selected
-            {
-                //it is valid number 8 because its not a txt box and goes at the end
-                valid[3] = true;
-            }
-            #region compare explaination
-            /*Less than zero time1 is earlier than time2. Zero time1 is the same as time2. Greater than
-            zero time1 is later than time2.
-            this if is saying if the user has inputted a date in the future or exactly now, then it is not correct
-            */
-            #endregion
+            valid[3]=Utilities.TitleValidation(comboTitle);
             //DOB validation
-            if ((DateTime.Compare(dtpDOB.Value, DateTime.Now)) < 0)
-            {
-                valid[4] = true;
-            }
+            valid[4] = Utilities.DOBValidation(dtpDOB);
             //Phone number validation
-            if (userInputs[5].Text.Length == 11 && Regex.IsMatch(userInputs[5].Text, @"^\d+$"))
-            {
-                valid[5] = true;
-            }
+            valid[5] = Utilities.PhoneNumberValidation(txtPhoneNumber);
             //all address validation
             for (int i = 6; i <= 8; i++)
             {
                 //if its txtAddress1
-                if (i == 6)
-                {
-                    if (userInputs[i].Text.Length <= 64 && userInputs[i].Text.Length > 0)
-                    {
-                        valid[i] = true;
-                    }
-                }
-                else //if it isnt txtAddress1 - therefore txtAddress2 and 3
-                {
-                    //only check if its input is less that 64
-                    if (userInputs[i].Text.Length <= 64)
-                    {
-                        valid[i] = true;
-                    }
-                }
+                valid[i] = Utilities.AddressValidation((TextBox)userInputs[i]);
             }
             //searches through the how valid array after all controls have been checked, and prints errors respectively
             for (int i = 0; i < valid.Length; i++)
             {
                 if (valid[i] == false)
                 {
-                    validation_failed(userInputs[i]);
+                   Utilities.validation_failed(userInputs[i],lblErrorMsg,btnSubmit);
                 }
             }
             if (!valid.Contains(false))

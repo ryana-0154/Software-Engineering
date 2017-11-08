@@ -59,13 +59,107 @@ namespace BasicGP
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        public static void toDashboard(object sender, EventArgs e,Form currentForm)
+        public static void toDashboard(object sender, EventArgs e, Form currentForm)
         {
             currentForm.Visible = false;
             Dashboard dashboard = new Dashboard();
             dashboard.Visible = true;
         }
+        public static bool NHNumberValidation(TextBox userInput)
+        {
+            if (userInput.Text.Length == 10 && Regex.IsMatch(userInput.Text, @"^\d+$"))
+            {
+                return true;
+            }
+            else
+            { return false; }
+        }
+        public static bool TitleValidation(ComboBox userinput)
+        {
+            if (userinput.SelectedIndex != -1)//something was selected
+            { return true; }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool NameValidation(TextBox userInput)
+        {
+            if ((userInput.Text.Length <= 16 && userInput.Text.Length > 0) && Regex.IsMatch(userInput.Text, @"^[\p{L}]+$"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
+        #region compare explaination
+        /*Less than zero time1 is earlier than time2. Zero time1 is the same as time2. Greater than
+        zero time1 is later than time2.
+        this if is saying if the user has inputted a date in the future or exactly now, then it is not correct
+        */
+        #endregion
+        public static bool DOBValidation(DateTimePicker dtpDOB)
+        {
+            if ((DateTime.Compare(dtpDOB.Value, DateTime.Now)) < 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool PhoneNumberValidation(TextBox userInput)
+        {
+            if (userInput.Text.Length == 11 && Regex.IsMatch(userInput.Text, @"^\d+$"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool AddressValidation(TextBox userInput)
+        {
+            if (userInput.Name == "txtAddress1")
+            {
+                if (userInput.Text.Length <= 64 && userInput.Text.Length > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                if (userInput.Text.Length <= 64)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        public static bool DescriptionValidation(TextBox userInput)
+        {
+            //TODO: Correct the allowed length of a description
+            if (userInput.Text != "" && userInput.Text.Length < 300)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         #region Still needs fixing - not functional
         /*
