@@ -117,7 +117,7 @@
             this.tableLayoutPanel3.Controls.Add(this.dtpDOB, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.txtAddress1, 1, 6);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(23, 68);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 9;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.55245F));
@@ -317,6 +317,7 @@
             // 
             // dtpDOB
             // 
+            this.dtpDOB.CalendarMonthBackground = System.Drawing.Color.LightCoral;
             this.dtpDOB.Checked = false;
             this.dtpDOB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -327,7 +328,6 @@
             this.dtpDOB.Size = new System.Drawing.Size(304, 22);
             this.dtpDOB.TabIndex = 12;
             this.dtpDOB.Tag = "DOB";
-            this.dtpDOB.Value = new System.DateTime(2017, 11, 4, 0, 0, 0, 0);
             // 
             // txtAddress1
             // 
@@ -347,7 +347,7 @@
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnSubmit.Location = new System.Drawing.Point(1221, 503);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(136, 81);
             this.btnSubmit.TabIndex = 6;
@@ -364,7 +364,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtAllergies, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblAllergiesText, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(661, 311);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28F));
@@ -376,7 +376,7 @@
             // 
             this.txtAllergies.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAllergies.Location = new System.Drawing.Point(6, 98);
-            this.txtAllergies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAllergies.Margin = new System.Windows.Forms.Padding(4);
             this.txtAllergies.Multiline = true;
             this.txtAllergies.Name = "txtAllergies";
             this.txtAllergies.Size = new System.Drawing.Size(451, 152);
@@ -407,7 +407,7 @@
             this.tableLayoutPanel2.Controls.Add(this.cbAsthmatic, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.lblFlagText, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(779, 68);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.48148F));
@@ -423,7 +423,7 @@
             this.cbSmoker.AutoSize = true;
             this.cbSmoker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSmoker.Location = new System.Drawing.Point(129, 117);
-            this.cbSmoker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSmoker.Margin = new System.Windows.Forms.Padding(4);
             this.cbSmoker.Name = "cbSmoker";
             this.cbSmoker.Size = new System.Drawing.Size(86, 24);
             this.cbSmoker.TabIndex = 19;
@@ -436,7 +436,7 @@
             this.cbDiabetes.AutoSize = true;
             this.cbDiabetes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDiabetes.Location = new System.Drawing.Point(127, 73);
-            this.cbDiabetes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDiabetes.Margin = new System.Windows.Forms.Padding(4);
             this.cbDiabetes.Name = "cbDiabetes";
             this.cbDiabetes.Size = new System.Drawing.Size(89, 24);
             this.cbDiabetes.TabIndex = 18;
@@ -449,7 +449,7 @@
             this.cbAsthmatic.AutoSize = true;
             this.cbAsthmatic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAsthmatic.Location = new System.Drawing.Point(121, 159);
-            this.cbAsthmatic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbAsthmatic.Margin = new System.Windows.Forms.Padding(4);
             this.cbAsthmatic.Name = "cbAsthmatic";
             this.cbAsthmatic.Size = new System.Drawing.Size(102, 24);
             this.cbAsthmatic.TabIndex = 20;
@@ -475,7 +475,7 @@
             this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picLogo.Image = global::BasicGP.Properties.Resources.logo1;
             this.picLogo.Location = new System.Drawing.Point(1188, 48);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(169, 124);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -485,13 +485,12 @@
             // 
             // lblErrorMsg
             // 
-            this.lblErrorMsg.AutoSize = true;
+            this.lblErrorMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorMsg.ForeColor = System.Drawing.Color.LightCoral;
             this.lblErrorMsg.Location = new System.Drawing.Point(661, 606);
             this.lblErrorMsg.Name = "lblErrorMsg";
-            this.lblErrorMsg.Size = new System.Drawing.Size(46, 17);
+            this.lblErrorMsg.Size = new System.Drawing.Size(684, 137);
             this.lblErrorMsg.TabIndex = 20;
-            this.lblErrorMsg.Text = "label1";
             // 
             // RegisterForm
             // 
@@ -522,7 +521,6 @@
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -29,30 +29,32 @@ namespace BasicGP
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            CheckValidation();
-            //attributes
-            string[] patientDetails = new string[7];
-            bool[] additionalInfo = new bool[3];
-            string address = ConcatAddress();
-            Console.WriteLine(address);
-            //TODO: cahnge from bool and string arrays to just one Control data type array
-            patientDetails[0] = txtNHNumber.Text; // data[1]
-            patientDetails[1] = txtFName.Text + " " + txtSName.Text; // data[2]
-            patientDetails[2] = comboTitle.Text; // data[3]
-            patientDetails[3] = dtpDOB.Text; // data[4]
-            patientDetails[4] = txtPhoneNumber.Text; // data[5]
-            patientDetails[5] = address; // data[6]
-            patientDetails[6] = txtAllergies.Text; // data[7]
+            if (CheckValidation())
+            {
+                //attributes
+                string[] patientDetails = new string[7];
+                bool[] additionalInfo = new bool[3];
+                string address = ConcatAddress();
+                Console.WriteLine(address);
+                //TODO: cahnge from bool and string arrays to just one Control data type array
+                patientDetails[0] = txtNHNumber.Text; // data[1]
+                patientDetails[1] = txtFName.Text + " " + txtSName.Text; // data[2]
+                patientDetails[2] = comboTitle.Text; // data[3]
+                patientDetails[3] = dtpDOB.Text; // data[4]
+                patientDetails[4] = txtPhoneNumber.Text; // data[5]
+                patientDetails[5] = address; // data[6]
+                patientDetails[6] = txtAllergies.Text; // data[7]
 
-            additionalInfo[0] = cbDiabetes.Checked; // data[8]
-            additionalInfo[1] = cbSmoker.Checked; // data[9]
-            additionalInfo[2] = cbAsthmatic.Checked; // data[10]
+                additionalInfo[0] = cbDiabetes.Checked; // data[8]
+                additionalInfo[1] = cbSmoker.Checked; // data[9]
+                additionalInfo[2] = cbAsthmatic.Checked; // data[10]
 
-            DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3],
-                patientDetails[4], patientDetails[5], patientDetails[6],
-                additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
-            
-           Utilities.toDashboard(sender, e,this);
+                DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3],
+                    patientDetails[4], patientDetails[5], patientDetails[6],
+                    additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
+
+                Utilities.toDashboard(sender, e, this);
+            }
         }
 
         /// <summary>
@@ -76,15 +78,16 @@ namespace BasicGP
         private Boolean CheckValidation()
         {
             bool result = false;
+            string errorMsg = "";
             Boolean[] valid = new bool[9];
             Control[] userInputs = new Control[9];
 
-            //[0] = txtNHNumber; //valid[0]
+            userInputs[0] = txtNHNumber; //valid[0]
             userInputs[1] = txtFName;
             userInputs[2] = txtSName;
-            //userInputs[3] = comboTitle;
-            //userInputs[4] = dtpDOB;
-            //userInputs[5] = txtPhoneNumber;
+            userInputs[3] = comboTitle;
+            userInputs[4] = dtpDOB;
+            userInputs[5] = txtPhoneNumber;
             userInputs[6] = txtAddress1;
             userInputs[7] = txtAddress2;
             userInputs[8] = txtAddress3;
@@ -112,9 +115,11 @@ namespace BasicGP
             {
                 if (valid[i] == false)
                 {
-                   Utilities.validation_failed(userInputs[i],lblErrorMsg,btnSubmit);
+                   errorMsg = Utilities.validation_failed(userInputs[i],lblErrorMsg,btnSubmit,errorMsg);
                 }
             }
+            lblErrorMsg.Text = errorMsg;
+            lblErrorMsg.Visible = true;
             if (!valid.Contains(false))
             {
                 result = true;
@@ -231,6 +236,5 @@ namespace BasicGP
         {
             MessageBox.Show(title, message);
         }
-
     }
 }
