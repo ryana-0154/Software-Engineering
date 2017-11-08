@@ -85,8 +85,9 @@ namespace BasicGP
             userInputs[0] = txtNHNumber; //valid[0]
             userInputs[1] = txtFName;
             userInputs[2] = txtSName;
-            userInputs[3] = comboTitle;
-            userInputs[4] = dtpDOB;
+            // these are set as panels so that the back colour can be changed
+            userInputs[3] = pnlTitle;
+            userInputs[4] = pnlDOB;
             userInputs[5] = txtPhoneNumber;
             userInputs[6] = txtAddress1;
             userInputs[7] = txtAddress2;
@@ -236,5 +237,6 @@ namespace BasicGP
         {
             MessageBox.Show(title, message);
         }
+        
     }
 }

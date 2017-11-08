@@ -33,7 +33,6 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblAddress3 = new System.Windows.Forms.Label();
             this.txtAddress3 = new System.Windows.Forms.TextBox();
-            this.lblAddress2 = new System.Windows.Forms.Label();
             this.txtAddress2 = new System.Windows.Forms.TextBox();
             this.lblAddress1 = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
@@ -44,9 +43,11 @@
             this.lblSName = new System.Windows.Forms.Label();
             this.txtSName = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.comboTitle = new System.Windows.Forms.ComboBox();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.txtAddress1 = new System.Windows.Forms.TextBox();
+            this.pnlTitle = new System.Windows.Forms.Panel();
+            this.comboTitle = new System.Windows.Forms.ComboBox();
+            this.lblAddress2 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtAllergies = new System.Windows.Forms.TextBox();
@@ -58,10 +59,13 @@
             this.lblFlagText = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblErrorMsg = new System.Windows.Forms.Label();
+            this.pnlDOB = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3.SuspendLayout();
+            this.pnlTitle.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.pnlDOB.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNHNumber
@@ -98,10 +102,9 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.307F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.693F));
+            this.tableLayoutPanel3.Controls.Add(this.pnlDOB, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.lblAddress3, 0, 8);
-            this.tableLayoutPanel3.Controls.Add(this.txtAddress3, 0, 8);
             this.tableLayoutPanel3.Controls.Add(this.lblAddress2, 0, 7);
-            this.tableLayoutPanel3.Controls.Add(this.txtAddress2, 0, 7);
             this.tableLayoutPanel3.Controls.Add(this.lblAddress1, 0, 6);
             this.tableLayoutPanel3.Controls.Add(this.txtPhoneNumber, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.lblPhone, 0, 5);
@@ -113,9 +116,10 @@
             this.tableLayoutPanel3.Controls.Add(this.lblSName, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.txtSName, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.lblTitle, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.comboTitle, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.dtpDOB, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.txtAddress1, 1, 6);
+            this.tableLayoutPanel3.Controls.Add(this.pnlTitle, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.txtAddress2, 1, 7);
+            this.tableLayoutPanel3.Controls.Add(this.txtAddress3, 1, 8);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(23, 68);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -157,20 +161,6 @@
             this.txtAddress3.Size = new System.Drawing.Size(304, 77);
             this.txtAddress3.TabIndex = 19;
             this.txtAddress3.Tag = "Address Line 3";
-            // 
-            // lblAddress2
-            // 
-            this.lblAddress2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress2.Location = new System.Drawing.Point(5, 481);
-            this.lblAddress2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAddress2.Name = "lblAddress2";
-            this.lblAddress2.Size = new System.Drawing.Size(280, 75);
-            this.lblAddress2.TabIndex = 18;
-            this.lblAddress2.Text = "Address Line 2";
-            this.lblAddress2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtAddress2
             // 
@@ -296,32 +286,14 @@
             this.lblTitle.Text = "Title *";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboTitle
-            // 
-            this.comboTitle.DisplayMember = "Mr";
-            this.comboTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboTitle.FormattingEnabled = true;
-            this.comboTitle.Items.AddRange(new object[] {
-            "Mrs",
-            "Miss",
-            "Mr",
-            "Master",
-            "Dr"});
-            this.comboTitle.Location = new System.Drawing.Point(293, 184);
-            this.comboTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboTitle.Name = "comboTitle";
-            this.comboTitle.Size = new System.Drawing.Size(304, 24);
-            this.comboTitle.TabIndex = 10;
-            this.comboTitle.Tag = "Title";
-            // 
             // dtpDOB
             // 
-            this.dtpDOB.CalendarMonthBackground = System.Drawing.Color.LightCoral;
+            this.dtpDOB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDOB.Checked = false;
-            this.dtpDOB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDOB.Location = new System.Drawing.Point(293, 258);
+            this.dtpDOB.Location = new System.Drawing.Point(-3, 12);
             this.dtpDOB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpDOB.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             this.dtpDOB.Name = "dtpDOB";
@@ -339,6 +311,49 @@
             this.txtAddress1.Size = new System.Drawing.Size(304, 69);
             this.txtAddress1.TabIndex = 16;
             this.txtAddress1.Tag = "Address Line 1";
+            // 
+            // pnlTitle
+            // 
+            this.pnlTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlTitle.Controls.Add(this.comboTitle);
+            this.pnlTitle.Location = new System.Drawing.Point(293, 185);
+            this.pnlTitle.Name = "pnlTitle";
+            this.pnlTitle.Size = new System.Drawing.Size(304, 36);
+            this.pnlTitle.TabIndex = 21;
+            this.pnlTitle.Tag = "Title";
+            // 
+            // comboTitle
+            // 
+            this.comboTitle.DisplayMember = "Mr";
+            this.comboTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTitle.FormattingEnabled = true;
+            this.comboTitle.Items.AddRange(new object[] {
+            "Mrs",
+            "Miss",
+            "Mr",
+            "Master",
+            "Dr"});
+            this.comboTitle.Location = new System.Drawing.Point(3, 8);
+            this.comboTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboTitle.Name = "comboTitle";
+            this.comboTitle.Size = new System.Drawing.Size(304, 24);
+            this.comboTitle.TabIndex = 10;
+            this.comboTitle.Tag = "Title";
+            // 
+            // lblAddress2
+            // 
+            this.lblAddress2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress2.Location = new System.Drawing.Point(5, 481);
+            this.lblAddress2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAddress2.Name = "lblAddress2";
+            this.lblAddress2.Size = new System.Drawing.Size(280, 75);
+            this.lblAddress2.TabIndex = 18;
+            this.lblAddress2.Text = "Address Line 2";
+            this.lblAddress2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSubmit
             // 
@@ -492,6 +507,17 @@
             this.lblErrorMsg.Size = new System.Drawing.Size(684, 137);
             this.lblErrorMsg.TabIndex = 20;
             // 
+            // pnlDOB
+            // 
+            this.pnlDOB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlDOB.Controls.Add(this.dtpDOB);
+            this.pnlDOB.Location = new System.Drawing.Point(293, 259);
+            this.pnlDOB.Name = "pnlDOB";
+            this.pnlDOB.Size = new System.Drawing.Size(304, 39);
+            this.pnlDOB.TabIndex = 21;
+            this.pnlDOB.Tag = "DOB";
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -515,11 +541,13 @@
             this.Load += new System.EventHandler(this.RegisterForm_Load);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.pnlTitle.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.pnlDOB.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -555,5 +583,7 @@
         private System.Windows.Forms.Label lblAddress3;
         private System.Windows.Forms.TextBox txtAddress3;
         private System.Windows.Forms.Label lblErrorMsg;
+        private System.Windows.Forms.Panel pnlTitle;
+        private System.Windows.Forms.Panel pnlDOB;
     }
 }

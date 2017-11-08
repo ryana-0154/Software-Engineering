@@ -27,10 +27,12 @@ namespace BasicGP
                 case "txtSName":
                     errorMsg += userInput.Tag + " - Field must be less than 16 characters but more than 0 and only letters." + Environment.NewLine;
                     break;
-                case "comboTitle":
+                    //these are panels because the control being passed over is the panel
+                case "pnlTitle":
                     errorMsg += userInput.Tag + " - Must select one of the drop down options." + Environment.NewLine;
                     break;
-                case "dtpDOB":
+                    //these are panels because the control being passed over is the panel
+                case "pnlDOB":
                     errorMsg += userInput.Tag + " - Field must before current day." + Environment.NewLine;
                     break;
                 case "txtPhoneNumber":
