@@ -86,7 +86,7 @@ namespace BasicGP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void PatientSelect(object sender, DataGridViewCellEventArgs e)
         {
             dgvPatients.Visible = false;
             tcResults.Visible = true;
@@ -156,6 +156,12 @@ namespace BasicGP
             
 
             
+        }
+
+        private void ExtendPrescription(object sender, DataGridViewCellEventArgs e)
+        {
+            int prescriptionID = (int)dgvPrescriptions.Rows[e.RowIndex].Cells[0].Value;
+
         }
     }
 }
