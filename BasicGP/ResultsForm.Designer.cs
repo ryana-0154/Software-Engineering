@@ -166,7 +166,7 @@
             this.dgvPrescriptions.RowHeadersWidth = 5;
             this.dgvPrescriptions.Size = new System.Drawing.Size(1284, 574);
             this.dgvPrescriptions.TabIndex = 4;
-            this.dgvPrescriptions.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExtendPrescription);
+            this.dgvPrescriptions.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PrescriptionClick);
             // 
             // tabPage1
             // 

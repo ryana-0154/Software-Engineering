@@ -155,6 +155,17 @@ namespace BasicGP
                     // Add the value of the sqlCommand to the sqlDataAdapter
                     dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
+                case "prescriptionDuration":
+                    int prescriptionID;
+                    // Try to parse data[1] to an int32 and output as prescriptionID
+                    Int32.TryParse(data[1], out prescriptionID);
+                    // Instantiate an sqlCommand on the DBConnection
+                    sqlCommand = new SqlCommand("SELECT duration FROM prescriptions WHERE prescriptionID = @id", DBConnection);
+                    // add parameters to the sql command (Prevents again SQLI)
+                    sqlCommand.Parameters.AddWithValue("@id", prescriptionID);
+                    // Add the value of the sqlCommand to the sqlDataAdapter
+                    dataAdapter = new SqlDataAdapter(sqlCommand);
+                    break;
                 // TODO: Figure out how to defualt this
                 default:
                     dataSet = null;

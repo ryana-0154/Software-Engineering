@@ -31,9 +31,10 @@
             this.lblNHNumber = new System.Windows.Forms.Label();
             this.lblFName = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlDOB = new System.Windows.Forms.Panel();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.lblAddress3 = new System.Windows.Forms.Label();
-            this.txtAddress3 = new System.Windows.Forms.TextBox();
-            this.txtAddress2 = new System.Windows.Forms.TextBox();
+            this.lblAddress2 = new System.Windows.Forms.Label();
             this.lblAddress1 = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
@@ -43,11 +44,11 @@
             this.lblSName = new System.Windows.Forms.Label();
             this.txtSName = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.txtAddress1 = new System.Windows.Forms.TextBox();
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.comboTitle = new System.Windows.Forms.ComboBox();
-            this.lblAddress2 = new System.Windows.Forms.Label();
+            this.txtAddress2 = new System.Windows.Forms.TextBox();
+            this.txtAddress3 = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtAllergies = new System.Windows.Forms.TextBox();
@@ -59,13 +60,12 @@
             this.lblFlagText = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblErrorMsg = new System.Windows.Forms.Label();
-            this.pnlDOB = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3.SuspendLayout();
+            this.pnlDOB.SuspendLayout();
             this.pnlTitle.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            this.pnlDOB.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNHNumber
@@ -137,6 +137,32 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(601, 639);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
+            // pnlDOB
+            // 
+            this.pnlDOB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlDOB.Controls.Add(this.dtpDOB);
+            this.pnlDOB.Location = new System.Drawing.Point(293, 259);
+            this.pnlDOB.Name = "pnlDOB";
+            this.pnlDOB.Size = new System.Drawing.Size(304, 39);
+            this.pnlDOB.TabIndex = 21;
+            this.pnlDOB.Tag = "DOB";
+            // 
+            // dtpDOB
+            // 
+            this.dtpDOB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpDOB.Checked = false;
+            this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDOB.Location = new System.Drawing.Point(-3, 12);
+            this.dtpDOB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpDOB.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(304, 22);
+            this.dtpDOB.TabIndex = 12;
+            this.dtpDOB.Tag = "DOB";
+            // 
             // lblAddress3
             // 
             this.lblAddress3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -151,27 +177,19 @@
             this.lblAddress3.Text = "Address Line 3";
             this.lblAddress3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtAddress3
+            // lblAddress2
             // 
-            this.txtAddress3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAddress3.Location = new System.Drawing.Point(293, 559);
-            this.txtAddress3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAddress3.Multiline = true;
-            this.txtAddress3.Name = "txtAddress3";
-            this.txtAddress3.Size = new System.Drawing.Size(304, 77);
-            this.txtAddress3.TabIndex = 19;
-            this.txtAddress3.Tag = "Address Line 3";
-            // 
-            // txtAddress2
-            // 
-            this.txtAddress2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAddress2.Location = new System.Drawing.Point(293, 483);
-            this.txtAddress2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAddress2.Multiline = true;
-            this.txtAddress2.Name = "txtAddress2";
-            this.txtAddress2.Size = new System.Drawing.Size(304, 71);
-            this.txtAddress2.TabIndex = 17;
-            this.txtAddress2.Tag = "Address Line 2";
+            this.lblAddress2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress2.Location = new System.Drawing.Point(5, 481);
+            this.lblAddress2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAddress2.Name = "lblAddress2";
+            this.lblAddress2.Size = new System.Drawing.Size(280, 75);
+            this.lblAddress2.TabIndex = 18;
+            this.lblAddress2.Text = "Address Line 2";
+            this.lblAddress2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblAddress1
             // 
@@ -286,21 +304,6 @@
             this.lblTitle.Text = "Title *";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dtpDOB
-            // 
-            this.dtpDOB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpDOB.Checked = false;
-            this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDOB.Location = new System.Drawing.Point(-3, 12);
-            this.dtpDOB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpDOB.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
-            this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(304, 22);
-            this.dtpDOB.TabIndex = 12;
-            this.dtpDOB.Tag = "DOB";
-            // 
             // txtAddress1
             // 
             this.txtAddress1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -341,19 +344,27 @@
             this.comboTitle.TabIndex = 10;
             this.comboTitle.Tag = "Title";
             // 
-            // lblAddress2
+            // txtAddress2
             // 
-            this.lblAddress2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress2.Location = new System.Drawing.Point(5, 481);
-            this.lblAddress2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAddress2.Name = "lblAddress2";
-            this.lblAddress2.Size = new System.Drawing.Size(280, 75);
-            this.lblAddress2.TabIndex = 18;
-            this.lblAddress2.Text = "Address Line 2";
-            this.lblAddress2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtAddress2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAddress2.Location = new System.Drawing.Point(293, 483);
+            this.txtAddress2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddress2.Multiline = true;
+            this.txtAddress2.Name = "txtAddress2";
+            this.txtAddress2.Size = new System.Drawing.Size(304, 71);
+            this.txtAddress2.TabIndex = 17;
+            this.txtAddress2.Tag = "Address Line 2";
+            // 
+            // txtAddress3
+            // 
+            this.txtAddress3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAddress3.Location = new System.Drawing.Point(293, 559);
+            this.txtAddress3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddress3.Multiline = true;
+            this.txtAddress3.Name = "txtAddress3";
+            this.txtAddress3.Size = new System.Drawing.Size(304, 77);
+            this.txtAddress3.TabIndex = 19;
+            this.txtAddress3.Tag = "Address Line 3";
             // 
             // btnSubmit
             // 
@@ -507,17 +518,6 @@
             this.lblErrorMsg.Size = new System.Drawing.Size(684, 137);
             this.lblErrorMsg.TabIndex = 20;
             // 
-            // pnlDOB
-            // 
-            this.pnlDOB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlDOB.Controls.Add(this.dtpDOB);
-            this.pnlDOB.Location = new System.Drawing.Point(293, 259);
-            this.pnlDOB.Name = "pnlDOB";
-            this.pnlDOB.Size = new System.Drawing.Size(304, 39);
-            this.pnlDOB.TabIndex = 21;
-            this.pnlDOB.Tag = "DOB";
-            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -541,13 +541,13 @@
             this.Load += new System.EventHandler(this.RegisterForm_Load);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.pnlDOB.ResumeLayout(false);
             this.pnlTitle.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            this.pnlDOB.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

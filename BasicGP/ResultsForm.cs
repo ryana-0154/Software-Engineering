@@ -142,25 +142,32 @@ namespace BasicGP
                 case 1:
                     DataSet dataSetPrescriptions = DBAccess.getData("patientPresciptions", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
                     DataTable tablePrescriptions = dataSetPrescriptions.Tables[0];
-                    CheckForResults(tablePrescriptions, dgvAppointments);
+                    CheckForResults(tablePrescriptions, dgvPrescriptions);
                     break;
                 case 2:
                     DataSet dataSetResults = DBAccess.getData("testResults", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
                     DataTable tableResults = dataSetResults.Tables[0];
-                    CheckForResults(tableResults, dgvAppointments);
+                    CheckForResults(tableResults, dgvResults);
                     break;
                 default:
                     break;
             }
-
-            
-
-            
         }
 
+        private void PrescriptionClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //these will be found from the DB
+            string presciptionName = "Medication Placeholder";
+            string prescriptionDuration = "12";
+            //https://stackoverflow.com/questions/3036829/how-do-i-create-a-message-box-with-yes-no-choices-and-a-dialogresult
+            DialogResult result = MessageBox.Show("Would you like to extend: " + Environment.NewLine + presciptionName + " for another " + prescriptionDuration + " days.","Extend Prescription",MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                ExtendPrescription(sender,e);
+            }
+        }
         private void ExtendPrescription(object sender, DataGridViewCellEventArgs e)
         {
-            int prescriptionID = (int)dgvPrescriptions.Rows[e.RowIndex].Cells[0].Value;
 
         }
     }
