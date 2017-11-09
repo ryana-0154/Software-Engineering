@@ -13,6 +13,7 @@ namespace BasicGP
         private static SqlDataAdapter loginDataAdapter;
         private static SqlDataAdapter dataAdapter;
         private static SqlCommand sqlCommand;
+        private static SqlCommand loginSqlCommand;
 
 
         /// <summary>
@@ -42,8 +43,11 @@ namespace BasicGP
             DataSet loginDataSet;
             //Open a connection to the database inside DBAccess
             OpenConnection();
+            loginSqlCommand = new SqlCommand(Constants.checkLogin, DBConnection);
+            loginSqlCommand.Parameters.AddWithValue("@username", username);
+            loginSqlCommand.Parameters.AddWithValue("@password", password);
             //create the object dataAdapter to manipulate a table from the database specified by DBConnection
-            loginDataAdapter = new SqlDataAdapter($"SELECT * FROM users WHERE userName = '{username}' AND password = '{password}'", DBConnection);
+            loginDataAdapter = new SqlDataAdapter(loginSqlCommand);
             //Creat the dataSet
             loginDataSet = new DataSet();
             loginDataAdapter.Fill(loginDataSet);
@@ -81,7 +85,7 @@ namespace BasicGP
                             // Try to parse data[2] (ID) to an int32 and output as pID
                             Int32.TryParse(data[2], out pID);
                             // Instantiate an sqlCommand on the DBConnection
-                            sqlCommand = new SqlCommand("SELECT * FROM patients WHERE NationalHealthNumber = @id", DBConnection);
+                            sqlCommand = new SqlCommand(Constants.getPatientByID, DBConnection);
                             // add parameters to the sql command (Prevents again SQLI)
                             sqlCommand.Parameters.AddWithValue("@id", pID);
                             break;
@@ -90,7 +94,7 @@ namespace BasicGP
                             DateTime dateOfBirth = DateTime.Parse(data[3]);
 
                             string name = data[2];
-                            sqlCommand = new SqlCommand("SELECT * FROM patients WHERE name = @name AND DOB = @DOB", DBConnection);
+                            sqlCommand = new SqlCommand(Constants.getPatientByDOB, DBConnection);
                             sqlCommand.Parameters.AddWithValue("@name", name);
                             sqlCommand.Parameters.AddWithValue("@DOB", dateOfBirth);
                             break;
@@ -105,7 +109,7 @@ namespace BasicGP
                     // Try to parse data[1] to an int32 and output as pID
                     Int32.TryParse(data[1], out pID);
                     // Instantiate an sqlCommand on the DBConnection
-                    sqlCommand = new SqlCommand("SELECT * FROM appointment WHERE NationalHealthNumber = @id", DBConnection);
+                    sqlCommand = new SqlCommand(Constants.getAppointments, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
                     // Add the value of the sqlCommand to the sqlDataAdapter
@@ -116,7 +120,7 @@ namespace BasicGP
                     // Try to parse data[1] to an int32 and output as pID
                     Int32.TryParse(data[1], out pID);
                     // Instantiate an sqlCommand on the DBConnection
-                    sqlCommand = new SqlCommand("SELECT * FROM testresults WHERE NationalHealthNumber = @id", DBConnection);
+                    sqlCommand = new SqlCommand(Constants.getTestResults, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
                     // Add the value of the sqlCommand to the sqlDataAdapter
@@ -127,7 +131,7 @@ namespace BasicGP
                     // Try to parse data[1] to an int32 and output as pID
                     Int32.TryParse(data[1], out pID);
                     // Instantiate an sqlCommand on the DBConnection
-                    sqlCommand = new SqlCommand("SELECT * FROM prescriptions WHERE NationalHealthNumber = @id", DBConnection);
+                    sqlCommand = new SqlCommand(Constants.getPrescriptions, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
                     // Add the value of the sqlCommand to the sqlDataAdapter
@@ -138,7 +142,7 @@ namespace BasicGP
                     // Try to parse data[1] to an int32 and output as pID
                     Int32.TryParse(data[1], out pID);
                     // Instantiate an sqlCommand on the DBConnection
-                    sqlCommand = new SqlCommand("SELECT * FROM availability WHERE NationalHealthNumber = @id", DBConnection);
+                    sqlCommand = new SqlCommand(Constants.getAvailability, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
                     // Add the value of the sqlCommand to the sqlDataAdapter
@@ -149,7 +153,7 @@ namespace BasicGP
                     // Try to parse data[1] to an int32 and output as pID
                     Int32.TryParse(data[1], out pID);
                     // Instantiate an sqlCommand on the DBConnection
-                    sqlCommand = new SqlCommand("SELECT * FROM duty WHERE NationalHealthNumber = @id", DBConnection);
+                    sqlCommand = new SqlCommand(Constants.getDuty, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
                     // Add the value of the sqlCommand to the sqlDataAdapter
@@ -160,7 +164,7 @@ namespace BasicGP
                     // Try to parse data[1] to an int32 and output as prescriptionID
                     Int32.TryParse(data[1], out prescriptionID);
                     // Instantiate an sqlCommand on the DBConnection
-                    sqlCommand = new SqlCommand("SELECT duration FROM prescriptions WHERE prescriptionID = @id", DBConnection);
+                    sqlCommand = new SqlCommand(Constants.getPrescriptionDuration, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", prescriptionID);
                     // Add the value of the sqlCommand to the sqlDataAdapter
@@ -201,8 +205,7 @@ namespace BasicGP
                 case "registerPatient":
                     // Instantiate an sqlCommand on the DBConnection
                     // TODO: Concat Address
-                    SqlCommand sqlCommand = new SqlCommand("INSERT INTO patients (NationalHealthNumber, Name, Title, DOB, PhoneNumber, Address, Diabetes, Smoker, Asthma, Allergies) " +
-                        "VALUES (@NHNumber, @name, @title, @DOB, @phoneNumber, @address, @diabetes, @smoker, @asthma, @allergies)", DBConnection);
+                    SqlCommand sqlCommand = new SqlCommand(Constants.postPatient, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@NHNumber", data[1]);
                     sqlCommand.Parameters.AddWithValue("@Name", data[2]);
@@ -228,8 +231,7 @@ namespace BasicGP
                     count = 0;
                     break;
                 case "newAppointment":
-                    sqlCommand = new SqlCommand("INSERT INTO appointment (AppointmentID, EmployeeID, NationalHealthNumber, Date, Time, Description" +
-                        "Status) VALUES (@AppointmentID, @EmployeeID, @NHNumber, @Date, @Time, @Description, @Status)", DBConnection);
+                    sqlCommand = new SqlCommand(Constants.postAppointment, DBConnection);
                     // Add params to the above SQL query (Prevents against SQLI)
                     sqlCommand.Parameters.AddWithValue("@AppointmentID", data[1]);
                     sqlCommand.Parameters.AddWithValue("@EmployeeID", data[2]);
