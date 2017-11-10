@@ -262,5 +262,12 @@ namespace BasicGP
             return dataSet;
         }
 
+        public static void updateData(params string[] data)
+        {
+            sqlCommand = new SqlCommand(Constants.extendPrescriptionDuration, DBConnection);
+            sqlCommand.Parameters.AddWithValue("@Date", DateTime.Today);
+            sqlCommand.Parameters.AddWithValue("@prescriptionID", data[1]);
+            //return 
+        }
     }
 }
