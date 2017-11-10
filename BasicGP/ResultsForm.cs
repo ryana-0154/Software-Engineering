@@ -18,7 +18,6 @@ namespace BasicGP
         }
         private void ResultsForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void picLogo_Click(object sender, EventArgs e)
@@ -90,9 +89,10 @@ namespace BasicGP
         {
             dgvPatients.Visible = false;
             tcResults.Visible = true;
-
+            lblPatientName.Visible = true;
+            lblPatientName.Text = dgvPatients.Rows[e.RowIndex].Cells[1].Value.ToString();
             NHNumber = e.RowIndex;
-
+            
             string[] data = new string[1];
             //https://stackoverflow.com/questions/5571963/how-to-get-datagridview-cell-value-in-messagebox
             //finds the NHNumber of whichever row was clicked on
@@ -132,7 +132,7 @@ namespace BasicGP
 
         private void tcResults_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            switch(e.TabPageIndex)
+            switch (e.TabPageIndex)
             {
                 case 0:
                     DataSet dataSetAppointments = DBAccess.getData("patientAppointments", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
@@ -168,6 +168,11 @@ namespace BasicGP
             }
         }
         private void ExtendPrescription(int prescriptionID)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
