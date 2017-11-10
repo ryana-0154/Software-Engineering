@@ -157,16 +157,17 @@ namespace BasicGP
         private void PrescriptionClick(object sender, DataGridViewCellEventArgs e)
         {
             //these will be found from the DB
+            int prescriptionID = 3;
             string presciptionName = "Medication Placeholder";
             string prescriptionDuration = "12";
             //https://stackoverflow.com/questions/3036829/how-do-i-create-a-message-box-with-yes-no-choices-and-a-dialogresult
             DialogResult result = MessageBox.Show("Would you like to extend: " + Environment.NewLine + presciptionName + " for another " + prescriptionDuration + " days.","Extend Prescription",MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                ExtendPrescription(sender,e);
+                ExtendPrescription(prescriptionID);
             }
         }
-        private void ExtendPrescription(object sender, DataGridViewCellEventArgs e)
+        private void ExtendPrescription(int prescriptionID)
         {
 
         }
