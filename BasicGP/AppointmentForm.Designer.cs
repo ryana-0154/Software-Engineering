@@ -67,15 +67,12 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.693F));
             this.tableLayoutPanel4.Controls.Add(this.lblTime, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.lblDate, 0, 0);
-<<<<<<< HEAD
             this.tableLayoutPanel4.Controls.Add(this.dtpDate, 1, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(26, 112);
-=======
             this.tableLayoutPanel4.Controls.Add(this.pnlTime, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.pnlDate, 1, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(35, 138);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4);
->>>>>>> cfe14fa3054b39248d3d7f33fb40b2891e6cdfd9
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.55245F));
@@ -91,7 +88,6 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(451, 202);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
-<<<<<<< Updated upstream
             // dtpTime
             // 
             this.dtpTime.Checked = false;
@@ -105,8 +101,6 @@
             this.dtpTime.TabIndex = 21;
             this.dtpTime.Tag = "DOB";
             // 
-=======
->>>>>>> Stashed changes
             // lblTime
             // 
             this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -167,13 +161,10 @@
             this.dtpDate.Checked = false;
             this.dtpDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-<<<<<<< HEAD
             this.dtpDate.Location = new System.Drawing.Point(220, 3);
             this.dtpDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
             this.dtpDate.Location = new System.Drawing.Point(0, 0);
             this.dtpDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> cfe14fa3054b39248d3d7f33fb40b2891e6cdfd9
             this.dtpDate.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(228, 20);
@@ -202,13 +193,10 @@
             this.tableLayoutPanel5.Controls.Add(this.lblSName, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.lblFName, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.lblTitleA, 0, 0);
-<<<<<<< HEAD
             this.tableLayoutPanel5.Location = new System.Drawing.Point(26, 362);
-=======
             this.tableLayoutPanel5.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(35, 446);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4);
->>>>>>> cfe14fa3054b39248d3d7f33fb40b2891e6cdfd9
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.55245F));
@@ -243,8 +231,7 @@
             this.txtSName.Size = new System.Drawing.Size(228, 20);
             this.txtSName.TabIndex = 8;
             this.txtSName.Tag = "Surname";
-            // 
-<<<<<<< HEAD
+            //
             // comboTitle
             // 
             this.comboTitle.DisplayMember = "Mr";
@@ -264,8 +251,6 @@
             this.comboTitle.TabIndex = 10;
             this.comboTitle.Tag = "Title";
             // 
-=======
->>>>>>> cfe14fa3054b39248d3d7f33fb40b2891e6cdfd9
             // lblSName
             // 
             this.lblSName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -376,12 +361,9 @@
             this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLight;
-<<<<<<< HEAD
             this.btnSubmit.Location = new System.Drawing.Point(748, 453);
-=======
             this.btnSubmit.Location = new System.Drawing.Point(1130, 652);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
->>>>>>> cfe14fa3054b39248d3d7f33fb40b2891e6cdfd9
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(102, 66);
             this.btnSubmit.TabIndex = 9;
@@ -417,12 +399,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1037, 692);
-=======
             this.ClientSize = new System.Drawing.Size(1381, 852);
             this.Controls.Add(this.lblEmployee);
->>>>>>> cfe14fa3054b39248d3d7f33fb40b2891e6cdfd9
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.tableLayoutPanel6);
