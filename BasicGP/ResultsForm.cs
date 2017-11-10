@@ -77,7 +77,7 @@ namespace BasicGP
                 }
             }
         }
-
+        
         int NHNumber;
 
         /// <summary>
@@ -90,7 +90,9 @@ namespace BasicGP
             dgvPatients.Visible = false;
             tcResults.Visible = true;
             lblPatientName.Visible = true;
-            lblPatientName.Text = dgvPatients.Rows[e.RowIndex].Cells[1].Value.ToString();
+            
+            // TODO : Trim first element
+            lblPatientName.Text = string.Join(", ", dgvPatients.Rows[e.RowIndex].Cells[2].Value.ToString() + dgvPatients.Rows[e.RowIndex].Cells[1].Value.ToString());
             NHNumber = e.RowIndex;
             
             string[] data = new string[1];

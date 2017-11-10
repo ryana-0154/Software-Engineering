@@ -285,7 +285,7 @@
             // 
             this.lblPatientName.AutoSize = true;
             this.lblPatientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatientName.Location = new System.Drawing.Point(815, 111);
+            this.lblPatientName.Location = new System.Drawing.Point(721, 113);
             this.lblPatientName.Name = "lblPatientName";
             this.lblPatientName.Size = new System.Drawing.Size(110, 20);
             this.lblPatientName.TabIndex = 14;

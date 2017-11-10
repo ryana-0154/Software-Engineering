@@ -41,10 +41,13 @@ namespace BasicGP
         {
             bool result = false;
             bool[] valid = new bool[6];
-            valid[2] = Utilities.TitleValidation(comboTitle);
-            valid[3] = Utilities.NameValidation(txtFName);
-            valid[4] = Utilities.NameValidation(txtSName);
-            valid[5] = Utilities.DescriptionValidation(txtDescription);
+            valid[0] = false;//this will be the nhnumber
+            valid[1] = Utilities.DateBookingValidation(dtpDate);
+            valid[2] = Utilities.TimeBookingValidation(dtpTime);
+            valid[3] = Utilities.TitleValidation(comboTitle);
+            valid[4] = Utilities.NameValidation(txtFName);
+            valid[5] = Utilities.NameValidation(txtSName);
+            valid[6] = Utilities.DescriptionValidation(txtDescription);
 
             return result;
         }
