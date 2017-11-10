@@ -113,28 +113,24 @@ namespace BasicGP
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
                     break;
-                // TODO:  Implement this case (TestResults)
                 case "testResults":
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getTestResults, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
                     break;
-                // TODO:  Implement this case (PatientPresciptions)
                 case "patientPresciptions":
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getPrescriptions, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
                     break;
-                // TODO:  Implement this case (Availability)
                 case "availability":
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getAvailability, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
                     break;
-                // TODO: Implement this case (Duty
                 case "duty":
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getDuty, DBConnection);
@@ -147,10 +143,8 @@ namespace BasicGP
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
                     break;
-                // TODO: Figure out how to defualt this
                 default:
                     dataSet = null;
-                    Console.WriteLine("default");
                     break;
             }
             // Add the value of the sqlCommand to the sqlDataAdapter
