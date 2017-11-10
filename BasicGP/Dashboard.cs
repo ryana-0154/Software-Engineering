@@ -46,5 +46,11 @@ namespace BasicGP
             Visible = false;
             new AppointmentForm().Visible = true;
         }
+
+        private void btnAvailability_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new AvailabilityForm().Visible = true;
+        }
     }
 }

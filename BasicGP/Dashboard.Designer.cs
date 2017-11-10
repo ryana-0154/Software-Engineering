@@ -128,6 +128,7 @@
             this.btnAvailability.TabIndex = 1;
             this.btnAvailability.Text = "Check Availability";
             this.btnAvailability.UseVisualStyleBackColor = false;
+            this.btnAvailability.Click += new System.EventHandler(this.btnAvailability_Click);
             // 
             // Dashboard
             // 
