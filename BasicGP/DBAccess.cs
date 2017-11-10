@@ -69,12 +69,16 @@ namespace BasicGP
             dataSet = null;
             dataAdapter = null;
             int pID;
+            int findID;
 
             // Open the DB Connection
             OpenConnection();
-            
+
+            // Try to parse data[1] to an int32 and output as pID
+            Int32.TryParse(data[1], out pID);
+
             // Switch statement based on what is in data[0]
-            switch(data[0])
+            switch (data[0])
             {
                 case "findPatient":
 
@@ -83,11 +87,11 @@ namespace BasicGP
                     {
                         case "id":
                             // Try to parse data[2] (ID) to an int32 and output as pID
-                            Int32.TryParse(data[2], out pID);
+                            Int32.TryParse(data[2], out findID);
                             // Instantiate an sqlCommand on the DBConnection
                             sqlCommand = new SqlCommand(Constants.getPatientByID, DBConnection);
                             // add parameters to the sql command (Prevents again SQLI)
-                            sqlCommand.Parameters.AddWithValue("@id", pID);
+                            sqlCommand.Parameters.AddWithValue("@id", findID);
                             break;
                         case "name&dob":
                             Console.WriteLine(data[3]);
@@ -102,81 +106,49 @@ namespace BasicGP
                             //dataSet = null;
                             break;
                     }
-                    // Add the value of the sqlCommand to the sqlDataAdapter
-                    dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
                 case "patientAppointments":
-                    // Try to parse data[1] to an int32 and output as pID
-                    Int32.TryParse(data[1], out pID);
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getAppointments, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
-                    // Add the value of the sqlCommand to the sqlDataAdapter
-                    dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
-                // TODO:  Implement this case (TestResults)
                 case "testResults":
-                    // Try to parse data[1] to an int32 and output as pID
-                    Int32.TryParse(data[1], out pID);
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getTestResults, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
-                    // Add the value of the sqlCommand to the sqlDataAdapter
-                    dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
-                // TODO:  Implement this case (PatientPresciptions)
                 case "patientPresciptions":
-                    // Try to parse data[1] to an int32 and output as pID
-                    Int32.TryParse(data[1], out pID);
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getPrescriptions, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
-                    // Add the value of the sqlCommand to the sqlDataAdapter
-                    dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
-                // TODO:  Implement this case (Availability)
                 case "availability":
-                    // Try to parse data[1] to an int32 and output as pID
-                    Int32.TryParse(data[1], out pID);
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getAvailability, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
-                    // Add the value of the sqlCommand to the sqlDataAdapter
-                    dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
-                // TODO: Implement this case (Duty
                 case "duty":
-                    // Try to parse data[1] to an int32 and output as pID
-                    Int32.TryParse(data[1], out pID);
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getDuty, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
-                    // Add the value of the sqlCommand to the sqlDataAdapter
-                    dataAdapter = new SqlDataAdapter(sqlCommand);
                     break;
                 case "prescriptionDuration":
-                    int prescriptionID;
-                    // Try to parse data[1] to an int32 and output as prescriptionID
-                    Int32.TryParse(data[1], out prescriptionID);
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getPrescriptionDuration, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
-                    sqlCommand.Parameters.AddWithValue("@id", prescriptionID);
-                    // Add the value of the sqlCommand to the sqlDataAdapter
-                    dataAdapter = new SqlDataAdapter(sqlCommand);
+                    sqlCommand.Parameters.AddWithValue("@id", pID);
                     break;
-                // TODO: Figure out how to defualt this
                 default:
                     dataSet = null;
-                    Console.WriteLine("default");
                     break;
             }
-
+            // Add the value of the sqlCommand to the sqlDataAdapter
+            dataAdapter = new SqlDataAdapter(sqlCommand);
             // create a data set
             dataSet = new DataSet();
             // Fill the dataAdapter with the data from the dataSet
