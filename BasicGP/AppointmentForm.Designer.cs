@@ -29,25 +29,32 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.dtpTime = new System.Windows.Forms.DateTimePicker();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
+            this.pnlTime = new System.Windows.Forms.Panel();
+            this.dtpTime = new System.Windows.Forms.DateTimePicker();
+            this.pnlDate = new System.Windows.Forms.Panel();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.txtFName = new System.Windows.Forms.TextBox();
             this.txtSName = new System.Windows.Forms.TextBox();
-            this.comboTitle = new System.Windows.Forms.ComboBox();
             this.lblSName = new System.Windows.Forms.Label();
             this.lblFName = new System.Windows.Forms.Label();
             this.lblTitleA = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.comboTitle = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.lblEmployee = new System.Windows.Forms.Label();
             this.tableLayoutPanel4.SuspendLayout();
+            this.pnlTime.SuspendLayout();
+            this.pnlDate.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -58,10 +65,10 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.307F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.693F));
-            this.tableLayoutPanel4.Controls.Add(this.dtpTime, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.lblTime, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.lblDate, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.dtpDate, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.pnlTime, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.pnlDate, 1, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(35, 138);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -79,6 +86,7 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(601, 249);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
+<<<<<<< Updated upstream
             // dtpTime
             // 
             this.dtpTime.Checked = false;
@@ -92,6 +100,8 @@
             this.dtpTime.TabIndex = 21;
             this.dtpTime.Tag = "DOB";
             // 
+=======
+>>>>>>> Stashed changes
             // lblTime
             // 
             this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -120,19 +130,47 @@
             this.lblDate.Text = "Date";
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnlTime
+            // 
+            this.pnlTime.Controls.Add(this.dtpTime);
+            this.pnlTime.Location = new System.Drawing.Point(293, 121);
+            this.pnlTime.Name = "pnlTime";
+            this.pnlTime.Size = new System.Drawing.Size(304, 81);
+            this.pnlTime.TabIndex = 13;
+            // 
+            // dtpTime
+            // 
+            this.dtpTime.Checked = false;
+            this.dtpTime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpTime.Location = new System.Drawing.Point(0, 0);
+            this.dtpTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpTime.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
+            this.dtpTime.Name = "dtpTime";
+            this.dtpTime.Size = new System.Drawing.Size(304, 22);
+            this.dtpTime.TabIndex = 22;
+            this.dtpTime.Tag = "DOB";
+            // 
+            // pnlDate
+            // 
+            this.pnlDate.Controls.Add(this.dtpDate);
+            this.pnlDate.Location = new System.Drawing.Point(293, 4);
+            this.pnlDate.Name = "pnlDate";
+            this.pnlDate.Size = new System.Drawing.Size(304, 73);
+            this.pnlDate.TabIndex = 14;
+            // 
             // dtpDate
             // 
             this.dtpDate.Checked = false;
             this.dtpDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(293, 3);
+            this.dtpDate.Location = new System.Drawing.Point(0, 0);
             this.dtpDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpDate.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(304, 22);
             this.dtpDate.TabIndex = 12;
             this.dtpDate.Tag = "DOB";
-            this.dtpDate.Value = new System.DateTime(2017, 11, 4, 0, 0, 0, 0);
             // 
             // lblTitle
             // 
@@ -154,10 +192,10 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.693F));
             this.tableLayoutPanel5.Controls.Add(this.txtFName, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.txtSName, 1, 2);
-            this.tableLayoutPanel5.Controls.Add(this.comboTitle, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.lblSName, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.lblFName, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.lblTitleA, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(35, 446);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -194,25 +232,6 @@
             this.txtSName.Size = new System.Drawing.Size(304, 22);
             this.txtSName.TabIndex = 8;
             this.txtSName.Tag = "Surname";
-            // 
-            // comboTitle
-            // 
-            this.comboTitle.DisplayMember = "Mr";
-            this.comboTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboTitle.FormattingEnabled = true;
-            this.comboTitle.Items.AddRange(new object[] {
-            "Mrs",
-            "Miss",
-            "Mr",
-            "Master",
-            "Dr"});
-            this.comboTitle.Location = new System.Drawing.Point(293, 3);
-            this.comboTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboTitle.Name = "comboTitle";
-            this.comboTitle.Size = new System.Drawing.Size(304, 24);
-            this.comboTitle.TabIndex = 10;
-            this.comboTitle.Tag = "Title";
             // 
             // lblSName
             // 
@@ -255,6 +274,33 @@
             this.lblTitleA.TabIndex = 9;
             this.lblTitleA.Text = "Title *";
             this.lblTitleA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.comboTitle);
+            this.panel1.Location = new System.Drawing.Point(293, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(304, 63);
+            this.panel1.TabIndex = 10;
+            // 
+            // comboTitle
+            // 
+            this.comboTitle.DisplayMember = "Mr";
+            this.comboTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTitle.FormattingEnabled = true;
+            this.comboTitle.Items.AddRange(new object[] {
+            "Mrs",
+            "Miss",
+            "Mr",
+            "Master",
+            "Dr"});
+            this.comboTitle.Location = new System.Drawing.Point(0, 0);
+            this.comboTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboTitle.Name = "comboTitle";
+            this.comboTitle.Size = new System.Drawing.Size(304, 24);
+            this.comboTitle.TabIndex = 10;
+            this.comboTitle.Tag = "Title";
             // 
             // tableLayoutPanel6
             // 
@@ -303,7 +349,7 @@
             this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSubmit.Location = new System.Drawing.Point(997, 558);
+            this.btnSubmit.Location = new System.Drawing.Point(1130, 652);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(136, 81);
@@ -325,11 +371,24 @@
             this.picLogo.TabStop = false;
             this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
             // 
+            // lblEmployee
+            // 
+            this.lblEmployee.AutoSize = true;
+            this.lblEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployee.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblEmployee.Location = new System.Drawing.Point(38, 395);
+            this.lblEmployee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmployee.Name = "lblEmployee";
+            this.lblEmployee.Size = new System.Drawing.Size(169, 39);
+            this.lblEmployee.TabIndex = 21;
+            this.lblEmployee.Text = "Employee";
+            // 
             // AppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1381, 852);
+            this.Controls.Add(this.lblEmployee);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.tableLayoutPanel6);
@@ -343,8 +402,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AppointmentForm";
             this.tableLayoutPanel4.ResumeLayout(false);
+            this.pnlTime.ResumeLayout(false);
+            this.pnlDate.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
@@ -356,7 +418,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.DateTimePicker dtpTime;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.DateTimePicker dtpDate;
@@ -373,5 +434,10 @@
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.DateTimePicker dtpTime;
+        private System.Windows.Forms.Panel pnlTime;
+        private System.Windows.Forms.Panel pnlDate;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblEmployee;
     }
 }
