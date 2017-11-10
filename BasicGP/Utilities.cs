@@ -35,6 +35,12 @@ namespace BasicGP
                 case "pnlDOB":
                     errorMsg += userInput.Tag + " - Field must before current day." + Environment.NewLine;
                     break;
+                case "pnlBookedDate":
+                    errorMsg += userInput.Tag + " - Field must in the future." + Environment.NewLine;
+                    break;
+                case "pnlBookedTime":
+                    errorMsg += userInput.Tag + " - Field must between 0800 and 1700." + Environment.NewLine;
+                    break;
                 case "txtPhoneNumber":
                     errorMsg += userInput.Tag + " - Field must be 11 digits and numbers only." + Environment.NewLine;
                     break;
@@ -85,6 +91,31 @@ namespace BasicGP
         public static bool NameValidation(TextBox userInput)
         {
             if ((userInput.Text.Length <= 16 && userInput.Text.Length > 0) && Regex.IsMatch(userInput.Text, @"^[\p{L}]+$"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        // Check 
+        public static bool TimeBookingValidation (DateTimePicker dtpTime)
+        {
+            //should only be 20 minutes
+            if (true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        public static bool DateBookingValidation(DateTimePicker dtpDate)
+        {
+            if ((DateTime.Compare(dtpDate.Value, DateTime.Today)) >= 0)
             {
                 return true;
             }

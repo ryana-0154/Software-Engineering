@@ -108,6 +108,7 @@ C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP
 B:\Win Folders\Documents\Developing\BasicGP\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.AppointmentForm.resources
 C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.AppointmentForm.resources
 C:\Users\ryan\Documents\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.AvailabilityForm.resources
+<<<<<<< Updated upstream
 K:\mod003263-software-engineering\BasicGP\bin\Debug\OverGPDB.mdf
 K:\mod003263-software-engineering\BasicGP\bin\Debug\OverGPDB_log.ldf
 K:\mod003263-software-engineering\BasicGP\bin\Debug\BasicGP.exe.config
@@ -124,3 +125,6 @@ K:\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.ResultsForm.resource
 K:\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.csproj.GenerateResource.Cache
 K:\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.exe
 K:\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.pdb
+=======
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.AvailabilityForm.resources
+>>>>>>> Stashed changes

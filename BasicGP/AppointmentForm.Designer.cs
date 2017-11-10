@@ -91,7 +91,6 @@
             this.dtpTime.Size = new System.Drawing.Size(304, 22);
             this.dtpTime.TabIndex = 21;
             this.dtpTime.Tag = "DOB";
-            this.dtpTime.Value = new System.DateTime(2017, 11, 4, 0, 0, 0, 0);
             // 
             // lblTime
             // 
