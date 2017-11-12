@@ -236,10 +236,20 @@ namespace BasicGP
 
         public static void updateData(params string[] data)
         {
+            OpenConnection();
             sqlCommand = new SqlCommand(Constants.extendPrescriptionDuration, DBConnection);
             sqlCommand.Parameters.AddWithValue("@Date", DateTime.Today);
-            sqlCommand.Parameters.AddWithValue("@prescriptionID", data[1]);
-            //return 
+            sqlCommand.Parameters.AddWithValue("@prescriptionID", data[0]);
+            int count = sqlCommand.ExecuteNonQuery();
+
+            if (count > 0)
+            {
+                RegisterForm.showMessage("Success!", "Prescription was extended sucessfully!");
+            }
+            else
+            {
+                RegisterForm.showMessage("Error!", "There was an error and the prescription was not extended.");
+            }
         }
     }
 }

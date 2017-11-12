@@ -93,6 +93,7 @@ namespace BasicGP
             if ((userInput.Text.Length <= 16 && userInput.Text.Length > 0) && Regex.IsMatch(userInput.Text, @"^[\p{L}]+$"))
             {
                 return true;
+                
             }
             else
             {

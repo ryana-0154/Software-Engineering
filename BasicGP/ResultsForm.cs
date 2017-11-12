@@ -159,24 +159,31 @@ namespace BasicGP
         private void PrescriptionClick(object sender, DataGridViewCellEventArgs e)
         {
             //these will be found from the DB
-            int prescriptionID = 3;
-            string presciptionName = "Medication Placeholder";
-            string prescriptionDuration = "12";
-            //https://stackoverflow.com/questions/3036829/how-do-i-create-a-message-box-with-yes-no-choices-and-a-dialogresult
-            DialogResult result = MessageBox.Show("Would you like to extend: " + Environment.NewLine + presciptionName + " for another " + prescriptionDuration + " days.","Extend Prescription",MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            int prescriptionID;
+            int prescriptionDuration;
+            string presciptionName = dgvPrescriptions.Rows[e.RowIndex].Cells[1].Value.ToString();
+            int.TryParse(dgvPrescriptions.Rows[e.RowIndex].Cells[0].Value.ToString(), out prescriptionID);
+            int.TryParse(dgvPrescriptions.Rows[e.RowIndex].Cells[5].Value.ToString(), out prescriptionDuration);
+            DateTime prescriptionDate = (DateTime)dgvPrescriptions.Rows[e.RowIndex].Cells[4].Value;
+            //if the duration of the prescription has ran out
+            if (DateTime.Compare(prescriptionDate.AddDays(prescriptionDuration), DateTime.Today) < 0)
             {
-                ExtendPrescription(prescriptionID);
+                //https://stackoverflow.com/questions/3036829/how-do-i-create-a-message-box-with-yes-no-choices-and-a-dialogresult
+                DialogResult result = MessageBox.Show("Would you like to extend: " + Environment.NewLine + presciptionName + " for another " + prescriptionDuration + " days.", "Extend Prescription", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    ExtendPrescription(prescriptionID);
+                }
             }
+            else
+            {
+                MessageBox.Show("Cannot extend this prescription as it is still active.");
+            }
+
         }
         private void ExtendPrescription(int prescriptionID)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            DBAccess.updateData(prescriptionID.ToString());
         }
     }
 }
