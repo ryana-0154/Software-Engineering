@@ -29,55 +29,41 @@ namespace BasicGP
 
         private void txtInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            string[] data;
             DataSet dataSet;
             DataTable table;
-            if (rdbNHNumber.Checked)
+
+            // TODO: Send this all to backend
+            //If the return key is pressed, sent a login button click event
+            if (e.KeyChar == (char)13)
             {
-                // TODO: Send this all to backend
-                //If the return key is pressed, sent a login button click event
-                if (e.KeyChar == (char)13)
+                // Define a dataSet from DBAccess with the SQL statement
+                if (rdbNHNumber.Checked)
                 {
-                    data = new string[1];
-                    // Define a dataSet from DBAccess with the SQL statement
                     dataSet = DBAccess.getData("findPatient", "id", txtInput.Text);
-                    //Define a datatable with the tables from the dataset return
-                    table = dataSet.Tables[0];
-
-                    Console.WriteLine(table.Rows.Count);
-
-                    if (table.Rows.Count > 0)
-                    {
-                        dgvPatients.DataSource = table;
-                    }
-                    else
-                    {
-                        MessageBox.Show("No data was found");
-                    }
                 }
-            } else if (radioButton2.Checked) {
-                if (e.KeyChar == (char)13)
-                {
-                    data = new string[1];
-                    // Define a dataSet from DBAccess with the SQL statement
+                //and therefore the other button is checked
+                else
+                {// Define a dataSet from DBAccess with the SQL statement
                     dataSet = DBAccess.getData("findPatient", "name&dob", txtInput.Text, dtpDOB.Text);
-                    //Define a datatable with the tables from the dataset return
-                    table = dataSet.Tables[0];
-
-                    Console.WriteLine(table.Rows.Count);
-
-                    if (table.Rows.Count > 0)
-                    {
-                        dgvPatients.DataSource = table;
-                    }
-                    else
-                    {
-                        MessageBox.Show("No data was found");
-                    }
                 }
+                //Define a datatable with the tables from the dataset return
+                table = dataSet.Tables[0];
+
+                Console.WriteLine(table.Rows.Count);
+
+                if (table.Rows.Count > 0)
+                {
+                    dgvPatients.DataSource = table;
+                }
+                else
+                {
+                    MessageBox.Show("No data was found");
+                }
+
             }
         }
-        
+
+
         int NHNumber;
 
         /// <summary>
@@ -87,21 +73,21 @@ namespace BasicGP
         /// <param name="e"></param>
         private void PatientSelect(object sender, DataGridViewCellEventArgs e)
         {
+            //TODO: THERE IS BUG WHEN YOU DOUBLE CLICK MIDDLE LINE
             dgvPatients.Visible = false;
             tcResults.Visible = true;
             lblPatientName.Visible = true;
             
-            // TODO : Trim first element
-            lblPatientName.Text = string.Join(", ", dgvPatients.Rows[e.RowIndex].Cells[2].Value.ToString() + dgvPatients.Rows[e.RowIndex].Cells[1].Value.ToString());
+            lblPatientName.Text = dgvPatients.Rows[e.RowIndex].Cells[2].Value.ToString().TrimEnd() +" " + dgvPatients.Rows[e.RowIndex].Cells[1].Value.ToString();
             NHNumber = e.RowIndex;
-            
+
             string[] data = new string[1];
             //https://stackoverflow.com/questions/5571963/how-to-get-datagridview-cell-value-in-messagebox
             //finds the NHNumber of whichever row was clicked on
             DataSet dataSetAppointments = DBAccess.getData("patientAppointments", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
             DataTable tableAppointments = dataSetAppointments.Tables[0];
             CheckForResults(tableAppointments, dgvAppointments);
-            
+
             Console.WriteLine(tableAppointments.Rows.Count);
 
         }
@@ -184,6 +170,11 @@ namespace BasicGP
         private void ExtendPrescription(int prescriptionID)
         {
             DBAccess.updateData(prescriptionID.ToString());
+        }
+
+        private void dgvAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

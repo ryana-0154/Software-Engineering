@@ -31,11 +31,11 @@ namespace BasicGP
             appointmentDetails[2] = comboTitle.Text;
             appointmentDetails[3] = txtFName + " " + txtSName;
             appointmentDetails[4] = txtDescription.Text;
-          
+
             // TODO: Fix this
             //DBAccess.postData("newAppointment",);
-            
-            Utilities.toDashboard(sender, e,this);
+
+            Utilities.toDashboard(sender, e, this);
         }
         private bool CheckValidation()
         {
@@ -50,6 +50,45 @@ namespace BasicGP
             valid[6] = Utilities.DescriptionValidation(txtDescription);
 
             return result;
+        }
+
+        private void AppointmentForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this appointment?", "Delete appointment", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                //DBAccess.Delete("deleteAppointment", txtNHNumber.Text, dtpDate.Value, dtpTime.Value);
+            }
+        }
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DataSet dataSet;
+            DataTable table;
+
+            if (e.KeyChar == (char)13)
+            {
+                // Define a dataSet from DBAccess with the SQL statement
+
+                dataSet = DBAccess.getData("findPatient", "id", txtSearch.Text);
+                //Define a datatable with the tables from the dataset return
+                table = dataSet.Tables[0];
+
+                Console.WriteLine(table.Rows.Count);
+
+                if (table.Rows.Count > 0)
+                {
+                    dgvAppointments.DataSource = table;
+                }
+                else
+                {
+                    MessageBox.Show("No data was found");
+                }
+            }
         }
     }
 }
