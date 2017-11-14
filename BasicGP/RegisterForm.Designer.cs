@@ -1,4 +1,6 @@
-﻿namespace BasicGP
+﻿using System;
+
+namespace BasicGP
 {
     partial class RegisterForm
     {
@@ -157,11 +159,13 @@
             this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDOB.Location = new System.Drawing.Point(-3, 12);
             this.dtpDOB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpDOB.MaxDate = new System.DateTime(2017, 11, 14, 0, 0, 0, 0);
             this.dtpDOB.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(304, 22);
             this.dtpDOB.TabIndex = 12;
             this.dtpDOB.Tag = "DOB";
+            this.dtpDOB.Value = new System.DateTime(2017, 11, 14, 0, 0, 0, 0);
             // 
             // lblAddress3
             // 

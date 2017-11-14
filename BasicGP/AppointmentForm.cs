@@ -32,11 +32,14 @@ namespace BasicGP
             appointmentDetails[4] = txtFName;
             appointmentDetails[5] = txtSName;
             appointmentDetails[6] = txtDescription;
-            CheckValidation(appointmentDetails);
+            if (CheckValidation(appointmentDetails))
+            {
+                DBAccess.postData("newAppointment", appointmentDetails[0].Text, appointmentDetails[1].ToString(), appointmentDetails[2].ToString(), appointmentDetails[4].Text, appointmentDetails[5].Text, appointmentDetails[6].Text);
+                Utilities.toDashboard(sender, e, this);
+            }
+            
             // TODO: Fix this
-            DBAccess.postData("newAppointment",appointmentDetails[0].Text,appointmentDetails[1].ToString(),appointmentDetails[2].ToString(),appointmentDetails[4].Text,appointmentDetails[5].Text, appointmentDetails[6].Text);
 
-            Utilities.toDashboard(sender, e, this);
         }
         private bool CheckValidation(Control[] appointmentDetails)
         {
@@ -55,7 +58,9 @@ namespace BasicGP
             {
                 if (valid[i] == false)
                 {
+                    //TODO: appointment details entries for dtp and dropdown needs to be set as the panel for this to work
                     errorMsg = Utilities.validation_failed(appointmentDetails[i], lblErrorMsg, btnSubmit, errorMsg);
+
                 }
             }
             lblErrorMsg.Text = errorMsg;
@@ -85,7 +90,7 @@ namespace BasicGP
             {
                 // Define a dataSet from DBAccess with the SQL statement
 
-                dataSet = DBAccess.getData("findPatient", "id", txtSearch.Text);
+                dataSet = DBAccess.getData("patientAppointmentsEdit", txtSearch.Text);
                 //Define a datatable with the tables from the dataset return
                 table = dataSet.Tables[0];
 
@@ -101,5 +106,19 @@ namespace BasicGP
                 }
             }
         }
+
+        private void dgvCellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtNHNumber.Text = dgvAppointments.Rows[e.RowIndex].Cells[0].Value.ToString();
+           //TODO: BUG  - ERROR CAN BE THROWN HERE WHEN THE EDITING DATE IS BEFORE CURRENT DATE
+            dtpDate.Value = (DateTime)dgvAppointments.Rows[e.RowIndex].Cells[3].Value;
+            dtpTime.Value = (DateTime)dgvAppointments.Rows[e.RowIndex].Cells[4].Value;
+
+            //comboTitle.Text = dgvAppointments.Rows[e.RowIndex].Cells[3].Value.ToString();
+            //txtFName.Text = dgvAppointments.Rows[e.RowIndex].Cells[4].Value.ToString();
+            //txtSName.Text = dgvAppointments.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+            txtDescription.Text = dgvAppointments.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    }
     }
 }

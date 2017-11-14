@@ -113,6 +113,12 @@ namespace BasicGP
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", pID);
                     break;
+                case "patientAppointmentsEdit":
+                    // Instantiate an sqlCommand on the DBConnection
+                    sqlCommand = new SqlCommand(Constants.getAppointmentsForEdit, DBConnection);
+                    // add parameters to the sql command (Prevents again SQLI)
+                    sqlCommand.Parameters.AddWithValue("@id", pID);
+                    break;
                 case "testResults":
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getTestResults, DBConnection);

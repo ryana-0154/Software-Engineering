@@ -1,4 +1,6 @@
-﻿namespace BasicGP
+﻿using System;
+
+namespace BasicGP
 {
     partial class AppointmentForm
     {
@@ -29,12 +31,14 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblNHNumber = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.pnlTime = new System.Windows.Forms.Panel();
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
             this.pnlDate = new System.Windows.Forms.Panel();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.txtNHNumber = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.txtFName = new System.Windows.Forms.TextBox();
@@ -55,8 +59,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnl = new System.Windows.Forms.Panel();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
-            this.lblNHNumber = new System.Windows.Forms.Label();
-            this.txtNHNumber = new System.Windows.Forms.TextBox();
             this.lblErrorMsg = new System.Windows.Forms.Label();
             this.tableLayoutPanel4.SuspendLayout();
             this.pnlTime.SuspendLayout();
@@ -91,6 +93,20 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(393, 128);
             this.tableLayoutPanel4.TabIndex = 4;
+            // 
+            // lblNHNumber
+            // 
+            this.lblNHNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNHNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNHNumber.Location = new System.Drawing.Point(5, 1);
+            this.lblNHNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNHNumber.Name = "lblNHNumber";
+            this.lblNHNumber.Size = new System.Drawing.Size(180, 41);
+            this.lblNHNumber.TabIndex = 27;
+            this.lblNHNumber.Text = "NH Number*";
+            this.lblNHNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTime
             // 
@@ -139,8 +155,8 @@
             this.dtpTime.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
             this.dtpTime.Name = "dtpTime";
             this.dtpTime.Size = new System.Drawing.Size(194, 22);
-            this.dtpTime.TabIndex = 22;
-            this.dtpTime.Tag = "DOB";
+            this.dtpTime.TabIndex = 3;
+            this.dtpTime.Tag = "Time";
             // 
             // pnlDate
             // 
@@ -158,11 +174,20 @@
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDate.Location = new System.Drawing.Point(0, 0);
             this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.dtpDate.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
+            this.dtpDate.MinDate = new System.DateTime(2017, 11, 14, 0, 0, 0, 0);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(194, 22);
-            this.dtpDate.TabIndex = 12;
+            this.dtpDate.TabIndex = 2;
             this.dtpDate.Tag = "DOB";
+            // 
+            // txtNHNumber
+            // 
+            this.txtNHNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNHNumber.Location = new System.Drawing.Point(193, 4);
+            this.txtNHNumber.Name = "txtNHNumber";
+            this.txtNHNumber.Size = new System.Drawing.Size(196, 22);
+            this.txtNHNumber.TabIndex = 1;
+            this.txtNHNumber.Tag = "NH Number";
             // 
             // lblTitle
             // 
@@ -212,7 +237,7 @@
             this.txtFName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(194, 22);
-            this.txtFName.TabIndex = 6;
+            this.txtFName.TabIndex = 5;
             this.txtFName.Tag = "First Name";
             // 
             // txtSName
@@ -222,7 +247,7 @@
             this.txtSName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSName.Name = "txtSName";
             this.txtSName.Size = new System.Drawing.Size(194, 22);
-            this.txtSName.TabIndex = 8;
+            this.txtSName.TabIndex = 6;
             this.txtSName.Tag = "Surname";
             // 
             // lblSName
@@ -275,6 +300,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(192, 56);
             this.panel1.TabIndex = 10;
+            this.panel1.Tag = "Title";
             // 
             // comboTitle
             // 
@@ -297,7 +323,7 @@
             this.comboTitle.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.comboTitle.Name = "comboTitle";
             this.comboTitle.Size = new System.Drawing.Size(192, 24);
-            this.comboTitle.TabIndex = 10;
+            this.comboTitle.TabIndex = 4;
             this.comboTitle.Tag = "Title";
             // 
             // tableLayoutPanel6
@@ -325,7 +351,7 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(378, 90);
-            this.txtDescription.TabIndex = 17;
+            this.txtDescription.TabIndex = 7;
             // 
             // lblDescription
             // 
@@ -351,7 +377,7 @@
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(5);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(136, 81);
-            this.btnSubmit.TabIndex = 9;
+            this.btnSubmit.TabIndex = 8;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -399,7 +425,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(171, 7);
+            this.txtSearch.Location = new System.Drawing.Point(334, 3);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(51, 22);
             this.txtSearch.TabIndex = 23;
@@ -409,51 +435,35 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 7);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 25);
+            this.label1.Size = new System.Drawing.Size(290, 25);
             this.label1.TabIndex = 24;
-            this.label1.Text = "Appointment ID:";
+            this.label1.Text = "Appointment ID or Employee ID:";
             // 
             // pnl
             // 
             this.pnl.Controls.Add(this.txtSearch);
             this.pnl.Controls.Add(this.label1);
-            this.pnl.Location = new System.Drawing.Point(856, 141);
+            this.pnl.Location = new System.Drawing.Point(837, 183);
             this.pnl.Name = "pnl";
-            this.pnl.Size = new System.Drawing.Size(228, 66);
+            this.pnl.Size = new System.Drawing.Size(417, 40);
             this.pnl.TabIndex = 25;
             // 
             // dgvAppointments
             // 
+            this.dgvAppointments.AllowUserToAddRows = false;
+            this.dgvAppointments.AllowUserToDeleteRows = false;
+            this.dgvAppointments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAppointments.Location = new System.Drawing.Point(837, 229);
             this.dgvAppointments.Name = "dgvAppointments";
+            this.dgvAppointments.ReadOnly = true;
+            this.dgvAppointments.RowHeadersVisible = false;
             this.dgvAppointments.RowTemplate.Height = 24;
             this.dgvAppointments.Size = new System.Drawing.Size(487, 335);
             this.dgvAppointments.TabIndex = 26;
-            // 
-            // lblNHNumber
-            // 
-            this.lblNHNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNHNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNHNumber.Location = new System.Drawing.Point(5, 1);
-            this.lblNHNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNHNumber.Name = "lblNHNumber";
-            this.lblNHNumber.Size = new System.Drawing.Size(180, 41);
-            this.lblNHNumber.TabIndex = 27;
-            this.lblNHNumber.Text = "NH Number*";
-            this.lblNHNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtNHNumber
-            // 
-            this.txtNHNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtNHNumber.Location = new System.Drawing.Point(193, 4);
-            this.txtNHNumber.Name = "txtNHNumber";
-            this.txtNHNumber.Size = new System.Drawing.Size(196, 22);
-            this.txtNHNumber.TabIndex = 28;
+            this.dgvAppointments.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellDoubleClick);
             // 
             // lblErrorMsg
             // 
