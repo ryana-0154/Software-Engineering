@@ -3,6 +3,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace BasicGP
 {
@@ -56,7 +57,7 @@ namespace BasicGP
 
             return loginDataSet;
         }
-
+       
         /// <summary>
         /// Fetches data from the server
         /// </summary>
@@ -76,7 +77,6 @@ namespace BasicGP
 
             // Try to parse data[1] to an int32 and output as pID
             Int32.TryParse(data[1], out pID);
-
             // Switch statement based on what is in data[0]
             switch (data[0])
             {
@@ -141,7 +141,7 @@ namespace BasicGP
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getDuty, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
-                    sqlCommand.Parameters.AddWithValue("@id", pID);
+                    sqlCommand.Parameters.AddWithValue("@day", data[1]);
                     break;
                 case "prescriptionDuration":
                     // Instantiate an sqlCommand on the DBConnection

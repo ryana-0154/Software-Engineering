@@ -43,6 +43,15 @@ namespace BasicGP
                 MessageBox.Show("No data was found");
             }
         }
-       
+        
+        private void mcDutyDate_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            DataSet dataSet = DBAccess.getData("duty", mcDutyDate.SelectionRange.Start.DayOfWeek.ToString());
+
+            DataTable table = dataSet.Tables[0];
+
+            dgvAvailable.DataSource = table;
+            
+        }
     }
 }
