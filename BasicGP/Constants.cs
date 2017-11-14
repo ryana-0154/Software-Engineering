@@ -14,13 +14,13 @@ namespace BasicGP
         public static string getAvailability = "SELECT * FROM availability WHERE NationalHealthNumber = @id";
         public static string getDuty = "SELECT * FROM duty WHERE NationalHealthNumber = @id";
         public static string getPrescriptionDuration = "SELECT duration FROM prescriptions WHERE prescriptionID = @id";
-        public static string getEmployeeIDByName = "SELECT * FROM employee WHERE firstName = @firstName and lastName = @lastName";
+        //public static string getEmployeeIDByName = "SELECT * FROM employee WHERE firstName = @firstName and lastName = @lastName";
 
         // Insert Statements
         public static string postPatient = "INSERT INTO patients (NationalHealthNumber, Name, Title, DOB, PhoneNumber, Address, Diabetes, Smoker, Asthma, Allergies) " +
                         "VALUES (@NHNumber, @name, @title, @DOB, @phoneNumber, @address, @diabetes, @smoker, @asthma, @allergies)";
-        public static string postAppointment = "INSERT INTO appointment (AppointmentID, EmployeeID, NationalHealthNumber, Date, Time, Description" +
-                        "Status) VALUES (@AppointmentID, @EmployeeID, @NHNumber, @Date, @Time, @Description, @Status)";
+        public static string postAppointment = "INSERT INTO appointment ( EmployeeID, NationalHealthNumber, Date, Time, Description) VALUES ( " +
+            "(SELECT EmployeeID FROM Employee WHERE Title = @title AND FirstName = @firstname AND LastName = @lastname), @NHNumber, @Date, @Time, @Description)";
 
         // UPDATE statements
         public static string extendPrescriptionDuration = "UPDATE prescriptions SET DatePrescribed = @date WHERE PrescriptionID = @prescriptionID";

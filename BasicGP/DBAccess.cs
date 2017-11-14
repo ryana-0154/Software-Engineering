@@ -204,14 +204,14 @@ namespace BasicGP
                     break;
                 case "newAppointment":
                     sqlCommand = new SqlCommand(Constants.postAppointment, DBConnection);
-                    // Add params to the above SQL query (Prevents against SQLI)
-                    sqlCommand.Parameters.AddWithValue("@AppointmentID", data[1]);
-                    sqlCommand.Parameters.AddWithValue("@EmployeeID", data[2]);
-                    sqlCommand.Parameters.AddWithValue("@NHNumber", data[3]);
-                    sqlCommand.Parameters.AddWithValue("@Date", data[4]);
-                    sqlCommand.Parameters.AddWithValue("@Time", data[5]);
-                    sqlCommand.Parameters.AddWithValue("@Description", data[6]);
-                    sqlCommand.Parameters.AddWithValue("@Status", data[7]);
+                    // Add params to the above SQL query (Prevents against SQLI)  
+                    sqlCommand.Parameters.AddWithValue("@NHNumber", data[0]);
+                    sqlCommand.Parameters.AddWithValue("@Date", data[1]);
+                    sqlCommand.Parameters.AddWithValue("@Time", data[2]);
+                    sqlCommand.Parameters.AddWithValue("@Description", data[3]);
+                    sqlCommand.Parameters.AddWithValue("@firstname",data[4]);
+                    sqlCommand.Parameters.AddWithValue("@lastname",data[5]);
+                    sqlCommand.Parameters.AddWithValue("@title", data[6]);
 
                     count = sqlCommand.ExecuteNonQuery();
 

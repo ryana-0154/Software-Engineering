@@ -55,6 +55,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnl = new System.Windows.Forms.Panel();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
+            this.lblNHNumber = new System.Windows.Forms.Label();
+            this.txtNHNumber = new System.Windows.Forms.TextBox();
+            this.lblErrorMsg = new System.Windows.Forms.Label();
             this.tableLayoutPanel4.SuspendLayout();
             this.pnlTime.SuspendLayout();
             this.pnlDate.SuspendLayout();
@@ -72,25 +75,21 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.307F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.693F));
-            this.tableLayoutPanel4.Controls.Add(this.lblTime, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.lblDate, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.pnlTime, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.pnlDate, 1, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(46, 245);
+            this.tableLayoutPanel4.Controls.Add(this.lblNHNumber, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblTime, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.lblDate, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.pnlTime, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.pnlDate, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txtNHNumber, 1, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(46, 206);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.55245F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.44755F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 79F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(393, 107);
+            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(393, 128);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // lblTime
@@ -99,10 +98,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(5, 51);
+            this.lblTime.Location = new System.Drawing.Point(5, 85);
             this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(180, 55);
+            this.lblTime.Size = new System.Drawing.Size(180, 42);
             this.lblTime.TabIndex = 4;
             this.lblTime.Text = "Time";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -113,10 +112,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(5, 1);
+            this.lblDate.Location = new System.Drawing.Point(5, 43);
             this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(180, 49);
+            this.lblDate.Size = new System.Drawing.Size(180, 41);
             this.lblDate.TabIndex = 1;
             this.lblDate.Text = "Date";
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -124,10 +123,10 @@
             // pnlTime
             // 
             this.pnlTime.Controls.Add(this.dtpTime);
-            this.pnlTime.Location = new System.Drawing.Point(194, 55);
+            this.pnlTime.Location = new System.Drawing.Point(194, 89);
             this.pnlTime.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTime.Name = "pnlTime";
-            this.pnlTime.Size = new System.Drawing.Size(194, 47);
+            this.pnlTime.Size = new System.Drawing.Size(194, 34);
             this.pnlTime.TabIndex = 13;
             // 
             // dtpTime
@@ -146,10 +145,10 @@
             // pnlDate
             // 
             this.pnlDate.Controls.Add(this.dtpDate);
-            this.pnlDate.Location = new System.Drawing.Point(194, 5);
+            this.pnlDate.Location = new System.Drawing.Point(194, 47);
             this.pnlDate.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDate.Name = "pnlDate";
-            this.pnlDate.Size = new System.Drawing.Size(194, 41);
+            this.pnlDate.Size = new System.Drawing.Size(194, 33);
             this.pnlDate.TabIndex = 14;
             // 
             // dtpDate
@@ -420,9 +419,9 @@
             // 
             this.pnl.Controls.Add(this.txtSearch);
             this.pnl.Controls.Add(this.label1);
-            this.pnl.Location = new System.Drawing.Point(837, 175);
+            this.pnl.Location = new System.Drawing.Point(856, 141);
             this.pnl.Name = "pnl";
-            this.pnl.Size = new System.Drawing.Size(228, 33);
+            this.pnl.Size = new System.Drawing.Size(228, 66);
             this.pnl.TabIndex = 25;
             // 
             // dgvAppointments
@@ -434,11 +433,43 @@
             this.dgvAppointments.Size = new System.Drawing.Size(487, 335);
             this.dgvAppointments.TabIndex = 26;
             // 
+            // lblNHNumber
+            // 
+            this.lblNHNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNHNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNHNumber.Location = new System.Drawing.Point(5, 1);
+            this.lblNHNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNHNumber.Name = "lblNHNumber";
+            this.lblNHNumber.Size = new System.Drawing.Size(180, 41);
+            this.lblNHNumber.TabIndex = 27;
+            this.lblNHNumber.Text = "NH Number*";
+            this.lblNHNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtNHNumber
+            // 
+            this.txtNHNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNHNumber.Location = new System.Drawing.Point(193, 4);
+            this.txtNHNumber.Name = "txtNHNumber";
+            this.txtNHNumber.Size = new System.Drawing.Size(196, 22);
+            this.txtNHNumber.TabIndex = 28;
+            // 
+            // lblErrorMsg
+            // 
+            this.lblErrorMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMsg.ForeColor = System.Drawing.Color.LightCoral;
+            this.lblErrorMsg.Location = new System.Drawing.Point(480, 600);
+            this.lblErrorMsg.Name = "lblErrorMsg";
+            this.lblErrorMsg.Size = new System.Drawing.Size(684, 137);
+            this.lblErrorMsg.TabIndex = 27;
+            // 
             // AppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1380, 850);
+            this.Controls.Add(this.lblErrorMsg);
             this.Controls.Add(this.dgvAppointments);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblEmployee);
@@ -455,8 +486,8 @@
             this.Name = "AppointmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AppointmentForm";
-            this.Load += new System.EventHandler(this.AppointmentForm_Load);
             this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.pnlTime.ResumeLayout(false);
             this.pnlDate.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -502,5 +533,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnl;
         private System.Windows.Forms.DataGridView dgvAppointments;
+        private System.Windows.Forms.Label lblNHNumber;
+        private System.Windows.Forms.TextBox txtNHNumber;
+        private System.Windows.Forms.Label lblErrorMsg;
     }
 }

@@ -23,39 +23,50 @@ namespace BasicGP
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //CheckValidation();
-            string[] appointmentDetails = new string[5];
-
-            appointmentDetails[0] = dtpDate.ToString();
-            appointmentDetails[1] = dtpTime.ToString();
-            appointmentDetails[2] = comboTitle.Text;
-            appointmentDetails[3] = txtFName + " " + txtSName;
-            appointmentDetails[4] = txtDescription.Text;
-
+            
+            Control[] appointmentDetails = new Control[7];
+            appointmentDetails[0] = txtNHNumber;
+            appointmentDetails[1] = dtpDate;
+            appointmentDetails[2] = dtpTime;
+            appointmentDetails[3] = comboTitle;
+            appointmentDetails[4] = txtFName;
+            appointmentDetails[5] = txtSName;
+            appointmentDetails[6] = txtDescription;
+            CheckValidation(appointmentDetails);
             // TODO: Fix this
-            //DBAccess.postData("newAppointment",);
+            DBAccess.postData("newAppointment",appointmentDetails[0].Text,appointmentDetails[1].ToString(),appointmentDetails[2].ToString(),appointmentDetails[4].Text,appointmentDetails[5].Text, appointmentDetails[6].Text);
 
             Utilities.toDashboard(sender, e, this);
         }
-        private bool CheckValidation()
+        private bool CheckValidation(Control[] appointmentDetails)
         {
             bool result = false;
-            bool[] valid = new bool[6];
-            valid[0] = false;//this will be the nhnumber
+            string errorMsg = "";
+            bool[] valid = new bool[7];
+            valid[0] = Utilities.NHNumberValidation(txtNHNumber);
             valid[1] = Utilities.DateBookingValidation(dtpDate);
             valid[2] = Utilities.TimeBookingValidation(dtpTime);
             valid[3] = Utilities.TitleValidation(comboTitle);
             valid[4] = Utilities.NameValidation(txtFName);
             valid[5] = Utilities.NameValidation(txtSName);
             valid[6] = Utilities.DescriptionValidation(txtDescription);
-
+            //searches through the how valid array after all controls have been checked, and prints errors respectively
+            for (int i = 0; i < valid.Length; i++)
+            {
+                if (valid[i] == false)
+                {
+                    errorMsg = Utilities.validation_failed(appointmentDetails[i], lblErrorMsg, btnSubmit, errorMsg);
+                }
+            }
+            lblErrorMsg.Text = errorMsg;
+            lblErrorMsg.Visible = true;
+            if (!valid.Contains(false))
+            {
+                result = true;
+            }
             return result;
         }
-
-        private void AppointmentForm_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
