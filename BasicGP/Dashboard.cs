@@ -50,7 +50,7 @@ namespace BasicGP
         private void btnAvailability_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            new AvailabilityForm().Visible = true;
+            new DutyForm().Visible = true;
         }
     }
 }

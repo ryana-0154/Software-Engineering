@@ -35,6 +35,7 @@ namespace BasicGP
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.pnlTime = new System.Windows.Forms.Panel();
+            this.cbTime = new System.Windows.Forms.ComboBox();
             this.pnlDate = new System.Windows.Forms.Panel();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.txtNHNumber = new System.Windows.Forms.TextBox();
@@ -45,13 +46,12 @@ namespace BasicGP
             this.lblSName = new System.Windows.Forms.Label();
             this.lblFName = new System.Windows.Forms.Label();
             this.lblTitleA = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.comboTitle = new System.Windows.Forms.ComboBox();
+            this.pnlTitle = new System.Windows.Forms.Panel();
+            this.cbTitle = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblEmployee = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -59,16 +59,16 @@ namespace BasicGP
             this.pnl = new System.Windows.Forms.Panel();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
             this.lblErrorMsg = new System.Windows.Forms.Label();
-            this.cbTime = new System.Windows.Forms.ComboBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel4.SuspendLayout();
             this.pnlTime.SuspendLayout();
             this.pnlDate.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlTitle.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel4
@@ -145,6 +145,39 @@ namespace BasicGP
             this.pnlTime.Size = new System.Drawing.Size(193, 34);
             this.pnlTime.TabIndex = 13;
             // 
+            // cbTime
+            // 
+            this.cbTime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTime.FormattingEnabled = true;
+            this.cbTime.Items.AddRange(new object[] {
+            "08:00",
+            "08:30",
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30",
+            "17:00",
+            "17:30",
+            "18:00"});
+            this.cbTime.Location = new System.Drawing.Point(0, 0);
+            this.cbTime.Name = "cbTime";
+            this.cbTime.Size = new System.Drawing.Size(193, 24);
+            this.cbTime.TabIndex = 0;
+            this.cbTime.Tag = "Time";
+            // 
             // pnlDate
             // 
             this.pnlDate.Controls.Add(this.dtpDate);
@@ -201,7 +234,7 @@ namespace BasicGP
             this.tableLayoutPanel5.Controls.Add(this.lblSName, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.lblFName, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.lblTitleA, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.pnlTitle, 1, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(45, 438);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -283,34 +316,34 @@ namespace BasicGP
             this.lblTitleA.Text = "Title *";
             this.lblTitleA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
+            // pnlTitle
             // 
-            this.panel1.Controls.Add(this.comboTitle);
-            this.panel1.Location = new System.Drawing.Point(191, 5);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(191, 55);
-            this.panel1.TabIndex = 10;
-            this.panel1.Tag = "Title";
+            this.pnlTitle.Controls.Add(this.cbTitle);
+            this.pnlTitle.Location = new System.Drawing.Point(191, 5);
+            this.pnlTitle.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlTitle.Name = "pnlTitle";
+            this.pnlTitle.Size = new System.Drawing.Size(191, 55);
+            this.pnlTitle.TabIndex = 10;
+            this.pnlTitle.Tag = "Title";
             // 
-            // comboTitle
+            // cbTitle
             // 
-            this.comboTitle.DisplayMember = "Mr";
-            this.comboTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboTitle.FormattingEnabled = true;
-            this.comboTitle.Items.AddRange(new object[] {
+            this.cbTitle.DisplayMember = "Mr";
+            this.cbTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTitle.FormattingEnabled = true;
+            this.cbTitle.Items.AddRange(new object[] {
             "Mrs",
             "Miss",
             "Mr",
             "Master",
             "Dr"});
-            this.comboTitle.Location = new System.Drawing.Point(0, 0);
-            this.comboTitle.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.comboTitle.Name = "comboTitle";
-            this.comboTitle.Size = new System.Drawing.Size(191, 24);
-            this.comboTitle.TabIndex = 4;
-            this.comboTitle.Tag = "Title";
+            this.cbTitle.Location = new System.Drawing.Point(0, 0);
+            this.cbTitle.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.cbTitle.Name = "cbTitle";
+            this.cbTitle.Size = new System.Drawing.Size(191, 24);
+            this.cbTitle.TabIndex = 4;
+            this.cbTitle.Tag = "Title";
             // 
             // tableLayoutPanel6
             // 
@@ -370,19 +403,6 @@ namespace BasicGP
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // picLogo
-            // 
-            this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picLogo.Image = global::BasicGP.Properties.Resources.logo1;
-            this.picLogo.Location = new System.Drawing.Point(1155, 26);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(169, 124);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 20;
-            this.picLogo.TabStop = false;
-            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
-            // 
             // lblEmployee
             // 
             this.lblEmployee.AutoSize = true;
@@ -417,7 +437,7 @@ namespace BasicGP
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(51, 22);
-            this.txtSearch.TabIndex = 23;
+            this.txtSearch.TabIndex = 9;
             this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
             // label1
@@ -465,38 +485,18 @@ namespace BasicGP
             this.lblErrorMsg.Size = new System.Drawing.Size(684, 137);
             this.lblErrorMsg.TabIndex = 27;
             // 
-            // cbTime
+            // picLogo
             // 
-            this.cbTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTime.FormattingEnabled = true;
-            this.cbTime.Items.AddRange(new object[] {
-            "08:00",
-            "08:30",
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30",
-            "17:00",
-            "17:30",
-            "18:00"});
-            this.cbTime.Location = new System.Drawing.Point(0, 0);
-            this.cbTime.Name = "cbTime";
-            this.cbTime.Size = new System.Drawing.Size(193, 24);
-            this.cbTime.TabIndex = 0;
-            this.cbTime.Tag = "Time";
+            this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLogo.Image = global::BasicGP.Properties.Resources.logo1;
+            this.picLogo.Location = new System.Drawing.Point(1155, 26);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(169, 124);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 20;
+            this.picLogo.TabStop = false;
+            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
             // 
             // AppointmentForm
             // 
@@ -520,19 +520,20 @@ namespace BasicGP
             this.Name = "AppointmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AppointmentForm";
+            this.Load += new System.EventHandler(this.AppointmentForm_Load);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.pnlTime.ResumeLayout(false);
             this.pnlDate.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.pnlTitle.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -548,7 +549,7 @@ namespace BasicGP
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TextBox txtFName;
         private System.Windows.Forms.TextBox txtSName;
-        private System.Windows.Forms.ComboBox comboTitle;
+        private System.Windows.Forms.ComboBox cbTitle;
         private System.Windows.Forms.Label lblSName;
         private System.Windows.Forms.Label lblFName;
         private System.Windows.Forms.Label lblTitleA;
@@ -559,7 +560,7 @@ namespace BasicGP
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Panel pnlTime;
         private System.Windows.Forms.Panel pnlDate;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlTitle;
         private System.Windows.Forms.Label lblEmployee;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtSearch;

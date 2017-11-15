@@ -21,7 +21,7 @@ namespace BasicGP
         // Insert Statements
         public static string postPatient = "INSERT INTO patients (NationalHealthNumber, Name, Title, DOB, PhoneNumber, Address, Diabetes, Smoker, Asthma, Allergies) " +
                         "VALUES (@NHNumber, @name, @title, @DOB, @phoneNumber, @address, @diabetes, @smoker, @asthma, @allergies)";
-        public static string postAppointment = "INSERT INTO appointment ( EmployeeID, NationalHealthNumber, Date, Time, Description) VALUES ( " +
+        public static string postAppointment = "INSERT INTO appointment (EmployeeID, NationalHealthNumber, Date, Time, Description) VALUES ( " +
             "(SELECT EmployeeID FROM Employee WHERE Title = @title AND FirstName = @firstname AND LastName = @lastname), @NHNumber, @Date, @Time, @Description)";
 
         // UPDATE statements

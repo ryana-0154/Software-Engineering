@@ -26,20 +26,19 @@ namespace BasicGP
             
             Control[] appointmentDetails = new Control[7];
             appointmentDetails[0] = txtNHNumber;
-            appointmentDetails[1] = dtpDate;
-            appointmentDetails[2] = cbTime;
-            appointmentDetails[3] = comboTitle;
-            appointmentDetails[4] = txtFName;
-            appointmentDetails[5] = txtSName;
-            appointmentDetails[6] = txtDescription;
+            //place the panel in here then later on work on the containing element
+            appointmentDetails[1] = pnlDate;
+            appointmentDetails[2] = pnlTime;
+            appointmentDetails[3] = txtDescription;
+            appointmentDetails[4] = pnlTitle;
+            appointmentDetails[5] = txtFName;
+            appointmentDetails[6] = txtSName;
             if (CheckValidation(appointmentDetails))
             {
-                DBAccess.postData("newAppointment", appointmentDetails[0].Text, appointmentDetails[1].ToString(), appointmentDetails[2].ToString(), appointmentDetails[4].Text, appointmentDetails[5].Text, appointmentDetails[6].Text);
+                //TODO: check order of data entry
+                DBAccess.postData("newAppointment", appointmentDetails[0].Text, appointmentDetails[1].Controls[0].Text, appointmentDetails[2].Controls[0].Text, appointmentDetails[3].Text, appointmentDetails[4].Controls[0].Text, appointmentDetails[5].Text, appointmentDetails[6].Text);
                 Utilities.toDashboard(sender, e, this);
             }
-            
-            // TODO: Fix this
-
         }
         private bool CheckValidation(Control[] appointmentDetails)
         {
@@ -49,7 +48,7 @@ namespace BasicGP
             valid[0] = Utilities.NHNumberValidation(txtNHNumber);
             valid[1] = Utilities.DateBookingValidation(dtpDate);
             valid[2] = Utilities.ComboBoxValidation(cbTime);
-            valid[3] = Utilities.ComboBoxValidation(comboTitle);
+            valid[3] = Utilities.ComboBoxValidation(cbTitle);
             valid[4] = Utilities.NameValidation(txtFName);
             valid[5] = Utilities.NameValidation(txtSName);
             valid[6] = Utilities.DescriptionValidation(txtDescription);
@@ -78,7 +77,7 @@ namespace BasicGP
             DialogResult result = MessageBox.Show("Are you sure you want to delete this appointment?", "Delete appointment", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                //DBAccess.Delete("deleteAppointment", txtNHNumber.Text, dtpDate.Value, dtpTime.Value);
+               // DBAccess.Delete("deleteAppointment", txtNHNumber.Text, dtpDate.Value, cbTime.Text);
             }
         }
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
@@ -120,6 +119,10 @@ namespace BasicGP
 
             txtDescription.Text = dgvAppointments.Rows[e.RowIndex].Cells[6].Value.ToString();
                     }
-        
+
+        private void AppointmentForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
