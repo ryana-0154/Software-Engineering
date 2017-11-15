@@ -100,7 +100,7 @@ namespace BasicGP
                 valid[i] = Utilities.NameValidation((TextBox)userInputs[i]);
             }
             //Title validation
-            valid[3]=Utilities.TitleValidation(comboTitle);
+            valid[3]=Utilities.ComboBoxValidation(comboTitle);
             //DOB validation
             valid[4] = Utilities.DOBValidation(dtpDOB);
             //Phone number validation

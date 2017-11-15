@@ -33,13 +33,11 @@ namespace BasicGP
                     break;
                     //these are panels because the control being passed over is the panel
                 case "pnlDOB":
+                case "pnlBookedTime":
                     errorMsg += userInput.Tag + " - Field must before current day." + Environment.NewLine;
                     break;
                 case "pnlBookedDate":
                     errorMsg += userInput.Tag + " - Field must in the future." + Environment.NewLine;
-                    break;
-                case "pnlBookedTime":
-                    errorMsg += userInput.Tag + " - Field must between 0800 and 1700." + Environment.NewLine;
                     break;
                 case "txtPhoneNumber":
                     errorMsg += userInput.Tag + " - Field must be 11 digits and numbers only." + Environment.NewLine;
@@ -82,7 +80,7 @@ namespace BasicGP
             else
             { return false; }
         }
-        public static bool TitleValidation(ComboBox userinput)
+        public static bool ComboBoxValidation(ComboBox userinput)
         {
             if (userinput.SelectedIndex != -1)//something was selected
             { return true; }
@@ -102,20 +100,6 @@ namespace BasicGP
             {
                 return false;
             }
-        }
-        // Check 
-        public static bool TimeBookingValidation (DateTimePicker dtpTime)
-        {
-            //should only be 20 minutes
-            if (true)
-            {
-                return true;
-            }
-            else
-            {
-              return false;
-            }
-
         }
         public static bool DateBookingValidation(DateTimePicker dtpDate)
         {

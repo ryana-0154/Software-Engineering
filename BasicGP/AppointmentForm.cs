@@ -27,7 +27,7 @@ namespace BasicGP
             Control[] appointmentDetails = new Control[7];
             appointmentDetails[0] = txtNHNumber;
             appointmentDetails[1] = dtpDate;
-            appointmentDetails[2] = dtpTime;
+            appointmentDetails[2] = cbTime;
             appointmentDetails[3] = comboTitle;
             appointmentDetails[4] = txtFName;
             appointmentDetails[5] = txtSName;
@@ -48,8 +48,8 @@ namespace BasicGP
             bool[] valid = new bool[7];
             valid[0] = Utilities.NHNumberValidation(txtNHNumber);
             valid[1] = Utilities.DateBookingValidation(dtpDate);
-            valid[2] = Utilities.TimeBookingValidation(dtpTime);
-            valid[3] = Utilities.TitleValidation(comboTitle);
+            valid[2] = Utilities.ComboBoxValidation(cbTime);
+            valid[3] = Utilities.ComboBoxValidation(comboTitle);
             valid[4] = Utilities.NameValidation(txtFName);
             valid[5] = Utilities.NameValidation(txtSName);
             valid[6] = Utilities.DescriptionValidation(txtDescription);
@@ -106,13 +106,13 @@ namespace BasicGP
                 }
             }
         }
-
+  
         private void dgvCellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             txtNHNumber.Text = dgvAppointments.Rows[e.RowIndex].Cells[0].Value.ToString();
            //TODO: BUG  - ERROR CAN BE THROWN HERE WHEN THE EDITING DATE IS BEFORE CURRENT DATE
             dtpDate.Value = (DateTime)dgvAppointments.Rows[e.RowIndex].Cells[3].Value;
-            dtpTime.Value = (DateTime)dgvAppointments.Rows[e.RowIndex].Cells[4].Value;
+            cbTime.Text = dgvAppointments.Rows[e.RowIndex].Cells[4].Value.ToString();
 
             //comboTitle.Text = dgvAppointments.Rows[e.RowIndex].Cells[3].Value.ToString();
             //txtFName.Text = dgvAppointments.Rows[e.RowIndex].Cells[4].Value.ToString();
@@ -120,5 +120,6 @@ namespace BasicGP
 
             txtDescription.Text = dgvAppointments.Rows[e.RowIndex].Cells[6].Value.ToString();
                     }
+        
     }
 }

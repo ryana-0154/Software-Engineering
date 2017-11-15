@@ -35,7 +35,6 @@ namespace BasicGP
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.pnlTime = new System.Windows.Forms.Panel();
-            this.dtpTime = new System.Windows.Forms.DateTimePicker();
             this.pnlDate = new System.Windows.Forms.Panel();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.txtNHNumber = new System.Windows.Forms.TextBox();
@@ -60,6 +59,7 @@ namespace BasicGP
             this.pnl = new System.Windows.Forms.Panel();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
             this.lblErrorMsg = new System.Windows.Forms.Label();
+            this.cbTime = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel4.SuspendLayout();
             this.pnlTime.SuspendLayout();
             this.pnlDate.SuspendLayout();
@@ -84,7 +84,7 @@ namespace BasicGP
             this.tableLayoutPanel4.Controls.Add(this.pnlDate, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.txtNHNumber, 1, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(45, 206);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 3;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -138,31 +138,18 @@ namespace BasicGP
             // 
             // pnlTime
             // 
-            this.pnlTime.Controls.Add(this.dtpTime);
+            this.pnlTime.Controls.Add(this.cbTime);
             this.pnlTime.Location = new System.Drawing.Point(194, 89);
-            this.pnlTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTime.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTime.Name = "pnlTime";
             this.pnlTime.Size = new System.Drawing.Size(193, 34);
             this.pnlTime.TabIndex = 13;
-            // 
-            // dtpTime
-            // 
-            this.dtpTime.Checked = false;
-            this.dtpTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTime.Location = new System.Drawing.Point(0, 0);
-            this.dtpTime.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.dtpTime.MinDate = new System.DateTime(1930, 1, 1, 0, 0, 0, 0);
-            this.dtpTime.Name = "dtpTime";
-            this.dtpTime.Size = new System.Drawing.Size(193, 22);
-            this.dtpTime.TabIndex = 3;
-            this.dtpTime.Tag = "Time";
             // 
             // pnlDate
             // 
             this.pnlDate.Controls.Add(this.dtpDate);
             this.pnlDate.Location = new System.Drawing.Point(194, 47);
-            this.pnlDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDate.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDate.Name = "pnlDate";
             this.pnlDate.Size = new System.Drawing.Size(193, 33);
             this.pnlDate.TabIndex = 14;
@@ -216,7 +203,7 @@ namespace BasicGP
             this.tableLayoutPanel5.Controls.Add(this.lblTitleA, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(45, 438);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.55245F));
@@ -300,7 +287,7 @@ namespace BasicGP
             // 
             this.panel1.Controls.Add(this.comboTitle);
             this.panel1.Location = new System.Drawing.Point(191, 5);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(191, 55);
             this.panel1.TabIndex = 10;
@@ -313,11 +300,6 @@ namespace BasicGP
             this.comboTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTitle.FormattingEnabled = true;
             this.comboTitle.Items.AddRange(new object[] {
-            "Mrs",
-            "Miss",
-            "Mr",
-            "Master",
-            "Dr",
             "Mrs",
             "Miss",
             "Mr",
@@ -339,7 +321,7 @@ namespace BasicGP
             this.tableLayoutPanel6.Controls.Add(this.txtDescription, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.lblDescription, 0, 0);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(45, 686);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28F));
@@ -351,7 +333,7 @@ namespace BasicGP
             // 
             this.txtDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDescription.Location = new System.Drawing.Point(6, 43);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescription.MaxLength = 300;
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -380,7 +362,7 @@ namespace BasicGP
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnSubmit.Location = new System.Drawing.Point(483, 742);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(5);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(136, 81);
             this.btnSubmit.TabIndex = 8;
@@ -393,7 +375,7 @@ namespace BasicGP
             this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picLogo.Image = global::BasicGP.Properties.Resources.logo1;
             this.picLogo.Location = new System.Drawing.Point(1155, 26);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(169, 124);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -420,7 +402,7 @@ namespace BasicGP
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnDelete.Location = new System.Drawing.Point(1197, 742);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(136, 81);
             this.btnDelete.TabIndex = 22;
@@ -483,6 +465,39 @@ namespace BasicGP
             this.lblErrorMsg.Size = new System.Drawing.Size(684, 137);
             this.lblErrorMsg.TabIndex = 27;
             // 
+            // cbTime
+            // 
+            this.cbTime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTime.FormattingEnabled = true;
+            this.cbTime.Items.AddRange(new object[] {
+            "08:00",
+            "08:30",
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30",
+            "17:00",
+            "17:30",
+            "18:00"});
+            this.cbTime.Location = new System.Drawing.Point(0, 0);
+            this.cbTime.Name = "cbTime";
+            this.cbTime.Size = new System.Drawing.Size(193, 24);
+            this.cbTime.TabIndex = 0;
+            this.cbTime.Tag = "Time";
+            // 
             // AppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -542,7 +557,6 @@ namespace BasicGP
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.PictureBox picLogo;
-        private System.Windows.Forms.DateTimePicker dtpTime;
         private System.Windows.Forms.Panel pnlTime;
         private System.Windows.Forms.Panel pnlDate;
         private System.Windows.Forms.Panel panel1;
@@ -555,5 +569,6 @@ namespace BasicGP
         private System.Windows.Forms.Label lblNHNumber;
         private System.Windows.Forms.TextBox txtNHNumber;
         private System.Windows.Forms.Label lblErrorMsg;
+        private System.Windows.Forms.ComboBox cbTime;
     }
 }
