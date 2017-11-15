@@ -55,6 +55,9 @@ namespace BasicGP
                 case "txtAllergies":
                     errorMsg += userInput.Tag + " - Field must be less than 64 characters." + Environment.NewLine;
                     break;
+                case "txtDescription":
+                    errorMsg += userInput.Tag + " - Field must not be empty(But less than 300 characters)." + Environment.NewLine;
+                    break;
             }
             userInput.BackColor = System.Drawing.Color.LightCoral;
             return errorMsg;

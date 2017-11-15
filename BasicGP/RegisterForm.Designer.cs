@@ -216,6 +216,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhoneNumber.Location = new System.Drawing.Point(293, 335);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPhoneNumber.MaxLength = 11;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(304, 22);
             this.txtPhoneNumber.TabIndex = 14;
@@ -254,6 +255,7 @@ namespace BasicGP
             this.txtFName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFName.Location = new System.Drawing.Point(293, 51);
             this.txtFName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFName.MaxLength = 16;
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(304, 22);
             this.txtFName.TabIndex = 6;
@@ -289,6 +291,7 @@ namespace BasicGP
             this.txtSName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSName.Location = new System.Drawing.Point(293, 104);
             this.txtSName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSName.MaxLength = 16;
             this.txtSName.Name = "txtSName";
             this.txtSName.Size = new System.Drawing.Size(304, 22);
             this.txtSName.TabIndex = 8;
@@ -313,6 +316,7 @@ namespace BasicGP
             this.txtAddress1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAddress1.Location = new System.Drawing.Point(293, 409);
             this.txtAddress1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddress1.MaxLength = 64;
             this.txtAddress1.Multiline = true;
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(304, 69);
@@ -353,6 +357,7 @@ namespace BasicGP
             this.txtAddress2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAddress2.Location = new System.Drawing.Point(293, 483);
             this.txtAddress2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddress2.MaxLength = 64;
             this.txtAddress2.Multiline = true;
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(304, 71);
@@ -364,6 +369,7 @@ namespace BasicGP
             this.txtAddress3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAddress3.Location = new System.Drawing.Point(293, 559);
             this.txtAddress3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddress3.MaxLength = 64;
             this.txtAddress3.Multiline = true;
             this.txtAddress3.Name = "txtAddress3";
             this.txtAddress3.Size = new System.Drawing.Size(304, 77);
