@@ -14,7 +14,7 @@ namespace BasicGP
         public static string getTestResults = "SELECT * FROM testresults WHERE NationalHealthNumber = @id";
         public static string getPrescriptions = "SELECT * FROM prescriptions WHERE NationalHealthNumber = @id";
         public static string getAvailability = "SELECT * FROM availability WHERE NationalHealthNumber = @id";
-        public static string getDuty = "SELECT * FROM duty WHERE @day = 'True'";
+        public static string getDuty = "SELECT * FROM rota WHERE Shift1 OR Shift2 OR Shift3 OR Shift 4 OR Shift5 OR Shift6 OR Shift7 = @day";
         public static string getPrescriptionDuration = "SELECT duration FROM prescriptions WHERE prescriptionID = @id";
         //public static string getEmployeeIDByName = "SELECT * FROM employee WHERE firstName = @firstName and lastName = @lastName";
 
