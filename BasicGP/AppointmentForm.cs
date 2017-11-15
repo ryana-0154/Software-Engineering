@@ -95,14 +95,8 @@ namespace BasicGP
 
                 Console.WriteLine(table.Rows.Count);
 
-                if (table.Rows.Count > 0)
-                {
-                    dgvAppointments.DataSource = table;
-                }
-                else
-                {
-                    MessageBox.Show("No data was found");
-                }
+                Utilities.CheckForResults(dgvAppointments, table);
+
             }
         }
   
