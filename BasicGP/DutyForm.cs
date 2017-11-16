@@ -18,7 +18,7 @@ namespace BasicGP
         }
         private void ResultsForm_Load(object sender, EventArgs e)
         {
-
+            GetDuty(DateTime.Today.DayOfWeek.ToString());
         }
 
         private void picLogo_Click(object sender, EventArgs e)
@@ -30,15 +30,18 @@ namespace BasicGP
         {
             
         }
-                
+        
+        private void GetDuty(string dayOfWeek)
+        {
+            DataSet dataSet = DBAccess.getData("duty", dayOfWeek);
+            DataTable table = dataSet.Tables[0];
+
+            dgvDuty.DataSource = table;
+        }
+
         private void mcDutyDate_DateChanged(object sender, DateRangeEventArgs e)
         {
-            DataSet dataSet = DBAccess.getData("duty", mcDutyDate.SelectionStart.DayOfWeek.ToString());
-            
-            DataTable table = dataSet.Tables[0];
-            
-            dgvDuty.DataSource = table;
-            
+            GetDuty(mcDutyDate.SelectionStart.DayOfWeek.ToString());
         }
     }
 }
