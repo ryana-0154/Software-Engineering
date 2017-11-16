@@ -190,5 +190,13 @@ namespace BasicGP
                 MessageBox.Show("No data was found");
             }
         }
+
+        public static string GenerateNHNumber()
+        {
+            string NHNumber = String.Format("{0:d9}", (DateTime.Now.Ticks / 10) % 10000000000);
+
+            return NHNumber;
+        }
+
     }
 }
