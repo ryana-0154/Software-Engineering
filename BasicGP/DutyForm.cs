@@ -18,7 +18,7 @@ namespace BasicGP
         }
         private void ResultsForm_Load(object sender, EventArgs e)
         {
-
+            GetDuty(DateTime.Today.DayOfWeek.ToString());
         }
 
         private void picLogo_Click(object sender, EventArgs e)
@@ -31,27 +31,17 @@ namespace BasicGP
             
         }
         
-        //seperating this into a method allows it to work on all three dgvs without writing it over and over again
-        private void CheckForResults(DataTable dt, DataGridView dgv)
+        private void GetDuty(string dayOfWeek)
         {
-            if (dt.Rows.Count > 0)
-            {
-                dgv.DataSource = dt;
-            }
-            else
-            {
-                MessageBox.Show("No data was found");
-            }
+            DataSet dataSet = DBAccess.getData("duty", dayOfWeek);
+            DataTable table = dataSet.Tables[0];
+
+            dgvDuty.DataSource = table;
         }
-        
+
         private void mcDutyDate_DateChanged(object sender, DateRangeEventArgs e)
         {
-            DataSet dataSet = DBAccess.getData("duty", mcDutyDate.SelectionStart.DayOfWeek.ToString());
-            
-            DataTable table = dataSet.Tables[0];
-            
-            dgvDuty.DataSource = table;
-            
+            GetDuty(mcDutyDate.SelectionStart.DayOfWeek.ToString());
         }
     }
 }

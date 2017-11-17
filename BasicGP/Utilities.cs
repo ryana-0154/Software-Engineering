@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -178,5 +179,24 @@ namespace BasicGP
                 return false;
             }
         }
-}
+        public static void CheckForResults(DataGridView dgv,DataTable tb)
+        {
+            if (tb.Rows.Count > 0)
+            {
+                dgv.DataSource = tb;
+            }
+            else
+            {
+                MessageBox.Show("No data was found");
+            }
+        }
+
+        public static string GenerateNHNumber()
+        {
+            string NHNumber = String.Format("{0:d9}", (DateTime.Now.Ticks / 10) % 10000000000);
+
+            return NHNumber;
+        }
+
+    }
 }
