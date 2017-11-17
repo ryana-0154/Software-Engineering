@@ -19,6 +19,7 @@ namespace BasicGP
         public static string getDuty = "SELECT Title, FirstName, LastName, Occupation FROM employee WHERE rotaID IN (SELECT rotaID FROM rota WHERE Shift1 = @day OR Shift2 = @day OR Shift3 = @day OR Shift4 = @day OR Shift5 = @day OR Shift6 = @day OR Shift7 = @day)";
         public static string getPrescriptionDuration = "SELECT duration FROM prescriptions WHERE prescriptionID = @id";
         //public static string getEmployeeIDByName = "SELECT * FROM employee WHERE firstName = @firstName and lastName = @lastName";
+        public static string isEmployeeAvailable = "";//join employee rota and appointments, and show which one is on and that day and doesnt have a conflicting appointment
 
         // Insert Statements
         public static string postPatient = "INSERT INTO patients (NationalHealthNumber, Name, Title, DOB, PhoneNumber, Address, Diabetes, Smoker, Asthma, Allergies) " +
@@ -31,6 +32,6 @@ namespace BasicGP
         //public static string updateAppointment = "UPDATE appointments SET ";
 
         // DELETE statements
-        public static string cancelAppointment = "DELETE FROM appointment WHERE AppointmentID = @appointmentID";
+        public static string cancelAppointment = "DELETE FROM appointment WHERE NHNumber = @NHNumber AND date = @date AND time = @time";
     }
 }

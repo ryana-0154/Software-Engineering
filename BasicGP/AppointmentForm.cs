@@ -70,14 +70,16 @@ namespace BasicGP
             }
             return result;
         }
-        
-
+        private bool CheckEmployeeIsAvailable()
+        {
+            return true;
+        }
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to delete this appointment?", "Delete appointment", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-               // DBAccess.Delete("deleteAppointment", txtNHNumber.Text, dtpDate.Value, cbTime.Text);
+               DBAccess.deleteData(txtNHNumber.Text, dtpDate.Text, cbTime.Text);
             }
         }
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
