@@ -28,9 +28,9 @@ namespace BasicGP
 
         private void txtInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
-        
+
         private void GetDuty(string dayOfWeek)
         {
             DataSet dataSet = DBAccess.getData("duty", dayOfWeek);
@@ -42,6 +42,46 @@ namespace BasicGP
         private void mcDutyDate_DateChanged(object sender, DateRangeEventArgs e)
         {
             GetDuty(mcDutyDate.SelectionStart.DayOfWeek.ToString());
+            for (int i = 1; i < 18; i=+2)
+            {
+                tableLayout.Controls[i].BackColor = SystemColors.ControlLight;
+                tableLayout.Controls[i].Text = "Available";
+            }
+        }
+
+        private void dgvCellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //gets the employee title from the dgv and clicked cell
+            string title = dgvDuty.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //gets the employee firstname from the dgv and clicked cell
+            string firstname = dgvDuty.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //gets the employee last name from the dgv and clicked cell
+            string lastname = dgvDuty.Rows[e.RowIndex].Cells[2].Value.ToString();
+            DataSet dataSetAvailability = DBAccess.getData("employeeID", title, firstname, lastname);
+            DataTable tableAvailabilty = dataSetAvailability.Tables[0];
+            //TODO: get the employee ID using the data above and store it as employeeID
+            int employeeID = 2;
+            ShowTimes(employeeID);
+        }
+        private void ShowTimes(int employeeID)
+        {
+            //uses the employeeID and the selected date to return all of their appointment times on that day
+            DBAccess.getData("showEmployeeAvailability", employeeID.ToString(), mcDutyDate.SelectionStart.ToShortDateString());
+            //loops through all of the returned rows, and therefore all the times in that day that the employee has appointments
+            for (int i = 0; i < dgvDuty.RowCount; i++)
+            {
+                //loops through all of the times on the page
+                for (int j = 0; j < 18; j+= 2)
+                {//j is the time labels, it increments by 2 because the the odd numbers are the available labels
+                    //if the appointment time matches one of the time labels time then change the colour and text of the opposite item
+                    if (/*compare the row[i] returned from the above query*/dgvDuty.Rows[i].Cells[3].Value.ToString().Equals(tableLayout.Controls[j].Text))
+                    {
+                        tableLayout.Controls[j + 1].BackColor = Color.LightCoral;
+                        tableLayout.Controls[j + 1].Text = "Not Available";
+                    }
+                }
+            }
+
         }
     }
 }

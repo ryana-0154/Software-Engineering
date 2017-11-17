@@ -149,10 +149,16 @@ namespace BasicGP
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", ID);
                     break;
+                case "employeeID":
+                    sqlCommand = new SqlCommand(Constants.getEmployeeIDByName, DBConnection);
+                    sqlCommand.Parameters.AddWithValue("@title", data[1]);
+                    sqlCommand.Parameters.AddWithValue("@firstname", data[2]);
+                    sqlCommand.Parameters.AddWithValue("@lastname", data[3]);
+                    break;
                 case "showEmployeeAvailability":
                     sqlCommand = new SqlCommand(Constants.showEmployeeAvailability, DBConnection);
                     sqlCommand.Parameters.AddWithValue("@employeeID", ID);
-                    sqlCommand.Parameters.AddWithValue("@date", data[2]);
+                    sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(data[2]));
                     break;
                 default:
                     dataSet = null;

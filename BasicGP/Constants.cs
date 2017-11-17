@@ -19,7 +19,7 @@ namespace BasicGP
         //TODO: Use a join here and then use IN instead of all the ORs
         public static string getDuty = "SELECT Title, FirstName, LastName, Occupation FROM employee WHERE rotaID IN (SELECT rotaID FROM rota WHERE Shift1 = @day OR Shift2 = @day OR Shift3 = @day OR Shift4 = @day OR Shift5 = @day OR Shift6 = @day OR Shift7 = @day)";
         public static string getPrescriptionDuration = "SELECT duration FROM prescriptions WHERE prescriptionID = @id";
-        //public static string getEmployeeIDByName = "SELECT * FROM employee WHERE firstName = @firstName and lastName = @lastName";
+        public static string getEmployeeIDByName = "SELECT employeeID FROM employee WHERE title = @title AND firstName = @firstName and lastName = @lastName";
         public static string isEmployeeAvailable = "";//join employee rota and appointments, and show which one is on and that day and doesnt have a conflicting appointment
         public static string showEmployeeAvailability = "SELECT * FROM appointment WHERE EmployeeID = @employeeID AND Date = @date";
 
