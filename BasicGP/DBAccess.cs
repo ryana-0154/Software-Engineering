@@ -257,5 +257,24 @@ namespace BasicGP
                 RegisterForm.showMessage("Error!", "There was an error and the prescription was not extended.");
             }
         }
+        public static void deleteData(params string[] data)
+        {
+            OpenConnection();
+            sqlCommand = new SqlCommand(Constants.cancelAppointment, DBConnection);
+            sqlCommand.Parameters.AddWithValue("@NHNumber", data[0]);
+            sqlCommand.Parameters.AddWithValue("@Date", DateTime.Parse(data[1]));
+            sqlCommand.Parameters.AddWithValue("@time", DateTime.Parse(data[2]));
+            int count = sqlCommand.ExecuteNonQuery();
+
+            if (count > 0)
+            {
+                RegisterForm.showMessage("Success!", "Sucessfully Deleted.");
+            }
+            else
+            {
+                RegisterForm.showMessage("Error!", "There was an error and the entry was not deleted.");
+            }
+
+        }
     }
 }
