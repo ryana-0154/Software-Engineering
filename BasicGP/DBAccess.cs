@@ -69,14 +69,14 @@ namespace BasicGP
             // Clean the dataSet and the dataAdapter
             dataSet = null;
             dataAdapter = null;
-            int pID;
+            int ID;
             int findID;
 
             // Open the DB Connection
             OpenConnection();
 
             // Try to parse data[1] to an int32 and output as pID
-            Int32.TryParse(data[1], out pID);
+            Int32.TryParse(data[1], out ID);
             // Switch statement based on what is in data[0]
             switch (data[0])
             {
@@ -111,31 +111,31 @@ namespace BasicGP
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getAppointments, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
-                    sqlCommand.Parameters.AddWithValue("@id", pID);
+                    sqlCommand.Parameters.AddWithValue("@id", ID);
                     break;
                 case "patientAppointmentsEdit":
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getAppointmentsForEdit, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
-                    sqlCommand.Parameters.AddWithValue("@id", pID);
+                    sqlCommand.Parameters.AddWithValue("@id", ID);
                     break;
                 case "testResults":
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getTestResults, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
-                    sqlCommand.Parameters.AddWithValue("@id", pID);
+                    sqlCommand.Parameters.AddWithValue("@id", ID);
                     break;
                 case "patientPresciptions":
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getPrescriptions, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
-                    sqlCommand.Parameters.AddWithValue("@id", pID);
+                    sqlCommand.Parameters.AddWithValue("@id", ID);
                     break;
                 case "availability":
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getAvailability, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
-                    sqlCommand.Parameters.AddWithValue("@id", pID);
+                    sqlCommand.Parameters.AddWithValue("@id", ID);
                     break;
                 case "duty":
                     // Instantiate an sqlCommand on the DBConnection
@@ -147,7 +147,12 @@ namespace BasicGP
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getPrescriptionDuration, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
-                    sqlCommand.Parameters.AddWithValue("@id", pID);
+                    sqlCommand.Parameters.AddWithValue("@id", ID);
+                    break;
+                case "showEmployeeAvailability":
+                    sqlCommand = new SqlCommand(Constants.showEmployeeAvailability, DBConnection);
+                    sqlCommand.Parameters.AddWithValue("@employeeID", ID);
+                    sqlCommand.Parameters.AddWithValue("@date", data[2]);
                     break;
                 default:
                     dataSet = null;

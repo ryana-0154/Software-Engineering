@@ -16,11 +16,6 @@ namespace BasicGP
         {
             InitializeComponent();
         }
-        //comment
-        private void RegisterForm_Load(object sender, EventArgs e)
-        {
-            txtNHNumber.Text = Utilities.GenerateNHNumber();
-        }
 
         private void RegisterForm_FormClosing(object sender, FormClosingEventArgs e)
         {
