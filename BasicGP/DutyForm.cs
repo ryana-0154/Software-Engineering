@@ -42,11 +42,7 @@ namespace BasicGP
         private void mcDutyDate_DateChanged(object sender, DateRangeEventArgs e)
         {
             GetDuty(mcDutyDate.SelectionStart.DayOfWeek.ToString());
-            for (int i = 1; i < 40; i += 2)
-            {
-                tableLayout.Controls[i].BackColor = SystemColors.ControlLight;
-                tableLayout.Controls[i].Text = "Available";
-            }
+            
         }
 
         private void dgvCellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -62,20 +58,28 @@ namespace BasicGP
             DataTable tableAvailabilty = dataSetAvailability.Tables[0];
             DataSet datasetEID = DBAccess.getData("employeeID", title, firstname, lastname);
             int employeeID = Int32.Parse(datasetEID.Tables[0].Rows[0].ItemArray[0].ToString());
+            //sets every time back to available before it gets changed
+            for (int i = 1; i < 40; i += 2)
+            {
+                tableLayout.Controls[i].BackColor = Color.PaleGreen;
+                tableLayout.Controls[i].Text = "Available";
+            }
             ShowTimes(employeeID);
         }
         private void ShowTimes(int employeeID)
         {
             //uses the employeeID and the selected date to return all of their appointment times on that day
-            DBAccess.getData("showEmployeeAvailability", employeeID.ToString(), mcDutyDate.SelectionStart.ToShortDateString());
+            DataSet dsTest = DBAccess.getData("showEmployeeAvailability", employeeID.ToString(), mcDutyDate.SelectionStart.ToShortDateString());
+            DataTable table = dsTest.Tables[0];
+
             //loops through all of the returned rows, and therefore all the times in that day that the employee has appointments
-            for (int i = 0; i < dgvDuty.RowCount; i++)
+            for (int i = 0; i < table.Rows.Count; i++)
             {
                 //loops through all of the times on the page
                 for (int j = 0; j < 40; j += 2)
                 {//j is the time labels, it increments by 2 because the the odd numbers are the available labels
                     //if the appointment time matches one of the time labels time then change the colour and text of the opposite item
-                    if (/*compare the row[i] returned from the above query*/dgvDuty.Rows[i].Cells[3].Value.ToString().Equals(tableLayout.Controls[j].Text))
+                    if (table.Rows[i].ItemArray[4].ToString().Equals(tableLayout.Controls[j].Text + ":00"))
                     {
                         tableLayout.Controls[j + 1].BackColor = Color.LightCoral;
                         tableLayout.Controls[j + 1].Text = "Not Available";

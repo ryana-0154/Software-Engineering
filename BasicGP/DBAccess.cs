@@ -158,6 +158,7 @@ namespace BasicGP
                 case "showEmployeeAvailability":
                     sqlCommand = new SqlCommand(Constants.showEmployeeAvailability, DBConnection);
                     sqlCommand.Parameters.AddWithValue("@employeeID", ID);
+                    //sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(data[2]));
                     sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(data[2]));
                     break;
                 default:
