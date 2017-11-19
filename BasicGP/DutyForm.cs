@@ -42,7 +42,7 @@ namespace BasicGP
         private void mcDutyDate_DateChanged(object sender, DateRangeEventArgs e)
         {
             GetDuty(mcDutyDate.SelectionStart.DayOfWeek.ToString());
-            for (int i = 1; i < 18; i=+2)
+            for (int i = 1; i < 40; i += 2)
             {
                 tableLayout.Controls[i].BackColor = SystemColors.ControlLight;
                 tableLayout.Controls[i].Text = "Available";
@@ -51,6 +51,7 @@ namespace BasicGP
 
         private void dgvCellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            Console.WriteLine("Clicked");
             //gets the employee title from the dgv and clicked cell
             string title = dgvDuty.Rows[e.RowIndex].Cells[0].Value.ToString();
             //gets the employee firstname from the dgv and clicked cell
@@ -59,8 +60,8 @@ namespace BasicGP
             string lastname = dgvDuty.Rows[e.RowIndex].Cells[2].Value.ToString();
             DataSet dataSetAvailability = DBAccess.getData("employeeID", title, firstname, lastname);
             DataTable tableAvailabilty = dataSetAvailability.Tables[0];
-            //TODO: get the employee ID using the data above and store it as employeeID
-            int employeeID = 2;
+            DataSet datasetEID = DBAccess.getData("employeeID", title, firstname, lastname);
+            int employeeID = Int32.Parse(datasetEID.Tables[0].Rows[0].ItemArray[0].ToString());
             ShowTimes(employeeID);
         }
         private void ShowTimes(int employeeID)
@@ -71,7 +72,7 @@ namespace BasicGP
             for (int i = 0; i < dgvDuty.RowCount; i++)
             {
                 //loops through all of the times on the page
-                for (int j = 0; j < 18; j+= 2)
+                for (int j = 0; j < 40; j += 2)
                 {//j is the time labels, it increments by 2 because the the odd numbers are the available labels
                     //if the appointment time matches one of the time labels time then change the colour and text of the opposite item
                     if (/*compare the row[i] returned from the above query*/dgvDuty.Rows[i].Cells[3].Value.ToString().Equals(tableLayout.Controls[j].Text))
