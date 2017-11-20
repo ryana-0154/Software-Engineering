@@ -54,8 +54,8 @@ namespace BasicGP
             string firstname = dgvDuty.Rows[e.RowIndex].Cells[1].Value.ToString();
             //gets the employee last name from the dgv and clicked cell
             string lastname = dgvDuty.Rows[e.RowIndex].Cells[2].Value.ToString();
-            DataSet dataSetAvailability = DBAccess.getData("employeeID", title, firstname, lastname);
-            DataTable tableAvailabilty = dataSetAvailability.Tables[0];
+            //DataSet dataSetAvailability = DBAccess.getData("employeeID", title, firstname, lastname);
+            //DataTable tableAvailabilty = dataSetAvailability.Tables[0];
             DataSet datasetEID = DBAccess.getData("employeeID", title, firstname, lastname);
             int employeeID = Int32.Parse(datasetEID.Tables[0].Rows[0].ItemArray[0].ToString());
             //sets every time back to available before it gets changed

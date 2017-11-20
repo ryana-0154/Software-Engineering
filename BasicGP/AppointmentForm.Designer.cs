@@ -194,7 +194,7 @@ namespace BasicGP
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDate.Location = new System.Drawing.Point(0, 0);
             this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.dtpDate.MinDate = DateTime.Today;
+            this.dtpDate.MinDate = new System.DateTime(2017, 11, 20, 0, 0, 0, 0);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(193, 22);
             this.dtpDate.TabIndex = 2;
@@ -454,7 +454,7 @@ namespace BasicGP
             // 
             this.pnl.Controls.Add(this.txtSearch);
             this.pnl.Controls.Add(this.lblInputPrompt);
-            this.pnl.Location = new System.Drawing.Point(837, 183);
+            this.pnl.Location = new System.Drawing.Point(771, 186);
             this.pnl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl.Name = "pnl";
             this.pnl.Size = new System.Drawing.Size(417, 39);
@@ -464,15 +464,15 @@ namespace BasicGP
             // 
             this.dgvAppointments.AllowUserToAddRows = false;
             this.dgvAppointments.AllowUserToDeleteRows = false;
-            this.dgvAppointments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAppointments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppointments.Location = new System.Drawing.Point(837, 229);
+            this.dgvAppointments.Location = new System.Drawing.Point(771, 229);
             this.dgvAppointments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAppointments.Name = "dgvAppointments";
             this.dgvAppointments.ReadOnly = true;
             this.dgvAppointments.RowHeadersVisible = false;
             this.dgvAppointments.RowTemplate.Height = 24;
-            this.dgvAppointments.Size = new System.Drawing.Size(487, 335);
+            this.dgvAppointments.Size = new System.Drawing.Size(553, 335);
             this.dgvAppointments.TabIndex = 26;
             this.dgvAppointments.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellDoubleClick);
             // 

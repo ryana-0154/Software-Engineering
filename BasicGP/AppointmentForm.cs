@@ -102,7 +102,7 @@ namespace BasicGP
             {
                 // Define a dataSet from DBAccess with the SQL statement
 
-                dataSet = DBAccess.getData("patientAppointmentsEdit", txtSearch.Text);
+                dataSet = DBAccess.getData("patientAppointmentsView", txtSearch.Text);
                 //Define a datatable with the tables from the dataset return
                 table = dataSet.Tables[0];
 
@@ -115,12 +115,14 @@ namespace BasicGP
 
         private void dgvCellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtNHNumber.Text = dgvAppointments.Rows[e.RowIndex].Cells[0].Value.ToString();
+            DataSet dataSet = DBAccess.getData("patientAppointmentsEdit", txtSearch.Text);
+            DataTable table = dataSet.Tables[0];
+            txtNHNumber.Text = table.Rows[e.RowIndex].ItemArray[0].ToString();
             //TODO: BUG  - ERROR CAN BE THROWN HERE WHEN THE EDITING DATE IS BEFORE CURRENT DATE
-            dtpDate.Value = (DateTime)dgvAppointments.Rows[e.RowIndex].Cells[3].Value;
-            cbTime.Text = dgvAppointments.Rows[e.RowIndex].Cells[4].Value.ToString();
+            dtpDate.Value = DateTime.Parse(table.Rows[e.RowIndex].ItemArray[3].ToString());
+            cbTime.Text = table.Rows[e.RowIndex].ItemArray[2].ToString();
 
-            //get this data from employee table
+            //TODO: get this data from employee table
             //comboTitle.Text = dgvAppointments.Rows[e.RowIndex].Cells[3].Value.ToString();
             //txtFName.Text = dgvAppointments.Rows[e.RowIndex].Cells[4].Value.ToString();
             //txtSName.Text = dgvAppointments.Rows[e.RowIndex].Cells[5].Value.ToString();

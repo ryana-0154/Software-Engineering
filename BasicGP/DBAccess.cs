@@ -3,6 +3,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Text.RegularExpressions;
 
 namespace BasicGP
@@ -69,13 +70,13 @@ namespace BasicGP
             // Clean the dataSet and the dataAdapter
             dataSet = null;
             dataAdapter = null;
-            int ID;
+            int ID = 0;
             int findID;
 
             // Open the DB Connection
             OpenConnection();
-
-            ID = data.Length <= 0 ? Int32.Parse(data[1]) : 0;
+            Int32.TryParse(data[1], out ID);
+            //ID = data.Length <= 0 ? Int32.Parse(data[1]) : 0;
 
             // Switch statement based on what is in data[0]
             switch (data[0])
@@ -113,12 +114,19 @@ namespace BasicGP
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", ID);
                     break;
+                case "patientAppointmentsView":
+                    // Instantiate an sqlCommand on the DBConnection
+                    sqlCommand = new SqlCommand(Constants.getAppointmentsForView, DBConnection);
+                    // add parameters to the sql command (Prevents again SQLI)
+                    sqlCommand.Parameters.AddWithValue("@id", ID);
+                    sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(DateTime.Today.ToString("yyyy-MM-dd")));
+                    break;
                 case "patientAppointmentsEdit":
                     // Instantiate an sqlCommand on the DBConnection
                     sqlCommand = new SqlCommand(Constants.getAppointmentsForEdit, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", ID);
-                    sqlCommand.Parameters.AddWithValue("@date", DateTime.Today.ToShortDateString());
+                    sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(DateTime.Today.ToString("yyyy-MM-dd")));
                     break;
                 case "testResults":
                     // Instantiate an sqlCommand on the DBConnection
@@ -159,7 +167,6 @@ namespace BasicGP
                 case "showEmployeeAvailability":
                     sqlCommand = new SqlCommand(Constants.showEmployeeAvailability, DBConnection);
                     sqlCommand.Parameters.AddWithValue("@employeeID", ID);
-                    //sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(data[2]));
                     sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(data[2]));
                     break;
                 case "selectAllPatients":

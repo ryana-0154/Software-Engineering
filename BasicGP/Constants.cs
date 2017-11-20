@@ -12,7 +12,13 @@ namespace BasicGP
         public static string getAllPatients = "SELECT TOP 15 * FROM patients ORDER BY Name DESC";
         public static string getAppointments = "SELECT * FROM appointment WHERE NationalHealthNumber = @id";
         //TODO: use join and make this display patient name and employee name and date and time and description
-        public static string getAppointmentsForEdit = "SELECT * FROM appointment WHERE (NationalHealthNumber = @id OR EmployeeID = @id) AND date > @date";
+        //returns all the data so it can be edited
+        public static string getAppointmentsForEdit = "SELECT * FROM appointment WHERE (NationalHealthNumber = @id OR EmployeeID = @id) AND date >= @date";
+        //displays the appointments to show to then be chosen
+        public static string getAppointmentsForView = "SELECT employee.title, Employee.FirstName,Employee.LastName,appointment.Date,appointment.Time, patients.name FROM appointment " +
+        "right JOIN Employee ON appointment.EmployeeID = Employee.EmployeeID " +
+        "right join patients on appointment.NationalHealthNumber = patients.NationalHealthNumber " +
+        "WHERE (appointment.NationalHealthNumber = @ID OR appointment.EmployeeID = @ID) AND appointment.Date >= @date";
         public static string getTestResults = "SELECT * FROM testresults WHERE NationalHealthNumber = @id";
         public static string getPrescriptions = "SELECT * FROM prescriptions WHERE NationalHealthNumber = @id";
         //TODO: Not necessary
