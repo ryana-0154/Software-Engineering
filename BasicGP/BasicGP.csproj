@@ -78,17 +78,17 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="DBAccess.cs" />
+    <Compile Include="DutyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DutyForm.Designer.cs">
+      <DependentUpon>DutyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AvailabilityForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AvailabilityForm.Designer.cs">
-      <DependentUpon>AvailabilityForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ResultsForm.cs">
       <SubType>Form</SubType>
@@ -112,6 +112,9 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DutyForm.resx">
+      <DependentUpon>DutyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,9 +130,6 @@
     </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AvailabilityForm.resx">
-      <DependentUpon>AvailabilityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ResultsForm.resx">
       <DependentUpon>ResultsForm.cs</DependentUpon>
