@@ -15,3 +15,20 @@ C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Enginee
 C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csproj.CoreCompileInputs.cache
 C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.exe
 C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.pdb
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.csprojResolveAssemblyReference.cache
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.AppointmentForm.resources
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.Dashboard.resources
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.DutyForm.resources
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.LoginForm.resources
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.Properties.Resources.resources
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.RegisterForm.resources
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.ResultsForm.resources
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.csproj.GenerateResource.Cache
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.csproj.CoreCompileInputs.cache
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.exe
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\obj\Debug\BasicGP.pdb
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\bin\Debug\OverGPDB.mdf
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\bin\Debug\OverGPDB_log.ldf
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\bin\Debug\BasicGP.exe.config
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\bin\Debug\BasicGP.exe
+C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\bin\Debug\BasicGP.pdb
