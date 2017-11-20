@@ -7,7 +7,8 @@ namespace BasicGP
         // Select Statements
         public static string checkLogin = "SELECT * FROM users WHERE userName = @username AND password = @password";
         public static string getPatientByID = "SELECT * FROM patients WHERE NationalHealthNumber = @id";
-        public static string getPatientByDOB = "SELECT * FROM patients WHERE name = @name AND DOB = @DOB";
+        // In?
+        public static string getPatientByDOB = "SELECT * FROM patients WHERE name IN (@name) AND DOB IN (@DOB)";
         public static string getAllPatients = "SELECT TOP 15 * FROM patients ORDER BY Name DESC";
         public static string getAppointments = "SELECT * FROM appointment WHERE NationalHealthNumber = @id";
         //TODO: use join and make this display patient name and employee name and date and time and description
