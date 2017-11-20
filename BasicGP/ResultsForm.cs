@@ -18,6 +18,9 @@ namespace BasicGP
         }
         private void ResultsForm_Load(object sender, EventArgs e)
         {
+            DataSet dataSet = DBAccess.getData("selectAllPatients");
+            DataTable table = dataSet.Tables[0];
+            Utilities.CheckForResults(dgvPatients, table);
         }
 
         private void picLogo_Click(object sender, EventArgs e)

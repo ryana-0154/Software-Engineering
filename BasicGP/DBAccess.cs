@@ -75,8 +75,8 @@ namespace BasicGP
             // Open the DB Connection
             OpenConnection();
 
-            // Try to parse data[1] to an int32 and output as pID
-            Int32.TryParse(data[1], out ID);
+            ID = data.Length <= 0 ? Int32.Parse(data[1]) : 0;
+
             // Switch statement based on what is in data[0]
             switch (data[0])
             {
@@ -161,6 +161,9 @@ namespace BasicGP
                     sqlCommand.Parameters.AddWithValue("@employeeID", ID);
                     //sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(data[2]));
                     sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(data[2]));
+                    break;
+                case "selectAllPatients":
+                    sqlCommand = new SqlCommand(Constants.getAllPatients, DBConnection);
                     break;
                 default:
                     dataSet = null;
