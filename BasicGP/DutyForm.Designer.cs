@@ -1,4 +1,6 @@
-﻿namespace BasicGP
+﻿using System;
+
+namespace BasicGP
 {
     partial class DutyForm
     {
@@ -139,6 +141,7 @@
             this.mcDutyDate.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.mcDutyDate.Name = "mcDutyDate";
             this.mcDutyDate.TabIndex = 9;
+            this.mcDutyDate.MinDate = DateTime.Today;
             this.mcDutyDate.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.mcDutyDate_DateChanged);
             // 
             // lblTitleAvailability

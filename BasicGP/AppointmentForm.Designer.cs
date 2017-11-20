@@ -45,7 +45,7 @@ namespace BasicGP
             this.txtSName = new System.Windows.Forms.TextBox();
             this.lblSName = new System.Windows.Forms.Label();
             this.lblFName = new System.Windows.Forms.Label();
-            this.lblTitleA = new System.Windows.Forms.Label();
+            this.lblTitlePrompt = new System.Windows.Forms.Label();
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.cbTitle = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -55,7 +55,7 @@ namespace BasicGP
             this.lblEmployee = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblInputPrompt = new System.Windows.Forms.Label();
             this.pnl = new System.Windows.Forms.Panel();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
             this.lblErrorMsg = new System.Windows.Forms.Label();
@@ -194,7 +194,7 @@ namespace BasicGP
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDate.Location = new System.Drawing.Point(0, 0);
             this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.dtpDate.MinDate = new System.DateTime(2017, 11, 14, 0, 0, 0, 0);
+            this.dtpDate.MinDate = DateTime.Today;
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(193, 22);
             this.dtpDate.TabIndex = 2;
@@ -233,7 +233,7 @@ namespace BasicGP
             this.tableLayoutPanel5.Controls.Add(this.txtSName, 1, 2);
             this.tableLayoutPanel5.Controls.Add(this.lblSName, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.lblFName, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.lblTitleA, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lblTitlePrompt, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.pnlTitle, 1, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(45, 438);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(5);
@@ -302,19 +302,19 @@ namespace BasicGP
             this.lblFName.Text = "First Name(s) *";
             this.lblFName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblTitleA
+            // lblTitlePrompt
             // 
-            this.lblTitleA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblTitlePrompt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTitleA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleA.Location = new System.Drawing.Point(5, 1);
-            this.lblTitleA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTitleA.Name = "lblTitleA";
-            this.lblTitleA.Size = new System.Drawing.Size(177, 64);
-            this.lblTitleA.TabIndex = 9;
-            this.lblTitleA.Text = "Title *";
-            this.lblTitleA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitlePrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitlePrompt.Location = new System.Drawing.Point(5, 1);
+            this.lblTitlePrompt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitlePrompt.Name = "lblTitlePrompt";
+            this.lblTitlePrompt.Size = new System.Drawing.Size(177, 64);
+            this.lblTitlePrompt.TabIndex = 9;
+            this.lblTitlePrompt.Text = "Title *";
+            this.lblTitlePrompt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlTitle
             // 
@@ -440,20 +440,20 @@ namespace BasicGP
             this.txtSearch.TabIndex = 9;
             this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
-            // label1
+            // lblInputPrompt
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 25);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Appointment ID or Employee ID:";
+            this.lblInputPrompt.AutoSize = true;
+            this.lblInputPrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInputPrompt.Location = new System.Drawing.Point(3, 0);
+            this.lblInputPrompt.Name = "lblInputPrompt";
+            this.lblInputPrompt.Size = new System.Drawing.Size(290, 25);
+            this.lblInputPrompt.TabIndex = 24;
+            this.lblInputPrompt.Text = "Appointment ID or Employee ID:";
             // 
             // pnl
             // 
             this.pnl.Controls.Add(this.txtSearch);
-            this.pnl.Controls.Add(this.label1);
+            this.pnl.Controls.Add(this.lblInputPrompt);
             this.pnl.Location = new System.Drawing.Point(837, 183);
             this.pnl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl.Name = "pnl";
@@ -552,7 +552,7 @@ namespace BasicGP
         private System.Windows.Forms.ComboBox cbTitle;
         private System.Windows.Forms.Label lblSName;
         private System.Windows.Forms.Label lblFName;
-        private System.Windows.Forms.Label lblTitleA;
+        private System.Windows.Forms.Label lblTitlePrompt;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label lblDescription;
@@ -564,7 +564,7 @@ namespace BasicGP
         private System.Windows.Forms.Label lblEmployee;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblInputPrompt;
         private System.Windows.Forms.Panel pnl;
         private System.Windows.Forms.DataGridView dgvAppointments;
         private System.Windows.Forms.Label lblNHNumber;

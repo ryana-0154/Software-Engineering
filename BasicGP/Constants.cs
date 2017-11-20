@@ -10,7 +10,7 @@ namespace BasicGP
         public static string getPatientByDOB = "SELECT * FROM patients WHERE name = @name AND DOB = @DOB";
         public static string getAppointments = "SELECT * FROM appointment WHERE NationalHealthNumber = @id";
         //TODO: use join and make this display patient name and employee name and date and time and description
-        public static string getAppointmentsForEdit = "SELECT * FROM appointment WHERE NationalHealthNumber = @id OR EmployeeID = @id";
+        public static string getAppointmentsForEdit = "SELECT * FROM appointment WHERE (NationalHealthNumber = @id OR EmployeeID = @id) AND date > @date";
         public static string getTestResults = "SELECT * FROM testresults WHERE NationalHealthNumber = @id";
         public static string getPrescriptions = "SELECT * FROM prescriptions WHERE NationalHealthNumber = @id";
         //TODO: Not necessary

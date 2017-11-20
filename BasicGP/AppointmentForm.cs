@@ -12,6 +12,10 @@ namespace BasicGP
 {
     public partial class AppointmentForm : Form
     {
+        //attributes
+        bool isEdting = false;
+
+
         public AppointmentForm()
         {
             InitializeComponent();
@@ -33,11 +37,18 @@ namespace BasicGP
             appointmentDetails[4] = pnlTitle;
             appointmentDetails[5] = txtFName;
             appointmentDetails[6] = txtSName;
-            if (CheckValidation(appointmentDetails))
-            {
-                //TODO: check order of data entry
-                DBAccess.postData("newAppointment", appointmentDetails[0].Text, appointmentDetails[1].Controls[0].Text, appointmentDetails[2].Controls[0].Text, appointmentDetails[3].Text, appointmentDetails[4].Controls[0].Text, appointmentDetails[5].Text, appointmentDetails[6].Text);
-                Utilities.toDashboard(sender, e, this);
+            if (CheckValidation(appointmentDetails)) { 
+
+                if (isEdting == false)
+                {
+                    //TODO: check order of data entry
+                    DBAccess.postData("newAppointment", appointmentDetails[0].Text, appointmentDetails[1].Controls[0].Text, appointmentDetails[2].Controls[0].Text, appointmentDetails[3].Text, appointmentDetails[4].Controls[0].Text, appointmentDetails[5].Text, appointmentDetails[6].Text);
+                                    }
+                else
+                {
+                    //TODO: update statement for appointments here
+                }
+            Utilities.toDashboard(sender, e, this);
             }
         }
         private bool CheckValidation(Control[] appointmentDetails)
@@ -101,25 +112,35 @@ namespace BasicGP
 
             }
         }
-  
+
         private void dgvCellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             txtNHNumber.Text = dgvAppointments.Rows[e.RowIndex].Cells[0].Value.ToString();
-           //TODO: BUG  - ERROR CAN BE THROWN HERE WHEN THE EDITING DATE IS BEFORE CURRENT DATE
+            //TODO: BUG  - ERROR CAN BE THROWN HERE WHEN THE EDITING DATE IS BEFORE CURRENT DATE
             dtpDate.Value = (DateTime)dgvAppointments.Rows[e.RowIndex].Cells[3].Value;
             cbTime.Text = dgvAppointments.Rows[e.RowIndex].Cells[4].Value.ToString();
 
+            //get this data from employee table
             //comboTitle.Text = dgvAppointments.Rows[e.RowIndex].Cells[3].Value.ToString();
             //txtFName.Text = dgvAppointments.Rows[e.RowIndex].Cells[4].Value.ToString();
             //txtSName.Text = dgvAppointments.Rows[e.RowIndex].Cells[5].Value.ToString();
 
-            txtDescription.Text = dgvAppointments.Rows[e.RowIndex].Cells[6].Value.ToString();
-                    }
+            txtDescription.Text = dgvAppointments.Rows[e.RowIndex].Cells[5].Value.ToString();
+            ChangeToEdit();
+        }
+        private void ChangeToEdit()
+        {
+            lblTitle.Text = "Edit appointment";
+            btnDelete.Visible = true;
+            //TODO: change the method that is called on the event click btnSubmit
+
+            isEdting = true;
+            //TODO: implement a back button to go from edit to register
+        }
 
         private void AppointmentForm_Load(object sender, EventArgs e)
         {
 
         }
-        
     }
 }

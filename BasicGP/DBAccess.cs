@@ -118,6 +118,7 @@ namespace BasicGP
                     sqlCommand = new SqlCommand(Constants.getAppointmentsForEdit, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
                     sqlCommand.Parameters.AddWithValue("@id", ID);
+                    sqlCommand.Parameters.AddWithValue("@date", DateTime.Today.ToShortDateString());
                     break;
                 case "testResults":
                     // Instantiate an sqlCommand on the DBConnection
