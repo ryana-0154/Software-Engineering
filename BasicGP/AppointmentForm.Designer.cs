@@ -520,7 +520,6 @@ namespace BasicGP
             this.Name = "AppointmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AppointmentForm";
-            this.Load += new System.EventHandler(this.AppointmentForm_Load);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.pnlTime.ResumeLayout(false);

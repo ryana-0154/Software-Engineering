@@ -14,8 +14,7 @@ namespace BasicGP
     {
         //attributes
         bool isEdting = false;
-        string appointmentID;
-
+        string appointmentID = "";
         public AppointmentForm()
         {
             InitializeComponent();
@@ -46,12 +45,13 @@ namespace BasicGP
                 }
                 else
                 {
-                    DataSet dataSet = DBAccess.getData("employeeID", pnlTitle.Controls[0].Text, txtFName.Text, txtSName.Text);
+                    //finds the employee ID of the new employee associated with the appointment
+                    DataSet dataSet = DBAccess.getData("employeeID", appointmentDetails[4].Controls[0].Text, appointmentDetails[5].Text, appointmentDetails[6].Text);
                     DataTable table = dataSet.Tables[0];
                     // Put the value of the row returned into employeeid
                     int employeeID = Int32.Parse(dataSet.Tables[0].Rows[0].ItemArray[0].ToString());
 
-                    EditAppointment(employeeID, Int32.Parse(txtNHNumber.Text), pnlDate.Controls[0].Text, pnlTime.Controls[0].Text, txtDescription.Text, appointmentID);
+                    EditAppointment(employeeID, Int32.Parse(appointmentDetails[0].Text), pnlDate.Controls[0].Text, pnlTime.Controls[0].Text, appointmentDetails[3].Text, appointmentID);
                 }
 
                 Utilities.toDashboard(sender, e, this);
@@ -123,48 +123,27 @@ namespace BasicGP
 
         private void dgvCellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            appointmentID = dgvAppointments.Rows[e.RowIndex].Cells[0].Value.ToString();
             DataSet dataSet = DBAccess.getData("patientAppointmentsEdit", txtSearch.Text);
             DataTable table = dataSet.Tables[0];
             txtNHNumber.Text = table.Rows[e.RowIndex].ItemArray[0].ToString();
-            //TODO: BUG  - ERROR CAN BE THROWN HERE WHEN THE EDITING DATE IS BEFORE CURRENT DATE
-            dtpDate.Value = DateTime.Parse(table.Rows[e.RowIndex].ItemArray[3].ToString());
-
-            #region not sure why we need this
-            // Variables to hold the title, fname and sname pulled from the dgvAppointments
-            string title = dgvAppointments.Rows[e.RowIndex].Cells[0].Value.ToString();
-            string fName = dgvAppointments.Rows[e.RowIndex].Cells[1].Value.ToString();
-            string sName = dgvAppointments.Rows[e.RowIndex].Cells[2].Value.ToString();
-            
-            // Reuse dataset & table from above
-            dataSet = DBAccess.getData("employeeID", title, fName, sName);
-            table = dataSet.Tables[0];
-            // Put the value of the row returned into employeeid
-            int employeeID = Int32.Parse(dataSet.Tables[0].Rows[0].ItemArray[0].ToString());
-            #endregion
-
-            string time = dgvAppointments.Rows[e.RowIndex].Cells[4].Value.ToString();
-            
-            //TODO: get this data from employee table - Really?
-            cbTitle.Text = title;
-            txtFName.Text = fName;
-            txtSName.Text = sName;
-            cbTime.Text = time.Substring(0, time.Length-3);
-            
-            txtDescription.Text = dgvAppointments.Rows[e.RowIndex].Cells[5].Value.ToString();
-
-            //TODO: Fix this
-            //dataSet = DBAccess.getData("getAppointmentID", employeeID.ToString(), txtNHNumber.Text, dtpDate.Value.ToShortDateString(), cbTime.Text);
-            //table = dataSet.Tables[0];
-            //appointmentID = table.Rows[0].ItemArray[0].ToString();
-
+            dtpDate.Value = DateTime.Parse(table.Rows[e.RowIndex].ItemArray[1].ToString());
+            DateTime time = DateTime.Parse(table.Rows[e.RowIndex].ItemArray[2].ToString());
+            cbTime.Text = time.ToShortTimeString();
+            cbTitle.Text = table.Rows[e.RowIndex].ItemArray[3].ToString();
+            txtFName.Text = table.Rows[e.RowIndex].ItemArray[4].ToString();
+            txtSName.Text = table.Rows[e.RowIndex].ItemArray[5].ToString();
+            txtDescription.Text = table.Rows[e.RowIndex].ItemArray[6].ToString();
             ChangeToEdit();
+
         }
+        /// <summary>
+        /// changes all of the visuals on the form to look like editing then sets a bool flag isEditing to true;
+        /// </summary>
         private void ChangeToEdit()
         {
             lblTitle.Text = "Edit appointment";
             btnDelete.Visible = true;
-            //TODO: change the method that is called on the event click btnSubmit
-            
             isEdting = true;
             //TODO: implement a back button to go from edit to register
         }
@@ -176,11 +155,6 @@ namespace BasicGP
             {
                 DBAccess.updateData("editAppointment", eID.ToString(), NHNumber.ToString(), date, time, desc, aID);
             }
-        }
-        
-        private void AppointmentForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
