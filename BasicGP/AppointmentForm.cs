@@ -120,19 +120,35 @@ namespace BasicGP
             txtNHNumber.Text = table.Rows[e.RowIndex].ItemArray[0].ToString();
             //TODO: BUG  - ERROR CAN BE THROWN HERE WHEN THE EDITING DATE IS BEFORE CURRENT DATE
             dtpDate.Value = DateTime.Parse(table.Rows[e.RowIndex].ItemArray[3].ToString());
-            cbTime.Text = table.Rows[e.RowIndex].ItemArray[2].ToString();
 
-            //TODO: get this data from employee table
-            //comboTitle.Text = dgvAppointments.Rows[e.RowIndex].Cells[3].Value.ToString();
-            //txtFName.Text = dgvAppointments.Rows[e.RowIndex].Cells[4].Value.ToString();
-            //txtSName.Text = dgvAppointments.Rows[e.RowIndex].Cells[5].Value.ToString();
+            #region not sure why we need this
+            // Variables to hold the title, fname and sname pulled from the dgvAppointments
+            string title = dgvAppointments.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string fName = dgvAppointments.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string sName = dgvAppointments.Rows[e.RowIndex].Cells[2].Value.ToString();
+            
+            // Reuse dataset & table from above
+            dataSet = DBAccess.getData("employeeID", title, fName, sName);
+            table = dataSet.Tables[0];
+            // Put the value of the row returned into employeeid
+            int employeeID = Int32.Parse(dataSet.Tables[0].Rows[0].ItemArray[0].ToString());
+            #endregion
 
+            string time = dgvAppointments.Rows[e.RowIndex].Cells[4].Value.ToString();
+            
+            //TODO: get this data from employee table - Really?
+            cbTitle.Text = title;
+            txtFName.Text = fName;
+            txtSName.Text = sName;
+            cbTime.Text = time.Substring(0, time.Length-3);
+            
             txtDescription.Text = dgvAppointments.Rows[e.RowIndex].Cells[5].Value.ToString();
             ChangeToEdit();
         }
         private void ChangeToEdit()
         {
             lblTitle.Text = "Edit appointment";
+            btnSubmit.Text = "Edit";
             btnDelete.Visible = true;
             //TODO: change the method that is called on the event click btnSubmit
 
