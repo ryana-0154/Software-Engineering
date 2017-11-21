@@ -75,7 +75,9 @@ namespace BasicGP
 
             // Open the DB Connection
             OpenConnection();
+            
             Int32.TryParse(data[1], out ID);
+            
             //ID = data.Length <= 0 ? Int32.Parse(data[1]) : 0;
 
             // Switch statement based on what is in data[0]
