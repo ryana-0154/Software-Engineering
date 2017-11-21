@@ -11,6 +11,7 @@ namespace BasicGP
         public static string getPatientByDOB = "SELECT * FROM patients WHERE name IN (@name) AND DOB IN (@DOB)";
         public static string getAllPatients = "SELECT TOP 15 * FROM patients ORDER BY Name DESC";
         public static string getAppointments = "SELECT * FROM appointment WHERE NationalHealthNumber = @id";
+        public static string getAppointmentID = "select AppointmentID from appointment where EmployeeID = @eID AND NationalHealthNumber = @NHNumber AND Date = @date AND Time = @time";
         //TODO: use join and make this display patient name and employee name and date and time and description
         //returns all the data so it can be edited
         public static string getAppointmentsForEdit = "SELECT * FROM appointment WHERE (NationalHealthNumber = @id OR EmployeeID = @id) AND date >= @date";
@@ -39,7 +40,8 @@ namespace BasicGP
 
         // UPDATE statements
         public static string extendPrescriptionDuration = "UPDATE prescriptions SET DatePrescribed = @date WHERE PrescriptionID = @prescriptionID";
-        //public static string updateAppointment = "UPDATE appointments SET ";
+        public static string updateAppointment = "UPDATE appointments SET EmployeeID = @eID, NationalHealthNumber = @NHNumber, Date = @date, " +
+            "Time = @time, Description = @desc WHERE AppointmentID = @aID ";
 
         // DELETE statements
         public static string cancelAppointment = "DELETE FROM appointment WHERE NHNumber = @NHNumber AND date = @date AND time = @time";

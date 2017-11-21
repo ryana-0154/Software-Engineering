@@ -14,7 +14,7 @@ namespace BasicGP
     {
         //attributes
         bool isEdting = false;
-
+        string appointmentID;
 
         public AppointmentForm()
         {
@@ -27,7 +27,6 @@ namespace BasicGP
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            
             Control[] appointmentDetails = new Control[7];
             appointmentDetails[0] = txtNHNumber;
             //place the panel in here then later on work on the containing element
@@ -37,19 +36,28 @@ namespace BasicGP
             appointmentDetails[4] = pnlTitle;
             appointmentDetails[5] = txtFName;
             appointmentDetails[6] = txtSName;
-            if (CheckValidation(appointmentDetails)) { 
 
+            if (CheckValidation(appointmentDetails))
+            {
                 if (isEdting == false)
                 {
                     //TODO: check order of data entry
                     DBAccess.postData("newAppointment", appointmentDetails[0].Text, appointmentDetails[1].Controls[0].Text, appointmentDetails[2].Controls[0].Text, appointmentDetails[3].Text, appointmentDetails[4].Controls[0].Text, appointmentDetails[5].Text, appointmentDetails[6].Text);
-                                    }
+                }
                 else
                 {
-                    //TODO: update statement for appointments here
+                    DataSet dataSet = DBAccess.getData("employeeID", pnlTitle.Controls[0].Text, txtFName.Text, txtSName.Text);
+                    DataTable table = dataSet.Tables[0];
+                    // Put the value of the row returned into employeeid
+                    int employeeID = Int32.Parse(dataSet.Tables[0].Rows[0].ItemArray[0].ToString());
+
+                    EditAppointment(employeeID, Int32.Parse(txtNHNumber.Text), pnlDate.Controls[0].Text, pnlTime.Controls[0].Text, txtDescription.Text, appointmentID);
                 }
-            Utilities.toDashboard(sender, e, this);
+
+                Utilities.toDashboard(sender, e, this);
             }
+
+            
         }
         private bool CheckValidation(Control[] appointmentDetails)
         {
@@ -143,19 +151,33 @@ namespace BasicGP
             cbTime.Text = time.Substring(0, time.Length-3);
             
             txtDescription.Text = dgvAppointments.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+            //TODO: Fix this
+            //dataSet = DBAccess.getData("getAppointmentID", employeeID.ToString(), txtNHNumber.Text, dtpDate.Value.ToShortDateString(), cbTime.Text);
+            //table = dataSet.Tables[0];
+            //appointmentID = table.Rows[0].ItemArray[0].ToString();
+
             ChangeToEdit();
         }
         private void ChangeToEdit()
         {
             lblTitle.Text = "Edit appointment";
-            btnSubmit.Text = "Edit";
             btnDelete.Visible = true;
             //TODO: change the method that is called on the event click btnSubmit
-
+            
             isEdting = true;
             //TODO: implement a back button to go from edit to register
         }
 
+        private void EditAppointment(int eID, int NHNumber, string date, string time, string desc, string aID)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to edit this appointment?", "Edit appointment", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                DBAccess.updateData("editAppointment", eID.ToString(), NHNumber.ToString(), date, time, desc, aID);
+            }
+        }
+        
         private void AppointmentForm_Load(object sender, EventArgs e)
         {
 
