@@ -98,7 +98,7 @@ namespace BasicGP
             DialogResult result = MessageBox.Show("Are you sure you want to delete this appointment?", "Delete appointment", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-               DBAccess.deleteData(txtNHNumber.Text, dtpDate.Text, cbTime.Text);
+               DBAccess.deleteData(txtNHNumber.Text, dtpDate.Value.ToString(), cbTime.Text);
             }
         }
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
@@ -147,6 +147,22 @@ namespace BasicGP
             isEdting = true;
             //TODO: implement a back button to go from edit to register
         }
+        /// <summary>
+        /// changes all of the visuals on the form to look like a new appointment form
+        /// </summary>
+        private void ChangeToNew()
+        {
+            lblTitle.Text = "New appointment";
+            btnDelete.Visible = false;
+            isEdting = false;
+            txtNHNumber.Text = "";
+            //dtpDate.Value = DateTime.Today;
+            dtpDate.ResetText();
+            cbTime.SelectedIndex = -1;
+            cbTitle.SelectedIndex = -1;
+            txtFName.Text = "";
+            txtSName.Text = "";
+        }
 
         private void EditAppointment(int eID, int NHNumber, string date, string time, string desc, string aID)
         {
@@ -155,6 +171,11 @@ namespace BasicGP
             {
                 DBAccess.updateData("editAppointment", eID.ToString(), NHNumber.ToString(), date, time, desc, aID);
             }
+        }
+
+        private void BackClick(object sender, EventArgs e)
+        {
+            ChangeToNew();
         }
     }
 }

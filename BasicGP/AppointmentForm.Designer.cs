@@ -59,6 +59,7 @@ namespace BasicGP
             this.pnl = new System.Windows.Forms.Panel();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
             this.lblErrorMsg = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel4.SuspendLayout();
             this.pnlTime.SuspendLayout();
@@ -68,6 +69,7 @@ namespace BasicGP
             this.tableLayoutPanel6.SuspendLayout();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -485,6 +487,18 @@ namespace BasicGP
             this.lblErrorMsg.Size = new System.Drawing.Size(684, 137);
             this.lblErrorMsg.TabIndex = 27;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::BasicGP.Properties.Resources.backBtn;
+            this.pictureBox1.Location = new System.Drawing.Point(1099, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 39);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.BackClick);
+            // 
             // picLogo
             // 
             this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -503,6 +517,7 @@ namespace BasicGP
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1379, 848);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblErrorMsg);
             this.Controls.Add(this.dgvAppointments);
             this.Controls.Add(this.btnDelete);
@@ -532,6 +547,7 @@ namespace BasicGP
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -570,5 +586,6 @@ namespace BasicGP
         private System.Windows.Forms.TextBox txtNHNumber;
         private System.Windows.Forms.Label lblErrorMsg;
         private System.Windows.Forms.ComboBox cbTime;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

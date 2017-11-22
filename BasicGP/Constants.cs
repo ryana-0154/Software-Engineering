@@ -47,6 +47,6 @@ namespace BasicGP
             "Time = @time, Description = @desc WHERE AppointmentID = @aID ";
 
         // DELETE statements
-        public static string cancelAppointment = "DELETE FROM appointment WHERE NHNumber = @NHNumber AND date = @date AND time = @time";
+        public static string cancelAppointment = "DELETE FROM appointment WHERE NationalHealthNumber = @NHNumber AND Date = @date AND Time = @time";
     }
 }

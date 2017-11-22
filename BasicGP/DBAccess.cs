@@ -322,8 +322,8 @@ namespace BasicGP
             OpenConnection();
             sqlCommand = new SqlCommand(Constants.cancelAppointment, DBConnection);
             sqlCommand.Parameters.AddWithValue("@NHNumber", data[0]);
-            sqlCommand.Parameters.AddWithValue("@Date", DateTime.Parse(data[1]));
-            sqlCommand.Parameters.AddWithValue("@time", DateTime.Parse(data[2]));
+            sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(data[1]));
+            sqlCommand.Parameters.AddWithValue("@time", data[2]);
             int count = sqlCommand.ExecuteNonQuery();
 
             if (count > 0)
