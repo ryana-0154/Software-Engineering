@@ -281,11 +281,11 @@ namespace BasicGP
                 case "editAppointment":
                     sqlCommand = new SqlCommand(Constants.updateAppointment, DBConnection);
                     sqlCommand.Parameters.AddWithValue("@eID", data[1]);
-                    sqlCommand.Parameters.AddWithValue("@NHNumber", data[2]);
-                    sqlCommand.Parameters.AddWithValue("@date", data[3]);
-                    sqlCommand.Parameters.AddWithValue("@time", data[4]);
+                    sqlCommand.Parameters.AddWithValue("@NHNumber", Int32.Parse(data[2]));
+                    sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(data[3]));
+                    sqlCommand.Parameters.AddWithValue("@time", DateTime.Parse(data[4]));
                     sqlCommand.Parameters.AddWithValue("@desc", data[5]);
-                    sqlCommand.Parameters.AddWithValue("@aID", data[6]);
+                    sqlCommand.Parameters.AddWithValue("@aID", Int32.Parse(data[6]));
                     int count = sqlCommand.ExecuteNonQuery();
 
                     if (count > 0)

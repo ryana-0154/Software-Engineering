@@ -14,7 +14,7 @@ namespace BasicGP
         public static string getAppointmentID = "select AppointmentID from appointment where EmployeeID = @eID AND NHNumber = @NHNumber AND Date = @date AND Time = @time";
         //TODO: use join and make this display patient name and employee name and date and time and description
         //returns the data for the fields so it can be edited
-        public static string getAppointmentsForEdit = "SELECT appointment.NHNumber,appointment.Date,appointment.time,Employee.Title, Employee.FirstName,Employee.LastName,appointment.Description FROM appointment " +
+        public static string getAppointmentsForEdit = "SELECT appointment.NHNumber,appointment.Date,appointment.time,Employee.Title, Employee.FirstName,Employee.LastName,appointment.Description, appointment.AppointmentID FROM appointment " +
         "INNER JOIN Employee ON appointment.EmployeeID = Employee.EmployeeID " +
         "INNER join patients on appointment.NHNumber = patients.NHNumber "+
         "WHERE(appointment.NHNumber = @ID OR appointment.EmployeeID = @ID) AND appointment.Date >= @date";

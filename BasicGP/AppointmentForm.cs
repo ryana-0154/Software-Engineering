@@ -51,7 +51,7 @@ namespace BasicGP
                     // Put the value of the row returned into employeeid
                     int employeeID = Int32.Parse(dataSet.Tables[0].Rows[0].ItemArray[0].ToString());
 
-                    EditAppointment(employeeID, Int32.Parse(appointmentDetails[0].Text), pnlDate.Controls[0].Text, pnlTime.Controls[0].Text, appointmentDetails[3].Text, appointmentID);
+                    EditAppointment(employeeID, appointmentDetails[0].Text, pnlDate.Controls[0].Text, pnlTime.Controls[0].Text, appointmentDetails[6].Text, appointmentID);
                 }
 
                 Utilities.toDashboard(sender, e, this);
@@ -123,7 +123,6 @@ namespace BasicGP
 
         private void dgvCellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            appointmentID = dgvAppointments.Rows[e.RowIndex].Cells[0].Value.ToString();
             DataSet dataSet = DBAccess.getData("patientAppointmentsEdit", txtSearch.Text);
             DataTable table = dataSet.Tables[0];
             txtNHNumber.Text = table.Rows[e.RowIndex].ItemArray[0].ToString();
@@ -134,6 +133,7 @@ namespace BasicGP
             txtFName.Text = table.Rows[e.RowIndex].ItemArray[4].ToString();
             txtSName.Text = table.Rows[e.RowIndex].ItemArray[5].ToString();
             txtDescription.Text = table.Rows[e.RowIndex].ItemArray[6].ToString();
+            appointmentID = table.Rows[e.RowIndex].ItemArray[7].ToString();
             ChangeToEdit();
 
         }
@@ -165,12 +165,12 @@ namespace BasicGP
             txtSName.Text = "";
         }
 
-        private void EditAppointment(int eID, int NHNumber, string date, string time, string desc, string aID)
+        private void EditAppointment(int eID, string NHNumber, string date, string time, string desc, string aID)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to edit this appointment?", "Edit appointment", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                DBAccess.updateData("editAppointment", eID.ToString(), NHNumber.ToString(), date, time, desc, aID);
+                DBAccess.updateData("editAppointment", eID.ToString(), NHNumber, date, time, desc, aID);
             }
         }
 
