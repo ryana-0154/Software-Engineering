@@ -32,3 +32,6 @@ C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\bin\Debug\OverGPD
 C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\bin\Debug\BasicGP.exe.config
 C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\bin\Debug\BasicGP.exe
 C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\bin\Debug\BasicGP.pdb
+C:\Users\ashvi\Desktop\Software Engineering\GIT\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.exe.config
+C:\Users\ashvi\Desktop\Software Engineering\GIT\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.exe
+C:\Users\ashvi\Desktop\Software Engineering\GIT\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.pdb
