@@ -5,7 +5,7 @@ namespace BasicGP
     class Constants
     {
         // Select Statements
-        public static string checkLogin = "SELECT * FROM users WHERE userName = @username AND password = @password";
+        public static string checkLogin = "SELECT * FROM users WHERE userName = @username AND password = @password COLLATE SQL_Latin1_General_CP1_CS_AS";
         public static string getPatientByID = "SELECT * FROM patients WHERE NHNumber = @id";
         // In?
         public static string getPatientByDOB = "SELECT * FROM patients WHERE name IN (@name) AND DOB IN (@DOB)";
