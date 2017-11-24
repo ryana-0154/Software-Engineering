@@ -36,14 +36,14 @@ namespace BasicGP
         public static string showEmployeeAvailability = "SELECT * FROM appointment WHERE EmployeeID = @employeeID AND Date = @date";
 
         // Insert Statements
-        public static string postPatient = "INSERT INTO patients (NationalHealthNumber, Name, Title, DOB, PhoneNumber, Address, Diabetes, Smoker, Asthma, Allergies) " +
-                        "VALUES (@NHNumber, @name, @title, @DOB, @phoneNumber, @address, @diabetes, @smoker, @asthma, @allergies)";
+        public static string postPatient = "INSERT INTO patients (Name, Title, DOB, PhoneNumber, Address, Diabetes, Smoker, Asthma, Allergies) " +
+                        "VALUES (@name, @title, @DOB, @phoneNumber, @address, @diabetes, @smoker, @asthma, @allergies)";
         public static string postAppointment = "INSERT INTO appointment (EmployeeID, NationalHealthNumber, Date, Time, Description) VALUES ( " +
             "(SELECT EmployeeID FROM Employee WHERE Title = @title AND FirstName = @firstname AND LastName = @lastname), @NHNumber, @Date, @Time, @Description)";
 
         // UPDATE statements
         public static string extendPrescriptionDuration = "UPDATE prescriptions SET DatePrescribed = @date WHERE PrescriptionID = @prescriptionID";
-        public static string updateAppointment = "UPDATE appointments SET EmployeeID = @eID, NationalHealthNumber = @NHNumber, Date = @date, " +
+        public static string updateAppointment = "UPDATE appointment SET EmployeeID = @eID, NationalHealthNumber = @NHNumber, Date = @date, " +
             "Time = @time, Description = @desc WHERE AppointmentID = @aID ";
 
         // DELETE statements
