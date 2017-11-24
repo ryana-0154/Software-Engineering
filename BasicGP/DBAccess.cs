@@ -218,17 +218,17 @@ namespace BasicGP
                     // TODO: Concat Address
                     SqlCommand sqlCommand = new SqlCommand(Constants.postPatient, DBConnection);
                     // add parameters to the sql command (Prevents again SQLI)
-                    sqlCommand.Parameters.AddWithValue("@NHNumber", data[1]);
-                    sqlCommand.Parameters.AddWithValue("@Name", data[2]);
-                    sqlCommand.Parameters.AddWithValue("@Title", data[3]);
-                    
-                    sqlCommand.Parameters.AddWithValue("@DOB", DateTime.Parse(data[4]));
-                    sqlCommand.Parameters.AddWithValue("@PhoneNumber", data[5]);
-                    sqlCommand.Parameters.AddWithValue("@Address", data[6]);
-                    sqlCommand.Parameters.AddWithValue("@Allergies", data[7]);
-                    sqlCommand.Parameters.AddWithValue("@Diabetes", data[8]);
-                    sqlCommand.Parameters.AddWithValue("@Smoker", data[9]);
-                    sqlCommand.Parameters.AddWithValue("@Asthma", data[10]);
+                    //database will auto increment the id
+                    //sqlCommand.Parameters.AddWithValue("@NHNumber", data[1]);
+                    sqlCommand.Parameters.AddWithValue("@Name", data[1]);
+                    sqlCommand.Parameters.AddWithValue("@Title", data[2]);
+                    sqlCommand.Parameters.AddWithValue("@DOB", DateTime.Parse(data[3]));
+                    sqlCommand.Parameters.AddWithValue("@PhoneNumber", data[4]);
+                    sqlCommand.Parameters.AddWithValue("@Address", data[5]);
+                    sqlCommand.Parameters.AddWithValue("@Allergies", data[6]);
+                    sqlCommand.Parameters.AddWithValue("@Diabetes", data[7]);
+                    sqlCommand.Parameters.AddWithValue("@Smoker", data[8]);
+                    sqlCommand.Parameters.AddWithValue("@Asthma", data[9]);
 
                     count = sqlCommand.ExecuteNonQuery();
 

@@ -30,7 +30,6 @@ namespace BasicGP
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNHNumber = new System.Windows.Forms.Label();
             this.lblFName = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlDOB = new System.Windows.Forms.Panel();
@@ -42,7 +41,6 @@ namespace BasicGP
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblDOB = new System.Windows.Forms.Label();
             this.txtFName = new System.Windows.Forms.TextBox();
-            this.txtNHNumber = new System.Windows.Forms.TextBox();
             this.lblSName = new System.Windows.Forms.Label();
             this.txtSName = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -70,30 +68,16 @@ namespace BasicGP
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblNHNumber
-            // 
-            this.lblNHNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNHNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNHNumber.Location = new System.Drawing.Point(5, 1);
-            this.lblNHNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNHNumber.Name = "lblNHNumber";
-            this.lblNHNumber.Size = new System.Drawing.Size(280, 47);
-            this.lblNHNumber.TabIndex = 1;
-            this.lblNHNumber.Text = "NHS Number *";
-            this.lblNHNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblFName
             // 
             this.lblFName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFName.Location = new System.Drawing.Point(5, 49);
+            this.lblFName.Location = new System.Drawing.Point(5, 1);
             this.lblFName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFName.Name = "lblFName";
-            this.lblFName.Size = new System.Drawing.Size(280, 52);
+            this.lblFName.Size = new System.Drawing.Size(280, 79);
             this.lblFName.TabIndex = 4;
             this.lblFName.Text = "First Name(s) *";
             this.lblFName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -104,30 +88,27 @@ namespace BasicGP
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.307F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.693F));
-            this.tableLayoutPanel3.Controls.Add(this.pnlDOB, 1, 4);
-            this.tableLayoutPanel3.Controls.Add(this.lblAddress3, 0, 8);
-            this.tableLayoutPanel3.Controls.Add(this.lblAddress2, 0, 7);
-            this.tableLayoutPanel3.Controls.Add(this.lblAddress1, 0, 6);
-            this.tableLayoutPanel3.Controls.Add(this.txtPhoneNumber, 1, 5);
-            this.tableLayoutPanel3.Controls.Add(this.lblPhone, 0, 5);
-            this.tableLayoutPanel3.Controls.Add(this.lblDOB, 0, 4);
-            this.tableLayoutPanel3.Controls.Add(this.txtFName, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.lblFName, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.lblNHNumber, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txtNHNumber, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.lblSName, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.txtSName, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.lblTitle, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.txtAddress1, 1, 6);
-            this.tableLayoutPanel3.Controls.Add(this.pnlTitle, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.txtAddress2, 1, 7);
-            this.tableLayoutPanel3.Controls.Add(this.txtAddress3, 1, 8);
+            this.tableLayoutPanel3.Controls.Add(this.pnlDOB, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.lblAddress3, 0, 7);
+            this.tableLayoutPanel3.Controls.Add(this.lblAddress2, 0, 6);
+            this.tableLayoutPanel3.Controls.Add(this.lblAddress1, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.txtPhoneNumber, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.lblPhone, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.lblDOB, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.txtFName, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lblFName, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lblSName, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.txtSName, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lblTitle, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.txtAddress1, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.pnlTitle, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.txtAddress2, 1, 6);
+            this.tableLayoutPanel3.Controls.Add(this.txtAddress3, 1, 7);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(23, 68);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 9;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.55245F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.44755F));
+            this.tableLayoutPanel3.RowCount = 8;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 79F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 79F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
@@ -135,7 +116,7 @@ namespace BasicGP
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(601, 639);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
@@ -144,7 +125,7 @@ namespace BasicGP
             this.pnlDOB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlDOB.Controls.Add(this.dtpDOB);
-            this.pnlDOB.Location = new System.Drawing.Point(293, 259);
+            this.pnlDOB.Location = new System.Drawing.Point(293, 238);
             this.pnlDOB.Name = "pnlDOB";
             this.pnlDOB.Size = new System.Drawing.Size(304, 39);
             this.pnlDOB.TabIndex = 21;
@@ -173,10 +154,10 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAddress3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress3.Location = new System.Drawing.Point(5, 557);
+            this.lblAddress3.Location = new System.Drawing.Point(5, 536);
             this.lblAddress3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress3.Name = "lblAddress3";
-            this.lblAddress3.Size = new System.Drawing.Size(280, 81);
+            this.lblAddress3.Size = new System.Drawing.Size(280, 102);
             this.lblAddress3.TabIndex = 20;
             this.lblAddress3.Text = "Address Line 3";
             this.lblAddress3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -187,7 +168,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress2.Location = new System.Drawing.Point(5, 481);
+            this.lblAddress2.Location = new System.Drawing.Point(5, 460);
             this.lblAddress2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress2.Name = "lblAddress2";
             this.lblAddress2.Size = new System.Drawing.Size(280, 75);
@@ -201,7 +182,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAddress1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress1.Location = new System.Drawing.Point(5, 407);
+            this.lblAddress1.Location = new System.Drawing.Point(5, 386);
             this.lblAddress1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress1.Name = "lblAddress1";
             this.lblAddress1.Size = new System.Drawing.Size(280, 73);
@@ -214,7 +195,7 @@ namespace BasicGP
             this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(293, 335);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(293, 314);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhoneNumber.MaxLength = 11;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
@@ -228,7 +209,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(5, 333);
+            this.lblPhone.Location = new System.Drawing.Point(5, 312);
             this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(280, 73);
@@ -242,7 +223,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDOB.Location = new System.Drawing.Point(5, 256);
+            this.lblDOB.Location = new System.Drawing.Point(5, 235);
             this.lblDOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDOB.Name = "lblDOB";
             this.lblDOB.Size = new System.Drawing.Size(280, 76);
@@ -253,7 +234,7 @@ namespace BasicGP
             // txtFName
             // 
             this.txtFName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtFName.Location = new System.Drawing.Point(293, 51);
+            this.txtFName.Location = new System.Drawing.Point(293, 3);
             this.txtFName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFName.MaxLength = 16;
             this.txtFName.Name = "txtFName";
@@ -261,24 +242,13 @@ namespace BasicGP
             this.txtFName.TabIndex = 6;
             this.txtFName.Tag = "First Name";
             // 
-            // txtNHNumber
-            // 
-            this.txtNHNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtNHNumber.Location = new System.Drawing.Point(293, 3);
-            this.txtNHNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNHNumber.MaxLength = 10;
-            this.txtNHNumber.Name = "txtNHNumber";
-            this.txtNHNumber.Size = new System.Drawing.Size(304, 22);
-            this.txtNHNumber.TabIndex = 5;
-            this.txtNHNumber.Tag = "NHS Number";
-            // 
             // lblSName
             // 
             this.lblSName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSName.Location = new System.Drawing.Point(5, 102);
+            this.lblSName.Location = new System.Drawing.Point(5, 81);
             this.lblSName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSName.Name = "lblSName";
             this.lblSName.Size = new System.Drawing.Size(280, 79);
@@ -289,7 +259,7 @@ namespace BasicGP
             // txtSName
             // 
             this.txtSName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSName.Location = new System.Drawing.Point(293, 104);
+            this.txtSName.Location = new System.Drawing.Point(293, 83);
             this.txtSName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSName.MaxLength = 16;
             this.txtSName.Name = "txtSName";
@@ -303,7 +273,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(5, 182);
+            this.lblTitle.Location = new System.Drawing.Point(5, 161);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(280, 73);
@@ -314,7 +284,7 @@ namespace BasicGP
             // txtAddress1
             // 
             this.txtAddress1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAddress1.Location = new System.Drawing.Point(293, 409);
+            this.txtAddress1.Location = new System.Drawing.Point(293, 388);
             this.txtAddress1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddress1.MaxLength = 64;
             this.txtAddress1.Multiline = true;
@@ -328,7 +298,7 @@ namespace BasicGP
             this.pnlTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlTitle.Controls.Add(this.comboTitle);
-            this.pnlTitle.Location = new System.Drawing.Point(293, 185);
+            this.pnlTitle.Location = new System.Drawing.Point(293, 164);
             this.pnlTitle.Name = "pnlTitle";
             this.pnlTitle.Size = new System.Drawing.Size(304, 36);
             this.pnlTitle.TabIndex = 21;
@@ -355,7 +325,7 @@ namespace BasicGP
             // txtAddress2
             // 
             this.txtAddress2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAddress2.Location = new System.Drawing.Point(293, 483);
+            this.txtAddress2.Location = new System.Drawing.Point(293, 462);
             this.txtAddress2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddress2.MaxLength = 64;
             this.txtAddress2.Multiline = true;
@@ -367,12 +337,12 @@ namespace BasicGP
             // txtAddress3
             // 
             this.txtAddress3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAddress3.Location = new System.Drawing.Point(293, 559);
+            this.txtAddress3.Location = new System.Drawing.Point(293, 538);
             this.txtAddress3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddress3.MaxLength = 64;
             this.txtAddress3.Multiline = true;
             this.txtAddress3.Name = "txtAddress3";
-            this.txtAddress3.Size = new System.Drawing.Size(304, 77);
+            this.txtAddress3.Size = new System.Drawing.Size(304, 98);
             this.txtAddress3.TabIndex = 19;
             this.txtAddress3.Tag = "Address Line 3";
             // 
@@ -562,7 +532,6 @@ namespace BasicGP
         }
 
         #endregion
-        private System.Windows.Forms.Label lblNHNumber;
         private System.Windows.Forms.Label lblFName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label lblSName;
@@ -572,7 +541,6 @@ namespace BasicGP
         private System.Windows.Forms.TextBox txtAddress1;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.TextBox txtFName;
-        private System.Windows.Forms.TextBox txtNHNumber;
         private System.Windows.Forms.TextBox txtSName;
         private System.Windows.Forms.ComboBox comboTitle;
         private System.Windows.Forms.DateTimePicker dtpDOB;

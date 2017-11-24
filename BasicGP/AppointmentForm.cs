@@ -31,10 +31,10 @@ namespace BasicGP
             //place the panel in here then later on work on the containing element
             appointmentDetails[1] = pnlDate;
             appointmentDetails[2] = pnlTime;
-            appointmentDetails[3] = txtDescription;
-            appointmentDetails[4] = pnlTitle;
-            appointmentDetails[5] = txtFName;
-            appointmentDetails[6] = txtSName;
+            appointmentDetails[3] = pnlTitle;
+            appointmentDetails[4] = txtFName;
+            appointmentDetails[5] = txtSName;
+            appointmentDetails[6] = txtDescription;
 
             if (CheckValidation(appointmentDetails))
             {
@@ -46,7 +46,7 @@ namespace BasicGP
                 else
                 {
                     //finds the employee ID of the new employee associated with the appointment
-                    DataSet dataSet = DBAccess.getData("employeeID", appointmentDetails[4].Controls[0].Text, appointmentDetails[5].Text, appointmentDetails[6].Text);
+                    DataSet dataSet = DBAccess.getData("employeeID", appointmentDetails[3].Controls[0].Text, appointmentDetails[4].Text, appointmentDetails[5].Text);
                     DataTable table = dataSet.Tables[0];
                     // Put the value of the row returned into employeeid
                     int employeeID = Int32.Parse(dataSet.Tables[0].Rows[0].ItemArray[0].ToString());
@@ -144,6 +144,7 @@ namespace BasicGP
         {
             lblTitle.Text = "Edit appointment";
             btnDelete.Visible = true;
+            picBackButton.Visible = true;
             isEdting = true;
             //TODO: implement a back button to go from edit to register
         }
@@ -154,9 +155,9 @@ namespace BasicGP
         {
             lblTitle.Text = "New appointment";
             btnDelete.Visible = false;
+            picBackButton.Visible = false;
             isEdting = false;
             txtNHNumber.Text = "";
-            //dtpDate.Value = DateTime.Today;
             dtpDate.ResetText();
             cbTime.SelectedIndex = -1;
             cbTitle.SelectedIndex = -1;

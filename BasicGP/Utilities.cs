@@ -74,7 +74,7 @@ namespace BasicGP
         }
         public static bool NHNumberValidation(TextBox userInput)
         {
-            if (userInput.Text.Length == 10 && Regex.IsMatch(userInput.Text, @"^\d+$"))
+            if (Regex.IsMatch(userInput.Text, @"^\d+$"))
             {
                 return true;
             }

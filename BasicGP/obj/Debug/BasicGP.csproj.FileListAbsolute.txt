@@ -9,7 +9,6 @@ C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Enginee
 C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.LoginForm.resources
 C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.Properties.Resources.resources
 C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.RegisterForm.resources
-C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.AvailabilityForm.resources
 C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.ResultsForm.resources
 C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csproj.GenerateResource.Cache
 C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.csproj.CoreCompileInputs.cache
@@ -35,3 +34,4 @@ C:\Users\ryan\Documents\mod003263-software-engineering\BasicGP\bin\Debug\BasicGP
 C:\Users\ashvi\Desktop\Software Engineering\GIT\MOD003263-Software-Engineering\BasicGP\bin\Debug\BasicGP.exe.config
 C:\Users\ashvi\Desktop\Software Engineering\GIT\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.exe
 C:\Users\ashvi\Desktop\Software Engineering\GIT\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.pdb
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\BasicGP\obj\Debug\BasicGP.DutyForm.resources
