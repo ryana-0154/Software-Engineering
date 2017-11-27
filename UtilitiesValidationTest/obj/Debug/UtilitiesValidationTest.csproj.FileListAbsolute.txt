@@ -16,3 +16,21 @@ C:\Users\Ikram\Documents\Software Engineering\MOD003263-Software-Engineering\Uti
 C:\Users\Ikram\Documents\Software Engineering\MOD003263-Software-Engineering\UtilitiesValidationTest\obj\Debug\UtilitiesValidationTest.csproj.CoreCompileInputs.cache
 C:\Users\Ikram\Documents\Software Engineering\MOD003263-Software-Engineering\UtilitiesValidationTest\obj\Debug\UtilitiesValidationTest.dll
 C:\Users\Ikram\Documents\Software Engineering\MOD003263-Software-Engineering\UtilitiesValidationTest\obj\Debug\UtilitiesValidationTest.pdb
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\obj\Debug\UtilitiesValidationTest.csprojResolveAssemblyReference.cache
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\obj\Debug\UtilitiesValidationTest.csproj.CoreCompileInputs.cache
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\obj\Debug\UtilitiesValidationTest.dll
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\obj\Debug\UtilitiesValidationTest.pdb
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\bin\Debug\OverGPDB.mdf
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\bin\Debug\OverGPDB_log.ldf
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\bin\Debug\UtilitiesValidationTest.dll
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\bin\Debug\UtilitiesValidationTest.pdb
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\bin\Debug\BasicGP.exe
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\bin\Debug\BasicGP.pdb
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\bin\Debug\BasicGP.exe.config
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Stacey\Documents\Visual Studio 2017\Projects\MOD003263-Software-Engineering\UtilitiesValidationTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
