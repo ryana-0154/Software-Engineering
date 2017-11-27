@@ -72,27 +72,28 @@ namespace BasicGP
             Dashboard dashboard = new Dashboard();
             dashboard.Visible = true;
         }
-        public static bool NHNumberValidation(TextBox userInput)
+            //LOWELLS FOUR FOR AUTO TESTING
+        public static bool NHNumberValidation(string userInput)
         {
-            if (Regex.IsMatch(userInput.Text, @"^\d+$"))
+            if (Regex.IsMatch(userInput, @"^\d+$"))
             {
                 return true;
             }
             else
             { return false; }
         }
-        public static bool ComboBoxValidation(ComboBox userinput)
+        public static bool ComboBoxValidation(int userinput)
         {
-            if (userinput.SelectedIndex != -1)//something was selected
+            if (userinput != -1)//something was selected
             { return true; }
             else
             {
                 return false;
             }
         }
-        public static bool NameValidation(TextBox userInput)
+        public static bool NameValidation(string userInput)
         {
-            if ((userInput.Text.Length <= 16 && userInput.Text.Length > 0) && Regex.IsMatch(userInput.Text, @"^[\p{L}]+$"))
+            if ((userInput.Length <= 16 && userInput.Length > 0) && Regex.IsMatch(userInput, @"^[\p{L}]+$"))
             {
                 return true;
                 
@@ -102,9 +103,9 @@ namespace BasicGP
                 return false;
             }
         }
-        public static bool DateBookingValidation(DateTimePicker dtpDate)
+        public static bool DateBookingValidation(DateTime dtpDate)
         {
-            if ((DateTime.Compare(dtpDate.Value, DateTime.Today)) >= 0)
+            if ((DateTime.Compare(dtpDate, DateTime.Today)) >= 0)
             {
                 return true;
             }
@@ -120,9 +121,10 @@ namespace BasicGP
         this if is saying if the user has inputted a date in the future or exactly now, then it is not correct
         */
         #endregion
-        public static bool DOBValidation(DateTimePicker dtpDOB)
+            //IKRAMS FOUR FOR AUTO TESTING
+        public static bool DOBValidation(DateTime dtpDOB)
         {
-            if ((DateTime.Compare(dtpDOB.Value, DateTime.Today)) < 0)
+            if ((DateTime.Compare(dtpDOB, DateTime.Today)) < 0)
             {
                 return true;
             }
@@ -131,9 +133,9 @@ namespace BasicGP
                 return false;
             }
         }
-        public static bool PhoneNumberValidation(TextBox userInput)
+        public static bool PhoneNumberValidation(string userInput)
         {
-            if (userInput.Text.Length == 11 && Regex.IsMatch(userInput.Text, @"^\d+$"))
+            if (userInput.Length == 11 && Regex.IsMatch(userInput, @"^\d+$"))
             {
                 return true;
             }
@@ -142,11 +144,11 @@ namespace BasicGP
                 return false;
             }
         }
-        public static bool AddressValidation(TextBox userInput)
+        public static bool AddressValidation(string name,string userInput)
         {
-            if (userInput.Name == "txtAddress1")
+            if (userInput == "txtAddress1")
             {
-                if (userInput.Text.Length <= 64 && userInput.Text.Length > 0)
+                if (userInput.Length <= 64 && userInput.Length > 0)
                 {
                     return true;
                 }
@@ -157,7 +159,7 @@ namespace BasicGP
             }
             else
             {
-                if (userInput.Text.Length <= 64)
+                if (userInput.Length <= 64)
                 {
                     return true;
                 }
@@ -167,10 +169,10 @@ namespace BasicGP
                 }
             }
         }
-        public static bool DescriptionValidation(TextBox userInput)
+        public static bool DescriptionValidation(string userInput)
         {
             //TODO: Correct the allowed length of a description
-            if (userInput.Text != "" && userInput.Text.Length < 300)
+            if (userInput != "" && userInput.Length < 300)
             {
                 return true;
             }
@@ -179,6 +181,7 @@ namespace BasicGP
                 return false;
             }
         }
+
         public static void CheckForResults(DataGridView dgv,DataTable tb)
         {
             if (tb.Rows.Count > 0)

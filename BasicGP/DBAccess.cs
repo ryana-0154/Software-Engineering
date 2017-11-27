@@ -247,10 +247,10 @@ namespace BasicGP
                     sqlCommand.Parameters.AddWithValue("@NHNumber", data[1]);
                     sqlCommand.Parameters.AddWithValue("@Date", DateTime.Parse(data[2]));
                     sqlCommand.Parameters.AddWithValue("@Time", DateTime.Parse(data[3]));
-                    sqlCommand.Parameters.AddWithValue("@Description", data[4]);
+                    sqlCommand.Parameters.AddWithValue("@title", data[4]);
                     sqlCommand.Parameters.AddWithValue("@firstname",data[5]);
                     sqlCommand.Parameters.AddWithValue("@lastname",data[6]);
-                    sqlCommand.Parameters.AddWithValue("@title", data[7]);
+                    sqlCommand.Parameters.AddWithValue("@Description", data[7]);
 
                     count = sqlCommand.ExecuteNonQuery();
 

@@ -41,7 +41,7 @@ namespace BasicGP
                 if (isEdting == false)
                 {
                     //TODO: check order of data entry
-                    DBAccess.postData("newAppointment", appointmentDetails[0].Text, appointmentDetails[1].Controls[0].Text, appointmentDetails[2].Controls[0].Text, appointmentDetails[3].Text, appointmentDetails[4].Controls[0].Text, appointmentDetails[5].Text, appointmentDetails[6].Text);
+                    DBAccess.postData("newAppointment", appointmentDetails[0].Text, appointmentDetails[1].Controls[0].Text, appointmentDetails[2].Controls[0].Text, appointmentDetails[3].Controls[0].Text, appointmentDetails[4].Text, appointmentDetails[5].Text, appointmentDetails[6].Text);
                 }
                 else
                 {
@@ -64,13 +64,17 @@ namespace BasicGP
             bool result = false;
             string errorMsg = "";
             bool[] valid = new bool[7];
-            valid[0] = Utilities.NHNumberValidation(txtNHNumber);
-            valid[1] = Utilities.DateBookingValidation(dtpDate);
-            valid[2] = Utilities.ComboBoxValidation(cbTime);
-            valid[3] = Utilities.ComboBoxValidation(cbTitle);
-            valid[4] = Utilities.NameValidation(txtFName);
-            valid[5] = Utilities.NameValidation(txtSName);
-            valid[6] = Utilities.DescriptionValidation(txtDescription);
+            valid[0] = Utilities.NHNumberValidation(txtNHNumber.Text);
+            valid[1] = Utilities.DateBookingValidation(dtpDate.Value);
+            valid[2] = Utilities.ComboBoxValidation(cbTime.SelectedIndex);
+            valid[3] = Utilities.ComboBoxValidation(cbTitle.SelectedIndex);
+            //valid[4] = Utilities.NameValidation(txtFName);
+            for (int i = 4; i <= 5; i++)
+            {
+                valid[i] = Utilities.NameValidation(appointmentDetails[i].Text);
+            }
+            //valid[5] = Utilities.NameValidation(txtSName);
+            valid[6] = Utilities.DescriptionValidation(txtDescription.Text);
             //searches through the how valid array after all controls have been checked, and prints errors respectively
             for (int i = 0; i < valid.Length; i++)
             {

@@ -87,19 +87,19 @@ namespace BasicGP
             //all names validation
             for (int i = 0; i <= 1; i++)
             {
-                valid[i] = Utilities.NameValidation((TextBox)userInputs[i]);
+                valid[i] = Utilities.NameValidation(userInputs[i].Text);
             }
             //Title validation
-            valid[2]=Utilities.ComboBoxValidation(comboTitle);
+            valid[2]=Utilities.ComboBoxValidation(comboTitle.SelectedIndex);
             //DOB validation
-            valid[3] = Utilities.DOBValidation(dtpDOB);
+            valid[3] = Utilities.DOBValidation(dtpDOB.Value);
             //Phone number validation
-            valid[4] = Utilities.PhoneNumberValidation(txtPhoneNumber);
+            valid[4] = Utilities.PhoneNumberValidation(txtPhoneNumber.Text);
             //all address validation
             for (int i = 5; i <= 7; i++)
             {
                 //if its txtAddress1
-                valid[i] = Utilities.AddressValidation((TextBox)userInputs[i]);
+                valid[i] = Utilities.AddressValidation(userInputs[i].Name,userInputs[i].Text);
             }
             //searches through the how valid array after all controls have been checked, and prints errors respectively
             for (int i = 0; i < valid.Length; i++)

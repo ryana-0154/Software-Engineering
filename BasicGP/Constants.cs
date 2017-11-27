@@ -9,7 +9,7 @@ namespace BasicGP
         public static string getPatientByID = "SELECT * FROM patients WHERE NHNumber = @id";
         // In?
         public static string getPatientByDOB = "SELECT * FROM patients WHERE name IN (@name) AND DOB IN (@DOB)";
-        public static string getAllPatients = "SELECT TOP 15 * FROM patients ORDER BY Name DESC";
+        public static string getAllPatients = "SELECT TOP 15 * FROM patients ORDER BY Name ASC";
         public static string getAppointments = "SELECT * FROM appointment WHERE NHNumber = @id";
         public static string getAppointmentID = "select AppointmentID from appointment where EmployeeID = @eID AND NHNumber = @NHNumber AND Date = @date AND Time = @time";
         //TODO: use join and make this display patient name and employee name and date and time and description
