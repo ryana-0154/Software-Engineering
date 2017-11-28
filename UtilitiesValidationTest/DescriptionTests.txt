@@ -1,1 +1,3 @@
-Back Ache, True
+,False
+Back ache, True
+Sore throat,True

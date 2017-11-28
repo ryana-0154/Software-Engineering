@@ -13,7 +13,6 @@ namespace UtilitiesValidationTest
         //public string[] inputs;
         public List<bool> results = new List<bool>();
         public List<string> inputs = new List<string>();
-        public List<DateTime> input1 = new List<DateTime>();
 
 
         public void getTests(string filename)
@@ -36,7 +35,7 @@ namespace UtilitiesValidationTest
 
         public void PhoneNumberValidationTest()
         {
-            getTests("\\PhoneNumber.txt");
+            getTests("\\PhoneNumberTests.txt");
             for (int i = 0; i < results.Count; i++)
             {
                 bool actualResult = Utilities.PhoneNumberValidation(inputs[i]);
@@ -48,63 +47,82 @@ namespace UtilitiesValidationTest
         [TestMethod]
         public void DescriptionValidationTest()
         {
-            getTests("\\Description.txt");
+            getTests("\\DescriptionTests.txt");
             for (int i = 0; i < results.Count; i++)
             {
                 bool actualResult = Utilities.DescriptionValidation(inputs[i]);
                 Assert.AreEqual(results[i], actualResult);
-
             }
             emptyLists();
-
         }
 
 
         [TestMethod]
         public void AddressValidationTest()
         {
-            string txtAddress1 = "37 Castle Road";
-
-            bool actual = Utilities.AddressValidation("txtAddress1", txtAddress1);
-
-            const bool expected = true;
-            Assert.AreEqual(expected, actual);
-
+            getTests("\\AddressTests.txt");
+            for (int i = 0; i < results.Count; i++)
+            {
+                bool actualResult = Utilities.AddressValidation("txtAddress1", inputs[i]);
+                Assert.AreEqual(results[i], actualResult);
+            }
+            emptyLists();
         }
 
         [TestMethod]
         public void DOBValidationTest()
         {
-            
-            /*
-            System.IO.StreamReader file = new System.IO.StreamReader("\\DOB.txt");
-            string txt = file.ReadLine();
-            DateTime dt = DateTime.Parse(txt);
-            file.Close();
-            */
-
-            getTests("\\DOB.txt");
+            getTests("\\DOBTests.txt");
             for (int i = 0; i < results.Count; i++)
             {
-                
-                bool actualResult = Utilities.DOBValidation((input1[i]));
+                bool actualResult = Utilities.DOBValidation(DateTime.Parse(inputs[i]));
                 Assert.AreEqual(results[i], actualResult);
-
             }
             emptyLists();
-
-
-
-
-            /*   DateTime dtpDOB = new DateTime(2003, 05, 28);
-
-            bool actual = Utilities.DOBValidation(dtpDOB);
-
-            const bool expected = true;
-            Assert.AreEqual(expected, actual);
-        */
         }
-
-
+        [TestMethod]
+        public void NHNumberValidationTest()
+        {
+            getTests("\\NHNumberTests.txt");
+            for (int i = 0; i < results.Count; i++)
+            {
+                bool actualResult = Utilities.NHNumberValidation(inputs[i]);
+                Assert.AreEqual(results[i], actualResult);
+            }
+            emptyLists();
+        }
+        [TestMethod]
+        public void ComboBoxValidationTest()
+        {
+            getTests("\\ComboBoxTests.txt");
+            for (int i = 0; i < results.Count; i++)
+            {
+                bool actualResult = Utilities.ComboBoxValidation(Int32.Parse(inputs[i]));
+                Assert.AreEqual(results[i], actualResult);
+            }
+            emptyLists();
+        }
+        [TestMethod]
+        public void NameValidationTests()
+        {
+            getTests("\\NameTests.txt");
+            for (int i = 0; i < results.Count; i++)
+            {
+                bool actualResult = Utilities.NameValidation(inputs[i]);
+                Assert.AreEqual(results[i], actualResult);
+            }
+            emptyLists();
+        }
+        [TestMethod]
+        public void DateBookingValidationTests()
+        {
+            getTests("\\DateBookingTests.txt");
+            for (int i = 0; i < results.Count; i++)
+            {
+                bool actualResult = Utilities.DateBookingValidation(DateTime.Parse(inputs[i]));
+                Assert.AreEqual(results[i], actualResult);
+            }
+            emptyLists();
+        }
     }
 }
