@@ -12,7 +12,8 @@ namespace UtilitiesValidationTest
         public string dir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
         //public string[] inputs;
         public List<bool> results = new List<bool>();
-        public List<string> inputs = new List<string>(); 
+        public List<string> inputs = new List<string>();
+        public List<DateTime> input1 = new List<DateTime>();
 
 
         public void getTests(string filename)
@@ -47,12 +48,14 @@ namespace UtilitiesValidationTest
         [TestMethod]
         public void DescriptionValidationTest()
         {
-            string txtDescription = "Back ache";
+            getTests("\\Description.txt");
+            for (int i = 0; i < results.Count; i++)
+            {
+                bool actualResult = Utilities.DescriptionValidation(inputs[i]);
+                Assert.AreEqual(results[i], actualResult);
 
-            bool actual = Utilities.DescriptionValidation(txtDescription);
-
-            const bool expected = true;
-            Assert.AreEqual(expected, actual);
+            }
+            emptyLists();
 
         }
 
@@ -72,13 +75,34 @@ namespace UtilitiesValidationTest
         [TestMethod]
         public void DOBValidationTest()
         {
-            DateTime dtpDOB = new DateTime(2003, 05, 28);
+            
+            /*
+            System.IO.StreamReader file = new System.IO.StreamReader("\\DOB.txt");
+            string txt = file.ReadLine();
+            DateTime dt = DateTime.Parse(txt);
+            file.Close();
+            */
+
+            getTests("\\DOB.txt");
+            for (int i = 0; i < results.Count; i++)
+            {
+                
+                bool actualResult = Utilities.DOBValidation((input1[i]));
+                Assert.AreEqual(results[i], actualResult);
+
+            }
+            emptyLists();
+
+
+
+
+            /*   DateTime dtpDOB = new DateTime(2003, 05, 28);
 
             bool actual = Utilities.DOBValidation(dtpDOB);
 
             const bool expected = true;
             Assert.AreEqual(expected, actual);
-
+        */
         }
 
 
