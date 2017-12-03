@@ -3,3 +3,6 @@ Mike,True
 Galenalofranalkis,False
 10222,False
 mike44,False
+123abc,False
+" !"#$%&'()*+-./:;<=>?@[\]^_`{|}~",False
+,False

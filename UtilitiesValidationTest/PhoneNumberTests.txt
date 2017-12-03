@@ -1,3 +1,9 @@
 02075316006,True
 012,False
 ,False
+abc,False
+12345,False
+abc123,False
+123abc,False
+" !"#$%&'()*+-./:;<=>?@[\]^_`{|}~",False
+,False

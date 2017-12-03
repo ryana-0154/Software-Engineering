@@ -2,4 +2,7 @@
 dhfha,False
 77ffhs,False
 010111,True
-102638594110,False
+102638594110,True
+abc,False
+" !"#$%&'()*+-./:;<=>?@[\]^_`{|}~",False
+,False
