@@ -152,6 +152,17 @@ namespace BasicGP
             boxInput.BackColor = Color.White;
         }
 
+        /// <summary>
+        /// Shows a message box - this is used from DBAccess to display a message if the user was added to the db
+        /// or not
+        /// </summary>
+        /// <param name="title">title for the message box</param>
+        /// <param name="message">message for the message box</param>
+        public static void ShowMessage(string title, string message)
+        {
+            MessageBox.Show(title, message);
+        }
+
         #region Ryan's Code
         //// I'm only doing the following bits of code so that we can easily pass into DBAccess when it is created
         //string fName, sName, title, address, allergies, nhNumber, phone;
