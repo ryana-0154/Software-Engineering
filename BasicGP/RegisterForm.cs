@@ -44,7 +44,7 @@ namespace BasicGP
                 additionalInfo[2] = cbAsthmatic.Checked; // data[10]
 
                 DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3],
-                    patientDetails[4], patientDetails[5],additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
+                    patientDetails[4], patientDetails[5], additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
 
                 Utilities.toDashboard(sender, e, this);
             }
@@ -68,13 +68,17 @@ namespace BasicGP
             return address;
         }
 
+        /// <summary>
+        /// gets the data from each text box and checks each one with its designated validation method in utlities then handles the results
+        /// </summary>
+        /// <returns></returns>
         private Boolean CheckValidation()
         {
             bool result = false;
             string errorMsg = "";
             Boolean[] valid = new bool[8];
             Control[] userInputs = new Control[8];
-            
+
             userInputs[0] = txtFName;
             userInputs[1] = txtSName;
             // these are set as panels so that the back colour can be changed
@@ -90,7 +94,7 @@ namespace BasicGP
                 valid[i] = Utilities.NameValidation(userInputs[i].Text);
             }
             //Title validation
-            valid[2]=Utilities.ComboBoxValidation(comboTitle.SelectedIndex);
+            valid[2] = Utilities.ComboBoxValidation(comboTitle.SelectedIndex);
             //DOB validation
             valid[3] = Utilities.DOBValidation(dtpDOB.Value);
             //Phone number validation
@@ -99,25 +103,30 @@ namespace BasicGP
             for (int i = 5; i <= 7; i++)
             {
                 //if its txtAddress1
-                valid[i] = Utilities.AddressValidation(userInputs[i].Name,userInputs[i].Text);
+                valid[i] = Utilities.AddressValidation(userInputs[i].Name, userInputs[i].Text);
             }
             //searches through the how valid array after all controls have been checked, and prints errors respectively
             for (int i = 0; i < valid.Length; i++)
             {
                 if (valid[i] == false)
                 {
-                   errorMsg = Utilities.validation_failed(userInputs[i],lblErrorMsg,btnSubmit,errorMsg);
+                    //this adds the new error message to the old one with a new line
+                    errorMsg = Utilities.validation_failed(userInputs[i], lblErrorMsg, btnSubmit, errorMsg);
                 }
             }
+            //sets the error message label to the error message
             lblErrorMsg.Text = errorMsg;
+            //shows the label
             lblErrorMsg.Visible = true;
+            //if there is no occurance of a failed validation
             if (!valid.Contains(false))
             {
+                //return true
                 result = true;
             }
             return result;
         }
-        
+
         /// <summary>
         /// is called when the logo is clicked, can also be called from in code
         /// </summary>
@@ -125,9 +134,22 @@ namespace BasicGP
         /// <param name="e"></param>
         private void toDashboard(object sender, EventArgs e)
         {
+            //closes the current form
             this.Visible = false;
             Dashboard dashboard = new Dashboard();
+            //makes the dashboard object visible
             dashboard.Visible = true;
+        }
+
+
+        /// <summary>
+        /// allows the submit button to be clicked to progress
+        /// </summary>
+        /// <param name="boxInput"></param>
+        private void validation_passed(TextBox boxInput)
+        {
+            btnSubmit.Enabled = true;
+            boxInput.BackColor = Color.White;
         }
 
         #region Ryan's Code
@@ -148,23 +170,5 @@ namespace BasicGP
         //    smoker = cbSmoker.Checked;
         //    asthmatic = cbAsthmatic.Checked;
         #endregion
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="boxInput"></param>
-        private void validation_passed(TextBox boxInput)
-        {
-            btnSubmit.Enabled = true;
-            boxInput.BackColor = Color.White;
-        }
-        /// <summary>
-        /// Shows a messagebox
-        /// </summary>
-        public static void showMessage(string message, string title)
-        {
-            MessageBox.Show(title, message);
-        }
-        
     }
 }

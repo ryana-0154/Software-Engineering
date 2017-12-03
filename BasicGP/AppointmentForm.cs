@@ -19,11 +19,15 @@ namespace BasicGP
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// take user to dashboard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void picLogo_Click(object sender, EventArgs e)
         {
             Utilities.toDashboard(sender, e, this);
         }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             Control[] appointmentDetails = new Control[7];
@@ -59,6 +63,7 @@ namespace BasicGP
 
             
         }
+
         private bool CheckValidation(Control[] appointmentDetails)
         {
             bool result = false;
@@ -95,16 +100,29 @@ namespace BasicGP
         }
         private bool CheckEmployeeIsAvailable()
         {
+            //TODO: Implement this
             return true;
         }
+        /// <summary>
+        /// dialogue box for the delete button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            //builds a dialog box to confirm the decision
             DialogResult result = MessageBox.Show("Are you sure you want to delete this appointment?", "Delete appointment", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                DBAccess.deleteData(txtNHNumber.Text, dtpDate.Value.ToString(), cbTime.Text);
             }
         }
+
+        /// <summary>
+        /// Enter button pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             DataSet dataSet;
@@ -125,6 +143,11 @@ namespace BasicGP
             }
         }
 
+        /// <summary>
+        /// loads the selected appointment into the text boxes for editing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvCellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataSet dataSet = DBAccess.getData("patientAppointmentsEdit", txtSearch.Text);
@@ -146,19 +169,25 @@ namespace BasicGP
         /// </summary>
         private void ChangeToEdit()
         {
+            //sets the form title to edit appointment
             lblTitle.Text = "Edit appointment";
+            //makes the delete button now visible
             btnDelete.Visible = true;
+            //shows the hide button
             picBackButton.Visible = true;
+            //sets a is editing flag 
             isEdting = true;
-            //TODO: implement a back button to go from edit to register
         }
         /// <summary>
         /// changes all of the visuals on the form to look like a new appointment form
         /// </summary>
         private void ChangeToNew()
         {
+            //sets the form title to New Appointment
             lblTitle.Text = "New appointment";
+            //hides the delete button
             btnDelete.Visible = false;
+            //
             picBackButton.Visible = false;
             isEdting = false;
             txtNHNumber.Text = "";

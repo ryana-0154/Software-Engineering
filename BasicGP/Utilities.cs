@@ -58,6 +58,7 @@ namespace BasicGP
                     errorMsg += userInput.Tag + " - Field must not be empty(But less than 300 characters)." + Environment.NewLine;
                     break;
             }
+            //highlights the failed control so it can be identified
             userInput.BackColor = System.Drawing.Color.LightCoral;
             return errorMsg;
         }
@@ -72,9 +73,14 @@ namespace BasicGP
             Dashboard dashboard = new Dashboard();
             dashboard.Visible = true;
         }
-            //LOWELLS FOUR FOR AUTO TESTING
+        /// <summary>
+        /// validation for nhnumber
+        /// </summary>
+        /// <param name="userInput"></param>
+        /// <returns></returns>
         public static bool NHNumberValidation(string userInput)
         {
+            //checks that there is only numbers or not
             if (Regex.IsMatch(userInput, @"^\d+$"))
             {
                 return true;
@@ -82,17 +88,28 @@ namespace BasicGP
             else
             { return false; }
         }
+        /// <summary>
+        /// validation for any input on comboboxes
+        /// </summary>
+        /// <param name="userinput"></param>
+        /// <returns></returns>
         public static bool ComboBoxValidation(int userinput)
         {
-            if (userinput != -1)//something was selected
+            if (userinput != -1)//checks something was selected
             { return true; }
             else
             {
                 return false;
             }
         }
+        /// <summary>
+        /// validation for first names OR last names
+        /// </summary>
+        /// <param name="userInput"></param>
+        /// <returns></returns>
         public static bool NameValidation(string userInput)
         {
+            //checks if the length of the name is within 0 and 16 and checks that there is only letters
             if ((userInput.Length <= 16 && userInput.Length > 0) && Regex.IsMatch(userInput, @"^[\p{L}]+$"))
             {
                 return true;
@@ -103,8 +120,20 @@ namespace BasicGP
                 return false;
             }
         }
+        #region compare explaination
+        /*Less than zero time1 is earlier than time2. Zero time1 is the same as time2. Greater than
+        zero time1 is later than time2.
+        this if is saying if the user has inputted a date in the future or exactly now, then it is not correct
+        */
+        #endregion
+        /// <summary>
+        /// validation for the date of a booking
+        /// </summary>
+        /// <param name="dtpDate"></param>
+        /// <returns></returns>
         public static bool DateBookingValidation(DateTime dtpDate)
         {
+            //checks to see if the input is in the future or today
             if ((DateTime.Compare(dtpDate, DateTime.Today)) >= 0)
             {
                 return true;
@@ -115,15 +144,14 @@ namespace BasicGP
             }
         }
 
-        #region compare explaination
-        /*Less than zero time1 is earlier than time2. Zero time1 is the same as time2. Greater than
-        zero time1 is later than time2.
-        this if is saying if the user has inputted a date in the future or exactly now, then it is not correct
-        */
-        #endregion
-            //IKRAMS FOUR FOR AUTO TESTING
+        /// <summary>
+        /// validation of a Date of birth input
+        /// </summary>
+        /// <param name="dtpDOB"></param>
+        /// <returns></returns>
         public static bool DOBValidation(DateTime dtpDOB)
         {
+            //checks to see if the input is before today
             if ((DateTime.Compare(dtpDOB, DateTime.Today)) < 0)
             {
                 return true;
@@ -133,8 +161,14 @@ namespace BasicGP
                 return false;
             }
         }
+        /// <summary>
+        /// validation of phone number input
+        /// </summary>
+        /// <param name="userInput"></param>
+        /// <returns></returns>
         public static bool PhoneNumberValidation(string userInput)
         {
+            //checks if it is 11 digits long exactly and is only numbers
             if (userInput.Length == 11 && Regex.IsMatch(userInput, @"^\d+$"))
             {
                 return true;
@@ -144,10 +178,18 @@ namespace BasicGP
                 return false;
             }
         }
+        /// <summary>
+        /// validation of an address
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="userInput"></param>
+        /// <returns></returns>
         public static bool AddressValidation(string name,string userInput)
         {
+            //checks which input field we are validating
             if (userInput == "txtAddress1")
             {
+                //if its the first field it must have input and no longer than 64 characters
                 if (userInput.Length <= 64 && userInput.Length > 0)
                 {
                     return true;
@@ -159,6 +201,7 @@ namespace BasicGP
             }
             else
             {
+                //if it isnt the first input field then it can be empty but cannot be longer than 64 characters
                 if (userInput.Length <= 64)
                 {
                     return true;
@@ -169,10 +212,16 @@ namespace BasicGP
                 }
             }
         }
+
+        /// <summary>
+        /// validation for the appointment description
+        /// </summary>
+        /// <param name="userInput"></param>
+        /// <returns></returns>
         public static bool DescriptionValidation(string userInput)
         {
-            //TODO: Correct the allowed length of a description
-            if (userInput != "" && userInput.Length < 300)
+            //checks if the length is longer than 0 but less than 300 characters long
+            if (userInput.Length > 0  && userInput.Length < 300)
             {
                 return true;
             }
@@ -182,6 +231,11 @@ namespace BasicGP
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dgv"></param>
+        /// <param name="tb"></param>
         public static void CheckForResults(DataGridView dgv,DataTable tb)
         {
             if (tb.Rows.Count > 0)
