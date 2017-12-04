@@ -516,7 +516,7 @@ namespace BasicGP
             // 
             this.lblRegister.AutoSize = true;
             this.lblRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegister.ForeColor = System.Drawing.Color.Blue;
+            this.lblRegister.ForeColor = Constants.lblColor;
             this.lblRegister.Location = new System.Drawing.Point(21, -3);
             this.lblRegister.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRegister.Name = "lblRegister";
