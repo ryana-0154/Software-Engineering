@@ -102,6 +102,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNHNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNHNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblNHNumber.Location = new System.Drawing.Point(5, 1);
             this.lblNHNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNHNumber.Name = "lblNHNumber";
@@ -116,6 +117,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblTime.Location = new System.Drawing.Point(5, 85);
             this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
@@ -130,6 +132,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblDate.Location = new System.Drawing.Point(5, 43);
             this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDate.Name = "lblDate";
@@ -217,7 +220,7 @@ namespace BasicGP
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblTitle.ForeColor = System.Drawing.Color.Blue;
             this.lblTitle.Location = new System.Drawing.Point(23, 39);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
@@ -282,6 +285,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblSName.Location = new System.Drawing.Point(5, 137);
             this.lblSName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSName.Name = "lblSName";
@@ -296,6 +300,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblFName.Location = new System.Drawing.Point(5, 66);
             this.lblFName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFName.Name = "lblFName";
@@ -310,6 +315,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitlePrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitlePrompt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblTitlePrompt.Location = new System.Drawing.Point(5, 1);
             this.lblTitlePrompt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitlePrompt.Name = "lblTitlePrompt";
@@ -382,6 +388,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblDescription.Location = new System.Drawing.Point(5, 1);
             this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescription.Name = "lblDescription";
@@ -409,7 +416,7 @@ namespace BasicGP
             // 
             this.lblEmployee.AutoSize = true;
             this.lblEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployee.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblEmployee.ForeColor = System.Drawing.Color.Blue;
             this.lblEmployee.Location = new System.Drawing.Point(51, 375);
             this.lblEmployee.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblEmployee.Name = "lblEmployee";
@@ -446,6 +453,7 @@ namespace BasicGP
             // 
             this.lblInputPrompt.AutoSize = true;
             this.lblInputPrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInputPrompt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblInputPrompt.Location = new System.Drawing.Point(3, 0);
             this.lblInputPrompt.Name = "lblInputPrompt";
             this.lblInputPrompt.Size = new System.Drawing.Size(290, 25);
@@ -519,6 +527,7 @@ namespace BasicGP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(193)))), ((int)(((byte)(209)))));
             this.ClientSize = new System.Drawing.Size(1379, 848);
             this.Controls.Add(this.picBackButton);
             this.Controls.Add(this.lblErrorMsg);

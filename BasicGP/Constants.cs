@@ -1,5 +1,8 @@
 ﻿// Author: Ryan Alderton
 // SID: 1609275
+
+using System.Drawing;
+
 namespace BasicGP
 {
     class Constants
@@ -16,7 +19,7 @@ namespace BasicGP
         //returns the data for the fields so it can be edited
         public static string getAppointmentsForEdit = "SELECT appointment.NHNumber,appointment.Date,appointment.time,Employee.Title, Employee.FirstName,Employee.LastName,appointment.Description, appointment.AppointmentID FROM appointment " +
         "INNER JOIN Employee ON appointment.EmployeeID = Employee.EmployeeID " +
-        "INNER join patients on appointment.NHNumber = patients.NHNumber "+
+        "INNER join patients on appointment.NHNumber = patients.NHNumber " +
         "WHERE(appointment.NHNumber = @ID OR appointment.EmployeeID = @ID) AND appointment.Date >= @date";
         //displays the key inforamtion about appointments to show to then be chosen
         public static string getAppointmentsForView = "SELECT employee.title, Employee.FirstName,Employee.LastName,appointment.Date,appointment.Time, patients.name FROM appointment " +
@@ -48,5 +51,17 @@ namespace BasicGP
 
         // DELETE statements
         public static string cancelAppointment = "DELETE FROM appointment WHERE NHNumber = @NHNumber AND Date = @date AND Time = @time";
+
+
+
+
+        //Colours
+        public static Color TitleColor = Color.Blue;
+        public static Color BtnColor = SystemColors.HotTrack;
+        public static Color ErrorColor = Color.LightCoral;
+        public static Color BkColor = Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(193)))), ((int)(((byte)(209)))));
+        public static Color lblColor = Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
+        
     }
+    
 }

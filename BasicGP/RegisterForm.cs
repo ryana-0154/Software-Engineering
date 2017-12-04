@@ -181,5 +181,6 @@ namespace BasicGP
         //    smoker = cbSmoker.Checked;
         //    asthmatic = cbAsthmatic.Checked;
         #endregion
+            
     }
 }

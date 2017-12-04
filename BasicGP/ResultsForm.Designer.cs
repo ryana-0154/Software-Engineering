@@ -32,7 +32,6 @@
             this.txtInput = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblPrompt = new System.Windows.Forms.Label();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvResults = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -46,7 +45,7 @@
             this.lblDOB = new System.Windows.Forms.Label();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.lblPatientName = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -55,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             this.tcResults.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // txtInput
@@ -70,7 +70,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblTitle.ForeColor = Constants.TitleColor;
             this.lblTitle.Location = new System.Drawing.Point(60, 26);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
@@ -82,6 +82,7 @@
             // 
             this.lblPrompt.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblPrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrompt.ForeColor = Constants.lblColor;
             this.lblPrompt.Location = new System.Drawing.Point(85, 124);
             this.lblPrompt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrompt.Name = "lblPrompt";
@@ -90,23 +91,10 @@
             this.lblPrompt.Text = "National Health Number:";
             this.lblPrompt.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // picLogo
-            // 
-            this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picLogo.Image = global::BasicGP.Properties.Resources.logo1;
-            this.picLogo.InitialImage = global::BasicGP.Properties.Resources.logo;
-            this.picLogo.Location = new System.Drawing.Point(1252, 15);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(169, 124);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 7;
-            this.picLogo.TabStop = false;
-            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dgvResults);
+            this.tabPage3.ForeColor = System.Drawing.Color.Black;
             this.tabPage3.Location = new System.Drawing.Point(4, 38);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
@@ -142,6 +130,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dgvPrescriptions);
+            this.tabPage2.ForeColor = System.Drawing.Color.Black;
             this.tabPage2.Location = new System.Drawing.Point(4, 38);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
@@ -172,6 +161,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dgvAppointments);
+            this.tabPage1.ForeColor = System.Drawing.Color.Black;
             this.tabPage1.Location = new System.Drawing.Point(4, 38);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
@@ -237,6 +227,7 @@
             this.rdbNHNumber.AutoSize = true;
             this.rdbNHNumber.Checked = true;
             this.rdbNHNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbNHNumber.ForeColor = Constants.lblColor;
             this.rdbNHNumber.Location = new System.Drawing.Point(621, 129);
             this.rdbNHNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbNHNumber.Name = "rdbNHNumber";
@@ -251,6 +242,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.ForeColor = Constants.lblColor;
             this.radioButton2.Location = new System.Drawing.Point(621, 150);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton2.Name = "radioButton2";
@@ -264,6 +256,7 @@
             // 
             this.lblDOB.AutoSize = true;
             this.lblDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDOB.ForeColor = Constants.lblColor;
             this.lblDOB.Location = new System.Drawing.Point(315, 148);
             this.lblDOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDOB.Name = "lblDOB";
@@ -290,6 +283,7 @@
             // 
             this.lblPatientName.AutoSize = true;
             this.lblPatientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPatientName.ForeColor = Constants.lblColor;
             this.lblPatientName.Location = new System.Drawing.Point(961, 139);
             this.lblPatientName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPatientName.Name = "lblPatientName";
@@ -298,11 +292,25 @@
             this.lblPatientName.Text = "Patient Name";
             this.lblPatientName.Visible = false;
             // 
+            // picLogo
+            // 
+            this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLogo.Image = global::BasicGP.Properties.Resources.logo1;
+            this.picLogo.InitialImage = global::BasicGP.Properties.Resources.logo;
+            this.picLogo.Location = new System.Drawing.Point(1252, 15);
+            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(169, 124);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 7;
+            this.picLogo.TabStop = false;
+            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
+            // 
             // ResultsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = Constants.BkColor;
             this.ClientSize = new System.Drawing.Size(1436, 836);
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.lblPatientName);
@@ -324,7 +332,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Over Surgery | Results";
             this.Load += new System.EventHandler(this.ResultsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).EndInit();
             this.tabPage2.ResumeLayout(false);
@@ -333,6 +340,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
             this.tcResults.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

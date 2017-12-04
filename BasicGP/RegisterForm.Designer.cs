@@ -74,6 +74,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblFName.Location = new System.Drawing.Point(5, 1);
             this.lblFName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFName.Name = "lblFName";
@@ -154,6 +155,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAddress3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblAddress3.Location = new System.Drawing.Point(5, 536);
             this.lblAddress3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress3.Name = "lblAddress3";
@@ -168,6 +170,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblAddress2.Location = new System.Drawing.Point(5, 460);
             this.lblAddress2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress2.Name = "lblAddress2";
@@ -182,6 +185,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAddress1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblAddress1.Location = new System.Drawing.Point(5, 386);
             this.lblAddress1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress1.Name = "lblAddress1";
@@ -209,6 +213,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblPhone.Location = new System.Drawing.Point(5, 312);
             this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhone.Name = "lblPhone";
@@ -223,6 +228,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDOB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblDOB.Location = new System.Drawing.Point(5, 235);
             this.lblDOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDOB.Name = "lblDOB";
@@ -248,6 +254,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblSName.Location = new System.Drawing.Point(5, 81);
             this.lblSName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSName.Name = "lblSName";
@@ -273,6 +280,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblTitle.Location = new System.Drawing.Point(5, 161);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
@@ -348,7 +356,7 @@ namespace BasicGP
             // 
             // btnSubmit
             // 
-            this.btnSubmit.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSubmit.BackColor = Constants.BtnColor;
             this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -394,6 +402,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAllergiesText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAllergiesText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblAllergiesText.Location = new System.Drawing.Point(5, 1);
             this.lblAllergiesText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAllergiesText.Name = "lblAllergiesText";
@@ -428,6 +437,7 @@ namespace BasicGP
             this.cbSmoker.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbSmoker.AutoSize = true;
             this.cbSmoker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSmoker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.cbSmoker.Location = new System.Drawing.Point(129, 117);
             this.cbSmoker.Margin = new System.Windows.Forms.Padding(4);
             this.cbSmoker.Name = "cbSmoker";
@@ -441,6 +451,7 @@ namespace BasicGP
             this.cbDiabetes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbDiabetes.AutoSize = true;
             this.cbDiabetes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDiabetes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.cbDiabetes.Location = new System.Drawing.Point(127, 73);
             this.cbDiabetes.Margin = new System.Windows.Forms.Padding(4);
             this.cbDiabetes.Name = "cbDiabetes";
@@ -454,6 +465,7 @@ namespace BasicGP
             this.cbAsthmatic.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbAsthmatic.AutoSize = true;
             this.cbAsthmatic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAsthmatic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.cbAsthmatic.Location = new System.Drawing.Point(121, 159);
             this.cbAsthmatic.Margin = new System.Windows.Forms.Padding(4);
             this.cbAsthmatic.Name = "cbAsthmatic";
@@ -468,6 +480,7 @@ namespace BasicGP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFlagText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFlagText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblFlagText.Location = new System.Drawing.Point(5, 1);
             this.lblFlagText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFlagText.Name = "lblFlagText";
@@ -502,6 +515,7 @@ namespace BasicGP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(193)))), ((int)(((byte)(209)))));
             this.ClientSize = new System.Drawing.Size(1411, 752);
             this.Controls.Add(this.lblErrorMsg);
             this.Controls.Add(this.picLogo);
