@@ -60,6 +60,7 @@ namespace BasicGP
             this.lblFlagText = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblErrorMsg = new System.Windows.Forms.Label();
+            this.lblRegister = new System.Windows.Forms.Label();
             this.tableLayoutPanel3.SuspendLayout();
             this.pnlDOB.SuspendLayout();
             this.pnlTitle.SuspendLayout();
@@ -356,7 +357,7 @@ namespace BasicGP
             // 
             // btnSubmit
             // 
-            this.btnSubmit.BackColor = Constants.BtnColor;
+            this.btnSubmit.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -511,12 +512,25 @@ namespace BasicGP
             this.lblErrorMsg.Size = new System.Drawing.Size(684, 137);
             this.lblErrorMsg.TabIndex = 20;
             // 
+            // lblRegister
+            // 
+            this.lblRegister.AutoSize = true;
+            this.lblRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegister.ForeColor = System.Drawing.Color.Blue;
+            this.lblRegister.Location = new System.Drawing.Point(21, -3);
+            this.lblRegister.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRegister.Name = "lblRegister";
+            this.lblRegister.Size = new System.Drawing.Size(250, 67);
+            this.lblRegister.TabIndex = 21;
+            this.lblRegister.Text = "Register";
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(193)))), ((int)(((byte)(209)))));
             this.ClientSize = new System.Drawing.Size(1411, 752);
+            this.Controls.Add(this.lblRegister);
             this.Controls.Add(this.lblErrorMsg);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.tableLayoutPanel2);
@@ -542,6 +556,7 @@ namespace BasicGP
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -576,5 +591,6 @@ namespace BasicGP
         private System.Windows.Forms.Label lblErrorMsg;
         private System.Windows.Forms.Panel pnlTitle;
         private System.Windows.Forms.Panel pnlDOB;
+        private System.Windows.Forms.Label lblRegister;
     }
 }

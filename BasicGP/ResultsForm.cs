@@ -57,6 +57,7 @@ namespace BasicGP
                 Utilities.CheckForResults(dgvPatients, table);
 
             }
+
         }
 
 
@@ -159,6 +160,29 @@ namespace BasicGP
 
         private void dgvAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        DataSet dataSet;
+        DataTable table;
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            // Define a dataSet from DBAccess with the SQL statement
+            if (rdbNHNumber.Checked)
+            {
+                dataSet = DBAccess.getData("findPatient", "id", txtInput.Text);
+            }
+            //and therefore the other button is checked
+            else
+            {// Define a dataSet from DBAccess with the SQL statement
+                dataSet = DBAccess.getData("findPatient", "name&dob", txtInput.Text, dtpDOB.Text);
+            }
+            //Define a datatable with the tables from the dataset return
+            table = dataSet.Tables[0];
+
+            Console.WriteLine(table.Rows.Count);
+
+            Utilities.CheckForResults(dgvPatients, table);
 
         }
     }

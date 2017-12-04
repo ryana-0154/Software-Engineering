@@ -46,6 +46,7 @@
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.lblPatientName = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -70,7 +71,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = Constants.TitleColor;
+            this.lblTitle.ForeColor = System.Drawing.Color.Blue;
             this.lblTitle.Location = new System.Drawing.Point(60, 26);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
@@ -82,7 +83,7 @@
             // 
             this.lblPrompt.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblPrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrompt.ForeColor = Constants.lblColor;
+            this.lblPrompt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblPrompt.Location = new System.Drawing.Point(85, 124);
             this.lblPrompt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrompt.Name = "lblPrompt";
@@ -227,7 +228,7 @@
             this.rdbNHNumber.AutoSize = true;
             this.rdbNHNumber.Checked = true;
             this.rdbNHNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbNHNumber.ForeColor = Constants.lblColor;
+            this.rdbNHNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.rdbNHNumber.Location = new System.Drawing.Point(621, 129);
             this.rdbNHNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbNHNumber.Name = "rdbNHNumber";
@@ -242,7 +243,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = Constants.lblColor;
+            this.radioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.radioButton2.Location = new System.Drawing.Point(621, 150);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton2.Name = "radioButton2";
@@ -256,7 +257,7 @@
             // 
             this.lblDOB.AutoSize = true;
             this.lblDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDOB.ForeColor = Constants.lblColor;
+            this.lblDOB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblDOB.Location = new System.Drawing.Point(315, 148);
             this.lblDOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDOB.Name = "lblDOB";
@@ -283,7 +284,7 @@
             // 
             this.lblPatientName.AutoSize = true;
             this.lblPatientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatientName.ForeColor = Constants.lblColor;
+            this.lblPatientName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblPatientName.Location = new System.Drawing.Point(961, 139);
             this.lblPatientName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPatientName.Name = "lblPatientName";
@@ -306,12 +307,28 @@
             this.picLogo.TabStop = false;
             this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
             // 
+            // btnSubmit
+            // 
+            this.btnSubmit.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSubmit.Location = new System.Drawing.Point(621, 62);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(111, 61);
+            this.btnSubmit.TabIndex = 15;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
             // ResultsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = Constants.BkColor;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(193)))), ((int)(((byte)(209)))));
             this.ClientSize = new System.Drawing.Size(1436, 836);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.lblPatientName);
             this.Controls.Add(this.dtpDOB);
@@ -364,5 +381,6 @@
         private System.Windows.Forms.Label lblDOB;
         private System.Windows.Forms.DateTimePicker dtpDOB;
         private System.Windows.Forms.Label lblPatientName;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }
