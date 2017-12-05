@@ -14,6 +14,7 @@ namespace BasicGP
         public static string getPatientByDOB = "SELECT * FROM patients WHERE name IN (@name) AND DOB IN (@DOB)";
         public static string getAllPatients = "SELECT TOP 15 * FROM patients ORDER BY Name ASC";
         public static string getAppointments = "SELECT * FROM appointment WHERE NHNumber = @id";
+        public static string getAppointmentsToCheckBook = "SELECT * FROM appointment WHERE Date = @date AND Time = @time AND EmployeeID = @eID";
         public static string getAppointmentID = "select AppointmentID from appointment where EmployeeID = @eID AND NHNumber = @NHNumber AND Date = @date AND Time = @time";
         //TODO: use join and make this display patient name and employee name and date and time and description
         //returns the data for the fields so it can be edited

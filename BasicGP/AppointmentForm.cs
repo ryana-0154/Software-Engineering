@@ -44,16 +44,23 @@ namespace BasicGP
             {
                 if (isEdting == false)
                 {
-                    //TODO: check order of data entry
-                    DBAccess.postData("newAppointment", appointmentDetails[0].Text, appointmentDetails[1].Controls[0].Text, appointmentDetails[2].Controls[0].Text, appointmentDetails[3].Controls[0].Text, appointmentDetails[4].Text, appointmentDetails[5].Text, appointmentDetails[6].Text);
+                    int eID = Int32.Parse(GetEmployeeID(appointmentDetails[3].Controls[0].Text, appointmentDetails[4].Text, appointmentDetails[5].Text).Tables[0].Rows[0].ItemArray[0].ToString());
+                    if (CheckEmployeeIsAvailable(pnlTime.Controls[0].Text.ToString(), DateTime.Parse(pnlDate.Controls[0].Text.ToString()), eID))
+                    {
+                        //TODO: check order of data entry
+                        DBAccess.postData("newAppointment", appointmentDetails[0].Text, appointmentDetails[1].Controls[0].Text, appointmentDetails[2].Controls[0].Text, appointmentDetails[3].Controls[0].Text, appointmentDetails[4].Text, appointmentDetails[5].Text, appointmentDetails[6].Text);
+                    } else
+                    {
+                        MessageBox.Show($"Sorry, {appointmentDetails[3].Controls[0].Text} {appointmentDetails[4].Text} {appointmentDetails[5].Text} is not available on that date. " +
+                            $"Please select another.", "Sorry!");
+                    }
+                    
                 }
                 else
                 {
-                    //finds the employee ID of the new employee associated with the appointment
-                    DataSet dataSet = DBAccess.getData("employeeID", appointmentDetails[3].Controls[0].Text, appointmentDetails[4].Text, appointmentDetails[5].Text);
-                    DataTable table = dataSet.Tables[0];
+                    DataTable table = GetEmployeeID(appointmentDetails[3].Controls[0].Text, appointmentDetails[4].Text, appointmentDetails[5].Text).Tables[0];
                     // Put the value of the row returned into employeeid
-                    int employeeID = Int32.Parse(dataSet.Tables[0].Rows[0].ItemArray[0].ToString());
+                    int employeeID = Int32.Parse(table.Rows[0].ItemArray[0].ToString());
 
                     EditAppointment(employeeID, appointmentDetails[0].Text, pnlDate.Controls[0].Text, pnlTime.Controls[0].Text, appointmentDetails[6].Text, appointmentID);
                 }
@@ -62,6 +69,12 @@ namespace BasicGP
             }
 
             
+        }
+
+        private DataSet GetEmployeeID(string title, string firstName, string lastName)
+        {
+            DataSet dataSet = DBAccess.getData("employeeID", title, firstName, lastName);
+            return dataSet;
         }
 
         private bool CheckValidation(Control[] appointmentDetails)
@@ -98,10 +111,24 @@ namespace BasicGP
             }
             return result;
         }
-        private bool CheckEmployeeIsAvailable()
+
+        /// <summary>
+        /// Checks if the employee specified is free on a specific date
+        /// </summary>
+        /// <returns>true if free, false if busy</returns>
+        private bool CheckEmployeeIsAvailable(string time, DateTime date, int employeeID)
         {
-            //TODO: Implement this
-            return true;
+
+            DataSet dataSet = DBAccess.getData("getAppointmentsToCheckAvail", time.ToString(), date.ToLongDateString(), employeeID.ToString());
+            DataTable table = dataSet.Tables[0];
+
+            if (table.Rows.Count == 0)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
         }
         /// <summary>
         /// dialogue box for the delete button
@@ -206,7 +233,7 @@ namespace BasicGP
                 DBAccess.updateData("editAppointment", eID.ToString(), NHNumber, date, time, desc, aID);
             }
         }
-
+        
         private void BackClick(object sender, EventArgs e)
         {
             ChangeToNew();

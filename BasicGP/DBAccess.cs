@@ -164,6 +164,13 @@ namespace BasicGP
                     sqlCommand.Parameters.AddWithValue("@time", data[4]);
                     Console.WriteLine(data[1], data[2], DateTime.Parse(data[3]), DateTime.Parse(data[4]).ToShortTimeString());
                     break;
+                case "getAppointmentsToCheckAvail":
+                    sqlCommand = new SqlCommand(Constants.getAppointmentsToCheckBook, DBConnection);
+                    sqlCommand.Parameters.AddWithValue("@time", data[1]);
+                    sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(data[2]));
+                    sqlCommand.Parameters.AddWithValue("@eID", Int32.Parse(data[3]));
+                    Console.WriteLine(data[1] + data[2] + data[3]);
+                    break;
                 default:
                     // If it matches none of the cases above, set the dataSet to null; It should never use this case.
                     dataSet = null;
