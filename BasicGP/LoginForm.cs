@@ -49,10 +49,6 @@ namespace BasicGP
             }
         }
         
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-            authStatus.Visible = false;
-        }
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {

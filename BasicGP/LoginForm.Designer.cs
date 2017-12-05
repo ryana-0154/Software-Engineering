@@ -129,6 +129,7 @@
             this.authStatus.ForeColor = System.Drawing.Color.Red;
             this.authStatus.Location = new System.Drawing.Point(84, 13);
             this.authStatus.Name = "authStatus";
+            this.authStatus.Visible = false;
             this.authStatus.Size = new System.Drawing.Size(274, 128);
             this.authStatus.TabIndex = 3;
             this.authStatus.Text = "Incorrect Username or Password, Please try again.";
@@ -176,7 +177,6 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Over Surgery | Login";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
