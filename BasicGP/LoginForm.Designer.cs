@@ -67,7 +67,7 @@
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "Password";
             this.txtPassword.Enter += new System.EventHandler(this.TxtPassword_Enter);
-            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBox_KeyPress);
             this.txtPassword.Leave += new System.EventHandler(this.TxtPassword_Leave);
             // 
             // btnLogin

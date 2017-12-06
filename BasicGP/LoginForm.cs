@@ -65,7 +65,7 @@ namespace BasicGP
             }
         }
 
-        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             //If the return key is pressed, sent a login button click event
             if (e.KeyChar == (char)13)

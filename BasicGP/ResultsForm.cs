@@ -76,6 +76,7 @@ namespace BasicGP
             lblPatientName.Visible = true;
             
             lblPatientName.Text = dgvPatients.Rows[e.RowIndex].Cells[2].Value.ToString().TrimEnd() +" " + dgvPatients.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //TODO: make this easier to understand, rename it?
             NHNumber = e.RowIndex;
 
             string[] data = new string[1];
