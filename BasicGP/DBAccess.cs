@@ -168,8 +168,9 @@ namespace BasicGP
                     sqlCommand = new SqlCommand(Constants.getAppointmentsToCheckBook, DBConnection);
                     sqlCommand.Parameters.AddWithValue("@time", data[1]);
                     sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(data[2]));
-                    sqlCommand.Parameters.AddWithValue("@eID", Int32.Parse(data[3]));
-                    Console.WriteLine(data[1] + data[2] + data[3]);
+                    sqlCommand.Parameters.AddWithValue("@firstname", data[3]);
+                    sqlCommand.Parameters.AddWithValue("@lastname", data[4]);
+                    Console.WriteLine(data[1] + data[2] + data[3] + data[4]);
                     break;
                 default:
                     // If it matches none of the cases above, set the dataSet to null; It should never use this case.
@@ -280,12 +281,13 @@ namespace BasicGP
             {
                 case "editAppointment":
                     sqlCommand = new SqlCommand(Constants.updateAppointment, DBConnection);
-                    sqlCommand.Parameters.AddWithValue("@eID", data[1]);
-                    sqlCommand.Parameters.AddWithValue("@NHNumber", Int32.Parse(data[2]));
-                    sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(data[3]));
-                    sqlCommand.Parameters.AddWithValue("@time", DateTime.Parse(data[4]));
-                    sqlCommand.Parameters.AddWithValue("@desc", data[5]);
-                    sqlCommand.Parameters.AddWithValue("@aID", Int32.Parse(data[6]));
+                    sqlCommand.Parameters.AddWithValue("@NHNumber", Int32.Parse(data[1]));
+                    sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(data[2]));
+                    sqlCommand.Parameters.AddWithValue("@time", DateTime.Parse(data[3]));
+                    sqlCommand.Parameters.AddWithValue("@desc", data[4]);
+                    sqlCommand.Parameters.AddWithValue("@aID", Int32.Parse(data[5]));
+                    sqlCommand.Parameters.AddWithValue("@firstname", data[6]);
+                    sqlCommand.Parameters.AddWithValue("@lastname", data[7]);
                     int count = sqlCommand.ExecuteNonQuery();
 
                     if (count > 0)

@@ -505,7 +505,7 @@ namespace BasicGP
             // 
             // lblErrorMsg
             // 
-            this.lblErrorMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMsg.Font = new System.Drawing.Font("Microsoft Sans Se rif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorMsg.ForeColor = System.Drawing.Color.LightCoral;
             this.lblErrorMsg.Location = new System.Drawing.Point(661, 606);
             this.lblErrorMsg.Name = "lblErrorMsg";

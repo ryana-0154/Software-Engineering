@@ -14,7 +14,9 @@ namespace BasicGP
         public static string getPatientByDOB = "SELECT * FROM patients WHERE name IN (@name) AND DOB IN (@DOB)";
         public static string getAllPatients = "SELECT TOP 15 * FROM patients ORDER BY Name ASC";
         public static string getAppointments = "SELECT * FROM appointment WHERE NHNumber = @id";
-        public static string getAppointmentsToCheckBook = "SELECT * FROM appointment WHERE Date = @date AND Time = @time AND EmployeeID = @eID";
+        public static string getAppointmentsToCheckBook = "SELECT appointment.appointmentID,appointment.EmployeeID,appointment.NHNumber,Date,Time,Description FROM appointment "+
+        "INNER JOIN Employee ON appointment.EmployeeID = employee.EmployeeID "+
+        "WHERE appointment.Date = @date AND appointment.Time = @time AND employee.FirstName = @firstname AND Employee.LastName = @lastname";
         public static string getAppointmentID = "select AppointmentID from appointment where EmployeeID = @eID AND NHNumber = @NHNumber AND Date = @date AND Time = @time";
         //TODO: use join and make this display patient name and employee name and date and time and description
         //returns the data for the fields so it can be edited
@@ -47,8 +49,7 @@ namespace BasicGP
 
         // UPDATE statements
         public static string extendPrescriptionDuration = "UPDATE prescriptions SET DatePrescribed = @date WHERE PrescriptionID = @prescriptionID";
-        public static string updateAppointment = "UPDATE appointment SET EmployeeID = @eID, NHNumber = @NHNumber, Date = @date, " +
-            "Time = @time, Description = @desc WHERE AppointmentID = @aID ";
+        public static string updateAppointment = "UPDATE appointment SET EmployeeID = (SELECT EmployeeID FROM Employee WHERE FirstName= @firstname AND LastName = @lastname), NHNumber = @NHNumber, Date = @date, Time = @time, Description = @desc WHERE AppointmentID = @aID";
 
         // DELETE statements
         public static string cancelAppointment = "DELETE FROM appointment WHERE NHNumber = @NHNumber AND Date = @date AND Time = @time";
