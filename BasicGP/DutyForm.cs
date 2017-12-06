@@ -54,22 +54,18 @@ namespace BasicGP
             string firstname = dgvDuty.Rows[e.RowIndex].Cells[1].Value.ToString();
             //gets the employee last name from the dgv and clicked cell
             string lastname = dgvDuty.Rows[e.RowIndex].Cells[2].Value.ToString();
-            //DataSet dataSetAvailability = DBAccess.getData("employeeID", title, firstname, lastname);
-            //DataTable tableAvailabilty = dataSetAvailability.Tables[0];
-            DataSet datasetEID = DBAccess.getData("employeeID", title, firstname, lastname);
-            int employeeID = Int32.Parse(datasetEID.Tables[0].Rows[0].ItemArray[0].ToString());
             //sets every time back to available before it gets changed
             for (int i = 1; i < 40; i += 2)
             {
                 tableLayout.Controls[i].BackColor = Color.PaleGreen;
                 tableLayout.Controls[i].Text = "Available";
             }
-            ShowTimes(employeeID);
+            ShowTimes(title,firstname,lastname);
         }
-        private void ShowTimes(int employeeID)
+        private void ShowTimes(string title,string firstname,string lastname)
         {
             //uses the employeeID and the selected date to return all of their appointment times on that day
-            DataSet dsTest = DBAccess.getData("showEmployeeAvailability", employeeID.ToString(), mcDutyDate.SelectionStart.ToShortDateString());
+            DataSet dsTest = DBAccess.getData("showEmployeeAvailability", mcDutyDate.SelectionStart.ToShortDateString(),title,firstname,lastname);
             DataTable table = dsTest.Tables[0];
 
             //loops through all of the returned rows, and therefore all the times in that day that the employee has appointments

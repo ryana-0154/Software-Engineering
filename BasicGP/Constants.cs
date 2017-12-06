@@ -41,7 +41,7 @@ namespace BasicGP
         public static string getDuty = "SELECT Title, FirstName, LastName, Occupation FROM employee WHERE rotaID IN (SELECT rotaID FROM rota WHERE Shift1 = @day OR Shift2 = @day OR Shift3 = @day OR Shift4 = @day OR Shift5 = @day OR Shift6 = @day OR Shift7 = @day)";
         public static string getPrescriptionDuration = "SELECT duration FROM prescriptions WHERE prescriptionID = @id";
         public static string getEmployeeIDByName = "SELECT employeeID FROM employee WHERE title = @title AND firstName = @firstName and lastName = @lastName";
-        public static string showEmployeeAvailability = "SELECT * FROM appointment WHERE EmployeeID = @employeeID AND Date = @date";
+        public static string showEmployeeAvailability = "SELECT * FROM appointment JOIN Employee ON appointment.EmployeeID = Employee.EmployeeID WHERE Employee.Title = @title AND Employee.FirstName = @firstname AND Employee.LastName = @lastname AND Date = @date";
 
         // Insert Statements
         public static string postPatient = "INSERT INTO patients (Name, Title, DOB, PhoneNumber, Address, Diabetes, Smoker, Asthma, Allergies) " +

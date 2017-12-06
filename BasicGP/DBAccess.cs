@@ -149,8 +149,10 @@ namespace BasicGP
                     break;
                 case "showEmployeeAvailability":
                     sqlCommand = new SqlCommand(Constants.showEmployeeAvailability, DBConnection);
-                    sqlCommand.Parameters.AddWithValue("@employeeID", ID);
-                    sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(data[2]));
+                    sqlCommand.Parameters.AddWithValue("@date", DateTime.Parse(data[1]));
+                    sqlCommand.Parameters.AddWithValue("@title", data[2]);
+                    sqlCommand.Parameters.AddWithValue("@firstname", data[3]);
+                    sqlCommand.Parameters.AddWithValue("@lastname", data[4]);
                     break;
                 case "selectAllPatients":
                     sqlCommand = new SqlCommand(Constants.getAllPatients, DBConnection);

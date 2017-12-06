@@ -505,7 +505,7 @@ namespace BasicGP
             // 
             // lblErrorMsg
             // 
-            this.lblErrorMsg.Font = new System.Drawing.Font("Microsoft Sans Se rif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorMsg.ForeColor = System.Drawing.Color.LightCoral;
             this.lblErrorMsg.Location = new System.Drawing.Point(661, 606);
             this.lblErrorMsg.Name = "lblErrorMsg";
@@ -516,7 +516,7 @@ namespace BasicGP
             // 
             this.lblRegister.AutoSize = true;
             this.lblRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegister.ForeColor = Constants.lblColor;
+            this.lblRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(130)))), ((int)(((byte)(177)))));
             this.lblRegister.Location = new System.Drawing.Point(21, -3);
             this.lblRegister.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRegister.Name = "lblRegister";

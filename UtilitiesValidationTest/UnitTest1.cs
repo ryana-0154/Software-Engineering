@@ -10,11 +10,8 @@ namespace UtilitiesValidationTest
     public class UnitTest1
     {
         public string dir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-        //public string[] inputs;
         public List<bool> results = new List<bool>();
         public List<string> inputs = new List<string>();
-
-
         public void getTests(string filename)
         {
             string[] lines = File.ReadAllLines(@dir + filename);
