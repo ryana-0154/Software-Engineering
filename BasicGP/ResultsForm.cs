@@ -136,8 +136,8 @@ namespace BasicGP
             int prescriptionDuration;
             string presciptionName = dgvPrescriptions.Rows[e.RowIndex].Cells[1].Value.ToString();
             int.TryParse(dgvPrescriptions.Rows[e.RowIndex].Cells[0].Value.ToString(), out prescriptionID);
-            int.TryParse(dgvPrescriptions.Rows[e.RowIndex].Cells[5].Value.ToString(), out prescriptionDuration);
-            DateTime prescriptionDate = (DateTime)dgvPrescriptions.Rows[e.RowIndex].Cells[4].Value;
+            int.TryParse(dgvPrescriptions.Rows[e.RowIndex].Cells[3].Value.ToString(), out prescriptionDuration);
+            DateTime prescriptionDate = (DateTime)dgvPrescriptions.Rows[e.RowIndex].Cells[2].Value;
             //if the duration of the prescription has ran out
             if (DateTime.Compare(prescriptionDate.AddDays(prescriptionDuration), DateTime.Today) < 0)
             {
@@ -156,7 +156,7 @@ namespace BasicGP
         }
         private void ExtendPrescription(int prescriptionID)
         {
-            DBAccess.updateData(prescriptionID.ToString());
+            DBAccess.updateData("extendPrescription", prescriptionID.ToString());
         }
 
         private void dgvAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
