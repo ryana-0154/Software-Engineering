@@ -1,7 +1,4 @@
-﻿// Author: Ryan Alderton
-// SID: 1609275
-
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace BasicGP
 {
@@ -10,7 +7,6 @@ namespace BasicGP
         // Select Statements
         public static string checkLogin = "SELECT * FROM users WHERE userName = @username AND password = @password COLLATE SQL_Latin1_General_CP1_CS_AS";
         public static string getPatientByID = "SELECT * FROM patients WHERE NHNumber = @id";
-        // In?
         public static string getPatientByDOB = "SELECT * FROM patients WHERE name IN (@name) AND DOB IN (@DOB)";
         public static string getAllPatients = "SELECT TOP 15 * FROM patients ORDER BY Name ASC";
         public static string getAppointments = "SELECT Employee.FirstName,Employee.LastName,appointment.Date,appointment.Time,appointment.Description FROM appointment "+
@@ -21,7 +17,6 @@ namespace BasicGP
         "INNER JOIN Employee ON appointment.EmployeeID = employee.EmployeeID "+
         "WHERE appointment.Date = @date AND appointment.Time = @time AND employee.FirstName = @firstname AND Employee.LastName = @lastname";
         public static string getAppointmentID = "select AppointmentID from appointment where EmployeeID = @eID AND NHNumber = @NHNumber AND Date = @date AND Time = @time";
-        //TODO: use join and make this display patient name and employee name and date and time and description
         //returns the data for the fields so it can be edited
         public static string getAppointmentsForEdit = "SELECT appointment.NHNumber,appointment.Date,appointment.time,Employee.Title, Employee.FirstName,Employee.LastName,appointment.Description, appointment.AppointmentID FROM appointment " +
         "INNER JOIN Employee ON appointment.EmployeeID = Employee.EmployeeID " +
@@ -37,7 +32,6 @@ namespace BasicGP
         //TODO: Not necessary
         public static string getAvailability = "SELECT * FROM availability WHERE NHNumber = @id";
         //public static string getDuty = "SELECT * FROM rota WHERE Shift1 = @day OR Shift2 = @day OR Shift3 = @day OR Shift4 = @day OR Shift5 = @day OR Shift6 = @day OR Shift7 = @day";
-        //TODO: Use a join here and then use IN instead of all the ORs
         public static string getDuty = "SELECT Title, FirstName, LastName, Occupation FROM employee WHERE rotaID IN (SELECT rotaID FROM rota WHERE Shift1 = @day OR Shift2 = @day OR Shift3 = @day OR Shift4 = @day OR Shift5 = @day OR Shift6 = @day OR Shift7 = @day)";
         public static string getPrescriptionDuration = "SELECT duration FROM prescriptions WHERE prescriptionID = @id";
         public static string getEmployeeIDByName = "SELECT employeeID FROM employee WHERE title = @title AND firstName = @firstName and lastName = @lastName";

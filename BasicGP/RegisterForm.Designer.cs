@@ -368,7 +368,7 @@ namespace BasicGP
             this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -501,7 +501,7 @@ namespace BasicGP
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 19;
             this.picLogo.TabStop = false;
-            this.picLogo.Click += new System.EventHandler(this.toDashboard);
+            this.picLogo.Click += new System.EventHandler(this.ToDashboard);
             // 
             // lblErrorMsg
             // 

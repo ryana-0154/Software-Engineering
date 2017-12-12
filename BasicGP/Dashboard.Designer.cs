@@ -91,7 +91,7 @@
             this.btnManage.TabIndex = 6;
             this.btnManage.Text = "Manage Appointments";
             this.btnManage.UseVisualStyleBackColor = false;
-            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
+            this.btnManage.Click += new System.EventHandler(this.BtnManage_Click);
             // 
             // btnFind
             // 
@@ -106,7 +106,7 @@
             this.btnFind.TabIndex = 5;
             this.btnFind.Text = "Find Patient";
             this.btnFind.UseVisualStyleBackColor = false;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            this.btnFind.Click += new System.EventHandler(this.BtnFind_Click);
             // 
             // btnRegister
             // 
@@ -121,7 +121,7 @@
             this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Register Patient";
             this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.btnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
             // btnAvailability
             // 
@@ -136,7 +136,7 @@
             this.btnAvailability.TabIndex = 1;
             this.btnAvailability.Text = "Check Availability";
             this.btnAvailability.UseVisualStyleBackColor = false;
-            this.btnAvailability.Click += new System.EventHandler(this.btnAvailability_Click);
+            this.btnAvailability.Click += new System.EventHandler(this.BtnAvailability_Click);
             // 
             // Dashboard
             // 

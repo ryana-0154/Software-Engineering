@@ -21,31 +21,31 @@ namespace BasicGP
             GetDuty(DateTime.Today.DayOfWeek.ToString());
         }
 
-        private void picLogo_Click(object sender, EventArgs e)
+        private void PicLogo_Click(object sender, EventArgs e)
         {
-            Utilities.toDashboard(sender, e, this);
+            Utilities.ToDashboard(sender, e, this);
         }
 
-        private void txtInput_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtInput_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
 
         private void GetDuty(string dayOfWeek)
         {
-            DataSet dataSet = DBAccess.getData("duty", dayOfWeek);
+            DataSet dataSet = DBAccess.GetData("duty", dayOfWeek);
             DataTable table = dataSet.Tables[0];
 
             dgvDuty.DataSource = table;
         }
 
-        private void mcDutyDate_DateChanged(object sender, DateRangeEventArgs e)
+        private void McDutyDate_DateChanged(object sender, DateRangeEventArgs e)
         {
             GetDuty(mcDutyDate.SelectionStart.DayOfWeek.ToString());
             
         }
 
-        private void dgvCellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvCellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Console.WriteLine("Clicked");
             //gets the employee title from the dgv and clicked cell
@@ -65,7 +65,7 @@ namespace BasicGP
         private void ShowTimes(string title,string firstname,string lastname)
         {
             //uses the employeeID and the selected date to return all of their appointment times on that day
-            DataSet dsTest = DBAccess.getData("showEmployeeAvailability", mcDutyDate.SelectionStart.ToShortDateString(),title,firstname,lastname);
+            DataSet dsTest = DBAccess.GetData("showEmployeeAvailability", mcDutyDate.SelectionStart.ToShortDateString(),title,firstname,lastname);
             DataTable table = dsTest.Tables[0];
 
             //loops through all of the returned rows, and therefore all the times in that day that the employee has appointments

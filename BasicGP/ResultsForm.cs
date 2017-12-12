@@ -18,7 +18,7 @@ namespace BasicGP
         }
         private void ResultsForm_Load(object sender, EventArgs e)
         {
-            DataSet dataSet = DBAccess.getData("selectAllPatients", "0");
+            DataSet dataSet = DBAccess.GetData("selectAllPatients", "0");
             DataTable table = dataSet.Tables[0];
             Utilities.CheckForResults(dgvPatients, table);
         }
@@ -34,20 +34,18 @@ namespace BasicGP
         {
             DataSet dataSet;
             DataTable table;
-
-            // TODO: Send this all to backend
             //If the return key is pressed, sent a login button click event
             if (e.KeyChar == (char)13)
             {
                 // Define a dataSet from DBAccess with the SQL statement
                 if (rdbNHNumber.Checked)
                 {
-                    dataSet = DBAccess.getData("findPatient", "id", txtInput.Text);
+                    dataSet = DBAccess.GetData("findPatient", "id", txtInput.Text);
                 }
                 //and therefore the other button is checked
                 else
                 {// Define a dataSet from DBAccess with the SQL statement
-                    dataSet = DBAccess.getData("findPatient", "name&dob", txtInput.Text, dtpDOB.Text);
+                    dataSet = DBAccess.GetData("findPatient", "name&dob", txtInput.Text, dtpDOB.Text);
                 }
                 //Define a datatable with the tables from the dataset return
                 table = dataSet.Tables[0];
@@ -70,7 +68,6 @@ namespace BasicGP
         /// <param name="e"></param>
         private void PatientSelect(object sender, DataGridViewCellEventArgs e)
         {
-            //TODO: THERE IS BUG WHEN YOU DOUBLE CLICK MIDDLE LINE
             dgvPatients.Visible = false;
             tcResults.Visible = true;
             lblPatientName.Visible = true;
@@ -82,7 +79,7 @@ namespace BasicGP
             string[] data = new string[1];
             //https://stackoverflow.com/questions/5571963/how-to-get-datagridview-cell-value-in-messagebox
             //finds the NHNumber of whichever row was clicked on
-            DataSet dataSetAppointments = DBAccess.getData("patientAppointments", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
+            DataSet dataSetAppointments = DBAccess.GetData("patientAppointments", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
             DataTable tableAppointments = dataSetAppointments.Tables[0];
             Utilities.CheckForResults(dgvAppointments, tableAppointments);
 
@@ -91,36 +88,36 @@ namespace BasicGP
         }
 
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
             lblPrompt.Text = "Full Name: ";
             lblDOB.Visible = true;
             dtpDOB.Visible = true;
         }
 
-        private void rdbNHNumber_CheckedChanged(object sender, EventArgs e)
+        private void RdbNHNumber_CheckedChanged(object sender, EventArgs e)
         {
             lblPrompt.Text = "National Health Number: ";
             lblDOB.Visible = false;
             dtpDOB.Visible = false;
         }
 
-        private void tcResults_Selecting(object sender, TabControlCancelEventArgs e)
+        private void TcResults_Selecting(object sender, TabControlCancelEventArgs e)
         {
             switch (e.TabPageIndex)
             {
                 case 0:
-                    DataSet dataSetAppointments = DBAccess.getData("patientAppointments", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
+                    DataSet dataSetAppointments = DBAccess.GetData("patientAppointments", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
                     DataTable tableAppointments = dataSetAppointments.Tables[0];
                     Utilities.CheckForResults(dgvAppointments, tableAppointments);
                     break;
                 case 1:
-                    DataSet dataSetPrescriptions = DBAccess.getData("patientPresciptions", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
+                    DataSet dataSetPrescriptions = DBAccess.GetData("patientPresciptions", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
                     DataTable tablePrescriptions = dataSetPrescriptions.Tables[0];
                     Utilities.CheckForResults(dgvPrescriptions, tablePrescriptions);
                     break;
                 case 2:
-                    DataSet dataSetResults = DBAccess.getData("testResults", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
+                    DataSet dataSetResults = DBAccess.GetData("testResults", dgvPatients.Rows[NHNumber].Cells[0].Value.ToString());
                     DataTable tableResults = dataSetResults.Tables[0];
                     Utilities.CheckForResults(dgvResults, tableResults);
                     break;
@@ -156,27 +153,27 @@ namespace BasicGP
         }
         private void ExtendPrescription(int prescriptionID)
         {
-            DBAccess.updateData("extendPrescription", prescriptionID.ToString());
+            DBAccess.UpdateData("extendPrescription", prescriptionID.ToString());
         }
 
-        private void dgvAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
         DataSet dataSet;
         DataTable table;
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void BtnSubmit_Click(object sender, EventArgs e)
         {
             // Define a dataSet from DBAccess with the SQL statement
             if (rdbNHNumber.Checked)
             {
-                dataSet = DBAccess.getData("findPatient", "id", txtInput.Text);
+                dataSet = DBAccess.GetData("findPatient", "id", txtInput.Text);
             }
             //and therefore the other button is checked
             else
             {// Define a dataSet from DBAccess with the SQL statement
-                dataSet = DBAccess.getData("findPatient", "name&dob", txtInput.Text, dtpDOB.Text);
+                dataSet = DBAccess.GetData("findPatient", "name&dob", txtInput.Text, dtpDOB.Text);
             }
             //Define a datatable with the tables from the dataset return
             table = dataSet.Tables[0];

@@ -26,28 +26,27 @@ namespace BasicGP
         {
 
         }
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void BtnRegister_Click(object sender, EventArgs e)
         {
             //Is this bad coding practice to repeat everytime???
             this.Visible = false;
             new RegisterForm().Visible = true;
         }
 
-        private void btnFind_Click(object sender, EventArgs e)
+        private void BtnFind_Click(object sender, EventArgs e)
         {
             //and here repeated
             this.Visible = false;
             new ResultsForm().Visible = true;
         }
 
-        private void btnManage_Click(object sender, EventArgs e)
+        private void BtnManage_Click(object sender, EventArgs e)
         {
-            // TODO: Potentially change this link?
             Visible = false;
             new AppointmentForm().Visible = true;
         }
 
-        private void btnAvailability_Click(object sender, EventArgs e)
+        private void BtnAvailability_Click(object sender, EventArgs e)
         {
             this.Visible = false;
             new DutyForm().Visible = true;

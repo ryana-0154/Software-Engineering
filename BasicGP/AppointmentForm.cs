@@ -24,11 +24,11 @@ namespace BasicGP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void picLogo_Click(object sender, EventArgs e)
+        private void PicLogo_Click(object sender, EventArgs e)
         {
-            Utilities.toDashboard(sender, e, this);
+            Utilities.ToDashboard(sender, e, this);
         }
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void BtnSubmit_Click(object sender, EventArgs e)
         {
             Control[] appointmentDetails = new Control[7];
             appointmentDetails[0] = txtNHNumber;
@@ -46,8 +46,7 @@ namespace BasicGP
                 {
                     if (isEdting == false)
                     {
-                        //TODO: check order of data entry
-                        DBAccess.postData("newAppointment", appointmentDetails[0].Text, appointmentDetails[1].Controls[0].Text, appointmentDetails[2].Controls[0].Text, appointmentDetails[3].Controls[0].Text, appointmentDetails[4].Text, appointmentDetails[5].Text, appointmentDetails[6].Text);
+                        DBAccess.PostData("newAppointment", appointmentDetails[0].Text, appointmentDetails[1].Controls[0].Text, appointmentDetails[2].Controls[0].Text, appointmentDetails[3].Controls[0].Text, appointmentDetails[4].Text, appointmentDetails[5].Text, appointmentDetails[6].Text);
                         
                     }
                     else
@@ -63,7 +62,7 @@ namespace BasicGP
                     return;
                 }
 
-                Utilities.toDashboard(sender, e, this);
+                Utilities.ToDashboard(sender, e, this);
             }
 
 
@@ -90,8 +89,7 @@ namespace BasicGP
             {
                 if (valid[i] == false)
                 {
-                    //TODO: appointment details entries for dtp and dropdown needs to be set as the panel for this to work
-                    errorMsg = Utilities.validation_failed(appointmentDetails[i], lblErrorMsg, btnSubmit, errorMsg);
+                    errorMsg = Utilities.Validation_Failed(appointmentDetails[i], lblErrorMsg, btnSubmit, errorMsg);
 
                 }
             }
@@ -114,7 +112,7 @@ namespace BasicGP
         private bool CheckEmployeeIsAvailable(string time, DateTime date, string firstname, string lastname)
         {
 
-            DataSet dataSet = DBAccess.getData("getAppointmentsToCheckAvail", time.ToString(), date.ToLongDateString(),firstname,lastname);
+            DataSet dataSet = DBAccess.GetData("getAppointmentsToCheckAvail", time.ToString(), date.ToLongDateString(),firstname,lastname);
             DataTable table = dataSet.Tables[0];
 
             if (table.Rows.Count == 0)
@@ -130,13 +128,13 @@ namespace BasicGP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
             //builds a dialog box to confirm the decision
             DialogResult result = MessageBox.Show("Are you sure you want to delete this appointment?", "Delete appointment", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-               DBAccess.deleteData(txtNHNumber.Text, dtpDate.Value.ToString(), cbTime.Text);
+               DBAccess.DeleteData(txtNHNumber.Text, dtpDate.Value.ToString(), cbTime.Text);
             }
         }
 
@@ -145,7 +143,7 @@ namespace BasicGP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             DataSet dataSet;
             DataTable table;
@@ -154,7 +152,7 @@ namespace BasicGP
             {
                 // Define a dataSet from DBAccess with the SQL statement
 
-                dataSet = DBAccess.getData("patientAppointmentsView", txtSearch.Text);
+                dataSet = DBAccess.GetData("patientAppointmentsView", txtSearch.Text);
                 //Define a datatable with the tables from the dataset return
                 table = dataSet.Tables[0];
 
@@ -170,9 +168,9 @@ namespace BasicGP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgvCellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void DvCellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataSet dataSet = DBAccess.getData("patientAppointmentsEdit", txtSearch.Text);
+            DataSet dataSet = DBAccess.GetData("patientAppointmentsEdit", txtSearch.Text);
             DataTable table = dataSet.Tables[0];
             txtNHNumber.Text = table.Rows[e.RowIndex].ItemArray[0].ToString();
             dtpDate.Value = DateTime.Parse(table.Rows[e.RowIndex].ItemArray[1].ToString());
@@ -225,7 +223,7 @@ namespace BasicGP
             DialogResult result = MessageBox.Show("Are you sure you want to edit this appointment?", "Edit appointment", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                DBAccess.updateData("editAppointment", NHNumber, date, time, desc, aID,firstname,lastname);
+                DBAccess.UpdateData("editAppointment", NHNumber, date, time, desc, aID,firstname,lastname);
             }
         }
         

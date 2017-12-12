@@ -188,7 +188,7 @@
             this.dgvAppointments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvAppointments.Size = new System.Drawing.Size(1285, 577);
             this.dgvAppointments.TabIndex = 2;
-            this.dgvAppointments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointments_CellContentClick);
+            this.dgvAppointments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvAppointments_CellContentClick);
             // 
             // tcResults
             // 
@@ -203,7 +203,7 @@
             this.tcResults.Size = new System.Drawing.Size(1300, 624);
             this.tcResults.TabIndex = 3;
             this.tcResults.Visible = false;
-            this.tcResults.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tcResults_Selecting);
+            this.tcResults.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TcResults_Selecting);
             // 
             // dgvPatients
             // 
@@ -238,7 +238,7 @@
             this.rdbNHNumber.TabStop = true;
             this.rdbNHNumber.Text = "National Health Number";
             this.rdbNHNumber.UseVisualStyleBackColor = true;
-            this.rdbNHNumber.CheckedChanged += new System.EventHandler(this.rdbNHNumber_CheckedChanged);
+            this.rdbNHNumber.CheckedChanged += new System.EventHandler(this.RdbNHNumber_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -252,7 +252,7 @@
             this.radioButton2.TabIndex = 10;
             this.radioButton2.Text = "Name and DOB";
             this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.RadioButton2_CheckedChanged);
             // 
             // lblDOB
             // 
@@ -321,7 +321,7 @@
             this.btnSubmit.TabIndex = 15;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // ResultsForm
             // 

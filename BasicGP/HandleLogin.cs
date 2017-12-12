@@ -14,7 +14,7 @@ namespace BasicGP
         public static bool Authenticate(string username, string password)
         {
             // Define a dataSet from DBAccess with the SQL statement
-            DataSet dataSet = DBAccess.getData("login", username, password);
+            DataSet dataSet = DBAccess.GetData("login", username, password);
             //Define a datatable with the tables from the dataset return
             DataTable table = dataSet.Tables[0];
             //If there is a user with those credentials, do this

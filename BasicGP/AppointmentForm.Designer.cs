@@ -410,7 +410,7 @@ namespace BasicGP
             this.btnSubmit.TabIndex = 8;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // lblEmployee
             // 
@@ -438,7 +438,7 @@ namespace BasicGP
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Visible = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // txtSearch
             // 
@@ -447,7 +447,7 @@ namespace BasicGP
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(51, 22);
             this.txtSearch.TabIndex = 9;
-            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSearch_KeyPress);
             // 
             // lblInputPrompt
             // 
@@ -484,7 +484,7 @@ namespace BasicGP
             this.dgvAppointments.RowTemplate.Height = 24;
             this.dgvAppointments.Size = new System.Drawing.Size(553, 335);
             this.dgvAppointments.TabIndex = 26;
-            this.dgvAppointments.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellDoubleClick);
+            this.dgvAppointments.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DvCellDoubleClick);
             // 
             // lblErrorMsg
             // 
@@ -521,7 +521,7 @@ namespace BasicGP
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 20;
             this.picLogo.TabStop = false;
-            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
+            this.picLogo.Click += new System.EventHandler(this.PicLogo_Click);
             // 
             // AppointmentForm
             // 

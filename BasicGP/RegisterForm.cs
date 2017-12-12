@@ -22,7 +22,7 @@ namespace BasicGP
             Application.Exit();
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void BtnSubmit_Click(object sender, EventArgs e)
         {
             if (CheckValidation())
             {
@@ -31,7 +31,6 @@ namespace BasicGP
                 bool[] additionalInfo = new bool[3];
                 string address = ConcatAddress();
                 Console.WriteLine(address);
-                //TODO: cahnge from bool and string arrays to just one Control data type array
                 patientDetails[0] = txtFName.Text + " " + txtSName.Text; // data[2]
                 patientDetails[1] = comboTitle.Text; // data[3]
                 patientDetails[2] = dtpDOB.Text; // data[4]
@@ -43,10 +42,10 @@ namespace BasicGP
                 additionalInfo[1] = cbSmoker.Checked; // data[9]
                 additionalInfo[2] = cbAsthmatic.Checked; // data[10]
 
-                DBAccess.postData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3],
+                DBAccess.PostData("registerPatient", patientDetails[0], patientDetails[1], patientDetails[2], patientDetails[3],
                     patientDetails[4], patientDetails[5], additionalInfo[0].ToString(), additionalInfo[1].ToString(), additionalInfo[2].ToString());
 
-                Utilities.toDashboard(sender, e, this);
+                Utilities.ToDashboard(sender, e, this);
             }
         }
 
@@ -111,7 +110,7 @@ namespace BasicGP
                 if (valid[i] == false)
                 {
                     //this adds the new error message to the old one with a new line
-                    errorMsg = Utilities.validation_failed(userInputs[i], lblErrorMsg, btnSubmit, errorMsg);
+                    errorMsg = Utilities.Validation_Failed(userInputs[i], lblErrorMsg, btnSubmit, errorMsg);
                 }
             }
             //sets the error message label to the error message
@@ -132,7 +131,7 @@ namespace BasicGP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toDashboard(object sender, EventArgs e)
+        private void ToDashboard(object sender, EventArgs e)
         {
             //closes the current form
             this.Visible = false;
@@ -146,7 +145,7 @@ namespace BasicGP
         /// allows the submit button to be clicked to progress
         /// </summary>
         /// <param name="boxInput"></param>
-        private void validation_passed(TextBox boxInput)
+        private void Validation_passed(TextBox boxInput)
         {
             btnSubmit.Enabled = true;
             boxInput.BackColor = Color.White;
@@ -163,24 +162,5 @@ namespace BasicGP
             MessageBox.Show(title, message);
         }
 
-        #region Ryan's Code
-        //// I'm only doing the following bits of code so that we can easily pass into DBAccess when it is created
-        //string fName, sName, title, address, allergies, nhNumber, phone;
-        //string dob;
-        //bool diabetic, smoker, asthmatic;
-
-        //nhNumber = txtNHNumber.Text;
-        //    fName = txtFName.Text;
-        //    sName = txtSName.Text;
-        //    title = comboTitle.Text;
-        //    dob = dtpDOB.Text;
-        //    phone = txtPhoneNumber.Text;
-        //    address = txtAddress1.Text;
-        //    allergies = txtAllergies.Text;
-        //    diabetic = cbDiabetes.Checked;
-        //    smoker = cbSmoker.Checked;
-        //    asthmatic = cbAsthmatic.Checked;
-        #endregion
-            
     }
 }

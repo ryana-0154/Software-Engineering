@@ -1,6 +1,4 @@
-﻿// Author: Ryan Alderton
-// SID: 1609275
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -40,7 +38,7 @@ namespace BasicGP
         /// Fetches data from the server
         /// </summary>
         /// <param name="data">Data to be passed to the server - first element should always be the function</param>
-        public static DataSet getData(params string[] data)
+        public static DataSet GetData(params string[] data)
         {
             // Create a dataset called dataSet
             DataSet dataSet;
@@ -195,7 +193,7 @@ namespace BasicGP
         /// Posts Data to DB
         /// </summary>
         /// <param name="data">Data to be passed to the DB - first element should always be the function</param>
-        public static DataSet postData(params string[] data)
+        public static DataSet PostData(params string[] data)
         {
             // Integer variable to hold the number of rows that were affected by the query
             int count;
@@ -274,7 +272,7 @@ namespace BasicGP
         /// Method to update data in the database
         /// </summary>
         /// <param name="data">parameters for the method; The first element of the parameters should always be the function needed</param>
-        public static void updateData(params string[] data)
+        public static void UpdateData(params string[] data)
         {
             // Open the DB Connection
             OpenConnection();
@@ -325,7 +323,7 @@ namespace BasicGP
         /// Method used to delete data from the DB
         /// </summary>
         /// <param name="data"></param>
-        public static void deleteData(params string[] data)
+        public static void DeleteData(params string[] data)
         {
             OpenConnection();
             sqlCommand = new SqlCommand(Constants.cancelAppointment, DBConnection);

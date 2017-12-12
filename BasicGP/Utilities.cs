@@ -7,15 +7,11 @@ namespace BasicGP
 {
     public static class Utilities
     {
-        // TODO: Put methods that are used a lot here to prevent 
-        // writing the same things over and over again
-
-
         /// <summary>
         /// Is called if validation is failed, disables submit button, changes colours and posts a message
         /// </summary>
         /// <param name="userInput">is the control that has failed</param>
-        public static string validation_failed(Control userInput, Label lblErrorMsg, Button btnSubmit,string errorMsg)
+        public static string Validation_Failed(Control userInput, Label lblErrorMsg, Button btnSubmit,string errorMsg)
         {
             //start a fresh each time
             switch (userInput.Name)
@@ -67,7 +63,7 @@ namespace BasicGP
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public static void toDashboard(object sender, EventArgs e, Form currentForm)
+        public static void ToDashboard(object sender, EventArgs e, Form currentForm)
         {
             currentForm.Visible = false;
             Dashboard dashboard = new Dashboard();

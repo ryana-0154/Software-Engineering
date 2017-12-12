@@ -107,7 +107,7 @@ namespace BasicGP
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 7;
             this.picLogo.TabStop = false;
-            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
+            this.picLogo.Click += new System.EventHandler(this.PicLogo_Click);
             // 
             // dgvDuty
             // 
@@ -133,7 +133,7 @@ namespace BasicGP
             this.dgvDuty.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvDuty.Size = new System.Drawing.Size(602, 439);
             this.dgvDuty.TabIndex = 8;
-            this.dgvDuty.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellDoubleClick);
+            this.dgvDuty.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCellDoubleClick);
             // 
             // mcDutyDate
             // 
@@ -142,7 +142,7 @@ namespace BasicGP
             this.mcDutyDate.MinDate = new System.DateTime(2017, 12, 4, 0, 0, 0, 0);
             this.mcDutyDate.Name = "mcDutyDate";
             this.mcDutyDate.TabIndex = 9;
-            this.mcDutyDate.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.mcDutyDate_DateChanged);
+            this.mcDutyDate.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.McDutyDate_DateChanged);
             // 
             // lblTitleAvailability
             // 
