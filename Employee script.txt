@@ -1,6 +1,0 @@
-INSERT INTO [dbo].[Employee] ([EmployeeID], [RotaID], [FirstName], [LastName], [Title], [Occupation]) VALUES (1, 1, N'Paul', N'Ward', N'Dr', N'Chiropractor')
-INSERT INTO [dbo].[Employee] ([EmployeeID], [RotaID], [FirstName], [LastName], [Title], [Occupation]) VALUES (2, 2, N'Stephen', N'Paulson', N'Mr', N'Nurse')
-INSERT INTO [dbo].[Employee] ([EmployeeID], [RotaID], [FirstName], [LastName], [Title], [Occupation]) VALUES (3, 3, N'Jessica', N'Robson', N'Dr', N'GP')
-INSERT INTO [dbo].[Employee] ([EmployeeID], [RotaID], [FirstName], [LastName], [Title], [Occupation]) VALUES (4, 4, N'Jamie', N'Sanders', N'Dr', N'Cardiologist')
-INSERT INTO [dbo].[Employee] ([EmployeeID], [RotaID], [FirstName], [LastName], [Title], [Occupation]) VALUES (5, 5, N'Edward', N'Brown', N'Mr', N'Nurse')
-INSERT INTO [dbo].[Employee] ([EmployeeID], [RotaID], [FirstName], [LastName], [Title], [Occupation]) VALUES (6, 6, N'Sally', N'Williams', N'Dr', N'GP')
